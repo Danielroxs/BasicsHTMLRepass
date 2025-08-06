@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="" name="contacto" id="contacto" method="POST">
+      <label for="nombres">Nombre</label>
+      <input type="text" id="nombres" placeholder="John Doe" maxlength="50" />
+
+      <br /><br />
+
+      <textarea name="mensaje" id="mensaje" placeholder="Tu mensaje"></textarea>
+      <br />
+
+      <label for="pais">Pais</label>
+      <select name="pais" id="pais">
+        <option value="mexico">Mexico</option>
+        <option value="argentina">Argentina</option>
+        <option value="brasil">Brasil</option>
+        <option value="Peru">Peru</option>
+      </select>
+
+      <br /><br />
+
+      <input type="radio" id="esp" value="esp" name="nombre" />
+      <label for="esp">Esp</label>
+
+      <input type="radio" id="ingles" value="ingles" name="nombre" />
+      <label for="ingles">Ingles</label>
+
+      <br />
+      <br />
+
+      <input type="checkbox" id="terminos" name="terminos" /><label
+        for="terminos"
+        >Aceptar Terminos y Condiciones</label
+      >
+
+      <br /><br />
+
+      <input type="button" value="Enviar Datos" />
+    </form>
+  </body>
+  <link rel="stylesheet" href="index.css" />
+</html>
+
+<!--
+Este comentario documenta los atributos comunes que se pueden usar en un elemento <input> en HTML:
+
+- type: Especifica el tipo de control de entrada (por ejemplo, text, password, email, number, etc.).
+- name: Define el nombre del campo, utilizado al enviar el formulario.
+- value: Establece el valor inicial del campo de entrada.
+- placeholder: Muestra un texto de ayuda dentro del campo cuando está vacío.
+- required: Indica que el campo debe ser completado antes de enviar el formulario.
+- readonly: Hace que el campo sea de solo lectura.
+- disabled: Deshabilita el campo, impidiendo la interacción del usuario.
+- maxlength: Limita el número máximo de caracteres permitidos.
+- minlength: Establece el número mínimo de caracteres requeridos.
+- pattern: Define una expresión regular que el valor debe cumplir.
+- autocomplete: Controla si el navegador puede autocompletar el campo.
+- autofocus: Hace que el campo reciba el foco automáticamente al cargar la página.
+- size: Especifica el ancho visual del campo de entrada.
+- step: Para campos numéricos, define el incremento permitido.
+- min y max: Para campos numéricos o de fecha, establecen los valores mínimo y máximo permitidos.
+- multiple: Permite seleccionar múltiples valores (por ejemplo, en archivos o correos electrónicos).
+- formaction, formenctype, formmethod, formnovalidate, formtarget: Atributos relacionados con el envío de formularios.
+
+Estos atributos permiten personalizar el comportamiento y la validación de los campos de entrada en formularios HTML.
+-->
