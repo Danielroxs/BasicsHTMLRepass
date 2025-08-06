@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Etiquetas de maquetado</title>
+  </head>
+  <body>
+    <!--Ejemplo SIN semantica-->
+    <div class="header">
+      <div class="nav">
+        <a href="#">Home</a>
+        <a href="#">Blog</a>
+        <a href="#">Comtact</a>
+      </div>
+    </div>
+
+    <div class="main">
+      <div class="articulo">
+        <h3 class="titulo">Este es el Titulo de mi post</h3>
+        <p class="fecha">06 agosto 2025</p>
+        <p>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+          Consequuntur, neque!
+        </p>
+        <img src="imagenes/paisaje1.jpg" alt="montana" />
+      </div>
+    </div>
+
+    <div class="sidebar">
+      <p>Texto del sidebar</p>
+    </div>
+
+    <div class="footer">
+      <p>Texto del footer</p>
+    </div>
+
+    <!--
+        Elementos semánticos:
+        section     - Define una sección en un documento que puede contener un grupo de contenido
+        article     - Define el contenido de un sitio, por ejemplo un artículo
+        header      - Define cuál será el encabezado de un sitio (navegación, logo, enlaces, etc)
+        main        - Define la sección principal de un sitio.
+        aside       - Nos permite definir un área con contenido independiente al principal, como el sidebar
+        footer      - Define cuál será el pie de página de un sitio.
+        figcaption  - Representa la leyenda o pie de imagen.
+        figure      - Representa el contenido dentro de la etiqueta <figcaption>.
+        mark        - Define texto que debería ser resaltado por el navegador web.
+        nav         - Define un conjunto de enlaces de navegación.
+        summary     - Define el encabezado para la etiqueta <details>.
+        details     - Define los detalles adicionales de la etiqueta <summary>.
+        time        - Representa un tiempo en formato de computadora.
+        code        - Define código
+        kbd         - Representa teclas a presionar.
+        -->
+
+    <!--Ejemplo CON semantica-->
+
+    <header class="header">
+      <nav class="nav">
+        <a href="#">Home</a>
+        <a href="#">Blog</a>
+        <a href="#">Comtact</a>
+      </nav>
+    </header>
+
+    <main class="main">
+      <article class="articulo">
+        <h1 class="titulo">Este es el Titulo de mi post</h1>
+        <time datetime="1993-02-21" class="fecha">06 agosto 2025</time>
+        <p>
+          Lorem ipsum, dolor sit amet <mark>consectetur</mark> adipisicing elit.
+          Consequuntur, neque!
+        </p>
+        <figure>
+          <figcaption>
+            <img src="imagenes/paisaje1.jpg" alt="montana" />
+            Montana Nevada
+          </figcaption>
+        </figure>
+      </article>
+    </main>
+
+    <section>
+      <h4>Informacion Adicional</h4>
+      <p>Lorem ipsum dolor sit amet.</p>
+    </section>
+
+    <aside class="sidebar">
+      <p>Texto del sidebar</p>
+    </aside>
+
+    <footer class="footer">
+      <p>Texto del footer</p>
+    </footer>
+  </body>
+  <link rel="stylesheet" href="index.css" />
+</html>
