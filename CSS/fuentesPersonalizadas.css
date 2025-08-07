@@ -1,0 +1,23 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+ */
+
+@font-face{
+    font-family: 'Roboto';
+    src: url('../fuentes/Roboto-Medium.ttf') format('truetype');
+    font-weight: 500;
+} /* Si la descargas en local tienes que hacer esto de arriba y guardar los archivos en una carpeta del proyecto */
+
+@font-face{
+    font-family: 'Roboto';
+    src: url('../fuentes/Roboto-Regular.ttf') format('truetype')
+} /* Si la descargas en local tienes que hacer esto de arriba y guardar los archivos en una carpeta del proyecto */
+
+body{
+    background-color: darkgrey;
+     font-size: 30px;
+    font-family: 'Roboto';
+    font-weight: 400;
+}
+
+/* La forma mas facil de cargar fuentes es desde Google Fonts y copiar el codigo y pegarlo en el index o ya sea con import
+en el archivo CSS y usarlas, listo */
