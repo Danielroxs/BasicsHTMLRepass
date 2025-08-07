@@ -1,0 +1,30 @@
+body {
+    background-color: darkgrey;
+}
+
+.menu {
+    background: lightgrey
+}
+
+.menu a {
+    color: red;
+}
+
+/* Selectores de hijos */
+.menu > a {
+    font-size: 32px;
+}
+
+/* Selector de hermanos */
+
+h3 + p {
+    color: blue;
+    font-size: 22px;
+}
+
+/* Selector General */
+
+h3 ~ p {
+    color: red;
+    font-size: 30px;
+}

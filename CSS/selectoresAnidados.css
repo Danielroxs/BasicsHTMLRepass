@@ -1,0 +1,77 @@
+/* Ejemplo de codigo sin anidar */
+body {
+  background-color: darkgrey;
+}
+
+/* .contenedor .articulo {
+    background: lightgray;
+}
+
+.contenedor .articulo h2 {
+    font-size: 40px;
+}
+
+.contenedor .articulo p {
+    font-size: 20px;
+}
+
+.contenedor .articulo a {
+    color: red;
+    font-size: 20px;
+}
+
+.contenedor .articulo.destacado {
+    background: lightblue;
+}
+
+.contenedor .articulo.destacado h2 {
+    color: blue;
+} */
+
+
+/* ---------------------------------------Ejemplo con anidado---------------------------------- */
+
+.contenedor {
+    background-color: lightgreen;
+
+    .articulo {
+        background: lightgray;
+
+        &.destacado {
+            background: lightblue;
+
+            h2 {
+                color: blue;
+            }
+        }
+
+        h2 {
+            font-size: 30px;
+        }
+
+        p {
+            font-size: 20px;
+        }
+
+        a {
+            color: red;
+            font-size: 20px;
+        }
+    }
+}
+
+/*
+Ventajas y desventajas:
+Nested CSS:
+- Ventajas:
+    - Código más limpio y moderno
+    - Más fácil de mantener
+- Desventajas:
+    - No está disponible en todas las versiones
+
+CSS sin Anidar:
+- Ventajas:
+    - Soporte en todos los navegadores
+- Desventajas:
+    - Código más limpio y difícil de mantener
+*/
