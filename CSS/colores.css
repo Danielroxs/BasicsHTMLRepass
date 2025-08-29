@@ -1,0 +1,27 @@
+body {
+  background: #8e8686ff;
+}
+
+.color {
+  /* Nombre */
+  /* Puedes usar color picker para escoger colores en el navegador */
+  /* 6 digitos */
+  /* color: #000000; */
+  color: darkblue;
+  /* color: orange; */
+
+  /* 3 digitos */
+  /* color: #000; */
+  /* color: rgba(139, 41, 41, 0.9); */
+
+  /* RGB */
+  /* color: rgb(255, 255, 255); */
+
+  /* Transparencia con RGBA */
+  /* color: rgba(255, 0, 225, 0.5); /* rojo, verde, azul, transparencia */
+
+  /* Color HSL */
+  /* color: hsla(239, 43%, 38%, 1.00) */
+
+  border: 5px solid currentColor;
+}
