@@ -1,0 +1,66 @@
+body {
+  background-color: #000;
+}
+
+.caja {
+  width: 500px;
+  height: 500px;
+  background: #6b5d5dff;
+  margin: 10px; /* separacion entre elementos contiguos */
+}
+
+.gradiente-linear {
+  /* background: linear-gradient(to top right, blue, black); */
+  /* background: linear-gradient(30deg, blue, black); */
+  /*
+ * Direcciones posibles para linear-gradient:
+ * - Básicas:
+ *   to right           (de izquierda a derecha)
+ *   to left            (de derecha a izquierda)
+ *   to top             (de abajo hacia arriba)
+ *   to bottom          (de arriba hacia abajo)
+ *
+ * - Diagonales:
+ *   to top right       (de abajo izquierda a arriba derecha)
+ *   to top left        (de abajo derecha a arriba izquierda)
+ *   to bottom right    (de arriba izquierda a abajo derecha)
+ *   to bottom left     (de arriba derecha a abajo izquierda)
+ *
+ * - Angulares (usando grados, 0deg es hacia arriba, 90deg a la derecha):
+ *   0deg     (hacia arriba)
+ *   90deg    (hacia la derecha)
+ *   180deg   (hacia abajo)
+ *   270deg   (hacia la izquierda)
+ *   Cualquier ángulo entre 0deg y 360deg es válido.
+ */
+
+  background: #283c86; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #45a247,
+    #283c86
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #45a247,
+    #283c86
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.gradiente-radial {
+  background: radial-gradient(lime, black);
+}
+.gradiente-conico {
+  background: conic-gradient(yellow, orangered);
+}
+
+.gradiente-imagen {
+  background: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0),
+      rgba(0, 0, 0, 1)
+    ),
+    url("./imagenes/bosque.png");
+  background-size: cover;
+  background-position: center;
+}
