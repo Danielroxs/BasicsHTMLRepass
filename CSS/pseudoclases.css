@@ -1,0 +1,57 @@
+body {
+  background: #695c5cff;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+a {
+  font-size: 50px;
+  &:hover {
+    /* no ocupas doble : */
+    background: red;
+    color: #fff;
+  }
+
+  &:active {
+    background: #000;
+  }
+
+  &:visited {
+    color: green;
+  }
+}
+
+.articulos {
+  p:hover {
+    background: #414141;
+    color: white;
+  }
+}
+
+.cajas {
+  /* Aplica estilos a todos los divs dentro de .cajas */
+  div {
+    background: lightcyan;
+    height: 50px;
+    margin-bottom: 5px;
+
+    /* Primer hijo div dentro de .cajas */
+    &:first-child {
+      background: red;
+    }
+
+    /* Segundo hijo div dentro de .cajas */
+    &:nth-child(2) {
+      background: lightblue;
+    }
+
+    /* Último hijo div dentro de .cajas */
+    &:last-child {
+      background: green;
+    }
+
+    /* Penúltimo hijo div dentro de .cajas */
+    &:nth-last-child(2) {
+      background: brown;
+    }
+  }
+}
