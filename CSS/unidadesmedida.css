@@ -1,0 +1,60 @@
+/*
+ * Explicación de las unidades relativas y absolutas en CSS:
+ *
+ * Unidades absolutas:
+ * - Son unidades fijas que no dependen de otros factores externos.
+ * - Ejemplos: px (píxeles), cm (centímetros), mm (milímetros), in (pulgadas), pt (puntos), pc (picas).
+ * - Se utilizan cuando se requiere un tamaño exacto y consistente en todos los dispositivos.
+ *
+ * Unidades relativas:
+ * - Son unidades que dependen de otros valores, como el tamaño de fuente del elemento padre o el viewport.
+ * - Ejemplos: em, rem, %, vw, vh, vmin, vmax.
+ * - Permiten crear diseños flexibles y adaptables, ya que cambian según el contexto.
+ *   - em: relativo al tamaño de fuente del elemento padre.
+ *   - rem: relativo al tamaño de fuente raíz (html).
+ *   - %: relativo al tamaño del elemento contenedor.
+ *   - vw/vh: relativo al ancho/alto de la ventana gráfica (viewport).
+ *
+ * Usar unidades relativas es recomendable para diseños responsivos, mientras que las absolutas son útiles para impresiones o cuando se necesita precisión.
+ */
+
+* {
+  margin: 0;
+}
+
+html {
+  font-size: 20px;
+}
+
+.caja {
+  background: rgba(68, 142, 166);
+  width: 50vw;
+  height: 50vh;
+  font-size: 40px;
+}
+
+.parrafo-uno {
+  /* 
+     * background: lightblue; -> Color de fondo del párrafo.
+     * width: 50%; -> El ancho es el 50% del elemento contenedor.
+     * height: 50%; -> La altura es el 50% del elemento contenedor.
+     * font-size: 2em; -> El tamaño de fuente es 2 veces el tamaño de fuente del elemento padre.
+     */
+  background: lightblue;
+  width: 50%;
+  height: 50%;
+  /*
+    La unidad de medida `em` en CSS es relativa al tamaño de fuente del elemento padre.
+    Por ejemplo, si el elemento padre tiene un `font-size` de 16px, entonces `2em` equivale a 32px.
+    Esto permite que el tamaño de fuente se adapte dinámicamente según el contexto del elemento.
+
+    La unidad de medida `rem` es similar a `em`, pero es relativa al tamaño de fuente del elemento raíz (`<html>`).
+    Por ejemplo, si el elemento raíz tiene un `font-size` de 16px, entonces `2rem` siempre será 32px,
+    independientemente del tamaño de fuente de los elementos padres.
+*/
+  font-size: 2em;
+}
+
+.parrafo-dos {
+  font-size: 2em;
+}

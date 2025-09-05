@@ -1,0 +1,62 @@
+body {
+  background: #787171ff;
+}
+
+/* 
+    .caja: Caja de ejemplo con tamaño de fuente y fondo.
+*/
+.caja {
+  font-size: 20px;
+  background: #65a665;
+}
+
+/* 
+    .inline: 
+    - Aplica display: inline.
+    - Los elementos inline NO pueden tener ancho ni padding.
+    - Se colocan uno al lado del otro en la misma línea.
+*/
+.inline {
+  display: inline;
+}
+
+/* 
+    .block: 
+    - Aplica display: block.
+    - Los elementos block ocupan todo el ancho disponible.
+    - Se pueden definir ancho, alto, padding y margin.
+    - Se colocan uno debajo del otro.
+*/
+.block {
+  display: block;
+  padding: 30px;
+  margin: 10px;
+  width: 200px;
+  height: 200px;
+}
+
+/* 
+    .inline-block: 
+    - Aplica display: inline-block.
+    - Se colocan uno al lado del otro (como inline).
+    - Permiten definir ancho, alto, padding y margin (como block).
+    - vertical-align: top los alinea en la parte superior.
+*/
+.inline-block {
+  display: inline-block;
+  padding: 30px;
+  margin: 10px;
+  width: 200px;
+  height: 200px;
+  vertical-align: top;
+}
+
+/* 
+    .none: 
+    - Aplica display: none.
+    - El elemento NO se muestra en la página.
+    - No ocupa espacio en el layout.
+*/
+.none {
+  display: none;
+}

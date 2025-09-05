@@ -1,0 +1,41 @@
+body {
+  background: #554c4cff;
+}
+/* Ejemplo con variables */
+/* h1 {
+  color: blue;
+}
+
+header nav a {
+  color: blue;
+}
+
+main a {
+  color: blue;
+}
+ */
+
+/* Ejemplo con variables */
+:root {
+  --color-primario: blue;
+  --color-secundario: red;
+  --fuente-primario: "Arial", sans-serif;
+  --fuente-secundaria: "Times New Roman", serif;
+  --padding: 10px;
+  --margin: 20px;
+}
+
+h1 {
+  color: var(--color-primario);
+  font-family: var(--fuente-secundaria);
+}
+
+header nav a {
+  color: var(--color-primario);
+  color: var(--color-primario);
+}
+
+main a {
+  color: var(--color-primario);
+  color: var(--color-primario);
+}

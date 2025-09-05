@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="display.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- 
+            Elemento de bloque:
+            Un elemento de bloque en CSS ocupa todo el ancho disponible de su contenedor y comienza en una nueva línea.
+            Ejemplos de elementos de bloque: <div>, <p>, <h1>–<h6>, <ul>, <ol>, <li>, etc.
+            Abajo hay ejemplos de elementos de bloque convertidos a inline con CSS.
+        -->
+    <div class="caja inline">Hola soy una caja DIV</div>
+    <p class="caja inline">Hola soy un parrafo</p>
+
+    <!-- 
+            Elemento en línea:
+            Un elemento en línea en CSS solo ocupa el espacio necesario para su contenido y no inicia una nueva línea.
+            Ejemplos de elementos en línea: <span>, <a>, <strong>, <em>, etc.
+            Abajo hay ejemplos de elementos en línea convertidos a inline-block con CSS.
+        -->
+    <a class="caja inline-block" href="#">Enlace</a>
+    <img
+      class="caja inline-block"
+      width="200px"
+      src="./imagenes/bosque.png"
+      alt="bosque"
+    />
+    <span class="caja inline-block">Hola soy un texto dentro de un SPAN</span>
+
+    <!-- 
+            display: none;
+            El siguiente elemento tiene la clase "none", lo que significa que no se mostrará en la página.
+            Se usa para ocultar elementos con CSS.
+        -->
+    <h1 class="caja none">Hola</h1>
+  </body>
+</html>
