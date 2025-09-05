@@ -1,0 +1,112 @@
+body {
+  background: #676767ff;
+}
+
+.container {
+  display: inline-block;
+}
+
+.boton-cuadrado {
+  background: #474bcdff;
+  display: inline-block;
+  padding: 10px;
+  font-weight: bold;
+  color: #fff;
+  transition: 0.3s ease all;
+  margin: 10px;
+
+  &:hover {
+    background: #4f54e6ff;
+  }
+}
+
+.boton-redondo {
+  background: orange;
+  display: inline-block;
+  padding: 10px;
+  border-radius: 100px;
+  color: #fff;
+  font-weight: bold;
+  transition: 0.3s ease all;
+  margin: 10px;
+
+  &:hover {
+    box-shadow: 0px 0px 10px 0 #762e2eff;
+  }
+}
+.boton-transparent {
+  background: transparent;
+  display: inline-block;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  border: solid 3px #000;
+  transition: 0.3s ease all;
+  color: #000;
+  font-weight: bold;
+
+  &:hover {
+    background: #000;
+    color: #fff;
+  }
+}
+
+.boton-gradiente {
+  background: linear-gradient(to bottom, #0f2027, #2c5364);
+  display: inline-block;
+  border-radius: 10px;
+  border: solid 3px #000;
+  padding: 10px;
+  transition: 0.3s ease all;
+
+  &:hover {
+    background: linear-gradient(to right, #0f2027, #2c5364);
+  }
+}
+
+.boton-sombra {
+  display: inline-block;
+  background: #007726ff;
+  padding: 10px;
+  margin: 10px;
+  border: none;
+  font-weight: bold;
+  color: #fff;
+  box-shadow: 10px 10px 0 0 #000;
+  transition: 0.3s ease all;
+
+  &:hover {
+    box-shadow: 5px 5px 0 0 #000;
+  }
+}
+
+.boton-icono {
+  background: #caab11ff;
+  display: inline-block;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px -50px 36px -28px inset;
+  padding: 10px;
+  font-weight: bold;
+  color: #000;
+  border-radius: 5px;
+  transition: 0.3s ease all;
+
+  &:hover {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 50px 36px -28px inset;
+  }
+}
+
+.enlace-boton {
+  background: transparent;
+  display: inline-block;
+  padding: 10px;
+  margin: 10px;
+  font-weight: bold;
+  color: #fff;
+  transition: 0.3s ease all;
+
+  &:hover {
+    background: #3890c6ff;
+    color: #073f61ff;
+    border-radius: 5px;
+  }
+}
