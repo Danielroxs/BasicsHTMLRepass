@@ -1,0 +1,26 @@
+body {
+  background: #554b4bff;
+  color: white;
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+.contenedor {
+  width: 500px;
+  height: 500px;
+  background: #bd4646ff;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 5px;
+  border: 1px solid #000;
+  /* overflow: visible | hidden | scroll | auto */
+  overflow: auto;
+
+  .parrafo {
+    width: 150%;
+    margin: 0;
+  }
+}
