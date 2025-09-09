@@ -3,7 +3,10 @@ body {
 }
 
 .container {
-  display: inline-block;
+  display: block;
+  margin: 0 auto;
+  padding: 20px 0;
+  width: 1000px;
 }
 
 .boton-cuadrado {
@@ -11,24 +14,33 @@ body {
   display: inline-block;
   padding: 10px;
   font-weight: bold;
+  font-family: "Roboto", sans-serif;
   color: #fff;
   transition: 0.3s ease all;
   margin: 10px;
+  cursor: pointer;
+  border: none;
 
   &:hover {
     background: #4f54e6ff;
+  }
+
+  &:focus {
+    outline: 1px solid #792828ff;
   }
 }
 
 .boton-redondo {
   background: orange;
   display: inline-block;
+  font-family: "Roboto", sans-serif;
   padding: 10px;
   border-radius: 100px;
   color: #fff;
   font-weight: bold;
   transition: 0.3s ease all;
   margin: 10px;
+  cursor: pointer;
 
   &:hover {
     box-shadow: 0px 0px 10px 0 #762e2eff;
@@ -36,14 +48,16 @@ body {
 }
 .boton-transparent {
   background: transparent;
+  font-family: "Roboto", sans-serif;
   display: inline-block;
   margin: 10px;
   padding: 10px;
   border-radius: 10px;
-  border: solid 3px #000;
-  transition: 0.3s ease all;
   color: #000;
+  border: solid 3px currentColor;
+  transition: 0.3s ease all;
   font-weight: bold;
+  cursor: pointer;
 
   &:hover {
     background: #000;
@@ -53,11 +67,13 @@ body {
 
 .boton-gradiente {
   background: linear-gradient(to bottom, #0f2027, #2c5364);
+  font-family: "Roboto", sans-serif;
   display: inline-block;
   border-radius: 10px;
   border: solid 3px #000;
   padding: 10px;
   transition: 0.3s ease all;
+  cursor: pointer;
 
   &:hover {
     background: linear-gradient(to right, #0f2027, #2c5364);
@@ -66,6 +82,7 @@ body {
 
 .boton-sombra {
   display: inline-block;
+  font-family: "Roboto", sans-serif;
   background: #007726ff;
   padding: 10px;
   margin: 10px;
@@ -74,6 +91,7 @@ body {
   color: #fff;
   box-shadow: 10px 10px 0 0 #000;
   transition: 0.3s ease all;
+  cursor: pointer;
 
   &:hover {
     box-shadow: 5px 5px 0 0 #000;
@@ -82,27 +100,38 @@ body {
 
 .boton-icono {
   background: #caab11ff;
+  font-family: "Roboto", sans-serif;
   display: inline-block;
   box-shadow: rgba(0, 0, 0, 0.35) 0px -50px 36px -28px inset;
   padding: 10px;
   font-weight: bold;
   color: #000;
+  border: 1px solid #8f8f26;
   border-radius: 5px;
   transition: 0.3s ease all;
+  cursor: pointer;
 
   &:hover {
     box-shadow: rgba(0, 0, 0, 0.35) 0px 50px 36px -28px inset;
+  }
+
+  svg {
+    margin-right: 5px;
+    height: 15px;
   }
 }
 
 .enlace-boton {
   background: transparent;
+  font-family: "Roboto", sans-serif;
   display: inline-block;
   padding: 10px;
   margin: 10px;
   font-weight: bold;
   color: #fff;
   transition: 0.3s ease all;
+  cursor: pointer;
+  text-decoration: none;
 
   &:hover {
     background: #3890c6ff;
