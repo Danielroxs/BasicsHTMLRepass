@@ -1,0 +1,167 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  background: #101010;
+  font-family: "REM", sans-serif;
+  color: #fff;
+}
+
+.contenedor {
+  width: 1000px;
+  margin: 50px auto;
+  text-align: center;
+
+  .titulo {
+    margin-bottom: 40px;
+  }
+
+  .galeria {
+    a {
+      color: #f2f2f2;
+      text-decoration: none;
+    }
+
+    figure {
+      width: 300px;
+      display: inline-block;
+      margin: 10px;
+
+      img {
+        width: 100%;
+        vertical-align: top;
+        border-radius: 5px;
+        filter: grayscale(100%);
+        transition: 0.3s ease all;
+        padding: 5px;
+        border: 1px solid transparent;
+      }
+
+      &:hover img {
+        filter: grayscale(0%);
+        border: 1px solid #fff;
+      }
+
+      figcaption {
+        margin-top: 10p;
+        color: #424242;
+        transition: 0.3s ease all;
+      }
+
+      &:hover figcaption {
+        color: #f2f2f2;
+      }
+    }
+  }
+}
+
+/* 
+.imagen {
+  display: block;
+  margin: 0;
+  opacity: 10%;
+  margin-bottom: 5px;
+  transition: 0.3s ease all;
+}
+
+.imagen:hover {
+  opacity: 100%;
+  border-radius: 5px;
+  border: 1px solid #fff;
+  cursor: pointer;
+}
+
+.contenedor {
+  width: 1000px; 
+  height: 100vh;
+  color: white;
+  padding: 20px;
+  margin: 0 auto; 
+  position: relative;
+}
+
+.titulo {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.caja-1 {
+  position: absolute;
+  top: 80px;
+  left: 50px;
+  color: #c9c9c94e;
+  transition: color 0.3s ease;
+  text-align: center;
+}
+
+.caja-1:hover {
+  color: rgba(255, 255, 255, 1);
+}
+
+.caja-2 {
+  position: absolute;
+  top: 80px;
+  left: 350px;
+  color: #c9c9c94e;
+  transition: color 0.3s ease;
+  text-align: center;
+}
+
+.caja-2:hover {
+  color: rgba(255, 255, 255, 1);
+}
+
+.caja-3 {
+  position: absolute;
+  top: 80px;
+  left: 650px;
+  color: #c9c9c94e;
+  transition: color 0.3s ease;
+  text-align: center;
+}
+
+.caja-3:hover {
+  color: rgba(255, 255, 255, 1);
+}
+
+.caja-4 {
+  position: absolute;
+  top: 350px;
+  left: 50px;
+  color: #c9c9c94e;
+  transition: color 0.3s ease;
+  text-align: center;
+}
+
+.caja-4:hover {
+  color: rgba(255, 255, 255, 1);
+}
+
+.caja-5 {
+  position: absolute;
+  top: 350px;
+  left: 350px;
+  color: #c9c9c94e;
+  transition: color 0.3s ease;
+  text-align: center;
+}
+
+.caja-5:hover {
+  color: rgba(255, 255, 255, 1);
+}
+
+.caja-6 {
+  position: absolute;
+  top: 350px;
+  left: 650px;
+  color: #c9c9c94e;
+  transition: color 0.3s ease;
+  text-align: center;
+}
+
+.caja-6:hover {
+  color: rgba(255, 255, 255, 1);
+}
+ */
