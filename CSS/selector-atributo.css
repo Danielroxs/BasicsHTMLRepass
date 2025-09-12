@@ -1,0 +1,31 @@
+body {
+  background: #414141ff;
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+[data-id] {
+  font-size: 20px;
+  color: blue;
+}
+
+[data-id="2"] {
+  font-weight: bold;
+  color: red;
+}
+
+a {
+  text-decoration: underline;
+  color: green;
+  font-size: 30px;
+}
+
+[href*="https://www.google.com"] /* El asterisco (*) busca cualquier enlace que contenga "https://www.google.com" en su href, útil para seleccionar enlaces a diferentes rutas bajo Google sin duplicar reglas */
+{
+  text-decoration: none;
+  color: orange;
+}
+
+input[type="email"] {
+  outline: 2px solid blue;
+}
