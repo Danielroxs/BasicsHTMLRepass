@@ -1,0 +1,52 @@
+* {
+  padding: 0px;
+  margin: 0px;
+}
+
+body {
+  background: #494747ff;
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+}
+
+.tabla {
+  border: 1px solid #fff4f4ff;
+  border-collapse: collapse;
+  width: 100%;
+  overflow-x: auto; /* para que en mobile se vea bien en el eje x */
+
+  tr,
+  th,
+  td {
+    border: 1px solid #fff4f4ff;
+    padding: 10px;
+    text-align: center;
+  }
+
+  thead {
+    background: #00293f;
+
+    th {
+      color: #fff;
+      padding: 10px 0;
+    }
+  }
+
+  tbody {
+    tr {
+      background: #5f5d5dff;
+      &:nth-child(even) {
+        background: #0f5f06ff;
+      }
+
+      &:hover {
+        background: #5b63afff;
+      }
+
+      &.azul {
+        background: #e69;
+        color: white;
+      }
+    }
+  }
+}
