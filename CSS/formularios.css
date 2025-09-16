@@ -1,0 +1,83 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  background: #686464ff;
+  color: white;
+}
+
+.input {
+  padding: 10px;
+  margin: 10px;
+  border: 2px solid #c2c2c2;
+  border-radius: 5px;
+
+  /* ::placeholder es un pseudoelemento que estiliza el texto de sugerencia en los inputs */
+  /* Sí, puedes pensar en los pseudoelementos como "maquillaje" para partes específicas de los elementos */
+  &::placeholder {
+    color: blue;
+    opacity: 0.2;
+  }
+
+  &:hover {
+    border: 2px solid #7e7eff;
+  }
+
+  &:focus {
+    outline: 3px solid #4545ff;
+    border: 2px solid transparent;
+  }
+
+  &:disabled {
+    background: #e7e7e7;
+  }
+
+  &:invalid {
+    outline: 2px solid red;
+    border: 2px solid transparent;
+    color: red;
+  }
+
+  &:read-only {
+    border: none;
+    color: #000;
+    background: #e7e7e7;
+    cursor: default;
+  }
+}
+
+button {
+  display: inline-block;
+  padding: 10px;
+
+  &:disabled {
+    opacity: 0.4;
+  }
+
+  &[type="submit"] {
+    background: green;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+}
+
+input[type="radio"] {
+  /* 
+        Selecciona el elemento <label> que está inmediatamente después de un elemento 
+        que coincide con el selector "&:checked+label". 
+        El selector correcto es ":checked + label" para aplicar estilos al <label> 
+        cuando el elemento anterior (por ejemplo, un <input>) está marcado.
+    */
+  &:checked + label {
+    color: blue;
+    font-weight: bold;
+  }
+
+  &:indeterminate + label {
+    color: red;
+  }
+}
