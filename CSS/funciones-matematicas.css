@@ -1,0 +1,39 @@
+/* Reset general: quita márgenes y rellenos, 
+   y usa border-box para que padding/borde se incluyan en ancho/alto */
+*,
+*::before,
+*::after {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+/* Estilos base del documento */
+body {
+  background: #101010; /* Fondo oscuro */
+  font-family: "REM", sans-serif; /* Fuente principal */
+  color: #fff; /* Texto blanco */
+}
+
+/* Caja con variaciones de ancho usando funciones CSS */
+.caja {
+  background: #2da776; /* Fondo verde */
+  font-size: 32px; /* Texto grande */
+  height: 100px;
+  padding: 20px;
+}
+
+/* calc(): combina porcentajes y valores fijos en cálculos, osea la mitad del viewport menos 200px */
+.caja.calc {
+  width: calc(50% - 200px);
+}
+
+/* min(): elige el valor más pequeño entre los definidos */
+.caja.min {
+  width: min(500px, 50%);
+}
+
+/* max(): elige el valor más grande entre los definidos */
+.caja.max {
+  width: max(500px, 50%);
+}
