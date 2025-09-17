@@ -1,0 +1,10 @@
+* {
+  padding: 0px;
+  margin: 0px;
+}
+
+body {
+  background: #494747ff; /* Fondo gris oscuro */
+  font-family: Arial, Helvetica, sans-serif; /* Fuente predeterminada */
+  color: white; /* Color de texto general */
+}

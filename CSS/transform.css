@@ -1,0 +1,54 @@
+/* ===========================
+   RESET BÁSICO
+   =========================== */
+* {
+  padding: 0px;
+  margin: 0px;
+}
+
+/* ===========================
+   ESTILOS GENERALES DEL BODY
+   =========================== */
+body {
+  background: #494747ff; /* Fondo gris oscuro */
+  font-family: Arial, Helvetica, sans-serif; /* Fuente predeterminada */
+  color: white; /* Color de texto general */
+}
+
+/* ===========================
+   CAJA PRINCIPAL
+   =========================== */
+.caja {
+  width: 400px; /* Ancho fijo de la caja */
+  margin: 100px 0; /* Margen superior e inferior de 100px, laterales 0 */
+  background: #837878ff; /* Fondo gris claro */
+  transition: 0.5s ease all; /* Transición suave para transformaciones */
+}
+
+/* ===========================
+   IMAGEN DENTRO DE LA CAJA
+   =========================== */
+.caja img {
+  width: 100%; /* Imagen ocupa todo el ancho de la caja */
+  vertical-align: top; /* Alinea arriba si hay texto al lado */
+  border-radius: 15px; /* Bordes redondeados */
+
+  /* === EJEMPLOS DE TRANSFORMACIONES (DESACTIVADOS) ===
+  transform: translateX(200px);   Mueve imagen en eje X
+  position: relative; left: 200px; Otra forma de mover en X
+  transform: translate(200px, -200px); Mueve en X y Y
+
+  transform: scaleX(2);   Escala horizontal
+  transform: scaleY(2);   Escala vertical
+  transform: scale(2);    Escala en ambos ejes (2x)
+  transform: scale(0.5);  Reduce tamaño a la mitad
+  transform: rotate(90deg); Rota 90 grados
+  */
+}
+
+/* ===========================
+   EFECTO CUANDO SE ACTIVA CHECKBOX
+   =========================== */
+.checkbox:checked + .caja {
+  transform: rotate(90deg) scale(1.1); /* Rota 90° y agranda 10% */
+}
