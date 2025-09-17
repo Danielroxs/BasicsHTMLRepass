@@ -1,0 +1,75 @@
+* {
+  padding: 0px;
+  margin: 0px;
+}
+
+body {
+  background: #494747ff; /* Fondo gris oscuro */
+  font-family: Arial, Helvetica, sans-serif; /* Fuente predeterminada */
+  color: white; /* Color de texto general */
+}
+
+.caja {
+  width: 200px;
+  height: 200px;
+  margin: 20px;
+  padding: 20px;
+  font-size: 28px;
+  border-radius: 5px;
+  background: #43ae75;
+
+  animation-name: cambiarAncho;
+  animation-duration: 3s;
+  animation-delay: 0s;
+  animation-timing-function: ease;
+  /* animation-iteration-count: infinite; */
+  /* animation-direction: alternate; */
+  /*
+ * Animation Direction:
+ * 
+ * - normal: La animación se reproduce en la dirección normal, desde el principio hasta el final.
+ * - reverse: La animación se reproduce en dirección inversa, desde el final hasta el principio.
+ * - alternate: La animación alterna la dirección en cada ciclo, comenzando en dirección normal y luego inversa.
+ * - alternate-reverse: La animación alterna la dirección en cada ciclo, comenzando en dirección inversa y luego normal.
+ */
+
+  /* animation-fill-mode: determina cómo se aplican los estilos de la animación antes y después de ejecutarse.
+ * Valores posibles:
+ * - none: No aplica estilos fuera del ciclo de animación.
+ * - forwards: Mantiene los estilos del último fotograma después de terminar.
+ * - backwards: Aplica los estilos del primer fotograma antes de que comience.
+ * - both: Aplica tanto forwards como backwards.
+ */
+  animation-fill-mode: both;
+
+  &:hover {
+    /* animation: nombre duracion funcion-tiempo delay repeticiones direccion */
+    animation: agitar 0.3s ease-in 0s infinite forwards;
+  }
+}
+
+@keyframes cambiarAncho {
+  from {
+    width: 200px;
+    background: #000;
+  }
+
+  to {
+    width: 400px;
+    background: #226bb5ff;
+  }
+}
+
+@keyframes agitar {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(5px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
