@@ -1,10 +1,59 @@
+/* ===========================
+   RESET BÁSICO
+   =========================== */
 * {
   padding: 0px;
   margin: 0px;
 }
 
+/* ===========================
+   ESTILOS GENERALES DEL BODY
+   =========================== */
 body {
   background: #494747ff; /* Fondo gris oscuro */
   font-family: Arial, Helvetica, sans-serif; /* Fuente predeterminada */
   color: white; /* Color de texto general */
+}
+
+/* ===========================
+   BOTÓN CON TRANSICIONES
+   =========================== */
+.button {
+  background: #000; /* Fondo negro */
+  color: white; /* Texto blanco */
+  font-size: 20px; /* Tamaño de texto */
+  border: none; /* Sin borde */
+  cursor: pointer; /* Manita al pasar */
+  padding: 30px 60px; /* Espaciado interno */
+  margin: 20px; /* Separación externa */
+  border-radius: 10px; /* Bordes redondeados */
+
+  /* === EJEMPLOS DE TRANSICIÓN (DESACTIVADOS) ===
+  transition-property: all;               Qué propiedades animar
+  transition-duration: 300ms;             Duración
+  transition-timing-function: ease-in;    Curva de aceleración
+  transition-delay: 0.5s;                 Retraso antes de iniciar
+  */
+
+  /* Transición resumida en una sola línea:
+     - all → afecta a todas las propiedades que cambien
+     - 0.3s → duración de 300ms
+     - ease → curva de aceleración predefinida
+     - 2s → retraso antes de empezar la animación */
+  /* 
+    transition: all 0.3s ease 0.2s;
+    - all: Aplica la transición a todas las propiedades que puedan ser animadas.
+    - 0.3s: Duración de la transición, en este caso 0.3 segundos.
+    - ease: Función de temporización que suaviza el inicio y el final de la transición.
+    - 0.2s: Retardo antes de que comience la transición, en este caso 0.2 segundos.
+*/
+  transition: all 0.3s ease 0.2s;
+}
+
+/* ===========================
+   EFECTO AL PASAR EL CURSOR
+   =========================== */
+.button:hover {
+  background: #158215; /* Cambia color de fondo */
+  transform: scale(1.1); /* Aumenta tamaño un 10% */
 }
