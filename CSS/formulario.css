@@ -1,0 +1,132 @@
+* {
+  /* 
+    El box-sizing: border-box; hace que el ancho y alto de un elemento incluyan el padding y el borde,
+    facilitando el diseño y evitando que los elementos se salgan del tamaño esperado.
+  */
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  background: #686464ff;
+  color: white;
+  font-family: "Roboto", sans-serif;
+}
+
+main {
+  width: 700px;
+  margin: 50px auto;
+
+  .mensaje {
+    margin-bottom: 40px;
+
+    h1 {
+      font-size: 34px;
+      margin-bottom: 10px;
+    }
+  }
+
+  .formulario {
+    width: 100%;
+    background: #999696ff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+
+    .grupo {
+      margin-bottom: 20px;
+    }
+
+    input,
+    textarea,
+    button {
+      font-family: "Roboto", sans-serif;
+      font-size: 16px;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #e1d2ff;
+      border-radius: 3px;
+
+      &:hover {
+        border: 1px solid transparent;
+        outline: 2px solid #be9dff;
+      }
+
+      &:focus {
+        outline: 2px solid #6320ee;
+      }
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: 500;
+      font-size: 14px;
+
+      .leyenda {
+        font-size: 12px;
+        font-style: italic;
+        color: #e9dfdfff;
+        font-weight: normal;
+      }
+    }
+
+    .radio {
+      color: #000;
+      display: inline-block;
+      background: #f3edfd;
+      padding: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-right: 10px;
+
+      input {
+        width: auto;
+
+        &:focus {
+          outline: none;
+        }
+
+        &:checked + span {
+          color: #6320ee;
+        }
+      }
+
+      &:hover {
+        background: #e5d9fc;
+
+        input {
+          outline: none;
+        }
+      }
+    }
+
+    textarea {
+      height: 200px;
+      min-height: 200px;
+      max-height: 300px;
+      resize: none; /* no permite ajustar, puede ser vertical si solo quieres que sea en Y */
+      min-width: 100%;
+      max-width: 100%;
+    }
+
+    button[type="submit"] {
+      display: inline-block;
+      background: #6320ee;
+      border: none;
+      padding: 10px 35px;
+      color: white;
+      cursor: pointer;
+      border-radius: 5px;
+
+      &:hover {
+        background: #7c41f1;
+      }
+    }
+  }
+}
