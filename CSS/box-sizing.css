@@ -1,0 +1,37 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box; /* es mas facil agregarlo aqui para que sea universal */
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  background: #686464ff;
+  color: white;
+}
+
+.caja {
+  display: inline-block;
+  width: 200px;
+  height: 200px;
+  font-size: 24px;
+  background: #728ef1;
+  border-radius: 5px;
+  margin: 20px;
+  vertical-align: top;
+  box-sizing: border-box; /* es como cuando pido $20 de tortillas ya me cobran el papel incluido */
+  // box-sizing: border-box significa que el ancho y alto de un elemento
+  // ya incluyen el padding y el borde.
+  // Por ejemplo, si pides una caja de 100px de ancho,
+  // el padding y el borde ya están dentro de esos 100px.
+  // Así es más fácil controlar el tamaño de los elementos en
+
+  &.padding {
+    padding: 20px;
+  }
+
+  &.borde {
+    border: 10px solid #1f114e;
+  }
+}
