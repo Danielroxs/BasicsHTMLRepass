@@ -1,0 +1,96 @@
+*,
+*::before,
+*::after {
+  /* Reset general: todos los elementos parten de cero */
+  box-sizing: border-box; /* Tamaños más fáciles de controlar */
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #686464ff; /* Fondo por defecto */
+  color: white; /* Texto general */
+  font-family: "Roboto", sans-serif;
+}
+
+/* =========================
+   Prioridad de estilos
+   =========================
+   1. Inline → style="..." (máxima prioridad)
+   2. ID → #id {}
+   3. Clase / atributo / pseudo-clase → .clase {}
+   4. Elemento / pseudo-elemento → h3, p, div {}
+   Nota: mientras más específico sea el selector,
+   más peso tiene. Y !important gana a todos.
+*/
+
+/* ======= Ejemplo #1 ======= */
+
+/* Caso clásico: compiten ID, clase y elemento.
+   - h3 (tipo) → prioridad baja
+   - .titulo (clase) → prioridad media
+   - #titulo-1 (id) → prioridad alta
+   Resultado: si un h3 tiene los tres, gana el ID */
+
+/* h3 {
+  color: red;
+  font-size: 30px;
+}
+
+.titulo {
+  color: blue;
+  font-size: 30px;
+}
+
+#titulo-1 {
+  font-size: 60px;
+  color: orange;
+} */
+
+/* ======= Ejemplo #2 ======= */
+
+/* main section article h3 → parece largo, pero
+   son solo selectores de tipo (elementos).
+   Es más específico que "h3" a secas,
+   pero menos que una clase.
+   Resultado: si un h3 tiene la clase .titulo,
+   gana la clase sobre el selector encadenado
+   de elementos. */
+
+/* main section article h3 {
+  color: red;
+}
+
+.titulo {
+  color: blue;
+} */
+
+/* ======= Ejemplo #3 ======= */
+
+/* .blog .post .titulo → varias clases encadenadas.
+   Cada clase suma en especificidad.
+   Resultado: este gana a un simple ".titulo".
+   Pero dentro del @media, si hay un .blog .titulo,
+   compiten según especificidad y orden. */
+
+.blog .post .titulo {
+  color: blue;
+}
+
+@media screen and (max-width: 700px) {
+  body {
+    background: #2e2e2e;
+    color: #fff;
+  }
+
+  /* .blog .post .titulo { color: red; }
+     Esto sería igual de específico que el azul,
+     así que ganaría por “orden de aparición”. */
+
+  /* Pero al usar !important,
+     forzamos el estilo sin importar la jerarquía.
+     Es el “rompe reglas” de CSS. */
+  .blog .titulo {
+    color: red !important;
+  }
+}
