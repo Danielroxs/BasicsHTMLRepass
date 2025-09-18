@@ -1,0 +1,139 @@
+/* Fondo: Imagen original (nítida)
+  Capa intermedia: Elemento "invisible" con fondo blanquecino + blur (hace que la imagen se vea borrosa y con tinte blanco)
+  Frente: Contenido principal (nítido y legible) */
+
+  /* 
+  Absolute: "Quiero control total para posicionarlo donde YO quiera"
+  Relative: "Quédate donde estás, solo necesito que funcione el z-index" */
+
+  /* Capas del body (de atrás hacia adelante):
+  🖼️  background-image        ← Automáticamente atrás (sin z-index)
+  🔲  ::after (z-index: 0)     ← Encima del background
+  📄  .contenedor (z-index: 1) ← Encima de todo */
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    font-family: "Roboto", sans-serif;
+    /* Imagen de fondo original */
+    background-image: url('../img/david-b-t1JFqYIaVJs-unsplash.jpg');
+    background-size: cover;
+    background-position: top;
+
+    &::after {
+      content: '';              /* Crea un elemento invisible */
+      width: 100%;              /* Ocupa toda la pantalla */
+      height: 100vh;
+      background: rgba(255, 255, 255, 0.5);  /* Filtro blanco semi-transparente */
+      position: fixed;  
+      min-height: 100%;     /* Se posiciona sobre la imagen */
+      top: 0;
+      left: 0;
+      backdrop-filter: blur(50px);  /* ¡Aquí está la magia del blur! */
+      z-index: 0;              /* Capa de blur en el fondo */
+    }
+  
+  .contenedor {
+    position: relative;  /* Necesario para que z-index funcione */
+    z-index: 1;         /* Contenido principal adelante */
+    width: 90%;
+    max-width: 700px;
+    margin: auto;
+    padding: 40px 0;
+    
+    .bio {
+      text-align: center;
+      margin-bottom: 40px;
+      
+      .foto {
+        width: 150px;
+        /* height: auto;
+        aspect-ratio: 1/1;
+        object-fit: cover; esto es opcional*/
+        border-radius:50%;
+        margin-bottom: 20px;
+      }
+      
+      .nombre {
+        margin-bottom: 5px;
+        font-size: 32px;
+      }
+      
+      .descripcion {
+        font-size: 18px;
+        
+      }
+  }
+
+  .links {
+    .link{
+      color: black;
+    border: 3px solid #000;
+    border-radius: 10px;
+    text-align: center;
+    display: block;
+    margin-bottom: 20px;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 20px;
+    font-weight: 700;
+    transition: 0.2s ease all;
+    box-shadow: 
+    1px 1px 0px 0px black,
+    2px 2px 0px 0px black,
+    3px 3px 0px 0px black,
+    4px 4px 0px 0px black,
+    5px 5px 0px 0px black;
+    transform: translate(-5px, -5px);
+
+    &:hover {
+      color: #fff;
+      box-shadow: 0px 0px 0px 0px black;  
+      transform: translate(0px, 0px);
+    }
+
+    &.sitio-web:hover {
+        background: orange;
+        color: #000;
+      }
+    
+      &.link-youtube:hover {
+        background: #ff0000;
+      }
+      
+      &.link-x:hover {
+        background: #14171a;
+      }
+      
+      &.link-facebook:hover {
+        background: #1877f2;
+      }
+
+      &.link-instagram:hover {
+        background: #c13584;
+      }
+    }
+    }
+  }
+}
+/* Palabras clave */
+font-weight: normal;    /* = 400 */
+font-weight: bold;      /* = 700 */
+font-weight: lighter;
+font-weight: bolder;
+
+/* Números (100-900) */
+font-weight: 100;  /* Ultra ligero */
+font-weight: 200;  /* Extra ligero */
+font-weight: 300;  /* Ligero */
+font-weight: 400;  /* Normal (por defecto) */
+font-weight: 500;  /* Medio */
+font-weight: 600;  /* Semi-negrita */
+font-weight: 700;  /* Negrita */
+font-weight: 800;  /* Extra negrita */
+font-weight: 900;  /* Ultra negrita */
