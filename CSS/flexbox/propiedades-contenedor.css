@@ -1,0 +1,67 @@
+*, *::before, *::after {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    background: #696666ff;
+    font-family: 'Roboto', sans-serif;
+    color: white;
+}
+
+.caja {
+    background: #1062ff;
+    padding: 20px;
+    font-size: 24px;
+    border-radius: 10px;
+}
+
+.contenedor {
+    width: 90%;
+    max-width: 1000px;
+    margin: 40px auto;
+    border: 4px solid #000;
+    padding: 40px;
+    /* 
+        'display: flex;' activa el modelo de caja flexible (Flexbox) en el contenedor,
+        permitiendo organizar y alinear sus elementos hijos de manera eficiente y adaptable.
+    */
+    display: flex;
+    gap: 40px;
+    
+    /* 
+    flex-wrap: wrap;
+    flex-direction: row;
+    flex-flow: row wrap; */  /* ← Equivale a lo de arriba */
+    
+    /* flex-wrap:
+    nowrap (no saltan de línea)
+    wrap (saltan a nueva línea)
+    wrap-reverse (saltan hacia arriba) 
+
+    flex-direction:
+    row (horizontal, izq → der)
+    row-reverse (horizontal, der → izq)
+    column (vertical, arriba → abajo)
+    column-reverse (vertical, abajo → arriba) 
+    */
+
+    /*
+     * justify-content: Esta propiedad de Flexbox define cómo se distribuyen los elementos hijos a lo largo del eje principal del contenedor.
+     * Valores comunes:
+     *   - flex-start: Los elementos se alinean al inicio del contenedor.
+     *   - flex-end: Los elementos se alinean al final del contenedor.
+     *   - center: Los elementos se centran en el contenedor.
+     *   - space-between: Los elementos se distribuyen con el máximo espacio posible entre ellos.
+     *   - space-around: Los elementos se distribuyen con espacio igual alrededor de cada uno.
+     *   - space-evenly: Los elementos se distribuyen con espacio igual entre ellos, incluyendo los bordes del contenedor.
+     */
+    /* justify-content: space-between; */
+
+    
+    /*  Con ambas propiedades flex-direction y justify-content damos espaciado vertical*/
+    flex-direction: column;
+    height: 90vh;
+    justify-content: space-between;
+}
