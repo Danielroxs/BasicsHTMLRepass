@@ -76,3 +76,17 @@ body {
         flex-grow: 3; /* Este crece 3 veces más que uno con flex-grow: 1 */
     }
 }
+
+.basis {
+    .caja {
+        flex-basis: 400px;
+        flex-grow: 1;
+        flex-shrink: 1;
+
+        /* flex: 1 1 400px;  Atajo: grow 1 | shrink 1 | basis de 400px */
+    }
+
+    .especial {
+        flex-shrink: 3; /* En que proporcion se va a encoger respecto a los demas elementos, 3 veces en este caso */
+    }
+}
