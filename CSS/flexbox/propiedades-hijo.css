@@ -36,7 +36,7 @@ body {
  * Es decir, define el tamaño base que tendrá el elemento dentro del contenedor flex, pudiendo ser sobrescrito por otras propiedades como flex-grow o flex-shrink.
  * Por ejemplo, en el código, .caja tendrá un tamaño base de 150px y .especial de 300px, antes de que el contenedor flex ajuste los tamaños según el espacio disponible.
  */
- 
+
 .basis {
     flex-direction: row;
 
@@ -46,5 +46,33 @@ body {
 
     .especial {
         flex-basis: 300px;
+    }
+}
+
+.grow {
+    .caja {
+        /*
+            flex-basis: 200px;
+            Define el tamaño base inicial del elemento antes de aplicar
+            distribución de espacio (similar a width pero en Flexbox).
+        */
+
+        /*
+            flex-grow
+            Indica cuánto puede "crecer" un elemento respecto a los demás
+            cuando hay espacio extra en el contenedor.
+
+            - Valor por defecto: 0 (no crece, mantiene su tamaño base).
+            - Si un elemento tiene flex-grow: 1 → crece proporcionalmente.
+            - Si varios elementos tienen flex-grow distinto:
+              el espacio libre se reparte según esas proporciones.
+        */
+
+        /* flex-grow: 1; */  /* La caja ocuparía 1 parte del espacio sobrante */
+        /* NORMALMENTE QUIERES QUE TODAS LAS CAJAS SEAN 1, SOLO CUANOD QUIERES DESTACAR UNA CAJA EN ESPECIAL LE DAS UN NUMERO MAYO EJEM 2 */
+    }
+
+    .especial {
+        flex-grow: 3; /* Este crece 3 veces más que uno con flex-grow: 1 */
     }
 }
