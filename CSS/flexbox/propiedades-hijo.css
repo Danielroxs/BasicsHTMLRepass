@@ -20,73 +20,83 @@ body {
     border-radius: 5px;
 }
 
+/* ==============================
+   Contenedor principal (Flexbox)
+   ============================== */
 .contenedor {
-    /* tamaño y espaciado */
     width: 90%;
     max-width: 1000px;
     margin: 40px auto;
     border: 4px solid #000;
     padding: 40px;
-    display: flex;
-    gap: 40px;
+
+    display: flex;   /* Activa Flexbox */
+    gap: 40px;       /* Espacio entre hijos */
 }
 
-/*
- * flex-basis establece el tamaño inicial principal de un elemento flexible antes de que se distribuya el espacio restante.
- * Es decir, define el tamaño base que tendrá el elemento dentro del contenedor flex, pudiendo ser sobrescrito por otras propiedades como flex-grow o flex-shrink.
- * Por ejemplo, en el código, .caja tendrá un tamaño base de 150px y .especial de 300px, antes de que el contenedor flex ajuste los tamaños según el espacio disponible.
- */
-
-.basis {
-    flex-direction: row;
-
-    .caja {
-        flex-basis: 150px;
-    }
-
-    .especial {
-        flex-basis: 300px;
-    }
+/* ==============================
+   Ejemplo con flex-basis
+   ============================== */
+.basis .caja {
+    flex-basis: 150px; /* Tamaño base inicial */
 }
 
-.grow {
-    .caja {
-        /*
-            flex-basis: 200px;
-            Define el tamaño base inicial del elemento antes de aplicar
-            distribución de espacio (similar a width pero en Flexbox).
-        */
-
-        /*
-            flex-grow
-            Indica cuánto puede "crecer" un elemento respecto a los demás
-            cuando hay espacio extra en el contenedor.
-
-            - Valor por defecto: 0 (no crece, mantiene su tamaño base).
-            - Si un elemento tiene flex-grow: 1 → crece proporcionalmente.
-            - Si varios elementos tienen flex-grow distinto:
-              el espacio libre se reparte según esas proporciones.
-        */
-
-        /* flex-grow: 1; */  /* La caja ocuparía 1 parte del espacio sobrante */
-        /* NORMALMENTE QUIERES QUE TODAS LAS CAJAS SEAN 1, SOLO CUANOD QUIERES DESTACAR UNA CAJA EN ESPECIAL LE DAS UN NUMERO MAYO EJEM 2 */
-    }
-
-    .especial {
-        flex-grow: 3; /* Este crece 3 veces más que uno con flex-grow: 1 */
-    }
+.basis .especial {
+    flex-basis: 300px; /* La caja especial arranca más grande */
 }
 
-.basis {
-    .caja {
-        flex-basis: 400px;
-        flex-grow: 1;
-        flex-shrink: 1;
+/* ==============================
+   Ejemplo con flex-grow
+   ============================== */
+.grow .caja {
+    /* flex-basis: 200px;  tamaño base inicial */
+    /* flex-grow: 1; cada caja ocupa 1 parte del espacio sobrante */
+}
 
-        /* flex: 1 1 400px;  Atajo: grow 1 | shrink 1 | basis de 400px */
-    }
+.grow .especial {
+    flex-grow: 3; /* Esta crecerá 3 veces más que las demás */
+}
 
-    .especial {
-        flex-shrink: 3; /* En que proporcion se va a encoger respecto a los demas elementos, 3 veces en este caso */
-    }
+/* ==============================
+   Ejemplo con flex-shrink
+   ============================== */
+.basis .caja {
+    flex-basis: 400px;
+    flex-grow: 1;
+    flex-shrink: 1;
+
+    /* Equivalente a usar: flex: 1 1 400px; */
+}
+
+.basis .especial {
+    flex-shrink: 3; /* Se encogerá 3 veces más que las demás si falta espacio */
+}
+
+/* ==============================
+   Ejemplo con order
+   ============================== */
+/* Nota: order cambia el orden visual de los elementos en el contenedor */
+.contenedor.order .caja.uno {
+    order: 10;
+    background: red;
+}
+
+.order .caja.uno {
+    order: 4;
+    background: red;
+}
+
+.order .caja.dos {
+    order: 3;
+    background: red;
+}
+
+.order .caja.tres {
+    order: 2;
+    background: red;
+}
+
+.order .caja.cuatro {
+    order: 1;
+    background: red;
 }
