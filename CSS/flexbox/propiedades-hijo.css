@@ -80,23 +80,60 @@ body {
     order: 10;
     background: red;
 }
-
+/* ==============================
+   PROPIEDAD: order
+   ==============================
+   - Cambia el orden visual de los elementos dentro de un contenedor flex.
+   - Por defecto todos tienen order = 0.
+   - Cuanto más pequeño el número → más adelante aparece el elemento.
+   - No afecta el DOM real, solo el orden en pantalla.
+*/
 .order .caja.uno {
-    order: 4;
+    order: 4;             /* Se renderiza de los últimos */
     background: red;
 }
 
 .order .caja.dos {
-    order: 3;
+    order: 3;             /* Va después de los que tengan order menor */
     background: red;
 }
 
 .order .caja.tres {
-    order: 2;
+    order: 2;             /* Más adelante que uno con order 1 */
     background: red;
 }
 
 .order .caja.cuatro {
-    order: 1;
+    order: 1;             /* Este será el primero entre estos cuatro */
     background: red;
+}
+
+/* ==============================
+   PROPIEDAD: align-self
+   ==============================
+   - Sobrescribe la propiedad align-items SOLO para un elemento específico.
+   - Permite alinear un hijo distinto a los demás en el eje transversal.
+   - Valores: stretch | flex-start | center | flex-end | baseline
+   - Requiere que el contenedor tenga display: flex.
+*/
+.align-self {
+    height: 700px;       /* Altura del contenedor para que se note la diferencia */
+    align-items: start;  /* Los hijos, por defecto, se alinean arriba */
+}
+
+/* Cada caja puede sobrescribir con align-self */
+.align-self .caja.uno {
+    align-self: stretch; /* Ocupa toda la altura disponible */
+}
+
+.align-self .caja.dos {
+    align-self: flex-start; /* Se mantiene arriba */
+}
+
+.align-self .caja.tres {
+    align-self: center;  /* Se centra en el eje vertical */
+}
+
+.align-self .caja.cuatro {
+    align-self: flex-end; /* Se va al fondo del contenedor */
 }
