@@ -1,67 +1,102 @@
+/* Reset básico: elimina márgenes/paddings y asegura box-sizing uniforme */
 *, *::before, *::after {
-    padding: 0px;
-    margin: 0px;
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
+/* Estilos globales del body */
 body {
-    background: #696666ff;
-    font-family: 'Roboto', sans-serif;
-    color: white;
+    background: #696666ff;          /* Color de fondo */
+    font-family: 'Roboto', sans-serif; /* Fuente principal */
+    color: white;                   /* Texto en blanco */
 }
 
+/* Caja de ejemplo */
 .caja {
-    background: #1062ff;
-    padding: 20px;
-    font-size: 24px;
-    border-radius: 10px;
+    background: #1062ff;   /* Fondo azul */
+    padding: 20px;         /* Relleno interno */
+    font-size: 24px;       /* Texto grande */
+    border-radius: 10px;   /* Bordes redondeados */
 }
 
+/* ==============================
+   Contenedor principal con Flexbox
+   ============================== */
 .contenedor {
-    width: 90%;
-    max-width: 1000px;
-    margin: 40px auto;
-    border: 4px solid #000;
-    padding: 40px;
-    /* 
-        'display: flex;' activa el modelo de caja flexible (Flexbox) en el contenedor,
-        permitiendo organizar y alinear sus elementos hijos de manera eficiente y adaptable.
-    */
-    display: flex;
-    gap: 40px;
-    
-    /* 
-    flex-wrap: wrap;
-    flex-direction: row;
-    flex-flow: row wrap; */  /* ← Equivale a lo de arriba */
-    
-    /* flex-wrap:
-    nowrap (no saltan de línea)
-    wrap (saltan a nueva línea)
-    wrap-reverse (saltan hacia arriba) 
+    /* --- Tamaño y estructura --- */
+    width: 90%;             /* Ocupa 90% del ancho disponible */
+    max-width: 1000px;      /* Máximo 1000px */
+    margin: 40px auto;      /* Centrado horizontal + margen vertical */
+    padding: 40px;          /* Espacio interno */
+    border: 4px solid #000; /* Borde negro */
+    /* height: 90vh; */      /* (Opcional) altura casi completa de la ventana */
 
-    flex-direction:
-    row (horizontal, izq → der)
-    row-reverse (horizontal, der → izq)
-    column (vertical, arriba → abajo)
-    column-reverse (vertical, abajo → arriba) 
+    /* --- Activar Flexbox --- */
+    display: flex;          /* Convierte al contenedor en Flexbox */
+    gap: 40px;              /* Espacio entre hijos */
+
+    /* --- Dirección del eje principal --- 
+       Define cómo se ordenan los elementos dentro del contenedor.
+       row (por defecto) → en fila, de izq → der
+       column           → en columna, arriba → abajo
+       row-reverse      → en fila, der → izq
+       column-reverse   → en columna, abajo → arriba
     */
+    /* flex-direction: row; */
+
+    /* --- Ajuste de línea ---
+       nowrap (por defecto) → todos en una sola línea
+       wrap                 → permite saltar a otra línea si no caben
+       wrap-reverse         → lo mismo, pero hacia el lado contrario
+    */
+    flex-wrap: wrap;
+
+    /* --- Combinación rápida ---
+       flex-flow = flex-direction + flex-wrap
+    */
+    /* flex-flow: row wrap; */
+
+    /* --- Distribución en el eje principal ---
+       justify-content controla cómo se reparte el espacio libre
+       (X si es row, Y si es column).
+         flex-start   → todos al inicio
+         flex-end     → todos al final
+         center       → centrados
+         space-between→ máximo espacio entre elementos
+         space-around → espacio igual alrededor de cada elemento
+         space-evenly → espacio igual entre todos + bordes
+    */
+    /* justify-content: center; */
+
+    /* --- Alineación en el eje transversal ---
+       align-items controla cómo se alinean los hijos en el eje perpendicular.
+         stretch     → (por defecto) se estiran para ocupar todo
+         flex-start  → al inicio del eje transversal
+         flex-end    → al final del eje transversal
+         center      → centrados
+         baseline    → alineados según la línea base del texto
+    */
+    /* align-items: flex-start; */
+
+    /* --- Alineación de múltiples líneas ---
+       align-content entra en juego SOLO si flex-wrap crea varias filas/columnas.
+       Controla cómo se distribuyen esas líneas dentro del contenedor:
+         flex-start  → todas arriba/izquierda
+         flex-end    → todas abajo/derecha
+         center      → todas al centro
+         space-between → máximo espacio entre líneas
+         space-around  → espacio igual alrededor de cada línea
+         stretch       → ocupa todo el espacio disponible
+    */
+    /* align-content: center; */
 
     /*
-     * justify-content: Esta propiedad de Flexbox define cómo se distribuyen los elementos hijos a lo largo del eje principal del contenedor.
-     * Valores comunes:
-     *   - flex-start: Los elementos se alinean al inicio del contenedor.
-     *   - flex-end: Los elementos se alinean al final del contenedor.
-     *   - center: Los elementos se centran en el contenedor.
-     *   - space-between: Los elementos se distribuyen con el máximo espacio posible entre ellos.
-     *   - space-around: Los elementos se distribuyen con espacio igual alrededor de cada uno.
-     *   - space-evenly: Los elementos se distribuyen con espacio igual entre ellos, incluyendo los bordes del contenedor.
-     */
-    /* justify-content: space-between; */
-
-    
-    /*  Con ambas propiedades flex-direction y justify-content damos espaciado vertical*/
-    flex-direction: column;
-    height: 90vh;
-    justify-content: space-between;
+    📌 Diferencia clave entre align-items y align-content:
+       - align-items: cómo se acomoda cada hijo en su propia "balda"
+       - align-content: cómo se acomoda todo el conjunto de "baldas"
+       👉 Analogía: 
+          align-content = dónde pongo el estante en la pared
+          align-items   = cómo acomodo los libros dentro del estante
+    */
 }
