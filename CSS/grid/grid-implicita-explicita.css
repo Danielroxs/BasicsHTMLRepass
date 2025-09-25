@@ -1,0 +1,45 @@
+.grid {
+    display: grid;              /* ← PASO 1: Activa el sistema Grid */
+    
+    /* ═══ GRID EXPLÍCITA (declarada por nosotros) ═══ */
+    grid-template-columns: repeat(3, 1fr);    /* 3 columnas iguales */
+    grid-template-rows: repeat(2, 300px);     /* 2 filas de 300px cada una */
+    /*                         ↑      ↑
+                               │      └─ Altura fija para control visual
+                               └─ Solo 2 filas definidas explícitamente
+    */
+
+    /* ═══ GRID IMPLÍCITA (creada automáticamente) ═══ */
+    grid-auto-rows: 160px;              /* ← Altura para filas EXTRA generadas automáticamente */
+    /* grid-auto-flow: column; */       /* ← Dirección: row (def.) | column */
+    /* grid-auto-columns: 120px; */     /* ← Ancho para columnas EXTRA (si flow es column) */
+    /*     ↑
+           └─ Solo se activa si grid-auto-flow: column
+    */
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════════
+   CONCEPTOS CLAVE:
+   
+   🔷 GRID EXPLÍCITA: Las celdas que TÚ defines conscientemente
+      ┌─────┬─────┬─────┐ ← Fila 1 (explícita: 300px)
+      │  1  │  2  │  3  │
+      ├─────┼─────┼─────┤ ← Fila 2 (explícita: 300px)
+      │  4  │  5  │  6  │
+      └─────┴─────┴─────┘
+   
+   🔶 GRID IMPLÍCITA: Las celdas que se crean AUTOMÁTICAMENTE cuando hay más contenido
+      ┌─────┬─────┬─────┐
+      │  1  │  2  │  3  │ ← Explícitas (300px cada una)
+      ├─────┼─────┼─────┤
+      │  4  │  5  │  6  │
+      ├─────┼─────┼─────┤ ← Fila 3 (implícita: 160px por grid-auto-rows)
+      │  7  │  8  │  9  │
+      └─────┴─────┴─────┘ ← Se crea automáticamente si tienes más elementos
+      
+   FLUJO DE DESARROLLO:
+   Paso 1: "Quiero 3x2 grid básico" → grid-template-*
+   Paso 2: "¿Y si tengo más elementos?" → grid-auto-* para control
+   Paso 3: "Quiero que las filas extra tengan altura específica" → grid-auto-rows
+   
+═══════════════════════════════════════════════════════════════════════════════ */
