@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body { /* Contenedor padre lleva flex */
+    background: #8a8787ff;
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    justify-content: center; /* Centra en X */
+}
+
+.contenedor-principal {
+    width: 90%;
+    max-width: 800px;
+    margin-top: 40px;
+}
+
+.grid{ 
+    border: 2px solid #000;
+}
+
+.caja {
+    background: #fff;
+    border: 1px solid #000;
+    padding: 40px;
+    font-size: 24px;
+    text-align: center; /* Alinear texto al centro */
+}
