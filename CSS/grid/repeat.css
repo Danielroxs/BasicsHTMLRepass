@@ -1,0 +1,15 @@
+.grid {
+    display: grid;              /* ← PASO 1: Activa el sistema Grid */
+    
+    /* VERSIÓN BÁSICA (comentada para comparar) */
+    /* grid-template-columns: repeat(3, 1fr); */ /* 3 columnas iguales */
+    /* grid-template-rows: repeat(2, 1fr); */    /* 2 filas iguales */
+
+    /* VERSIÓN AVANZADA: Combinando repeat() con otros tamaños */
+    grid-template-columns: auto repeat(4, 1fr) 200px;
+    /*                    ↑     ↑               ↑
+                          │     │               └─ Columna 6: Fija 200px (sidebar)
+                          │     └─ Columnas 2-5: Flexibles (se reparten espacio)
+                          └─ Columna 1: Auto-ajuste al contenido
+    */
+}
