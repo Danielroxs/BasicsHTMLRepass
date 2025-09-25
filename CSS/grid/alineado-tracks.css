@@ -1,0 +1,73 @@
+.grid {
+    display: grid;              /* ← PASO 1: Activa el sistema Grid */
+    
+    /* ═══ DEFINICIÓN DEL GRID (tamaños fijos) ═══ */
+    grid-template-columns: repeat(3, 100px);    /* 3 columnas de 100px cada una */
+    grid-template-rows: repeat(2, 100px);       /* 2 filas de 100px cada una */
+    /*                         ↑       ↑
+                               │       └─ Tamaño FIJO para tener control total
+                               └─ Total: 300px de ancho, 200px de alto
+    */
+
+    /* ═══ DISTRIBUCIÓN HORIZONTAL (eje X) ═══ */
+    justify-content: space-between;     /* ← Separa columnas con máximo espacio entre ellas */
+    /*               ↑
+                     └─ Columnas en los extremos + espacio uniforme al centro
+    */
+
+    /* ═══ TAMAÑO DEL CONTENEDOR ═══ */
+    height: 90vh;                       /* ← Altura del 90% de la pantalla */
+    /*      ↑
+            └─ CLAVE: Sin esto, align-content no tendría espacio para trabajar
+    */
+
+    /* ═══ DISTRIBUCIÓN VERTICAL (eje Y) ═══ */
+    align-content: space-between;       /* ← Separa filas con máximo espacio entre ellas */
+    /*             ↑
+                   └─ Filas arriba y abajo + espacio uniforme al centro
+    */
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════════
+   RESULTADO VISUAL:
+
+   ┌─────────────── 90vh (altura total) ──────────────┐
+   │                                                   │
+   │ [100px] ←─ espacio ─→ [100px] ←─ espacio ─→ [100px] │ ← Fila 1 (arriba)
+   │                                                   │
+   │                    ↕ espacio ↕                     │ ← justify/align-content
+   │                                                   │   crean separación
+   │ [100px] ←─ espacio ─→ [100px] ←─ espacio ─→ [100px] │ ← Fila 2 (abajo)
+   │                                                   │
+   └───────────────────────────────────────────────────┘
+    
+    ANÁLISIS DEL ALINEADO DE TRACKS:
+    FLUJO DE DESARROLLO (proceso de pensamiento):
+    Paso 1: "Quiero un grid pequeño y controlado"
+    → Tamaños fijos 100px - Evita que las celdas se estiren
+
+    Paso 2: "El grid es pequeño, quiero distribuirlo en la pantalla"
+    → justify-content: space-between - Separa horizontalmente
+
+    Paso 3: "Necesito altura para poder separar verticalmente"
+    → height: 90vh - CLAVE: Sin esto, align-content no funciona
+
+    Paso 4: "Ahora puedo separar las filas"
+    → align-content: space-between - Separa verticalmente
+
+    DIFERENCIA CLAVE vs FLEXBOX:
+    En Grid:
+    justify-content = distribuye tracks completos (columnas enteras)
+    align-content = distribuye tracks completos (filas enteras)
+    En Flexbox:
+    justify-content = distribuye elementos individuales
+    align-content = distribuye líneas de elementos
+    ¿POR QUÉ space-between?
+    Efecto: Elementos en extremos + espacio uniforme entre ellos
+
+    Primera columna/fila → Pegada al inicio
+    Última columna/fila → Pegada al final
+    Espacio máximo y uniforme entre todas
+   
+   EFECTO FINAL: Grid compacto (600px total) distribuido en pantalla grande (90vh)
+═══════════════════════════════════════════════════════════════════════════════ */

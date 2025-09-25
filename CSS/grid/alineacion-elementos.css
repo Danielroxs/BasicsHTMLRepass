@@ -1,0 +1,56 @@
+.grid {
+    display: grid;              /* ← PASO 1: Activa el sistema Grid */
+    
+    /* ═══ ESTRUCTURA DEL GRID ═══ */
+    grid-template-columns: repeat(3, 1fr);    /* 3 columnas flexibles e iguales */
+    grid-template-rows: repeat(2, 200px);     /* 2 filas fijas de 200px cada una */
+    /*                         ↑       ↑
+                               │       └─ Altura fija para tener espacio de alineación
+                               └─ Total: 6 celdas (3x2)
+    */
+
+    /* ═══ ALINEACIÓN GLOBAL (para TODOS los elementos) ═══ */
+    justify-items: center;      /* ← Centra elementos horizontalmente dentro de cada celda */
+    align-items: center;        /* ← Centra elementos verticalmente dentro de cada celda */
+    /*     ↑              ↑
+           │              └─ Eje Y (vertical): start | center | end | stretch
+           └─ Eje X (horizontal): start | center | end | stretch
+    */
+}
+
+/* ═══ ALINEACIÓN INDIVIDUAL (sobrescribe la global) ═══ */
+.especial {
+    justify-self: end;          /* ← Este elemento específico va al final horizontal */
+    align-self: end;            /* ← Este elemento específico va al final vertical */
+    /*    ↑           ↑
+          │           └─ Sobrescribe align-items solo para este elemento
+          └─ Sobrescribe justify-items solo para este elemento
+    */
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════════
+   RESULTADO VISUAL:
+
+   ┌──────────────┬──────────────┬──────────────┐
+   │              │              │              │
+   │      [1]     │      [2]     │      [3]     │ ← Todos centrados (justify/align-items)
+   │              │              │              │
+   ├──────────────┼──────────────┼──────────────┤
+   │              │              │           [6]│ ← .especial en esquina inferior derecha
+   │      [4]     │      [5]     │              │   (justify-self: end, align-self: end)
+   │              │              │              │
+   └──────────────┴──────────────┴──────────────┘
+
+   JERARQUÍA DE PROPIEDADES:
+   🔷 justify-items/align-items → Afecta a TODOS los elementos (configuración global)
+   🔶 justify-self/align-self → Afecta a UN ELEMENTO específico (sobrescribe global)
+
+   FLUJO DE DESARROLLO:
+   Paso 1: "Quiero todas las cajas centradas" → justify-items + align-items
+   Paso 2: "Pero una caja específica en otra posición" → justify-self + align-self
+   Paso 3: "Necesito altura fija para ver el efecto" → 200px en grid-template-rows
+   
+   DIFERENCIA CLAVE:
+   • justify/align-ITEMS = configuración del CONTENEDOR (afecta todos)
+   • justify/align-SELF = configuración del ELEMENTO individual (sobrescribe)
+═══════════════════════════════════════════════════════════════════════════════ */
