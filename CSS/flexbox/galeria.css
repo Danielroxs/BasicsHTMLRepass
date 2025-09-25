@@ -5,27 +5,27 @@
 }
 
 body {
-  background: #101010;
+  background: #101010;        /* Fondo oscuro elegante */
   font-family: "REM", sans-serif;
-  color: #fff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
+  color: #fff;               /* Texto blanco para contraste */
+  display: flex;             /* ← PASO CLAVE: Centrar todo */
+  justify-content: center;   /* Centra horizontalmente */
+  align-items: center;       /* Centra verticalmente */
+  min-height: 100vh;         /* Ocupa toda la pantalla */
 }
 
 .contenedor {
-  width: 1000px;
-  text-align: center;
+  width: 1000px;        /* Ancho fijo para no ocupar toda la pantalla */
+  text-align: center;   /* Centra el título */
 
   .titulo {
     margin-bottom: 40px;
   }
 
   .galeria {
-    display: flex;
-    gap: 30px;
-    flex-wrap: wrap;
+    display: flex;      /* ← CLAVE: Organiza imágenes en fila */
+    gap: 30px;          /* Espacio entre imágenes */
+    flex-wrap: wrap;    /* Permite salto de línea */
 
     a {
       color: #f2f2f2;
@@ -34,143 +34,56 @@ body {
     }
 
     figure {
-      flex-basis: 300px;
-      flex-grow: 1;
+      flex-basis: 300px;  /* Tamaño base de cada imagen */
+      flex-grow: 1;       /* Pueden crecer para llenar espacios */
 
 
       img {
-        width: 100%;
-        vertical-align: top;
-        border-radius: 5px;
-        filter: grayscale(100%);
-        transition: 0.3s ease all;
+        width: 100%;                    /* Ocupa todo el contenedor */
+        filter: grayscale(100%);        /* ← EFECTO: Imágenes en gris */
+        transition: 0.3s ease all;      /* Transición suave */
         padding: 5px;
-        border: 1px solid transparent;
+        border: 1px solid transparent;  /* Border invisible (preparado para hover) */
       }
 
       &:hover img {
-        filter: grayscale(0%);
-        border: 1px solid #fff;
+        filter: grayscale(0%);    /* ← Quita el gris, imagen a color */
+        border: 1px solid #fff;   /* Aparece border blanco */
       }
 
       figcaption {
-        margin-top: 10p;
-        color: #424242;
+        color: #424242;           /* Texto gris por defecto */
         transition: 0.3s ease all;
       }
 
       &:hover figcaption {
-        color: #f2f2f2;
+        color: #f2f2f2;          /* ← Texto blanco al hacer hover */
       }
     }
   }
 }
 
-/* 
-.imagen {
-  display: block;
-  margin: 0;
-  opacity: 10%;
-  margin-bottom: 5px;
-  transition: 0.3s ease all;
-}
+/* FLUJO DE DESARROLLO (Paso a paso):
+Paso 1: "Quiero centrar la galería en la pantalla"
+→ body con flex, justify-content: center, align-items: center
 
-.imagen:hover {
-  opacity: 100%;
-  border-radius: 5px;
-  border: 1px solid #fff;
-  cursor: pointer;
-}
+Paso 2: "Quiero que las imágenes estén en fila"
+→ .galeria con display: flex
 
-.contenedor {
-  width: 1000px; 
-  height: 100vh;
-  color: white;
-  padding: 20px;
-  margin: 0 auto; 
-  position: relative;
-}
+Paso 3: "Quiero espacio entre imágenes"
+→ gap: 30px
 
-.titulo {
-  text-align: center;
-  margin-bottom: 30px;
-}
+Paso 4: "Quiero que salten de línea si no caben"
+→ flex-wrap: wrap
 
-.caja-1 {
-  position: absolute;
-  top: 80px;
-  left: 50px;
-  color: #c9c9c94e;
-  transition: color 0.3s ease;
-  text-align: center;
-}
+Paso 5: "Quiero que se distribuyan uniformemente"
+→ flex-basis: 300px + flex-grow: 1
 
-.caja-1:hover {
-  color: rgba(255, 255, 255, 1);
-}
+Paso 6: "Quiero un efecto cool"
+→ filter: grayscale(100%) + efectos hover
 
-.caja-2 {
-  position: absolute;
-  top: 80px;
-  left: 350px;
-  color: #c9c9c94e;
-  transition: color 0.3s ease;
-  text-align: center;
-}
-
-.caja-2:hover {
-  color: rgba(255, 255, 255, 1);
-}
-
-.caja-3 {
-  position: absolute;
-  top: 80px;
-  left: 650px;
-  color: #c9c9c94e;
-  transition: color 0.3s ease;
-  text-align: center;
-}
-
-.caja-3:hover {
-  color: rgba(255, 255, 255, 1);
-}
-
-.caja-4 {
-  position: absolute;
-  top: 350px;
-  left: 50px;
-  color: #c9c9c94e;
-  transition: color 0.3s ease;
-  text-align: center;
-}
-
-.caja-4:hover {
-  color: rgba(255, 255, 255, 1);
-}
-
-.caja-5 {
-  position: absolute;
-  top: 350px;
-  left: 350px;
-  color: #c9c9c94e;
-  transition: color 0.3s ease;
-  text-align: center;
-}
-
-.caja-5:hover {
-  color: rgba(255, 255, 255, 1);
-}
-
-.caja-6 {
-  position: absolute;
-  top: 350px;
-  left: 650px;
-  color: #c9c9c94e;
-  transition: color 0.3s ease;
-  text-align: center;
-}
-
-.caja-6:hover {
-  color: rgba(255, 255, 255, 1);
-}
- */
+RESULTADO FINAL:
+Galería centrada en pantalla
+Imágenes organizadas en filas flexibles
+Efecto elegante (gris → color al hover)
+Responsive (se adapta a diferentes tamaños) */
