@@ -1,0 +1,82 @@
+.grid {
+    display: grid;              /* ← PASO 1: Activa el sistema Grid */
+    
+    /* ═══ ESTRUCTURA DEL GRID ═══ */
+    grid-template-columns: repeat(4, 1fr);    /* 4 columnas flexibles e iguales */
+    grid-template-rows: repeat(4, 1fr);       /* 4 filas flexibles e iguales */
+    /*                         ↑       ↑
+                               │       └─ Total: 16 celdas disponibles (4x4)
+                               └─ Grid cuadrado para máxima flexibilidad
+    */
+    
+    gap: 20px;          /* ← Espacio uniforme entre todas las celdas */
+    padding: 20px;      /* ← Espacio interno del contenedor */
+}
+
+/* ═══ ELEMENTO ESPECIAL (diferente visualmente) ═══ */
+.grid .caja.especial {
+    background: #1ea94f;        /* ← Verde para destacar del resto */
+    color: #fff;                /* ← Texto blanco para contraste */
+
+    /* ═══ OPCIONES DE POSICIONAMIENTO ESPECÍFICO (comentadas) ═══ */
+    /* grid-column-start: 1; */     /* Inicia en columna 1 */
+    /* grid-column-end: 3; */       /* Termina antes de columna 3 */
+    /* grid-column: 2 / 4; */       /* Atajo: desde columna 2 hasta 4 */
+
+    /* grid-row-start: 1; */        /* Inicia en fila 1 */
+    /* grid-row-end: -1; */         /* Termina en la última fila */
+    /* grid-row: 1 / 3; */          /* Atajo: desde fila 1 hasta 3 */
+    
+    /* NOTA CLAVE: Si usas posicionamiento específico (grid-row/column),  
+       esto SOBRESCRIBE el order. El posicionamiento explícito tiene prioridad. */
+}
+
+/* ═══ REORDENAMIENTO CON ORDER (colocación automática) ═══ */
+.grid .caja.especial.uno {
+    order: 6;           /* ← Va en posición 6 del orden de colocación */
+}
+
+.grid .caja.dos {
+    order: 4;           /* ← Va en posición 4 del orden de colocación */
+}
+
+.grid .caja.tres {
+    order: 2;           /* ← Va en posición 2 del orden de colocación */
+}
+
+.grid .caja.cuatro {
+    order: 1;           /* ← Va en posición 1 del orden de colocación (PRIMERO) */
+}
+
+.grid .caja.cinco {
+    order: 3;           /* ← Va en posición 3 del orden de colocación */
+}
+
+.grid .caja.seis {
+    order: 5;           /* ← Va en posición 5 del orden de colocación */
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════════
+   RESULTADO DEL ORDER:
+   
+   HTML original:  [1] [2] [3] [4] [5] [6]
+   Con order:      [4] [3] [5] [2] [6] [1]
+                    ↑   ↑   ↑   ↑   ↑   ↑
+                   ord ord ord ord ord ord
+                    1   2   3   4   5   6
+
+   FLUJO DE DESARROLLO:
+   Paso 1: "Quiero cambiar el orden visual sin tocar HTML" → order
+   Paso 2: "Asigno números para el orden deseado" → order: 1, 2, 3...
+   Paso 3: "Los elementos se reordenan automáticamente" → Grid los coloca en orden
+   
+   REGLAS IMPORTANTES:
+   🔷 order: 0 (por defecto) - aparecen en orden HTML original
+   🔷 order: negativo - van antes que los elementos sin order
+   🔷 order: positivo - van después que los elementos sin order  
+   🔷 Si hay empate en order, se usa el orden HTML original
+   
+   DIFERENCIA vs POSICIONAMIENTO ESPECÍFICO:
+   • order = cambiar ORDEN de colocación automática (flexible)
+   • grid-row/column = POSICIÓN FIJA específica (sobrescribe order)
+═══════════════════════════════════════════════════════════════════════════════ */
