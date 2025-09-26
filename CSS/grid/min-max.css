@@ -1,0 +1,63 @@
+.grid {
+    display: grid;              /* ← PASO 1: Activa el sistema Grid */
+    padding: 20px;              /* ← Espacio interno del contenedor */
+    gap: 20px;                  /* ← Separación uniforme entre celdas */
+    
+    /* ═══ COLUMNAS CON CONTROL FLEXIBLE ═══ */
+    grid-template-columns: minmax(200px, 1fr) 100px 100px;
+    /*                     ↑                  ↑     ↑
+                           │                  │     └─ Columna 3: Fija 100px
+                           │                  └─ Columna 2: Fija 100px
+                           └─ Columna 1: Flexible entre 200px y 1fr
+                           
+       LÓGICA: Columna 1 nunca será menor a 200px, pero puede crecer
+               para ocupar todo el espacio sobrante (1fr)
+    */
+    
+    height: 90vh;               /* ← Altura total para que las filas tengan espacio */
+    
+    /* ═══ FILAS CON CONTROL FLEXIBLE ═══ */
+    grid-template-rows: 200px minmax(200px, 500px);
+    /*                  ↑     ↑
+                        │     └─ Fila 2: Entre 200px (mín) y 500px (máx)
+                        └─ Fila 1: Fija 200px
+                        
+       LÓGICA: Fila 2 se adapta al contenido pero con límites:
+               - Nunca menor a 200px (legibilidad mínima)
+               - Nunca mayor a 500px (evita elementos gigantes)
+    */
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════════
+   RESULTADO VISUAL:
+
+   ┌─────────────────────┬─────────┬─────────┐ ← Fila 1: 200px fija
+   │                     │         │         │
+   │   Columna Flexible  │ 100px   │ 100px   │
+   │   (min: 200px)      │  fija   │  fija   │
+   │                     │         │         │
+   ├─────────────────────┼─────────┼─────────┤ ← Fila 2: 200px-500px flexible
+   │                     │         │         │
+   │    Se adapta al     │         │         │
+   │     contenido       │         │         │ ← Crece según contenido
+   │   (200px-500px)     │         │         │   pero con límites
+   │                     │         │         │
+   └─────────────────────┴─────────┴─────────┘
+
+   COMPORTAMIENTO RESPONSIVE:
+   📱 Pantalla pequeña: Columna 1 = 200px (mínimo)
+   💻 Pantalla grande:  Columna 1 = Todo el espacio sobrante (1fr)
+   
+   FLUJO DE DESARROLLO:
+   Paso 1: "Quiero una columna principal flexible" → minmax() para columna 1
+   Paso 2: "Pero con un mínimo legible" → 200px como mínimo
+   Paso 3: "Y dos sidebars fijos" → 100px para columnas 2 y 3
+   Paso 4: "Una fila de header fija" → 200px para fila 1
+   Paso 5: "Y contenido adaptable con límites" → minmax(200px, 500px) para fila 2
+   
+   VENTAJAS DE MINMAX():
+   ✅ Control granular del comportamiento responsive
+   ✅ Evita elementos demasiado pequeños o grandes
+   ✅ Mantiene proporciones visuales equilibradas
+   ✅ Se adapta automáticamente al contenido y pantalla
+═══════════════════════════════════════════════════════════════════════════════ */
