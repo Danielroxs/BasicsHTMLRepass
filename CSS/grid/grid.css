@@ -1,6 +1,63 @@
 .grid {
-    display: grid;
-    grid-template-columns: auto 1fr 1fr; /*pricipalmente FRACCIONES, porcentaje,  o auto */
+    display: grid;              /* ← PASO 1: Activa el sistema Grid */
+    
+    /* ═══ COLUMNAS CON DIFERENTES TIPOS DE MEDIDAS ═══ */
+    grid-template-columns: auto 1fr 1fr;
+    /*                     ↑    ↑   ↑
+                           │    │   └─ Columna 3: 1 fracción (50% del espacio restante)
+                           │    └─ Columna 2: 1 fracción (50% del espacio restante)
+                           └─ Columna 1: Auto-ajuste al contenido
+                           
+       LÓGICA DE DISTRIBUCIÓN:
+       1. Columna 1 toma solo el espacio que necesita (texto, imagen, etc.)
+       2. Espacio restante se divide en 2 partes iguales (1fr + 1fr = 2fr total)
+       3. Columnas 2 y 3 reciben cada una 1/2 del espacio sobrante
+    */
+    
+    /* ═══ FILAS CON LA MISMA LÓGICA ═══ */
     grid-template-rows: auto 1fr 1fr;
-    height: 600px;
+    /*                  ↑    ↑   ↑
+                        │    │   └─ Fila 3: 1 fracción (50% del espacio restante)
+                        │    └─ Fila 2: 1 fracción (50% del espacio restante)
+                        └─ Fila 1: Auto-ajuste al contenido (header típico)
+    */
+    
+    height: 600px;              /* ← CLAVE: Define el espacio total a distribuir */
+    /*     ↑
+           └─ Sin altura fija, las fracciones (1fr) no tendrían referencia
+    */
 }
+
+/* ═══════════════════════════════════════════════════════════════════════════════
+   RESULTADO VISUAL (ejemplo con height: 600px):
+
+   ┌─────────────┬─────────────────┬─────────────────┐ ← Fila 1: auto (ej: 80px)
+   │    Auto     │      1fr        │      1fr        │   (se ajusta al contenido)
+   │ (contenido) │   (260px)       │   (260px)       │
+   ├─────────────┼─────────────────┼─────────────────┤ ← Fila 2: 1fr (260px)
+   │             │                 │                 │   (600px - 80px) ÷ 2
+   │             │                 │                 │
+   ├─────────────┼─────────────────┼─────────────────┤ ← Fila 3: 1fr (260px)
+   │             │                 │                 │   (600px - 80px) ÷ 2
+   │             │                 │                 │
+   └─────────────┴─────────────────┴─────────────────┘
+
+   TIPOS DE MEDIDAS MÁS COMUNES EN GRID:
+   🔷 auto      → Se ajusta al contenido (mínimo necesario)
+   🔷 1fr       → Fracción del espacio disponible (flexible)
+   🔷 200px     → Medida fija en píxeles (rígida)
+   🔷 20%       → Porcentaje del contenedor (semi-flexible)
+   🔷 minmax()  → Rango entre mínimo y máximo (controlada)
+
+   FLUJO DE DESARROLLO:
+   Paso 1: "Quiero una columna que se ajuste al contenido" → auto
+   Paso 2: "Y dos columnas que se repartan el espacio restante" → 1fr 1fr
+   Paso 3: "Misma lógica para las filas" → auto 1fr 1fr
+   Paso 4: "Necesito altura fija para que las fracciones funcionen" → height: 600px
+
+   CASOS DE USO TÍPICOS:
+   • Columna 1 (auto): Logo, menú, sidebar de navegación
+   • Columnas 2-3 (1fr): Contenido principal dividido en secciones
+   • Fila 1 (auto): Header/barra de navegación
+   • Filas 2-3 (1fr): Contenido principal y footer
+═══════════════════════════════════════════════════════════════════════════════ */

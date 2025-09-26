@@ -1,0 +1,83 @@
+.grid {
+    display: grid;              /* ← PASO 1: Activa el sistema Grid */
+    
+    /* ═══ ESTRUCTURA BÁSICA DEL GRID ═══ */
+    grid-template-columns: repeat(4, 1fr);    /* 4 columnas iguales */
+    grid-template-rows: repeat(4, 1fr);       /* 4 filas iguales */
+    /*                         ↑       ↑
+                               │       └─ Total: 16 celdas disponibles (4x4)
+                               └─ Base uniforme para distribución flexible
+    */
+    
+    padding: 20px;              /* ← Espacio interno del contenedor */
+    gap: 20px;                  /* ← Separación entre áreas */
+    
+    /* ═══ PLANTILLA DE ÁREAS (la magia visual) ═══ */
+    grid-template-areas:
+        'header header  header  header'    /* ← Fila 1: Header ocupa las 4 columnas */
+        'body   body    body    sidebar'   /* ← Fila 2: Body (3 cols) + Sidebar (1 col) */
+        'body   body    body    sidebar'   /* ← Fila 3: Body (3 cols) + Sidebar (1 col) */
+        'footer footer  footer  footer';   /* ← Fila 4: Footer ocupa las 4 columnas */
+    /*   ↑       ↑       ↑       ↑
+         │       │       │       └─ Columna 4
+         │       │       └─ Columna 3
+         │       └─ Columna 2
+         └─ Columna 1
+         
+    LÓGICA VISUAL: Cada fila representa una fila del grid,
+                   cada palabra representa qué área ocupa esa celda
+    */
+}
+
+/* ═══ ASIGNACIÓN DE ELEMENTOS A ÁREAS ═══ */
+.caja.header {
+    grid-area: header;          /* ← Se coloca en todas las celdas marcadas como 'header' */
+}
+
+.caja.body {
+    grid-area: body;            /* ← Se coloca en todas las celdas marcadas como 'body' */
+}
+
+.caja.sidebar {
+    grid-area: sidebar;         /* ← Se coloca en todas las celdas marcadas como 'sidebar' */
+}
+
+.caja.footer {
+    grid-area: footer;          /* ← Se coloca en todas las celdas marcadas como 'footer' */
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════════
+   RESULTADO VISUAL:
+
+   ┌─────────────────────────────────────────────────────────────┐
+   │                        HEADER                               │ ← Fila 1: Full width
+   ├─────────────────────────────────────────────┬───────────────┤
+   │                                             │               │
+   │                   BODY                      │   SIDEBAR     │ ← Fila 2
+   │                                             │               │
+   ├─────────────────────────────────────────────┤               │
+   │                                             │               │ ← Fila 3
+   │                   BODY                      │   SIDEBAR     │   (body + sidebar
+   │                                             │               │    continúan)
+   ├─────────────────────────────────────────────┴───────────────┤
+   │                        FOOTER                               │ ← Fila 4: Full width
+   └─────────────────────────────────────────────────────────────┘
+
+   VENTAJAS DE GRID-TEMPLATE-AREAS:
+   ✅ Visual e intuitivo - ves el layout en el código
+   ✅ Semántico - nombres descriptivos (header, body, footer)
+   ✅ Flexible - cambias el layout solo modificando la plantilla
+   ✅ Mantenible - fácil de entender y modificar
+
+   FLUJO DE DESARROLLO:
+   Paso 1: "Necesito un layout típico web" → header, body, sidebar, footer
+   Paso 2: "Quiero verlo visualmente en CSS" → grid-template-areas
+   Paso 3: "Dibujo mi layout con palabras" → plantilla visual
+   Paso 4: "Asigno elementos a áreas" → grid-area en cada clase
+   
+   REGLAS IMPORTANTES:
+   🔷 Las áreas deben formar rectángulos (no formas L o T)
+   🔷 Usa el mismo nombre para celdas contiguas
+   🔷 Usa '.' (punto) para celdas vacías
+   🔷 Los nombres son case-sensitive (header ≠ Header)
+═══════════════════════════════════════════════════════════════════════════════ */
