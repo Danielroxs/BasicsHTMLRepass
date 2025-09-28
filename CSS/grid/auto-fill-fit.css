@@ -1,0 +1,80 @@
+/* ═══ PREPARACIÓN DEL CONTENEDOR ═══ */
+.contenedor-principal {
+    max-width: none;            /* ← CLAVE: Permite que el grid use TODO el ancho disponible */
+    /*         ↑
+               └─ Sin límite de ancho para ver el efecto completo de auto-fill/fit
+    */
+}
+
+.grid {
+    display: grid;              /* ← PASO 1: Activa el sistema Grid */
+    
+    /* ═══ COLUMNAS AUTOMÁTICAS Y RESPONSIVAS ═══ */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    /*                     ↑         ↑       ↑             ↑
+                           │         │       │             └─ Cada columna puede crecer (1fr)
+                           │         │       └─ Ancho mínimo por columna (200px)
+                           │         └─ Crea TODAS las columnas posibles (incluso vacías)
+                           └─ Genera columnas automáticamente según el espacio
+    */
+    
+    /* ALTERNATIVA COMENTADA PARA COMPARAR: */
+    /* grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); */
+    /*                              ↑
+                                    └─ Crea solo las columnas NECESARIAS (colapsa vacías) reparte el espacio vacion entre elementos
+    */
+    
+    gap: 20px;                  /* ← Separación uniforme entre columnas */
+    padding: 20px;              /* ← Espacio interno del contenedor */
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════════
+   DIFERENCIA CLAVE: AUTO-FILL vs AUTO-FIT
+
+   ESCENARIO: Contenedor de 1000px de ancho, elementos de mínimo 200px
+   Cálculo: (1000px - gaps) ÷ 200px = ~4 columnas posibles
+
+   CON AUTO-FILL (activo):
+   ┌─────────┬─────────┬─────────┬─────────┐ ← 4 columnas SIEMPRE
+   │ Elem 1  │ Elem 2  │ Elem 3  │ (vacía) │   (incluso si solo hay 3 elementos)
+   └─────────┴─────────┴─────────┴─────────┘
+   
+   CON AUTO-FIT (comentado):
+   ┌──────────────┬──────────────┬──────────────┐ ← Solo 3 columnas
+   │   Elem 1     │   Elem 2     │   Elem 3     │   (columnas se expanden para llenar espacio)
+   └──────────────┴──────────────┴──────────────┘
+
+   ¿CUÁNDO USAR CADA UNO?
+
+   🔷 AUTO-FILL: Cuando quieres COLUMNAS CONSISTENTES
+      - Galerías de productos (espacios reservados para futuros elementos)
+      - Grids que esperan más contenido dinámico
+      - Layouts donde el espaciado uniforme es importante
+      
+      Ventaja: Mantiene el ritmo visual consistente
+
+   🔶 AUTO-FIT: Cuando quieres APROVECHAR TODO EL ESPACIO
+      - Galerías de fotos (elementos existentes más grandes)
+      - Cards que se benefician de más espacio
+      - Layouts donde la eficiencia de espacio es prioritaria
+      
+      Ventaja: Sin espacios vacíos desperdiciados
+
+   COMPORTAMIENTO RESPONSIVE:
+   📱 Pantalla pequeña (400px): 1-2 columnas (ambos iguales)
+   💻 Pantalla mediana (800px): 3-4 columnas (diferencia se nota)
+   🖥️ Pantalla grande (1200px+): 5+ columnas (diferencia MUY notable)
+
+   FLUJO DE DESARROLLO:
+   Paso 1: "Quiero columnas que se adapten al ancho de pantalla"
+   Paso 2: "Cada columna necesita mínimo 200px para ser legible" 
+   Paso 3: "¿Quiero espacios reservados (auto-fill) o aprovechar todo (auto-fit)?"
+   Paso 4: "Elimino max-width para ver el efecto completo"
+
+   FÓRMULA MÁGICA:
+   repeat(auto-fill/fit, minmax(min-size, 1fr))
+   ↑                    ↑               ↑
+   │                    │               └─ Puede crecer
+   │                    └─ Tamaño mínimo garantizado
+   └─ Número automático de columnas
+═══════════════════════════════════════════════════════════════════════════════ */
