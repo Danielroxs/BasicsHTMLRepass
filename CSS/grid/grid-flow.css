@@ -1,0 +1,95 @@
+.grid {
+    display: grid;              /* ← PASO 1: Activa el sistema Grid */
+    
+    /* ═══ ESTRUCTURA BÁSICA DEL GRID ═══ */
+    grid-template-columns: repeat(4, 1fr);    /* 4 columnas iguales */
+    grid-template-rows: repeat(4, 1fr);       /* 4 filas iguales */
+    /*                         ↑       ↑
+                               │       └─ Total: 16 celdas base (4x4)
+                               └─ Grid cuadrado para máxima flexibilidad
+    */
+    
+    gap: 20px;                  /* ← Separación uniforme entre celdas */
+    padding: 20px;              /* ← Espacio interno del contenedor */
+
+    /* ═══ ALGORITMO DE COLOCACIÓN AUTOMÁTICA ═══ */
+    grid-auto-flow: column dense;
+    /*             ↑       ↑
+                   │       └─ DENSE: Rellena huecos vacíos automáticamente
+                   └─ COLUMN: Elementos sobrantes crean nuevas columnas
+                   
+       LÓGICA COMBINADA:
+       1. Coloca elementos por COLUMNAS (verticalmente primero)
+       2. Si hay espacios vacíos por elementos grandes → los RELLENA
+    */
+}
+
+/* ═══ ELEMENTOS QUE OCUPAN MÚLTIPLES CELDAS (comentados para comparar) ═══ */
+/* VERSIÓN HORIZONTAL (comentada):
+.span-2 {
+    grid-column: span 2;        ← Ocupa 2 columnas horizontalmente
+}
+
+.span-3 {
+    grid-column: span 3;        ← Ocupa 3 columnas horizontalmente
+} */
+
+/* ═══ VERSIÓN VERTICAL (activa) ═══ */
+.span-2 {
+    grid-row: span 2;           /* ← Ocupa 2 filas verticalmente */
+    /*        ↑
+              └─ Compatible con grid-auto-flow: column
+                 (elementos altos en flujo vertical)
+    */
+} 
+
+.span-3 {
+    grid-row: span 3;           /* ← Ocupa 3 filas verticalmente */
+    /*        ↑
+              └─ Elemento muy alto que puede crear huecos
+    */
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════════
+   RESULTADO VISUAL CON GRID-AUTO-FLOW: COLUMN DENSE
+
+   SIN DENSE (elementos grandes crean huecos):
+   ┌─────┬─────┬─────┬─────┐
+   │  1  │  4  │  6  │     │ ← Elemento 3 (span-3) deja huecos
+   ├─────┼─────┼─────┼─────┤
+   │  2  │  5  │     │     │
+   ├─────┼─────┼─────┼─────┤
+   │  3  │     │     │     │ ← Espacios vacíos
+   ├─────┼─────┼─────┼─────┤
+   │     │     │     │     │
+   └─────┴─────┴─────┴─────┘
+
+   CON DENSE (rellena automáticamente los huecos):
+   ┌─────┬─────┬─────┬─────┐
+   │  1  │  4  │  6  │  8  │ ← DENSE coloca elementos en huecos
+   ├─────┼─────┼─────┼─────┤
+   │  2  │  5  │  7  │  9  │   disponibles
+   ├─────┼─────┼─────┼─────┤
+   │  3  │     │     │ 10  │ ← Máximo aprovechamiento del espacio
+   ├─────┼─────┼─────┼─────┤
+   │     │     │     │     │
+   └─────┴─────┴─────┴─────┘
+
+   ¿POR QUÉ USAR grid-row: span EN LUGAR DE grid-column: span?
+   
+   🔷 Con grid-auto-flow: COLUMN → elementos fluyen VERTICALMENTE
+   🔷 grid-row: span → elementos altos aprovechan el flujo vertical
+   🔷 grid-column: span → elementos anchos van CONTRA el flujo
+   
+   FLUJO DE DESARROLLO:
+   Paso 1: "Quiero elementos que fluyan en columnas" → grid-auto-flow: column
+   Paso 2: "Algunos elementos necesitan más espacio vertical" → grid-row: span
+   Paso 3: "No quiero espacios vacíos" → dense para optimizar
+   Paso 4: "Resultado: layout compacto y optimizado"
+
+   CASOS DE USO PERFECTOS:
+   ✅ Galerías de imágenes con diferentes alturas
+   ✅ Feed de redes sociales (posts de diferentes tamaños)
+   ✅ Dashboards con widgets de varias alturas
+   ✅ Portafolios con proyectos de diferentes formatos
+═══════════════════════════════════════════════════════════════════════════════ */ 
