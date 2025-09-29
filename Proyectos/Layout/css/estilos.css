@@ -1,0 +1,178 @@
+    /* ═══════════════════════════════════════════════════════════════════════════
+   RESET CSS UNIVERSAL - Limpia estilos por defecto del navegador
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+*, 
+*::after, 
+*::before {
+    margin: 0;                                 /* ← Elimina márgenes externos de TODOS los elementos */
+    padding: 0;                                /* ← Elimina relleno interno de TODOS los elementos */
+    box-sizing: border-box;                    /* ← Incluye padding y border en el width total */
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   CONFIGURACIÓN BASE DEL BODY - Establece el diseño general de la página
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+body {
+    background: #b7b5b5ff;                     /* ← Color de fondo gris claro para toda la página */
+    font-family: "Gabarito", sans-serif;      /* ← Fuente Google Fonts + respaldo genérico */
+    display: flex;                             /* ← Convierte body en contenedor flexible */
+    justify-content: center;                   /* ← Centra horizontalmente el grid principal */
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   CONTENEDOR GRID PRINCIPAL - Layout base de toda la página
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/*
+ESTRUCTURA VISUAL DEL GRID:
+┌─────────────────┬─────────────────┬─────────────────┐
+│     HEADER      │     HEADER      │     HEADER      │  ← auto
+├─────────────────┼─────────────────┼─────────────────┤
+│      MAIN       │      MAIN       │     ASIDE       │  ← 1fr
+├─────────────────┼─────────────────┼─────────────────┤
+│    WIDGETS      │    WIDGETS      │    WIDGETS      │  ← auto
+├─────────────────┼─────────────────┼─────────────────┤
+│     FOOTER      │     FOOTER      │     FOOTER      │  ← auto
+└─────────────────┴─────────────────┴─────────────────┘
+   Col 1 (1fr)       Col 2 (1fr)       Col 3 (1fr)
+*/
+
+.grid {
+    width: 90%;                                /* ← Ocupa 90% del ancho disponible (responsivo) */
+    max-width: 1000px;                         /* ← Ancho máximo: nunca más de 1000px */
+    margin: 20px 0;                            /* ← Margen vertical: 20px arriba y abajo */
+    display: grid;                             /* ← Activa CSS Grid Layout */
+    grid-template-columns: repeat(3, 1fr);     /* ← 3 columnas de igual tamaño (1fr cada una) */
+    grid-template-rows: auto 1fr auto;         /* ← 3 filas: header/footer auto, main flexible */
+    gap: 20px;                                 /* ← Espaciado de 20px entre todas las celdas */
+    min-height: 90vh;                          /* ← Altura mínima: 90% de la ventana del navegador */
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   HEADER - Cabecera de la página con logo y navegación
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.header {
+    grid-column: 1/-1;                         /* ← Ocupa todas las columnas (1 a 3) del grid */
+    display: flex;                             /* ← Convierte header en contenedor flexible */
+    justify-content: space-between;            /* ← Separa logo y nav en extremos opuestos */
+    align-items: center;                       /* ← Centra verticalmente logo y nav */
+    padding: 20px;                             /* ← Espacio interno de 20px en todos los lados */
+    gap: 20px;                                 /* ← Espacio mínimo entre logo y nav si se acercan */
+}
+
+/* 🏷️ LOGO DEL HEADER */
+.header .logo {
+    font-size: 50px;                           /* ← Tamaño grande para destacar la marca */
+}
+
+/* 🧭 NAVEGACIÓN DEL HEADER */
+.header nav {
+    display: flex;                             /* ← Enlaces en fila horizontal */
+    gap: 20px;                                 /* ← Separación de 20px entre enlaces */
+    font-weight: 700;                          /* ← Texto en negrita para destacar */
+}
+
+/* 🔗 ENLACES DE NAVEGACIÓN */
+.header nav a {
+    text-decoration: none;                     /* ← Quita subrayado de los enlaces */
+    color: #531cb3;                            /* ← Color morado para los enlaces */
+    font-size: 20px;                           /* ← Tamaño legible para navegación */
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   MAIN - Contenido principal de la página
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.main {
+    grid-column: 1 / span 2;                   /* ← Ocupa 2 columnas (columnas 1 y 2) */
+    background: #fff;                          /* ← Fondo blanco para destacar contenido */
+    padding: 20px;                             /* ← Espacio interno para separar del borde */
+    color: #000;                               /* ← Texto negro para contraste con fondo blanco */
+    border-radius: 10px;                       /* ← Esquinas redondeadas de 10px */
+    display: flex;                             /* ← Contenedor flexible para organizar contenido */
+    flex-direction: column;                    /* ← Elementos apilados verticalmente */
+    gap: 20px;                                 /* ← Separación de 20px entre elementos internos */
+    align-items: flex-start;                   /* ← Elementos alineados a la izquierda */
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   ASIDE - Barra lateral con contenido secundario
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.aside {
+    grid-column: 3 / 4;                        /* ← Ocupa solo la columna 3 (barra lateral) */
+    background: #000;                          /* ← Fondo negro para contrastar con main */
+    color: white;                              /* ← Texto blanco para contrastar con fondo negro */
+    padding: 20px;                             /* ← Espacio interno de 20px */
+    border-radius: 10px;                       /* ← Esquinas redondeadas de 10px */
+    display: flex;                             /* ← Contenedor flexible */
+    justify-content: center;                   /* ← Centra contenido horizontalmente */
+    align-items: center;                       /* ← Centra contenido verticalmente */
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   WIDGETS - Sección de widgets/tarjetas informativas
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* 🗂️ CONTENEDOR DE WIDGETS */
+.widgets {
+    grid-column: 1 / -1;                       /* ← Ocupa todas las columnas disponibles */
+    display: grid;                             /* ← Sub-grid para organizar widgets individuales */
+    grid-template-columns: 1fr 1fr 1fr;       /* ← 3 columnas iguales para 3 widgets */
+    gap: 20px;                                 /* ← Espaciado de 20px entre widgets */
+}
+
+/* 📦 WIDGETS INDIVIDUALES */
+.grid .widgets > * {
+    background: #ffffff;                       /* ← Fondo blanco para cada widget */
+    min-height: 100px;                         /* ← Altura mínima de 100px */
+    border-radius: 10px;                       /* ← Esquinas redondeadas */
+    display: flex;                             /* ← Contenedor flexible */
+    justify-content: center;                   /* ← Centra contenido horizontalmente */
+    align-items: center;                       /* ← Centra contenido verticalmente */
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   FOOTER - Pie de página con información de copyright
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.footer {
+    grid-column: 1 / -1;                       /* ← Ocupa todas las columnas disponibles */
+}
+
+.grid .footer {
+    display: flex;                             /* ← Contenedor flexible */
+    padding: 20px;                             /* ← Espacio interno de 20px */
+    border-radius: 5px;                        /* ← Esquinas ligeramente redondeadas */
+    grid-column: 1 / -1;                       /* ← Confirmación: ocupa todas las columnas */
+    flex-direction: column;                    /* ← Elementos apilados verticalmente */
+    gap: 10px;                                 /* ← Separación de 10px entre elementos */
+    text-align: center;                        /* ← Texto centrado horizontalmente */
+    color: #929292;                            /* ← Color gris para texto secundario */
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   ELEMENTOS TIPOGRÁFICOS - Estilos para texto y botones
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* 📰 TÍTULOS DENTRO DEL GRID */
+.grid .titulo {
+    font-size: 30px;                           /* ← Tamaño grande para títulos principales */
+}
+
+/* 📝 PÁRRAFOS DENTRO DEL MAIN */
+.grid main p {
+    line-height: 25px;                         /* ← Espaciado entre líneas para mejor legibilidad */
+}
+
+/* 🔘 BOTONES DENTRO DEL MAIN */
+.grid main button {
+    padding: 15px;                             /* ← Espacio interno para botón clickeable */
+    background: #521cb3;                       /* ← Color morado de fondo */
+    color: #fff;                               /* ← Texto blanco para contrastar */
+    border-radius: 5px;                        /* ← Esquinas ligeramente redondeadas */
+    font-weight: 900;                          /* ← Texto extra negrita (muy pesado) */
+}

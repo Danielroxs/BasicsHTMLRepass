@@ -93,7 +93,7 @@
 
     &:hover {
       color: #fff;
-      box-shadow: 0px 0px 0px 0px black;  
+      box-shadow: 0px 0px 0px 0px;  
       transform: translate(0px, 0px);
     }
 
