@@ -1,0 +1,183 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   IMPORTACIÓN DE FUENTE EXTERNA - Google Fonts
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+@import url('https://fonts.googleapis.com/css2?family=Gabarito:wght@400..900&display=swap');
+/* ↑ Carga fuente "Gabarito" con pesos 400-900 y optimización de carga */
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   RESET CSS UNIVERSAL - Limpia estilos por defecto del navegador
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;  
+}
+
+body {
+    background: #838482ff;                     /* ← Color de fondo gris del sitio completo */
+    font-family: "Gabarito", sans-serif;      /* ← Fuente principal + respaldo genérico */
+    display: flex;                             /* ← Convierte body en contenedor flexible */
+    justify-content: center;                   /* ← Centra horizontalmente el contenido */
+    align-items: center;                       /* ← Centra verticalmente el contenido */
+    margin: 20px;                              /* ← Margen externo en todos los lados */
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   MÉTODO 1: GRID-TEMPLATE-AREAS (ACTIVO) - Más Semántico y Legible
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/*
+┌─────────────────┬─────────────────┬─────────────────┐
+│     HEADER      │     HEADER      │     HEADER      │  ← Fila 1
+├─────────────────┼─────────────────┼─────────────────┤
+│      MAIN       │      MAIN       │     ASIDE       │  ← Fila 2
+├─────────────────┼─────────────────┼─────────────────┤
+│     FOOTER      │     FOOTER      │     FOOTER      │  ← Fila 3
+└─────────────────┴─────────────────┴─────────────────┘
+   Col 1 (1fr)       Col 2 (1fr)       Col 3 (1fr)
+*/
+
+/* 🏗️ CONTENEDOR GRID PRINCIPAL */
+.grid {
+    width: 90%;                                /* ← Ocupa 90% del contenedor padre (body) */
+    min-height: 80vh;                          /* ← Altura mínima: 80% de la ventana del navegador */
+    display: grid;                             /* ← Activa CSS Grid Layout */
+    grid-template-columns: repeat(3, 1fr);     /* ← 3 columnas iguales */
+    grid-template-rows: minmax(150px, auto) 1fr auto;  /* ← 3 filas: min150px, flexible, auto */
+    gap: 20px;                                 /* ← Espaciado entre celdas */
+    padding: 20px;                             /* ← Espacio interno en todos los lados */
+    
+    /* 🎯 DEFINICIÓN VISUAL DEL LAYOUT CON AREAS */
+    grid-template-areas: 
+    'header header  header'    /* ← Header ocupa las 3 columnas de la fila 1 */
+    'main main aside'          /* ← Main ocupa 2 cols, Aside 1 col en fila 2 */
+    'footer footer  footer';   /* ← Footer ocupa las 3 columnas de la fila 3 */
+}
+
+
+/* 🎨 ESTILOS VISUALES DE LAS CAJAS */
+
+
+.caja {
+    margin: 0;                                 /* ← Sin márgenes externos (Grid gap se encarga) */
+    padding: 20px;                             /* ← Espacio interno para separar texto del borde */
+    border: 1px solid #000;                    /* ← Borde negro sólido de 1px en todos los lados */
+    border-radius: 10px;                       /* ← Esquinas redondeadas de 10px */
+    background: #000;                          /* ← Fondo negro sólido de cada caja */
+    color: #fff;                               /* ← Texto blanco para contrastar con fondo negro */
+    display: flex;                             /* ← Convierte cada caja en flex container */
+    align-items: flex-start;                   /* ← TOP: contenido arriba */
+    justify-content: flex-start;               /* ← LEFT: contenido a la izquierda */
+    font-size: 20px;                           /* ← Tamaño de fuente grande para mejor legibilidad */
+    font-weight: bold;                         /* ← Texto en negrita para mayor impacto visual */
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   🎯 ASIGNACIÓN DE AREAS A ELEMENTOS HTML
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/*
+CONECTAMOS cada elemento HTML con su área definida arriba:
+
+grid-template-areas:        Elementos HTML:
+'header header header'  →   <header> usa grid-area: header
+'main main aside'       →   <main> usa grid-area: main
+'footer footer footer'  →   <aside> usa grid-area: aside
+                        →   <footer> usa grid-area: footer
+*/
+
+header {
+    grid-area: header;                         /* ← Se posiciona en el área 'header' */
+}
+
+main {
+    grid-area: main;                           /* ← Se posiciona en el área 'main' */
+}
+
+aside {
+    grid-area: aside;                          /* ← Se posiciona en el área 'aside' */
+}
+
+footer {
+    grid-area: footer;                         /* ← Se posiciona en el área 'footer' */
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   MÉTODO 2: POSICIONAMIENTO MANUAL (ALTERNATIVO - COMENTADO)
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/*
+🚫 ESTE MÉTODO ESTÁ COMENTADO - Para usarlo, descomenta las clases de abajo
+   y comenta las clases del MÉTODO 1 (header, main, aside, footer)
+
+┌─────────────────────────────────────────────────────────────────┐
+│  COMPARACIÓN VISUAL DE AMBOS MÉTODOS:                           │
+│                                                                 │
+│  MÉTODO 1 (Areas):      MÉTODO 2 (Manual):                      │
+│  ✅ Más legible         ✅ Más control específico              │
+│  ✅ Más semántico       ✅ Posicionamiento exacto              │
+│  ✅ Fácil de entender   ⚠️  Más verboso                        │
+│  ⚠️  Menos flexible     ⚠️  Más propenso a errores             │
+│                                                                 │
+│  💡 RECOMENDACIÓN: Usa AREAS para layouts simples y             │
+│     MANUAL para layouts complejos con posicionamiento           │
+│     muy específico                                              │
+└─────────────────────────────────────────────────────────────────┘
+
+🏗️ CONTENEDOR GRID PARA MÉTODO MANUAL:
+
+.grid-manual {
+    width: 90%;                                
+    min-height: 80vh;                          
+    display: grid;                             
+    grid-template-columns: repeat(3, 1fr);     
+    grid-template-rows: minmax(150px, auto) 1fr auto;  
+    gap: 20px;                                 
+    padding: 20px;                             
+    // ❌ NO usamos grid-template-areas en método manual
+}
+
+🎯 POSICIONAMIENTO MANUAL DE CADA ELEMENTO:
+
+.header-manual {
+    grid-column: 1 / 4;     // ← span desde col 1 hasta antes de col 4 (3 cols)
+    grid-row: 1;            // ← fila 1
+}
+
+.main-manual {
+    grid-column: 1 / 3;     // ← span desde col 1 hasta antes de col 3 (2 cols)
+    grid-row: 2;            // ← fila 2
+}
+
+.aside-manual {
+    grid-column: 3 / 4;     // ← span desde col 3 hasta antes de col 4 (1 col)
+    grid-row: 2;            // ← fila 2
+}
+
+.footer-manual {
+    grid-column: 1 / 4;     // ← span desde col 1 hasta antes de col 4 (3 cols)
+    grid-row: 3;            // ← fila 3
+}
+
+┌─────────────────────────────────────────────────────────────────┐
+│  📝 SINTAXIS ALTERNATIVA PARA GRID-COLUMN:                      │
+│                                                                 │
+│  grid-column: 1 / 4;    ←→    grid-column: span 3;            │
+│  grid-column: 1 / 3;    ←→    grid-column: span 2;            │
+│  grid-column: 3 / 4;    ←→    grid-column: span 1;            │
+│                                                                 │
+│  💡 Ambas sintaxis hacen lo mismo, usa la que prefieras        │
+└─────────────────────────────────────────────────────────────────┘
+
+📝 HTML PARA MÉTODO MANUAL:
+<div class="grid-manual">
+    <header class="caja header-manual">Header</header>
+    <main class="caja main-manual">Main Content</main>
+    <aside class="caja aside-manual">Aside</aside>
+    <footer class="caja footer-manual">Footer</footer>
+</div>
+*/
