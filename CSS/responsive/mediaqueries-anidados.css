@@ -1,0 +1,51 @@
+
+body {
+    background: red;
+    color: #fff;
+    font-family: "Open Sans", sans-serif;
+    display: flex;
+    justify-content: center;
+    margin: 40px 0;
+
+    @media (max-width: 1000px) {
+        &{ /* El & referencia al contenedor padre, ahora body */
+            background: #111111;
+            color: #fff;
+        }
+    }
+}
+
+.grid {
+    width: 90%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+
+    /* 🖼️ IMÁGENES DENTRO DEL GRID */
+    img {
+        width: 100%; /* ← 100% de la celda (contenedor padre) */
+    }
+
+    /* 📰 ARTÍCULOS DENTRO DEL GRID */
+    article {
+        h3 {
+            font-size: 32px;
+        }
+    }
+
+    @media screen and (max-width: 1000px){
+        & {
+            grid-template-columns: repeat(2, 1fr);
+
+            a {
+                color: red;
+            }
+        }
+    }
+   
+    @media screen and (max-width: 500px){
+        & {
+            grid-template-columns: 1fr;
+        }
+    }
+}
