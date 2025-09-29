@@ -1,0 +1,31 @@
+*, 
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    border-size: border-box;
+}
+
+body {
+    background: #929090ff;
+    color: #fff;
+    font-family: "Open Sans", sans-serif;
+    display: flex;
+    justify-content: center;
+    margin: 40px 0;
+}
+
+.grid {
+    width: 90%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.grid img {
+    width: 100%; /* 100% de la celda (contenedor padre) */
+}
+
+.grid article h3{
+    font-size: 32px;
+}
