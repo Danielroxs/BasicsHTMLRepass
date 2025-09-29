@@ -29,3 +29,35 @@ body {
 .grid article h3{
     font-size: 32px;
 }
+
+@media print {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .grid img {                 /* ← Selector completo separado */
+        height: 200px;
+        width: auto;
+        filter: grayscale(100%);
+    }
+    
+    .grid a {                   /* ← Selector completo separado */
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1000px) { /*se ejecuta en pantalla y solo si la pantalla es menor a 1000px... */
+    body {
+        background: #b31111ff;
+    }
+
+    .grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media screen and (max-width: 500px){
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}
