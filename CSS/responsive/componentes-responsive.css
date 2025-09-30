@@ -13,7 +13,8 @@ body {
     justify-content: center;
 }
 
-.contenedor {
+/* ======== FORMA 1 ========= */
+/* .contenedor {
     width: 90%;
     max-width: 500px;
     margin 40px 0;
@@ -54,5 +55,222 @@ body {
                 font-weight: 900;
             }
         }
+   
+
+    @media screen and (max-width: 500px) {
+        & {
+            .textos {
+                padding: 10px;
+
+                h3 {
+                    font-size: 20px;
+                    margin-bottom: 5px;
+                }
+
+                P {
+                    font-size: 14px;
+                    margin-bottom: 10px;
+                }
+
+                a {
+                    padding: 5px 15px;
+                    font-size: 12px;
+                }
+            }
+        }
+    } 
+  }
+} */
+
+
+/* ==========================================
+   FORMA 2 | UNIDADES RELATIVAS EM
+   ========================================== */
+/* 
+   ¿QUÉ SON LAS UNIDADES EM?
+   - EM es una unidad RELATIVA que se basa en el font-size del elemento PADRE
+   - 1em = font-size del elemento contenedor
+   - Si el padre tiene font-size: 16px → 1em = 16px
+   - Si el padre tiene font-size: 20px → 1em = 20px
+   
+   VENTAJAS DE EM:
+   ✅ Escalabilidad automática
+   ✅ Responsive sin media queries complejas
+   ✅ Todo se ajusta proporcionalmente
+   ✅ Accesibilidad mejorada
+*/
+
+.contenedor {
+    width: 90%;                         /* Mantiene porcentaje para responsive */
+    max-width: 500px;                   /* Máximo en píxeles fijos */
+    margin: 40px 0;                     /* Margen en píxeles (podría ser em también) */
+
+    .card {
+        background: #fff;
+        box-shadow: 2px 2px 20px rgba(0,0,0, 0.2);
+        border-radius: 5px;
+        overflow: hidden;
+        
+        /* ==========================================
+           🎯 CLAVE: FONT-SIZE BASE PARA EM
+           ========================================== */
+        font-size: 16px;                /* ← ESTO ES LA BASE para todos los EM de dentro */
+        
+        /* EXPLICACIÓN:
+        Este font-size: 16px se convierte en la REFERENCIA para todos 
+        los elementos hijos que usen EM.
+        
+        CÁLCULO EM:
+        • 1em = 16px (porque card tiene font-size: 16px)
+        • 2em = 32px
+        • 0.5em = 8px
+        • 1.25em = 20px (16 × 1.25)
+        
+        EJEMPLO VISUAL:
+        .card { font-size: 16px }  ← BASE
+           ↓
+        h3 { font-size: 1.875em }  = 16px × 1.875 = 30px
+        p  { font-size: 1.25em }   = 16px × 1.25 = 20px
+        */
+
+        img {
+            width: 100%;
+            max-height: 15.625em;       /* 250px ÷ 16px = 15.625em */
+            object-fit: cover;
+            
+            /* CÁLCULO EM PARA IMAGEN:
+            Antes: max-height: 250px
+            Ahora: max-height: 15.625em
+            
+            ¿CÓMO SE CALCULÓ?
+            250px ÷ 16px (font-size base) = 15.625em
+            
+            VENTAJA:
+            Si cambias font-size: 16px a font-size: 20px en .card,
+            la imagen automáticamente será: 15.625 × 20px = 312.5px
+            ¡TODO ESCALA PROPORCIONALMENTE! */
+        }
+
+    .textos {
+        padding: 1.25em;                /* 20px ÷ 16px = 1.25em */
+        
+        /* CÁLCULO DEL PADDING:
+        Antes: padding: 20px
+        Ahora: padding: 1.25em
+        
+        FÓRMULA: píxeles ÷ font-size-base = em
+        20px ÷ 16px = 1.25em
+        
+        RESULTADO VISUAL:
+        ┌─────────────────────────────┐
+        │ ↕ 1.25em (20px)            │
+        │ ↔ 1.25em  CONTENIDO  1.25em│ ← Espaciado proporcional
+        │ ↕ 1.25em (20px)            │
+        └─────────────────────────────┘ */
+
+        h3 {
+            font-size: 1.875em;        /* 30px ÷ 16px = 1.875em */
+            margin-bottom: 0.625em;     /* 10px ÷ 16px = 0.625em */
+            
+            /* CÁLCULOS DETALLADOS:
+            📏 FONT-SIZE:
+            Antes: font-size: 30px
+            Ahora: font-size: 1.875em
+            Cálculo: 30px ÷ 16px = 1.875em
+            
+            📏 MARGIN:
+            Antes: margin-bottom: 10px  
+            Ahora: margin-bottom: 0.625em
+            Cálculo: 10px ÷ 16px = 0.625em
+            
+            JERARQUÍA EM:
+            H3: 1.875em (más grande)
+            P:  1.25em  (mediano)
+            A:  1.25em  (igual que párrafo) */
+        }
+
+        p {
+            font-size: 1.25em;         /* 20px ÷ 16px = 1.25em */
+            margin-bottom: 1.25em;      /* 20px ÷ 16px = 1.25em */
+            
+            /* CÁLCULOS DEL PÁRRAFO:
+            📏 FONT-SIZE: 20px → 1.25em
+            📏 MARGIN: 20px → 1.25em
+            
+            NOTA IMPORTANTE:
+            margin-bottom usa el font-size del MISMO elemento (p)
+            Como p tiene font-size: 1.25em, su 1em = 20px
+            Entonces: margin-bottom: 1.25em = 1.25 × 20px = 25px
+            
+            ¡CUIDADO! EM puede ser complicado porque cada elemento
+            puede tener diferente font-size base */
+        }
+
+        a {
+            background: #000;
+            color: #fff;
+            text-decoration: none;
+            display: inline-block;
+            
+            /* ==========================================
+               TODAS LAS MEDIDAS EN EM
+               ========================================== */
+            padding: 0.625em 1.875em;   /* 10px 30px → em */
+            font-size: 1.25em;          /* 20px → em */
+            border-radius: 0.3125em;     /* 5px → em */
+            
+            /* CÁLCULOS COMPLETOS:
+            📏 PADDING vertical: 10px ÷ 16px = 0.625em
+            📏 PADDING horizontal: 30px ÷ 16px = 1.875em  
+            📏 FONT-SIZE: 20px ÷ 16px = 1.25em
+            📏 BORDER-RADIUS: 5px ÷ 16px = 0.3125em
+            
+            MAGIA DE EM:
+            Si cambias .card { font-size: 20px } en lugar de 16px:
+            • padding: 0.625em × 20px = 12.5px (era 10px)
+            • font-size: 1.25em × 20px = 25px (era 20px)  
+            • border-radius: 0.3125em × 20px = 6.25px (era 5px)
+            
+            ¡TODO ESCALA AUTOMÁTICAMENTE! */
+        }
     }
+
+   
+
+    /* ==========================================
+       MEDIA QUERY - RESPONSIVE CON EM
+       ========================================== */
+    @media screen and (max-width: 500px) {
+        & {
+            .textos {
+                padding: 0.625em;       /* Reduce padding: 10px en lugar de 20px */
+
+                h3 {
+                    font-size: 1.25em;         /* 20px en lugar de 30px */
+                    margin-bottom: 0.312em;     /* 5px en lugar de 10px */
+                }
+
+                p {
+                    font-size: 0.875em;        /* 14px en lugar de 20px */
+                    margin-bottom: 0.625em;     /* 10px igual que antes */
+                }
+
+                a {
+                    padding: 0.312em 0.937em;  /* 5px 15px en lugar de 10px 30px */
+                    font-size: 0.75em;         /* 12px en lugar de 20px */
+                }
+            }
+        }
+    }
+    
+    /* CONVERSIONES MÓVIL (base 16px):
+    ┌─────────────────┬─────────────┬──────────────┐
+    │ ELEMENTO        │ DESKTOP     │ MÓVIL        │
+    ├─────────────────┼─────────────┼──────────────┤
+    │ h3 font-size    │ 1.875em→30px│ 1.25em→20px  │
+    │ p font-size     │ 1.25em→20px │ 0.875em→14px │
+    │ a font-size     │ 1.25em→20px │ 0.75em→12px  │
+    │ padding textos  │ 1.25em→20px │ 0.625em→10px │
+    └─────────────────┴─────────────┴──────────────┘ */ 
+  }
 }
