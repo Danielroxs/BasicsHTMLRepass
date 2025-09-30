@@ -1,51 +1,82 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   BODY RESPONSIVO - Configuración con media queries anidados
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/*
+📊 ETAPAS RESPONSIVE DEL BODY:
+┌─────────────────────────────────────────────────────────┐
+│ 0px ←─────────────────────────────────────────────→ ∞   │
+│ ├─ 📱 VERDE ─┤─ 💻 AZUL ──┤─── 🖥️ ROJO ───→        │
+│ 0px        500px       1000px        ∞                 │
+└─────────────────────────────────────────────────────────┘
+*/
 
 body {
-    background: red;
-    color: #fff;
-    font-family: "Open Sans", sans-serif;
-    display: flex;
-    justify-content: center;
-    margin: 40px 0;
-
-    @media (max-width: 1000px) {
-        &{ /* El & referencia al contenedor padre, ahora body */
-            background: #111111;
-            color: #fff;
-        }
+    background: red;                           /* ← BASE: Pantallas grandes (1000px+) - Color rojo */
+    
+    @media (max-width: 1000px) {               /* ← TABLET/LAPTOP: 0px-1000px - Color azul */
+        background: blue;                      /* ← Sobreescribe el rojo en pantallas medianas */
+    }
+    
+    @media (max-width: 500px) {                /* ← MOBILE: 0px-500px - Color verde */
+        background: green;                     /* ← Sobreescribe todo en pantallas pequeñas */
     }
 }
 
-.grid {
-    width: 90%;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
+/* ═══════════════════════════════════════════════════════════════════════════
+   GRID RESPONSIVO - Layout adaptativo con anidamiento CSS moderno
+   ═══════════════════════════════════════════════════════════════════════════ */
 
-    /* 🖼️ IMÁGENES DENTRO DEL GRID */
+/*
+🏗️ ESTRUCTURA RESPONSIVE DEL GRID:
+┌─────────────────────────────────────────────────────────┐
+│ DESKTOP (1000px+):  [▢][▢][▢][▢]  ← 4 columnas         │
+│ TABLET (500-1000px): [▢][▢]       ← 2 columnas         │
+│ MOBILE (0-500px):    [▢]           ← 1 columna          │
+└─────────────────────────────────────────────────────────┘
+*/
+
+.grid {
+    width: 90%;                                /* ← Ancho responsivo: 90% del contenedor padre */
+    display: grid;                             /* ← Activa CSS Grid Layout */
+    grid-template-columns: repeat(4, 1fr);     /* ← BASE: 4 columnas iguales para desktop */
+    gap: 20px;                                 /* ← Espaciado de 20px entre todas las celdas */
+
+    /* ═══════════════════════════════════════════════════════════════════
+       🖼️ IMÁGENES RESPONSIVAS DENTRO DEL GRID
+       ═══════════════════════════════════════════════════════════════════ */
     img {
-        width: 100%; /* ← 100% de la celda (contenedor padre) */
+        width: 100%;                           /* ← 100% del ancho de cada celda del grid */
     }
 
-    /* 📰 ARTÍCULOS DENTRO DEL GRID */
+    /* ═══════════════════════════════════════════════════════════════════
+       📰 ARTÍCULOS Y CONTENIDO TIPOGRÁFICO
+       ═══════════════════════════════════════════════════════════════════ */
     article {
         h3 {
-            font-size: 32px;
+            font-size: 32px;                   /* ← Títulos grandes para mejor legibilidad */
         }
     }
 
-    @media screen and (max-width: 1000px){
-        & {
-            grid-template-columns: repeat(2, 1fr);
+    /* ═══════════════════════════════════════════════════════════════════
+       💻 TABLET/LAPTOP RESPONSIVE (1000px y menos)
+       ═══════════════════════════════════════════════════════════════════ */
+    @media screen and (max-width: 1000px) {
+        & {                                    /* ← & = .grid (referencia al selector padre) */
+            grid-template-columns: repeat(2, 1fr); /* ← Cambia a 2 columnas para pantallas medianas */
 
-            a {
-                color: red;
+            a {                                /* ← Enlaces dentro del grid en tablets */
+                color: red;                    /* ← Color rojo para destacar enlaces */
             }
         }
     }
    
-    @media screen and (max-width: 500px){
-        & {
-            grid-template-columns: 1fr;
+    /* ═══════════════════════════════════════════════════════════════════
+       📱 MOBILE RESPONSIVE (500px y menos)
+       ═══════════════════════════════════════════════════════════════════ */
+    @media screen and (max-width: 500px) {
+        & {                                    /* ← & = .grid (referencia al selector padre) */
+            grid-template-columns: 1fr;        /* ← Una sola columna para móviles */
         }
     }
 }
