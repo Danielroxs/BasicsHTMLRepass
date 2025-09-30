@@ -1,0 +1,144 @@
+/* ==========================================
+   RESET CSS UNIVERSAL
+   ========================================== */
+*,
+*::before,
+*::after {
+    margin: 0;           /* Elimina márgenes por defecto */
+    padding: 0;          /* Elimina espacios internos por defecto */
+    box-sizing: border-box;  /* Incluye padding y border en el tamaño total */
+}
+
+/* ==========================================
+   CONFIGURACIÓN DEL BODY
+   ========================================== */
+body {
+    background: #878484ff;              /* Fondo gris suave */
+    font-family: "Open Sans", sans-serif; /* Fuente moderna */
+    display: flex;                      /* Flexbox para centrado */
+    justify-content: center;            /* Centra horizontalmente */
+}
+
+/* ==========================================
+   FORMA MODERNA CON clamp() - RESPONSIVE AUTOMÁTICO
+   ========================================== */
+/* 
+   ¿QUÉ ES clamp()?
+   clamp(mínimo, preferido, máximo)
+   - Una función CSS que establece un valor entre un mín y máx
+   - Se ajusta automáticamente según el viewport
+   - ¡No necesita media queries!
+   
+   SINTAXIS:
+   clamp(valor-mínimo, valor-preferido, valor-máximo)
+          ↑            ↑               ↑
+      Nunca menor   Ideal/deseado   Nunca mayor
+*/
+
+.contenedor {
+    width: 90%;                         /* Ancho responsive */
+    max-width: 500px;                   /* Máximo para pantallas grandes */
+    margin: 40px 0;                     /* Margen vertical fijo */
+
+    .card {
+        background: #fff;               /* Fondo blanco limpio */
+        box-shadow: 2px 2px 20px rgba(0,0,0, 0.2);  /* Sombra para elevación */
+        border-radius: 5px;             /* Esquinas redondeadas */
+        overflow: hidden;               /* Oculta contenido que se salga */
+
+        img {
+            width: 100%;                /* Ocupa todo el ancho disponible */
+            max-height: 250px;          /* Altura máxima fija */
+            object-fit: cover;          /* Recorta manteniendo proporción */
+            
+            /* NOTA: La imagen NO usa clamp() porque:
+            - width: 100% ya es responsive
+            - max-height: fijo mantiene consistencia visual */
+        }
+
+        .textos {
+            padding: clamp(10px, 3vw, 20px);
+            
+            /* ==========================================
+               🎯 PADDING RESPONSIVE CON clamp()
+               ========================================== */
+            /* clamp(10px, 3vw, 20px) SIGNIFICA:
+            - Mínimo: 10px (pantallas muy pequeñas)
+            - Preferido: 3vw (3% del ancho del viewport)
+            - Máximo: 20px (pantallas grandes)
+            
+            COMPORTAMIENTO:
+            📱 Móvil (320px):  3vw = 9.6px → usa 10px (mínimo)
+            💻 Tablet (768px): 3vw = 23px → usa 20px (máximo)
+            🖥️ Desktop (1200px): 3vw = 36px → usa 20px (máximo)
+            
+            ¡RESPONSIVE AUTOMÁTICO SIN MEDIA QUERIES! */
+
+            h3 {
+                font-size: clamp(20px, 3vw, 30px);
+                margin-bottom: 10px;
+                
+                /* TÍTULO RESPONSIVE:
+                clamp(20px, 3vw, 30px)
+                - Mínimo: 20px (legible en móvil)
+                - Preferido: 3vw (escala con viewport)
+                - Máximo: 30px (no demasiado grande)
+                
+                RESULTADO PRÁCTICO:
+                📱 320px: 3vw = 9.6px → usa 20px
+                📱 600px: 3vw = 18px → usa 20px  
+                💻 800px: 3vw = 24px → usa 24px
+                🖥️ 1000px: 3vw = 30px → usa 30px
+                🖥️ 1200px: 3vw = 36px → usa 30px (máximo) */
+            }
+
+            p {
+                font-size: clamp(16px, 3vw, 20px);
+                margin-bottom: 10px;
+                
+                /* PÁRRAFO RESPONSIVE:
+                clamp(16px, 3vw, 20px)
+                - Mínimo: 16px (legibilidad estándar)
+                - Preferido: 3vw (mismo % que título)
+                - Máximo: 20px (cómodo para lectura)
+                
+                JERARQUÍA MANTENIDA:
+                H3: 20px-30px (siempre más grande)
+                P:  16px-20px (siempre más pequeño)
+                ¡La proporción se mantiene en todos los tamaños! */
+            }
+
+            a {
+                background: #000;               /* Fondo negro */
+                color: white;                   /* Texto blanco */
+                display: inline-block;          /* Permite padding */
+                text-decoration: none;          /* Sin subrayado */
+                border-radius: 5px;             /* Esquinas redondeadas */
+                
+                /* ==========================================
+                   BOTÓN COMPLETAMENTE RESPONSIVE CON clamp()
+                   ========================================== */
+                padding: clamp(5px, 3vw, 10px) clamp(15px, 3vw, 30px);
+                /* PADDING VERTICAL: clamp(5px, 3vw, 10px)
+                   PADDING HORIZONTAL: clamp(15px, 3vw, 30px)
+                   
+                   COMPORTAMIENTO:
+                   📱 Móvil: padding: 5px 15px (compacto)
+                   💻 Tablet: padding: ~8px ~23px (intermedio)  
+                   🖥️ Desktop: padding: 10px 30px (espacioso) */
+                   
+                font-size: clamp(16px, 3vw, 20px);
+                /* TAMAÑO TEXTO: Mismo rango que párrafo
+                   Mantiene consistencia visual */
+                   
+                font-weight: 900;  /* ⚠️ CORREGIDO: era clamp(2px, 3vw, 5px) - ERROR */
+                
+                /* NOTA IMPORTANTE:
+                font-weight NO acepta píxeles, solo números:
+                ❌ clamp(2px, 3vw, 5px) - INCORRECTO
+                ✅ 900 - CORRECTO (bold)
+                ✅ clamp(400, 500, 900) - Si quisieras responsive weight */
+            }
+        }
+   }
+}

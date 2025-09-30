@@ -274,3 +274,171 @@ body {
     └─────────────────┴─────────────┴──────────────┘ */ 
   }
 }
+
+
+/* ==========================================
+   FORMA 3 | UNIDADES REM - MÁS FÁCIL QUE EM
+   ========================================== */
+/* 
+   ¿QUÉ ES REM?
+   REM = "Root EM" (EM de la raíz)
+   
+   DIFERENCIA CLAVE CON EM:
+   • EM: Se basa en el font-size del elemento PADRE
+   • REM: Se basa SIEMPRE en el font-size del elemento ROOT (html)
+   
+   VENTAJAS DE REM:
+   ✅ Más predecible que EM
+   ✅ No se "acumula" como EM
+   ✅ Siempre la misma referencia (html)
+   ✅ Más fácil de calcular
+   ✅ No importa el anidamiento
+   
+   EJEMPLO BASE:
+   html { font-size: 16px }  ← ESTO es la base para TODOS los REM
+   1rem = 16px SIEMPRE (en cualquier elemento)
+   2rem = 32px SIEMPRE  
+   0.5rem = 8px SIEMPRE
+*/
+
+.contenedor-rem {
+    width: 90%;
+    max-width: 31.25rem;                /* 500px ÷ 16px = 31.25rem */
+    margin: 2.5rem 0;                   /* 40px ÷ 16px = 2.5rem */
+
+    .card {
+        background: #fff;
+        box-shadow: 0.125rem 0.125rem 1.25rem rgba(0,0,0, 0.2);  /* 2px 2px 20px */
+        border-radius: 0.3125rem;       /* 5px ÷ 16px = 0.3125rem */
+        overflow: hidden;
+        
+        /* ==========================================
+           🎯 NO NECESITAMOS font-size BASE CON REM
+           ========================================== */
+        /* Con EM necesitábamos: font-size: 16px aquí
+           Con REM: NO es necesario, usa el html automáticamente */
+
+        img {
+            width: 100%;
+            max-height: 15.625rem;      /* 250px ÷ 16px = 15.625rem */
+            object-fit: cover;
+            
+            /* DIFERENCIA EM vs REM:
+            Con EM: 15.625em dependía del font-size del .card (16px)
+            Con REM: 15.625rem SIEMPRE depende del html (16px)
+            
+            RESULTADO: Mismo píxeles, pero REM es más predecible */
+        }
+
+        .textos {
+            padding: 1.25rem;           /* 20px ÷ 16px = 1.25rem */
+            
+            /* CÁLCULO REM SIMPLE:
+            Fórmula: píxeles ÷ 16px = rem
+            20px ÷ 16px = 1.25rem
+            
+            VENTAJA: No importa si .textos o .card tienen font-size diferente,
+            1.25rem SIEMPRE será 20px (porque depende del html) */
+
+            h3 {
+                font-size: 1.875rem;    /* 30px ÷ 16px = 1.875rem */
+                margin-bottom: 0.625rem; /* 10px ÷ 16px = 0.625rem */
+                
+                /* CON REM ES MÁS FÁCIL:
+                No importa el font-size del padre (.textos)
+                1.875rem SIEMPRE = 30px
+                0.625rem SIEMPRE = 10px
+                
+                Con EM era más complicado porque dependía del contexto */
+            }
+
+            p {
+                font-size: 1.25rem;     /* 20px ÷ 16px = 1.25rem */
+                margin-bottom: 0.625rem; /* 10px ÷ 16px = 0.625rem */
+                
+                /* GRAN DIFERENCIA EM vs REM:
+                Con EM: margin-bottom se calculaba desde el font-size del <p>
+                Con REM: margin-bottom se calcula desde el html (16px)
+                ¡MÁS PREDECIBLE Y FÁCIL! */
+            }
+
+            a {
+                background: #000;
+                color: #fff;
+                text-decoration: none;
+                display: inline-block;
+                padding: 0.625rem 1.875rem; /* 10px 30px */
+                font-size: 1.25rem;         /* 20px */
+                border-radius: 0.3125rem;   /* 5px */
+                
+                /* TODOS LOS REM usan la MISMA BASE:
+                html { font-size: 16px } ← Siempre esta referencia
+                
+                0.625rem = 0.625 × 16px = 10px
+                1.875rem = 1.875 × 16px = 30px  
+                1.25rem = 1.25 × 16px = 20px
+                0.3125rem = 0.3125 × 16px = 5px
+                
+                ¡SIMPLE Y PREDECIBLE! */
+            }
+        }
+
+        /* ==========================================
+           MEDIA QUERY CON REM
+           ========================================== */
+        @media screen and (max-width: 31.25rem) { /* 500px ÷ 16px = 31.25rem */
+            .textos {
+                padding: 0.625rem;      /* 10px ÷ 16px = 0.625rem */
+
+                h3 {
+                    font-size: 1.25rem;        /* 20px ÷ 16px = 1.25rem */
+                    margin-bottom: 0.3125rem;  /* 5px ÷ 16px = 0.3125rem */
+                }
+
+                p {
+                    font-size: 0.875rem;       /* 14px ÷ 16px = 0.875rem */
+                    margin-bottom: 0.625rem;   /* 10px ÷ 16px = 0.625rem */
+                }
+
+                a {
+                    padding: 0.3125rem 0.9375rem; /* 5px 15px */
+                    font-size: 0.75rem;           /* 12px ÷ 16px = 0.75rem */
+                }
+            }
+        }
+    }
+}
+
+/* ==========================================
+   📊 TABLA COMPARATIVA: EM vs REM
+   ========================================== */
+/*
+┌─────────────────┬─────────────────┬─────────────────┐
+│    ASPECTO      │       EM        │      REM        │
+├─────────────────┼─────────────────┼─────────────────┤
+│ Base de cálculo │ Font-size PADRE │ Font-size HTML  │
+│ Predictibilidad │ ❌ Complicado    │ ✅ Fácil        │  
+│ Anidamiento     │ ❌ Se acumula    │ ✅ No se acumula│
+│ Escalabilidad   │ ✅ Excelente     │ ✅ Excelente    │
+│ Cálculo mental  │ ❌ Difícil       │ ✅ Simple       │
+│ Dependencias    │ ❌ Muchas        │ ✅ Solo html    │
+└─────────────────┴─────────────────┴─────────────────┘
+
+CUÁNDO USAR CADA UNO:
+🎯 REM (Recomendado para principiantes):
+  • Layouts y espaciado general
+  • Font-sizes principales  
+  • Márgenes y padding
+  • Media queries
+  
+🎯 EM (Para casos específicos):
+  • Componentes que escalan juntos
+  • Elementos que dependen de su contexto
+  
+🎯 PX (Para detalles):
+  • Borders (1px, 2px)
+  • Box-shadows pequeñas
+  • Detalles que no deben escalar
+
+CONSEJO: ¡Empieza con REM! Es más fácil de entender y usar.
+*/
