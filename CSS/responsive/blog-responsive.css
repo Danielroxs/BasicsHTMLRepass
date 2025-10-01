@@ -1,0 +1,323 @@
+/* ==========================================
+   RESET CSS UNIVERSAL
+   ========================================== */
+*, 
+*::after, 
+*::before {
+    margin: 0;           /* Elimina márgenes por defecto del navegador */
+    padding: 0;          /* Elimina espacios internos por defecto */
+    box-sizing: border-box;  /* Incluye padding y border en el width total */
+    
+    /* COMPORTAMIENTO:
+    Sin esto, diferentes navegadores aplican estilos inconsistentes
+    box-sizing: border-box hace que padding NO aumente el tamaño total */
+}
+
+/* ==========================================
+   CONFIGURACIÓN DEL BODY
+   ========================================== */
+body {
+    background: #b7b5b5ff;              /* Fondo gris suave para toda la página */
+    font-family: "Gabarito", sans-serif; /* Fuente Google Fonts moderna */
+    display: flex;                      /* Convierte body en contenedor flexible */
+    justify-content: center;            /* Centra horizontalmente el grid principal */
+    
+    /* ESTRUCTURA VISUAL:
+    ┌─────────────────────────────────────┐
+    │               BODY                  │
+    │  ┌─────────────────────────────┐    │
+    │  │         GRID                │    │ ← Centrado con flex
+    │  │       (centrado)            │    │
+    │  └─────────────────────────────┘    │
+    └─────────────────────────────────────┘ */
+}
+
+/* ==========================================
+   CONCEPTOS CLAVE EXPLICADOS
+   ========================================== */
+/* 
+   📏 UNIDADES DE GRID:
+   • 1fr = "YO SOY LO MÁS IMPORTANTE, dame todo el espacio disponible"
+   • auto = "Solo necesito el espacio de mi contenido"
+   
+   📐 MIN-HEIGHT:
+   • min-height: 100px = "Por lo menos 100px de alto, pero puede crecer más si necesita"
+   
+   ⚡ RESPONSIVE MÁGICO:
+   • auto-fit + minmax = Responsive automático sin media queries
+*/
+
+/* ==========================================
+   CONTENEDOR GRID PRINCIPAL
+   ========================================== */
+.grid {
+    width: 90%;                         /* Ocupa 90% del viewport, deja 5% a cada lado */
+    max-width: 1000px;                  /* Máximo 1000px en pantallas grandes */
+    margin: 20px 0;                     /* Margen vertical, centrado horizontal por body flex */
+    display: grid;                      /* Activa CSS Grid Layout */
+    grid-template-columns: repeat(3, 1fr);  /* 3 columnas iguales (1fr cada una) */
+    grid-template-rows: auto 1fr auto auto auto;  /* 5 filas explícitas definidas */
+    gap: 20px;                          /* Espaciado de 20px entre todas las celdas */
+    min-height: 90vh;                   /* Altura mínima: 90% de la ventana del navegador */
+    
+    /* ESTRUCTURA VISUAL DEL GRID:
+    ┌─────────────────┬─────────────────┬─────────────────┐
+    │     HEADER      │     HEADER      │     HEADER      │ ← auto (fila 1)
+    ├─────────────────┼─────────────────┼─────────────────┤
+    │      MAIN       │      MAIN       │     ASIDE       │ ← 1fr (fila 2)
+    ├─────────────────┼─────────────────┼─────────────────┤
+    │    WIDGETS      │    WIDGETS      │    WIDGETS      │ ← auto (fila 3)
+    ├─────────────────┼─────────────────┼─────────────────┤
+    │     FOOTER      │     FOOTER      │     FOOTER      │ ← auto (fila 4)
+    └─────────────────┴─────────────────┴─────────────────┘
+       Col 1 (1fr)       Col 2 (1fr)       Col 3 (1fr)
+    
+    FILAS EXPLICADAS:
+    • Fila 1 (auto): Header - se ajusta al contenido (logo + nav)
+    • Fila 2 (1fr): Main + Aside - toma todo el espacio disponible
+    • Fila 3 (auto): Widgets - se ajusta al contenido (min 100px)
+    • Fila 4 (auto): Footer - se ajusta al contenido (texto)
+    • Fila 5 (auto): Reservada para futuros elementos */
+
+    /* ==========================================
+       HEADER - CABECERA CON LOGO Y NAVEGACIÓN
+       ========================================== */
+    .header {
+        grid-column: 1/-1;              /* Ocupa todas las columnas (1 a 3) */
+        display: flex;                  /* Contenedor flexible para logo y nav */
+        justify-content: space-between; /* Logo a la izquierda, nav a la derecha */
+        align-items: center;            /* Centra verticalmente logo y nav */
+        padding: 20px;                  /* Espacio interno uniforme */
+        gap: clamp(10px, 3vw, 20px);    /* Espacio responsive entre logo y nav */
+        
+        /* RESPONSIVE GAP:
+        📱 Móvil (320px): 3vw = 9.6px → usa 10px (mínimo)
+        💻 Tablet (768px): 3vw = 23px → usa 20px (máximo)
+        🖥️ Desktop (1200px): 3vw = 36px → usa 20px (máximo) */
+        
+        .logo {
+            font-size: clamp(30px, 5vw, 50px);  /* Tamaño responsive del logo */
+            
+            /* ESCALADO DEL LOGO:
+            📱 Móvil (320px): 5vw = 16px → usa 30px (mínimo para legibilidad)
+            📱 Tablet (600px): 5vw = 30px → usa 30px
+            💻 Desktop (800px): 5vw = 40px → usa 40px
+            🖥️ Grande (1000px): 5vw = 50px → usa 50px (máximo)
+            🖥️ Muy grande (1200px): 5vw = 60px → usa 50px (máximo) */
+        }
+
+        nav {
+            display: flex;                      /* Enlaces en fila horizontal */
+            gap: clamp(10px, 3vw, 20px);        /* Separación responsive entre enlaces */
+            font-weight: 700;                   /* Texto en negrita para destacar */
+
+            a {
+                text-decoration: none;          /* Quita subrayado de enlaces */
+                color: #531cb3;                 /* Color morado corporativo */
+                font-size: clamp(16px, 3vw, 20px);  /* Tamaño responsive de enlaces */
+                
+                /* TAMAÑO RESPONSIVE DE ENLACES:
+                📱 Móvil: 16px mínimo (legible en pantalla pequeña)
+                💻 Tablet: ~18px (3% del viewport)
+                🖥️ Desktop: 20px máximo (no demasiado grande) */
+            }
+        }
+        
+        @media screen and (max-width: 768px) {
+            & {  /* & = "este mismo elemento" (.header) */
+                flex-direction: column;     /* Cambia de horizontal a vertical */
+                
+                /* COMPORTAMIENTO EN MÓVIL:
+                ANTES (desktop):  [LOGO] ←→ [NAV NAV NAV]
+                DESPUÉS (móvil):  [LOGO]
+                                  [NAV]
+                                  [NAV]
+                                  [NAV] */
+            }
+        }
+    }
+
+    /* ==========================================
+       MAIN - CONTENIDO PRINCIPAL
+       ========================================== */
+    .main {
+        grid-column: 1 / span 2;        /* Ocupa 2 columnas (columnas 1 y 2) */
+        background: #fff;               /* Fondo blanco para destacar contenido */
+        padding: 20px;                  /* Espacio interno para separar del borde */
+        color: #000;                    /* Texto negro para contraste con fondo blanco */
+        border-radius: 10px;            /* Esquinas redondeadas suaves */
+        display: flex;                  /* Contenedor flexible para organizar contenido */
+        flex-direction: column;         /* Elementos apilados verticalmente */
+        gap: clamp(10px, 3vw, 20px);    /* Separación responsive entre elementos internos */
+        align-items: flex-start;        /* Elementos alineados a la izquierda */
+        
+        /* POSICIONAMIENTO EN GRID:
+        ┌─────────────────┬─────────────────┬─────────────────┐
+        │                 │                 │                 │
+        │       MAIN      │       MAIN      │     ASIDE       │
+        │    (2 columnas) │    (2 columnas) │   (1 columna)   │
+        │                 │                 │                 │
+        └─────────────────┴─────────────────┴─────────────────┘ */
+
+        p {
+            line-height: 25px;          /* Espaciado entre líneas para mejor legibilidad */
+            
+            /* LEGIBILIDAD:
+            25px de line-height mejora la lectura en párrafos largos
+            Proporciona espacio visual entre líneas de texto */
+        }
+
+        button {
+            padding: 15px;              /* Espacio interno para área táctil grande */
+            background: #521cb3;        /* Color morado consistente con diseño */
+            color: #fff;                /* Texto blanco para alto contraste */
+            border-radius: 5px;         /* Esquinas redondeadas suaves */
+            font-weight: 900;           /* Texto extra grueso para destacar acción */
+            
+            /* ACCESIBILIDAD:
+            - Padding generoso = fácil de tocar en móviles
+            - Alto contraste = legible para todos
+            - Font-weight 900 = destaca la acción principal */
+        }
+
+        @media screen and (max-width: 768px) {
+            & {
+                grid-column: 1 / -1;    /* Ocupa todas las columnas en móvil */
+                align-items: stretch;   /* El botón ocupa 100% del ancho disponible */
+                
+                /* CAMBIOS EN MÓVIL:
+                ANTES: Main ocupa 2/3 columnas, botón alineado a la izquierda
+                DESPUÉS: Main ocupa toda la fila, botón se estira al 100%
+                
+                RESULTADO VISUAL:
+                Desktop: [MAIN        ] [ASIDE]
+                Móvil:   [MAIN (100%)]
+                         [ASIDE (100%)] */
+            }
+        }
+    }
+
+    /* ==========================================
+       ASIDE - BARRA LATERAL
+       ========================================== */
+    .aside {
+        grid-column: 3 / 4;             /* Ocupa solo la columna 3 (barra lateral) */
+        background: #000;               /* Fondo negro para contrastar con main */
+        color: white;                   /* Texto blanco para contrastar con fondo */
+        padding: 20px;                  /* Espacio interno uniforme */
+        border-radius: 10px;            /* Esquinas redondeadas consistentes */
+        display: flex;                  /* Contenedor flexible */
+        justify-content: center;        /* Centra contenido horizontalmente */
+        align-items: center;            /* Centra contenido verticalmente */
+        
+        /* CONTRASTE VISUAL:
+        Main (blanco) vs Aside (negro) = Jerarquía visual clara
+        Aside complementa al contenido principal sin competir */
+
+        @media screen and (max-width: 768px) {
+            grid-column: 1 / -1;        /* Ocupa todas las columnas en móvil */
+            min-height: 200px;          /* Altura mínima para que no se vea muy pequeño */
+            
+            /* COMPORTAMIENTO RESPONSIVE:
+            Desktop: Aside a la derecha del main
+            Móvil: Aside debajo del main, ocupando toda la fila */
+        }
+    }
+
+    /* ==========================================
+       WIDGETS - RESPONSIVE MÁGICO SIN MEDIA QUERIES
+       ========================================== */
+    .widgets {
+        grid-column: 1 / -1;            /* Ocupa todas las columnas disponibles */
+        display: grid;                  /* Sub-grid para organizar widgets */
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));  /* ¡MAGIA RESPONSIVE! */
+        gap: 20px;                      /* Espaciado entre widgets */
+        
+        /* ==========================================
+           🪄 EXPLICACIÓN DE LA MAGIA RESPONSIVE:
+           ========================================== */
+        /* repeat(auto-fit, minmax(200px, 1fr)) DESGLOSADO:
+        
+        🔄 repeat() = "Repite esta instrucción"
+        📐 auto-fit = "Ajústate automáticamente al espacio disponible"
+        📏 minmax(200px, 1fr) = "Cada widget: mínimo 200px, máximo 1fr"
+        
+        COMPORTAMIENTO AUTOMÁTICO:
+        🖥️ Pantalla 1000px: 1000px ÷ 200px = 5 widgets por fila
+        💻 Pantalla 800px:  800px ÷ 200px = 4 widgets por fila  
+        📱 Pantalla 600px:  600px ÷ 200px = 3 widgets por fila
+        📱 Pantalla 400px:  400px ÷ 200px = 2 widgets por fila
+        📱 Pantalla 300px:  300px ÷ 200px = 1 widget por fila
+        
+        ⚡ REEMPLAZA ESTOS MEDIA QUERIES:
+        ❌ @media (max-width: 1200px) { grid-template-columns: 1fr 1fr 1fr 1fr 1fr; }
+        ❌ @media (max-width: 800px) { grid-template-columns: 1fr 1fr 1fr 1fr; }
+        ❌ @media (max-width: 600px) { grid-template-columns: 1fr 1fr 1fr; }
+        ❌ @media (max-width: 400px) { grid-template-columns: 1fr 1fr; }
+        ❌ @media (max-width: 300px) { grid-template-columns: 1fr; }
+        
+        ✅ UNA SOLA LÍNEA HACE TODO ESO! */
+
+        > * {  /* Selector: todos los hijos directos de .widgets */
+            background: #ffffff;        /* Fondo blanco para cada widget */
+            min-height: 100px;          /* "Al menos 100px de alto, puede crecer más" */
+            border-radius: 10px;        /* Esquinas redondeadas consistentes */
+            display: flex;              /* Contenedor flexible para centrar contenido */
+            justify-content: center;    /* Centra contenido horizontalmente */
+            align-items: center;        /* Centra contenido verticalmente */
+            
+            /* MIN-HEIGHT EXPLICADO:
+            📏 min-height: 100px significa:
+            - Nunca será más pequeño que 100px
+            - Si el contenido es más alto, el widget crece automáticamente
+            - Si el contenido es más pequeño, mantiene 100px mínimo
+            
+            EJEMPLO:
+            Widget con poco texto: exactamente 100px
+            Widget con mucho texto: 150px, 200px, etc. (crece según necesidad)
+            
+            > * EXPLICADO:
+            - ">" = selector de hijo directo (no nietos)
+            - "*" = cualquier elemento
+            - Resultado: aplica a todos los widgets, sin importar su etiqueta HTML */
+        }
+    }
+
+    /* ==========================================
+       FOOTER - PIE DE PÁGINA
+       ========================================== */
+    .footer {
+        grid-column: 1 / -1;            /* Ocupa todas las columnas disponibles */
+        display: flex;                  /* Contenedor flexible */
+        padding: 20px;                  /* Espacio interno uniforme */
+        border-radius: 5px;             /* Esquinas ligeramente redondeadas */
+        flex-direction: column;         /* Elementos apilados verticalmente */
+        gap: 10px;                      /* Separación entre elementos del footer */
+        text-align: center;             /* Texto centrado horizontalmente */
+        color: #929292;                 /* Color gris para texto secundario */
+        
+        /* DISEÑO DEL FOOTER:
+        ┌─────────────────────────────────────┐
+        │        Copyright 2025               │ ← Texto centrado
+        │     Todos los derechos...           │ ← Color gris suave
+        └─────────────────────────────────────┘ ← Ocupa toda la fila
+        
+        JERARQUÍA VISUAL:
+        - Color gris (#929292) = Menos prominencia que el contenido principal
+        - Centrado = Aspecto profesional y balanceado */
+    }
+
+    /* ==========================================
+       ELEMENTOS TIPOGRÁFICOS GENERALES
+       ========================================== */
+    .titulo {
+        font-size: 30px;                /* Tamaño grande para títulos principales */
+        
+        /* JERARQUÍA TIPOGRÁFICA:
+        📰 .titulo: 30px (más prominente)
+        📝 Párrafos: line-height 25px (legible)
+        🔗 Enlaces nav: clamp(16px, 3vw, 20px) (responsive)
+        🏷️ Logo: clamp(30px, 5vw, 50px) (responsive, más grande) */
+    }
+}
+
