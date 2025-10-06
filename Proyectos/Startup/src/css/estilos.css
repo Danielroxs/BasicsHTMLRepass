@@ -1,0 +1,34 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #3b3a3aff;
+    font-family: "Nunito Sans", sans-serif;
+}
+
+a {
+    text-decoration: none; 
+    color: var(--azul-secundario);
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+.boton {
+    display: inline-flex;
+    padding: 10px 15px;
+    background: var(--azul-primario);
+    transition: 0.2s ease all;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    gap: 10px;
+    
+}
