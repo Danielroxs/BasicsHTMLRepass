@@ -1,0 +1,9 @@
+.imagen {
+    padding: 10px;
+    border: 1px solid #fff;
+    cursor: pointer;
+
+    &:hover {
+        background: #fff;
+    }
+}
