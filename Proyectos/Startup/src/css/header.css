@@ -1,6 +1,6 @@
 .contenedor-header {
     width: 90%;
-    max-width: 1000px;
+    max-width: 1100px;
     margin: auto;    
 }
 
@@ -59,6 +59,8 @@ header {
             align-items: center;
             font-weight: 700;
             border-radius: 5px;
+            padding: 10px;
+            transition: 300ms ease all;
 
             &.boton {
                 font-weight: 500;
@@ -77,6 +79,7 @@ header {
         &:hover {
             text-decoration: none;
             background-color: var(--azul-primario-hover);
+            padding: 10px;
         }
         }
     }

@@ -19,6 +19,7 @@
             font-weight: 400;
             text-align: left;
             margin: 0;
+            color: #fff;
         }
 
         .descripcion {
@@ -88,7 +89,7 @@
             border-radius: 10px;
             width: 100%;
             overflow: hidden;
-            top: 0px;
+            top: -20px;
 
             .slides {
                 display: flex;
