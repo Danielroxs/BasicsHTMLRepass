@@ -1,7 +1,7 @@
 .precios {
     margin-bottom: 100px;
     
-    .grid {
+.grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 20px;
@@ -74,5 +74,31 @@
                 }
     }
     }
+
+@media screen and (max-width: 992px){
+    & {
+        margin-bottom: 20px;
+
+        .grid {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+  }
+
+  @media screen and (max-width: 768px){
+    & {
+        .grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+  }
+  
+  @media screen and (max-width: 568px){
+    & {
+        .grid {
+            grid-template-columns: 1fr;
+        }
+    }
+  }
 }
 
