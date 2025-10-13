@@ -8,6 +8,8 @@
     color: #fff;
     position: relative;
     padding: 40px;
+
+    
    
     .col-1 {
         display: flex;
@@ -160,6 +162,71 @@
                  width: 100%;
                  vertical-align: top;
                  aspect-ratio: 16/9;
+            }
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+        & {
+            display: flex;
+            flex-direction: column;
+            border-radius: 0;
+            gap: 20px;
+
+            
+
+            .col-1 {
+                order: 2;
+                text-align: center;
+                gap: 20px;
+                text-align: center;
+                
+                .titulo {
+                text-align: center;
+                font-size: 30px;
+              }
+
+                .botones {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                        max-width: 480px;
+                        width: 60%;
+                        margin: 0 auto;
+
+                        .boton {
+                            width: 100%;
+                        }
+                }
+
+                .estadisticas {
+                    flex-direction: column;
+                    gap: 20px;
+                    justify-content: center;
+                    font-size: 18px;
+
+                    p {
+                        gap: 10px;
+
+                        &:first-child{
+                            padding-right: 0px;
+                            border-right: none;
+                        }
+                    }
+                }
+            }
+
+            .col-2 {
+                order: 1;
+                display: flex;
+                justify-content: center;
+                
+                
+                .slideshow {
+                    position: relative;
+                    width: 70%;
+                }
             }
         }
     }

@@ -1,12 +1,14 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+*,
+*::after,
+*::before {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
 }
 
 body {
-    background: #3b3a3aff;
     font-family: "Nunito Sans", sans-serif;
+    background: #3b3a3aff;
 }
 
 a {
