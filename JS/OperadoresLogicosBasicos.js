@@ -20,3 +20,11 @@ const tienePermiso = true;
 // Ejemplo #3 - !
 const variable = true;
 console.log(!variable)
+
+if (variable === true) {
+   console.log('es true')
+} else if (variable === false) {
+   console.log('es false')
+} else if (variable === null) {
+   console.log('variable es null')
+} 
