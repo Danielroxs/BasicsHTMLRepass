@@ -115,25 +115,26 @@
                 justify-content: center;
                 gap: 10px;
                 position: absolute;
-                bottom: 20px;
+                bottom: 10px;
                 left: 0;
 
                 .indicador {
                     width: 25px;
-                    height: 2px;
+                    height: 10px;
                     border: none;
-                    background: rgba(255, 255, 255, 255, 0.3);
+                    background: #000;
                     transition: 300ms ease all;
                     border-radius: 10px;
-
-                    &.active {
-                        color: rgba(255, 255, 255, 1);
-                    }
-
                     &:hover {
                         background: rgba(255, 255, 255, 0.5);
+                        }
+                    
+
+                    &.active {
+                        background: rgba(255, 255, 255, 1);
                     }
-                }
+
+                  }  
             }
         }
     }
