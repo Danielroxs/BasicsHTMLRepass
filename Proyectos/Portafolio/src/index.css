@@ -24,6 +24,11 @@ body {
   font-family: "Inter", sans-serif;
   background: #838282ff; /* var(--shade-1); */
   color: var(--shade-9);
+
+  &.dark {
+    background: var(--shade-9);
+    color: var(--shade-4);
+  }
 }
 
 a {
@@ -33,6 +38,10 @@ a {
     &:hover {
       text-decoration: underline;
     }
+
+  .dark & { /* .dark a */
+    color: var(--shade-4);
+  }
 }
 
 .contenedor {

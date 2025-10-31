@@ -1,3 +1,4 @@
+import DarkModeSwitch from '../DarkModeSwitch'
 import './Header.css'
 
 const Header = () => {
@@ -13,7 +14,7 @@ const Header = () => {
                 <a href="#acerca-de">Acerca de</a>
                 <a href="#contacto">Contacto</a>
              </nav>
-             <button>Dark mode</button>
+             <DarkModeSwitch />
         </header>
         </>
     )
