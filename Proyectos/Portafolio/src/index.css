@@ -18,6 +18,7 @@
   --shade-9: #0D0D0D; 
   --shade-10: #000000; 
   --primario: #D83A3A;
+  --primario-hover: #bf3030;
 }
 
 body {
@@ -48,4 +49,29 @@ a {
   width: 95%;
   max-width: 1200px;
   margin: auto;
+}
+
+.boton {
+  background: var(--primario);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 100px;
+  font-weight: 500;
+  padding: 14px 20px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  transition: .3s ease all;
+  text-decoration: none;
+
+  &:hover {
+    background: var(--primario-hover);
+    text-decoration: none;
+  }
+
+  .dark & {
+    color: #fff;
+  }
+
 }
