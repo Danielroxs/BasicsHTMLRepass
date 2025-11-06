@@ -1,3 +1,4 @@
+import Clientes from "./componentes/layout/Clientes"
 import Header from "./componentes/layout/Header"
 import Hero from "./componentes/layout/Hero"
 
@@ -7,6 +8,7 @@ function App () {
             <div className="contenedor">
             <Header />
             <Hero />
+            <Clientes />
             </div>
         </>
     )

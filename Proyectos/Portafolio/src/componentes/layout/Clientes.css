@@ -1,0 +1,55 @@
+.clientes {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
+    text-align: center;
+    padding: 60px 20px;
+
+    .encabezado {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+        align-items: center;
+
+        .titulo {
+            font-family: 'Merriweather', serif;
+            color: var(--shade-8);
+            font-size: 22px;
+            font-weight: 700;
+
+            .dark & {
+                color: var(--shade-2);
+            }
+        }
+
+        .subtitulo {
+            font-size: 16px;
+            color: var(--shade-6);
+
+            .dark & {
+                color: var(--shade-4);
+            }
+        }
+    }    
+
+    .logos {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+
+        .logo {
+            border-radius: 5px;
+            max-width: 180px;
+            width: 100%;
+            
+            @media screen and (max-width: 768px) {
+                & {
+                    max-width: 130px;
+                }
+            }
+        }
+    }
+}

@@ -1,6 +1,5 @@
 .hero {
-    background-image: url('assets/hero-bg.png');
-    background-size: cover;
+    
     border-radius: 20px;
     overflow: hidden;
     color: #fff;
