@@ -1,38 +1,4 @@
-.clientes {
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
-    align-items: center;
-    text-align: center;
-    padding: 60px 20px;
-
-    .encabezado {
-        display: flex;
-        flex-direction: column;
-        gap: 14px;
-        align-items: center;
-
-        .titulo {
-            font-family: 'Merriweather', serif;
-            color: var(--shade-8);
-            font-size: 22px;
-            font-weight: 700;
-
-            .dark & {
-                color: var(--shade-2);
-            }
-        }
-
-        .subtitulo {
-            font-size: 16px;
-            color: var(--shade-6);
-
-            .dark & {
-                color: var(--shade-4);
-            }
-        }
-    }    
-
+.clientes {  
     .logos {
         display: flex;
         flex-direction: row;

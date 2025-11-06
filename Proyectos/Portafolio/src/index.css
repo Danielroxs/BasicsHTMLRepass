@@ -23,7 +23,7 @@
 
 body {
   font-family: "Inter", sans-serif;
-  background: #838282ff; /* var(--shade-1); */
+  background: rgb(158, 158, 158); /* var(--shade-1); */
   color: var(--shade-9);
 
   &.dark {
@@ -73,5 +73,39 @@ a {
   .dark & {
     color: #fff;
   }
+}
 
+.clientes, .trabajos {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
+    padding: 60px 20px;
+  
+    .encabezado {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      align-items: center;
+  
+      .titulo {
+        font-family: 'Merriweather', serif;
+        color: var(--shade-8);
+        font-size: 22px;
+        font-weight: 700;
+  
+        .dark & {
+          color: var(--shade-2);
+        }
+      }
+  
+      .subtitulo {
+        font-size: 16px;
+        color: var(--shade-6);
+  
+        .dark & {
+          color: var(--shade-4);
+        }
+      }
+    }
 }
