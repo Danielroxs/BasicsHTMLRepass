@@ -1,3 +1,4 @@
+import AcercaDe from "./componentes/layout/AcercaDe"
 import Clientes from "./componentes/layout/Clientes"
 import Header from "./componentes/layout/Header"
 import Hero from "./componentes/layout/Hero"
@@ -11,6 +12,7 @@ function App () {
             <Hero />
             <Clientes />
             <Trabajos />
+            <AcercaDe />
             </div>
         </>
     )

@@ -43,14 +43,14 @@ Ejemplo visual:
 
 // JavaScript:
 const abuelo = document.getElementById('abuelo');
-const padre = document.getElementById('padre');
-const hijo = document.getElementById('hijo');
+const padre1 = document.getElementById('padre1');
+const hijo1 = document.getElementById('hijo1');
 
-hijo.addEventListener('click', () => {
+hijo1.addEventListener('click', () => {
     console.log('1. Clic en HIJO');
 });
 
-padre.addEventListener('click', () => {
+padre1.addEventListener('click', () => {
     console.log('2. Clic en PADRE');
 });
 

@@ -1,0 +1,42 @@
+.acerca-de {
+    display: flex;
+    justify-content: center;
+
+    .grid {
+        width: 80%;
+        display: grid;
+        grid-template-columns: 1.7fr 2fr;
+        gap: clamp(20px, 3vw, 40px);
+
+        .col-1 {
+            .fotos {
+                display: flex;
+                justify-content: flex-end;
+                position: sticky;
+                top: 20px;
+
+                .foto {
+                    padding: 6px;
+                    border-radius: 10px;
+                    border: 1px solid var(--shade-2);
+
+                    .dark & {
+                        border: 1px solid var(--shade-6);
+                    }
+                    
+                    &:nth-child(1){
+                        width: 80%;
+                    }
+                    
+                    &:nth-child(2){
+                        width: 40%;
+                        position: absolute;
+                        left: 0;
+                        bottom: -15%;
+                    }
+                }
+            }
+            
+        }
+    }
+}
