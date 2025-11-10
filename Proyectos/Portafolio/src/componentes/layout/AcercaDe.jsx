@@ -12,13 +12,14 @@ const AcercaDe = () => {
                         </div>
                     </div>
                     <div className="col-2">
-                        <h4 className="pretitulo">Acerca de mí</h4> 
-                        <h3 className="titulo">La razón por la que deberiamos trabajar juntos.</h3>
-                        <p className="resumen">
+                        <h4 className="pre-titulo">Acerca de mí</h4> 
+                        <h3 className="titulo">La razón por la que deberiamos trabajar juntos</h3>
                             <p className="resumen">
-                                ¡Hola! Soy <strong>Dan Rox</strong>, un desarrollador frontend apasionado por crear interfaces limpias, rápidas y con propósito. 
-                                Con un enfoque en la experiencia del usuario, convierto ideas en productos digitales funcionales y atractivos. 
-                                <br />
+                                <span>
+                                    ¡Hola! Soy <strong>Dan Rox</strong>, un desarrollador frontend apasionado por crear interfaces limpias, rápidas y con propósito. 
+                                    Con un enfoque en la experiencia del usuario, convierto ideas en productos digitales funcionales y atractivos. 
+                                </span>
+                                
                                 Mi objetivo es combinar diseño, código y rendimiento para ofrecer soluciones que destaquen. 
                                 Con años de práctica en desarrollo web moderno, estoy listo para impulsar tu proyecto al siguiente nivel. 
                                 ¡Construyamos juntos algo que realmente marque la diferencia!
@@ -32,7 +33,6 @@ const AcercaDe = () => {
                                     </svg>
                                 </span>
                             </a>
-                        </p>
                     </div>
                 </div>
             </section>
