@@ -23,7 +23,7 @@
 
 body {
   font-family: "Inter", sans-serif;
-  background: rgb(158, 158, 158); /* var(--shade-1); */
+  background: var(--shade-1); /* var(--shade-1); */
   color: var(--shade-9);
 
   &.dark {
@@ -80,12 +80,12 @@ a {
   }
 }
 
-.clientes, .trabajos, .contacto {
+.clientes, .trabajos, .contacto, .footer {
     display: flex;
     flex-direction: column;
     gap: 40px;
     align-items: center;
-    padding: 60px 20px;
+    padding: 80px 20px;
   
     .encabezado {
       display: flex;
