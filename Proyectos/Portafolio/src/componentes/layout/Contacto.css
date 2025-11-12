@@ -84,4 +84,18 @@
             }
         }
     }
+
+    .boton:disabled {
+        opacity: 0.6;
+        cursor: default;
+    }
+}
+
+.mi-toast {
+    line-height: 25px;
+    color: var(--shade-1) !important;
+    font-family: 'Inter', sans-serif !important;
+    border-radius: 10px !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
+    font-weight: 700;
 }
