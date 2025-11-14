@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../public/estilos.css">
+    <title>Tamaños y Espaciado - Tailwind CSS</title>
+</head>
+<body class="bg-slate-900 text-slate-300 p-8 max-w-7xl mx-auto">
+    
+    <!-- ========================================
+         INTRODUCCIÓN A SIZING & SPACING
+         ======================================== -->
+    <section class="mb-20">
+        <h1 class="text-5xl font-bold mb-4 text-blue-400">📏 Tamaños y Espaciado en Tailwind CSS</h1>
+        <p class="text-lg text-slate-400 mb-4">
+            Tailwind usa un sistema de espaciado basado en múltiplos de <strong class="text-emerald-400">0.25rem (4px)</strong>
+        </p>
+        <div class="bg-slate-800 p-6 rounded-lg">
+            <h3 class="text-xl font-semibold mb-3 text-slate-300">Escala de Espaciado</h3>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
+                <div><code class="text-amber-300">0</code> = 0px</div>
+                <div><code class="text-amber-300">1</code> = 0.25rem (4px)</div>
+                <div><code class="text-amber-300">2</code> = 0.5rem (8px)</div>
+                <div><code class="text-amber-300">3</code> = 0.75rem (12px)</div>
+                <div><code class="text-amber-300">4</code> = 1rem (16px)</div>
+                <div><code class="text-amber-300">5</code> = 1.25rem (20px)</div>
+                <div><code class="text-amber-300">6</code> = 1.5rem (24px)</div>
+                <div><code class="text-amber-300">8</code> = 2rem (32px)</div>
+                <div><code class="text-amber-300">10</code> = 2.5rem (40px)</div>
+                <div><code class="text-amber-300">12</code> = 3rem (48px)</div>
+                <div><code class="text-amber-300">16</code> = 4rem (64px)</div>
+                <div><code class="text-amber-300">20</code> = 5rem (80px)</div>
+            </div>
+        </div>
+    </section>
+
+    <hr class="my-12 border-slate-700">
+
+    <!-- ========================================
+         PADDING (Relleno Interno)
+         ======================================== -->
+    <section class="mb-20">
+        <h2 class="text-4xl font-bold mb-6 text-blue-400">📦 Padding (Relleno Interno)</h2>
+        <p class="text-slate-400 mb-6">
+            El padding es el espacio <strong>dentro</strong> de un elemento, entre el contenido y el borde
+        </p>
+
+        <!-- Padding en todos los lados -->
+        <div class="mb-8">
+            <h3 class="text-2xl font-semibold mb-4 text-slate-300">Padding en todos los lados (p-)</h3>
+            <div class="space-y-4 bg-slate-800 p-6 rounded-lg">
+                <div class="bg-blue-500 p-0 inline-block">
+                    <span class="bg-blue-300 block">p-0 (sin padding)</span>
+                </div>
+                <div class="bg-blue-500 p-3 inline-block">
+                    <span class="bg-blue-300 block">p-3 (0.75rem / 12px)</span>
+                </div>
+                <div class="bg-blue-500 p-6 inline-block">
+                    <span class="bg-blue-300 block">p-6 (1.5rem / 24px)</span>
+                </div>
+                <div class="bg-blue-500 p-10 inline-block">
+                    <span class="bg-blue-300 block">p-10 (2.5rem / 40px)</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Padding vertical -->
+        <div class="mb-8">
+            <h3 class="text-2xl font-semibold mb-4 text-slate-300">Padding Vertical (py-)</h3>
+            <p class="text-slate-400 mb-4">Aplica padding arriba y abajo (top + bottom)</p>
+            <div class="space-y-4 bg-slate-800 p-6 rounded-lg">
+                <div class="bg-green-500 py-2 inline-block">
+                    <span class="bg-green-300 block px-4">py-2 (arriba y abajo)</span>
+                </div>
+                <div class="bg-green-500 py-5 inline-block">
+                    <span class="bg-green-300 block px-4">py-5</span>
+                </div>
+                <div class="bg-green-500 py-8 inline-block">
+                    <span class="bg-green-300 block px-4">py-8</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Padding horizontal -->
+        <div class="mb-8">
+            <h3 class="text-2xl font-semibold mb-4 text-slate-300">Padding Horizontal (px-)</h3>
+            <p class="text-slate-400 mb-4">Aplica padding izquierda y derecha (left + right)</p>
+            <div class="space-y-4 bg-slate-800 p-6 rounded-lg">
+                <div class="bg-purple-500 px-4 inline-block">
+                    <span class="bg-purple-300 block py-2">px-4</span>
+                </div>
+                <div class="bg-purple-500 px-8 inline-block">
+                    <span class="bg-purple-300 block py-2">px-8</span>
+                </div>
+                <div class="bg-purple-500 px-12 inline-block">
+                    <span class="bg-purple-300 block py-2">px-12</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Padding individual por lado -->
+        <div class="mb-8">
+            <h3 class="text-2xl font-semibold mb-4 text-slate-300">Padding Individual (pt-, pr-, pb-, pl-)</h3>
+            <p class="text-slate-400 mb-4">
+                <strong class="text-emerald-400">pt-</strong> = top (arriba) | 
+                <strong class="text-emerald-400">pr-</strong> = right (derecha) | 
+                <strong class="text-emerald-400">pb-</strong> = bottom (abajo) | 
+                <strong class="text-emerald-400">pl-</strong> = left (izquierda)
+            </p>
+            <div class="grid grid-cols-2 gap-4 bg-slate-800 p-6 rounded-lg">
+                <div class="bg-orange-500 pt-8">
+                    <div class="bg-orange-300 p-2">pt-8 (padding top)</div>
+                </div>
+                <div class="bg-orange-500 pr-8">
+                    <div class="bg-orange-300 p-2">pr-8 (padding right)</div>
+                </div>
+                <div class="bg-orange-500 pb-8">
+                    <div class="bg-orange-300 p-2">pb-8 (padding bottom)</div>
+                </div>
+                <div class="bg-orange-500 pl-8">
+                    <div class="bg-orange-300 p-2">pl-8 (padding left)</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr class="my-12 border-slate-700">
+
+    <!-- ========================================
+         MARGIN (Espacio Externo)
+         ======================================== -->
+    <section class="mb-20">
+        <h2 class="text-4xl font-bold mb-6 text-blue-400">🌐 Margin (Espacio Externo)</h2>
+        <p class="text-slate-400 mb-6">
+            El margin es el espacio <strong>fuera</strong> de un elemento, entre el elemento y otros elementos
+        </p>
+
+        <!-- Margin en todos los lados -->
+        <div class="mb-8">
+            <h3 class="text-2xl font-semibold mb-4 text-slate-300">Margin en todos los lados (m-)</h3>
+            <div class="bg-slate-800 p-6 rounded-lg">
+                <div class="bg-pink-500 m-0 p-3 inline-block">m-0</div>
+                <div class="bg-pink-500 m-4 p-3 inline-block">m-4</div>
+                <div class="bg-pink-500 m-8 p-3 inline-block">m-8</div>
+            </div>
+        </div>
+
+        <!-- Margin vertical y horizontal -->
+        <div class="mb-8">
+            <h3 class="text-2xl font-semibold mb-4 text-slate-300">Margin Vertical (my-) y Horizontal (mx-)</h3>
+            <div class="space-y-6 bg-slate-800 p-6 rounded-lg">
+                <div>
+                    <p class="text-sm text-slate-400 mb-2">my-4 (margen arriba y abajo):</p>
+                    <div class="bg-teal-500 my-4 p-3 inline-block">Elemento con my-4</div>
+                </div>
+                <div>
+                    <p class="text-sm text-slate-400 mb-2">mx-8 (margen izquierda y derecha):</p>
+                    <div class="bg-teal-500 mx-8 p-3 inline-block">Elemento con mx-8</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Margin individual -->
+        <div class="mb-8">
+            <h3 class="text-2xl font-semibold mb-4 text-slate-300">Margin Individual (mt-, mr-, mb-, ml-)</h3>
+            <div class="space-y-4 bg-slate-800 p-6 rounded-lg">
+                <div class="bg-cyan-500 mt-6 p-3 inline-block">mt-6 (margin top)</div>
+                <div class="bg-cyan-500 mb-6 p-3 inline-block">mb-6 (margin bottom)</div>
+                <div class="bg-cyan-500 ml-12 p-3 inline-block">ml-12 (margin left)</div>
+                <div class="bg-cyan-500 mr-12 p-3 inline-block">mr-12 (margin right)</div>
+            </div>
+        </div>
+
+        <!-- Margin auto para centrar -->
+        <div class="mb-8">
+            <h3 class="text-2xl font-semibold mb-4 text-slate-300">Centrar con Margin Auto (mx-auto)</h3>
+            <p class="text-slate-400 mb-4">
+                <code class="bg-slate-950 px-2 py-1 rounded text-amber-300">mx-auto</code> centra horizontalmente un elemento con ancho definido
+            </p>
+            <div class="bg-slate-800 p-6 rounded-lg">
+                <div class="bg-indigo-500 w-1/2 mx-auto p-4 text-center">
+                    w-1/2 mx-auto (50% ancho, centrado)
+                </div>
+            </div>
+        </div>
+
+        <!-- Margin negativo -->
+        <div class="mb-8">
+            <h3 class="text-2xl font-semibold mb-4 text-slate-300">Margin Negativo (-m-)</h3>
+            <p class="text-slate-400 mb-4">Usa el prefijo <code class="bg-slate-950 px-2 py-1 rounded text-amber-300">-</code> para valores negativos</p>
+            <div class="bg-slate-800 p-6 rounded-lg space-y-4">
+                <div class="bg-amber-600 p-4">
+                    <div class="bg-amber-400 -ml-4 p-3 inline-block">-ml-4 (sale hacia la izquierda)</div>
+                </div>
+                <div class="bg-amber-600 p-4">
+                    <div class="bg-amber-400 -mt-8 p-3 inline-block">-mt-8 (sube sobre el elemento anterior)</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr class="my-12 border-slate-700">
+
+    <!-- ========================================
+         WIDTH (Ancho)
+         ======================================== -->
+    <section class="mb-20">
+        <h2 class="text-4xl font-bold mb-6 text-blue-400">↔️ Width (Ancho)</h2>
+        
+        <!-- Ancho fijo con escala -->
+        <div class="mb-8">
+            <h3 class="text-2xl font-semibold mb-4 text-slate-300">Ancho Fijo (w-)</h3>
+            <p class="text-slate-400 mb-4">Usa la escala de espaciado de Tailwind</p>
+            <div class="space-y-4 bg-slate-800 p-6 rounded-lg">
+                <div class="bg-green-500 w-20 p-3">w-20 (5rem / 80px)</div>
+                <div class="bg-green-500 w-32 p-3">w-32 (8rem / 128px)</div>
+                <div class="bg-green-500 w-40 p-3">w-40 (10rem / 160px)</div>
+                <div class="bg-green-500 w-64 p-3">w-64 (16rem / 256px)</div>
+                <div class="bg-green-500 w-96 p-3">w-96 (24rem / 384px)</div>
+            </div>
+        </div>
+
+        <!-- Ancho en porcentaje -->
+        <div class="mb-8">
+            <h3 class="text-2xl font-semibold mb-4 text-slate-300">Ancho en Porcentaje (Fracciones)</h3>
+            <p class="text-slate-400 mb-4">Usa fracciones para anchos relativos al contenedor padre</p>
+            <div class="space-y-4 bg-slate-800 p-6 rounded-lg">
+                <div class="bg-blue-600 w-1/2 p-3">w-1/2 (50%)</div>
+                <div class="bg-blue-600 w-1/3 p-3">w-1/3 (33.33%)</div>
+                <div class="bg-blue-600 w-2/3 p-3">w-2/3 (66.66%)</div>
+                <div class="bg-blue-600 w-1/4 p-3">w-1/4 (25%)</div>
+                <div class="bg-blue-600 w-3/4 p-3">w-3/4 (75%)</div>
+                <div class="bg-blue-600 w-1/6 p-3">w-1/6 (16.66%)</div>
+                <div class="bg-blue-600 w-5/6 p-3">w-5/6 (83.33%)</div>
+            </div>
+        </div>
+
+        <!-- Fracciones con base 12 (como grid) -->
+        <div class="mb-8">
+            <h3 class="text-2xl font-semibold mb-4 text-slate-300">Sistema de 12 Columnas</h3>
+            <p class="text-slate-400 mb-4">Útil para layouts tipo grid (como Bootstrap)</p>
+            <div class="space-y-4 bg-slate-800 p-6 rounded-lg">
+                <div class="bg-purple-600 w-6/12 p-3">w-6/12 (50% - mitad)</div>
+                <div class="bg-purple-600 w-4/12 p-3">w-4/12 (33.33% - tercio)</div>
+                <div class="bg-purple-600 w-8/12 p-3">w-8/12 (66.66% - dos tercios)</div>
+                <div class="bg-purple-600 w-3/12 p-3">w-3/12 (25% - cuarto)</div>
+                <div class="bg-purple-600 w-9/12 p-3">w-9/12 (75% - tres cuartos)</div>
+                <div class="bg-purple-600 w-10/12 p-3">w-10/12 (83.33%)</div>
+                <div class="bg-purple-600 w-12/12 p-3">w-12/12 (100% - ancho completo)</div>
+            </div>
+        </div>
+
+        <!-- Ancho especial -->
+        <div class="mb-8">
+            <h3 class="text-2xl font-semibold mb-4 text-slate-300">Anchos Especiales</h3>
+            <div class="space-y-4 bg-slate-800 p-6 rounded-lg">
+                <div class="bg-pink-600 w-full p-3">w-full (100% del contenedor)</div>
+                <div class="bg-pink-600 w-screen p-3">w-screen (100% del viewport - toda la pantalla)</div>
+                <div class="bg-pink-600 w-auto p-3 inline-block">w-auto (automático)</div>
+                <div class="bg-pink-600 w-fit p-3 inline-block">w-fit (ajusta al contenido)</div>
+            </div>
+        </div>
+
+        <!-- Ancho arbitrario -->
+        <div class="mb-8">
+            <h3 class="text-2xl font-semibold mb-4 text-slate-300">Ancho Arbitrario (Personalizado)</h3>
+            <p class="text-slate-400 mb-4">Usa corchetes <code class="bg-slate-950 px-2 py-1 rounded text-amber-300">[]</code> para valores personalizados</p>
+            <div class="space-y-4 bg-slate-800 p-6 rounded-lg">
+                <div class="bg-orange-600 w-[200px] p-3">w-[200px] (200 píxeles exactos)</div>
+                <div class="bg-orange-600 w-[15rem] p-3">w-[15rem] (15rem)</div>
+                <div class="bg-orange-600 w-[45%] p-3">w-[45%] (45%)</div>
+                <div class="bg-orange-600 w-[calc(100%-2rem)] p-3">w-[calc(100%-2rem)] (100% menos 2rem)</div>
+            </div>
+        </div>
+    </section>
+
+    <hr class="my-12 border-slate-700">
+
+    <!-- ========================================
+         MAX-WIDTH (Ancho Máximo)
+         ======================================== -->
+    <section class="mb-20">
+        <h2 class="text-4xl font-bold mb-6 text-blue-400">⬅️➡️ Max-Width (Ancho Máximo)</h2>
+        <p class="text-slate-400 mb-6">
+            Define el ancho máximo que puede tener un elemento. Útil para contenedores responsivos.
+        </p>
+
+        <!-- Tamaños nombrados -->
+        <div class="mb-8">
+            <h3 class="text-2xl font-semibold mb-4 text-slate-300">Tamaños Nombrados (max-w-)</h3>
+            <div class="space-y-4 bg-slate-800 p-6 rounded-lg">
+                <div class="bg-teal-600 max-w-xs mx-auto p-3 text-center">
+                    max-w-xs (20rem / 320px)
+                </div>
+                <div class="bg-teal-600 max-w-sm mx-auto p-3 text-center">
+                    max-w-sm (24rem / 384px)
+                </div>
+                <div class="bg-teal-600 max-w-md mx-auto p-3 text-center">
+                    max-w-md (28rem / 448px)
+                </div>
+                <div class="bg-teal-600 max-w-lg mx-auto p-3 text-center">
+                    max-w-lg (32rem / 512px)
+                </div>
+                <div class="bg-teal-600 max-w-xl mx-auto p-3 text-center">
+                    max-w-xl (36rem / 576px)
+                </div>
+                <div class="bg-teal-600 max-w-2xl mx-auto p-3 text-center">
+                    max-w-2xl (42rem / 672px)
+                </div>
+                <div class="bg-teal-600 max-w-3xl mx-auto p-3 text-center">
+                    max-w-3xl (48rem / 768px)
+                </div>
+                <div class="bg-teal-600 max-w-4xl mx-auto p-3 text-center">
+                    max-w-4xl (56rem / 896px)
+                </div>
+                <div class="bg-teal-600 max-w-5xl mx-auto p-3 text-center">
+                    max-w-5xl (64rem / 1024px)
+                </div>
+            </div>
+        </div>
+
+        <!-- Max-width especiales -->
+        <div class="mb-8">
+            <h3 class="text-2xl font-semibold mb-4 text-slate-300">Max-Width Especiales</h3>
+            <div class="space-y-4 bg-slate-800 p-6 rounded-lg">
+                <div class="bg-indigo-600 max-w-full p-3">
+                    max-w-full (100% - ancho completo del padre)
+                </div>
+                <div class="bg-indigo-600 max-w-prose mx-auto p-3">
+                    max-w-prose (65ch - ideal para lectura de texto)
+                </div>
+                <div class="bg-indigo-600 max-w-screen-sm mx-auto p-3 text-center">
+                    max-w-screen-sm (640px - breakpoint small)
+                </div>
+                <div class="bg-indigo-600 max-w-screen-md mx-auto p-3 text-center">
+                    max-w-screen-md (768px - breakpoint medium)
+                </div>
+            </div>
+        </div>
+
+        <!-- Combinación común -->
+        <div class="mb-8">
+            <h3 class="text-2xl font-semibold mb-4 text-slate-300">Patrón Común: Contenedor Centrado</h3>
+            <p class="text-slate-400 mb-4">
+                Combina <code class="bg-slate-950 px-2 py-1 rounded text-amber-300">max-w-</code>, 
+                <code class="bg-slate-950 px-2 py-1 rounded text-amber-300">w-</code> y 
+                <code class="bg-slate-950 px-2 py-1 rounded text-amber-300">mx-auto</code>
+            </p>
+            <div class="bg-slate-800 p-6 rounded-lg">
+                <div class="bg-amber-600 max-w-3xl w-10/12 mx-auto p-5 text-center">
+                    <code class="bg-slate-900 px-2 py-1 rounded text-emerald-400">max-w-3xl w-10/12 mx-auto</code>
+                    <p class="mt-2 text-sm">Máximo 768px, pero 83.33% en pantallas pequeñas, siempre centrado</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr class="my-12 border-slate-700">
+
+    <!-- ========================================
+         HEIGHT (Alto)
+         ======================================== -->
+    <section class="mb-20">
+        <h2 class="text-4xl font-bold mb-6 text-blue-400">↕️ Height (Alto)</h2>
+        
+        <!-- Alto fijo -->
+        <div class="mb-8">
+            <h3 class="text-2xl font-semibold mb-4 text-slate-300">Alto Fijo (h-)</h3>
+            <div class="flex gap-4 bg-slate-800 p-6 rounded-lg items-end">
+                <div class="bg-red-500 w-20 h-20 flex items-center justify-center">h-20</div>
+                <div class="bg-red-500 w-20 h-32 flex items-center justify-center">h-32</div>
+                <div class="bg-red-500 w-20 h-48 flex items-center justify-center">h-48</div>
+                <div class="bg-red-500 w-20 h-64 flex items-center justify-center">h-64</div>
+            </div>
+        </div>
+
+        <!-- Alto especial -->
+        <div class="mb-8">
+            <h3 class="text-2xl font-semibold mb-4 text-slate-300">Altos Especiales</h3>
+            <div class="space-y-4 bg-slate-800 p-6 rounded-lg">
+                <div class="flex gap-4">
+                    <div class="bg-blue-500 w-32 h-full p-3">h-full (100% del padre)</div>
+                    <div class="bg-blue-500 w-32 h-auto p-3">h-auto (automático)</div>
+                    <div class="bg-blue-500 w-32 h-fit p-3">h-fit (ajusta al contenido)</div>
+                </div>
+                <div class="bg-yellow-900/20 border-l-4 border-yellow-500 p-4 rounded">
+                    <p class="text-yellow-200">
+                        <strong>⚠️ Nota:</strong> <code class="bg-slate-950 px-2 py-1 rounded">h-screen</code> 
+                        usa 100vh (100% de la altura de la pantalla)
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Alto arbitrario -->
+        <div class="mb-8">
+            <h3 class="text-2xl font-semibold mb-4 text-slate-300">Alto Arbitrario</h3>
+            <div class="flex gap-4 bg-slate-800 p-6 rounded-lg items-end">
+                <div class="bg-purple-500 w-24 h-[100px] flex items-center justify-center text-sm">
+                    h-[100px]
+                </div>
+                <div class="bg-purple-500 w-24 h-[150px] flex items-center justify-center text-sm">
+                    h-[150px]
+                </div>
+                <div class="bg-purple-500 w-24 h-[10rem] flex items-center justify-center text-sm">
+                    h-[10rem]
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr class="my-12 border-slate-700">
+
+    <!-- ========================================
+         MIN & MAX WIDTH/HEIGHT
+         ======================================== -->
+    <section class="mb-20">
+        <h2 class="text-4xl font-bold mb-6 text-blue-400">📐 Min/Max Width y Height</h2>
+        
+        <div class="grid md:grid-cols-2 gap-6 bg-slate-800 p-6 rounded-lg">
+            <!-- Min-width -->
+            <div>
+                <h3 class="text-xl font-semibold mb-3 text-slate-300">Min-Width (min-w-)</h3>
+                <div class="space-y-2">
+                    <div class="bg-green-600 min-w-full p-3">min-w-full</div>
+                    <div class="bg-green-600 min-w-0 p-3 inline-block">min-w-0</div>
+                    <div class="bg-green-600 min-w-[300px] p-3">min-w-[300px]</div>
+                </div>
+            </div>
+
+            <!-- Max-height -->
+            <div>
+                <h3 class="text-xl font-semibold mb-3 text-slate-300">Max-Height (max-h-)</h3>
+                <div class="space-y-2">
+                    <div class="bg-blue-600 max-h-20 p-3 overflow-auto">
+                        max-h-20 (contenido largo que hace scroll si excede)<br>
+                        Línea 2<br>Línea 3<br>Línea 4<br>Línea 5
+                    </div>
+                    <div class="bg-blue-600 max-h-[100px] p-3 overflow-auto">
+                        max-h-[100px]<br>Más contenido<br>Más contenido
+                    </div>
+                </div>
+            </div>
+
+            <!-- Min-height -->
+            <div>
+                <h3 class="text-xl font-semibold mb-3 text-slate-300">Min-Height (min-h-)</h3>
+                <div class="space-y-2">
+                    <div class="bg-purple-600 min-h-32 p-3">min-h-32 (mínimo 8rem)</div>
+                    <div class="bg-purple-600 min-h-screen p-3">min-h-screen (mínimo 100vh)</div>
+                </div>
+            </div>
+
+            <!-- Ejemplo práctico -->
+            <div>
+                <h3 class="text-xl font-semibold mb-3 text-slate-300">Combinación Práctica</h3>
+                <div class="bg-orange-600 min-w-[200px] max-w-md min-h-24 max-h-32 p-3 overflow-auto">
+                    <code class="text-xs">min-w-[200px] max-w-md min-h-24 max-h-32</code>
+                    <p class="text-sm mt-2">Tiene límites mínimos y máximos de ancho y alto</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr class="my-12 border-slate-700">
+
+    <!-- ========================================
+         SPACE BETWEEN (Espaciado entre elementos)
+         ======================================== -->
+    <section class="mb-20">
+        <h2 class="text-4xl font-bold mb-6 text-blue-400">🔄 Space Between (Espaciado Automático)</h2>
+        <p class="text-slate-400 mb-6">
+            Agrega espacio automáticamente entre elementos hijos (excepto el último)
+        </p>
+
+        <!-- Space-y -->
+        <div class="mb-8">
+            <h3 class="text-2xl font-semibold mb-4 text-slate-300">Space-Y (Espaciado Vertical)</h3>
+            <div class="bg-slate-800 p-6 rounded-lg">
+                <div class="space-y-4">
+                    <div class="bg-blue-500 p-3">Elemento 1</div>
+                    <div class="bg-blue-500 p-3">Elemento 2 (automáticamente separado)</div>
+                    <div class="bg-blue-500 p-3">Elemento 3</div>
+                    <div class="bg-blue-500 p-3">Elemento 4</div>
+                </div>
+                <code class="block mt-4 bg-slate-950 p-2 rounded text-amber-300">space-y-4</code>
+            </div>
+        </div>
+
+        <!-- Space-x -->
+        <div class="mb-8">
+            <h3 class="text-2xl font-semibold mb-4 text-slate-300">Space-X (Espaciado Horizontal)</h3>
+            <div class="bg-slate-800 p-6 rounded-lg">
+                <div class="flex space-x-4">
+                    <div class="bg-green-500 p-3">Item 1</div>
+                    <div class="bg-green-500 p-3">Item 2</div>
+                    <div class="bg-green-500 p-3">Item 3</div>
+                </div>
+                <code class="block mt-4 bg-slate-950 p-2 rounded text-amber-300">flex space-x-4</code>
+            </div>
+        </div>
+    </section>
+
+    <hr class="my-12 border-slate-700">
+
+    <!-- ========================================
+         CONSEJOS Y MEJORES PRÁCTICAS
+         ======================================== -->
+    <section class="mb-20">
+        <h2 class="text-4xl font-bold mb-6 text-blue-400">💡 Consejos y Mejores Prácticas</h2>
+        
+        <div class="space-y-6">
+            <!-- Consejo 1 -->
+            <div class="bg-emerald-900/20 border-l-4 border-emerald-500 p-6 rounded">
+                <h3 class="text-xl font-bold text-emerald-400 mb-2">✅ Usa la Escala Consistentemente</h3>
+                <p class="text-slate-300">
+                    Usa la escala de Tailwind (4, 8, 12, 16...) en lugar de valores arbitrarios cuando sea posible. 
+                    Esto mantiene tu diseño consistente.
+                </p>
+            </div>
+
+            <!-- Consejo 2 -->
+            <div class="bg-blue-900/20 border-l-4 border-blue-500 p-6 rounded">
+                <h3 class="text-xl font-bold text-blue-400 mb-2">📱 Responsividad</h3>
+                <p class="text-slate-300 mb-2">
+                    Usa <code class="bg-slate-950 px-2 py-1 rounded">max-w-</code> con 
+                    <code class="bg-slate-950 px-2 py-1 rounded">mx-auto</code> para contenedores responsivos centrados:
+                </p>
+                <code class="block bg-slate-950 p-3 rounded text-amber-300 text-sm">
+                    class="max-w-4xl mx-auto px-4"
+                </code>
+            </div>
+
+            <!-- Consejo 3 -->
+            <div class="bg-purple-900/20 border-l-4 border-purple-500 p-6 rounded">
+                <h3 class="text-xl font-bold text-purple-400 mb-2">🎯 Space-Y vs Margin Bottom</h3>
+                <div class="text-slate-300">
+                    <p class="mb-2">❌ Menos eficiente:</p>
+                    <code class="block bg-slate-950 p-2 rounded text-sm mb-3">
+                        &lt;div class="mb-4"&gt;...&lt;/div&gt;<br>
+                        &lt;div class="mb-4"&gt;...&lt;/div&gt;<br>
+                        &lt;div class="mb-4"&gt;...&lt;/div&gt;
+                    </code>
+                    <p class="mb-2">✅ Mejor:</p>
+                    <code class="block bg-slate-950 p-2 rounded text-sm">
+                        &lt;div class="space-y-4"&gt;<br>
+                        &nbsp;&nbsp;&lt;div&gt;...&lt;/div&gt;<br>
+                        &nbsp;&nbsp;&lt;div&gt;...&lt;/div&gt;<br>
+                        &nbsp;&nbsp;&lt;div&gt;...&lt;/div&gt;<br>
+                        &lt;/div&gt;
+                    </code>
+                </div>
+            </div>
+
+            <!-- Consejo 4 -->
+            <div class="bg-amber-900/20 border-l-4 border-amber-500 p-6 rounded">
+                <h3 class="text-xl font-bold text-amber-400 mb-2">🔧 Valores Arbitrarios Solo Cuando Sea Necesario</h3>
+                <p class="text-slate-300">
+                    Usa valores arbitrarios <code class="bg-slate-950 px-2 py-1 rounded">w-[345px]</code> 
+                    solo cuando realmente necesites un tamaño específico que no esté en la escala.
+                </p>
+            </div>
+
+            <!-- Consejo 5 -->
+            <div class="bg-pink-900/20 border-l-4 border-pink-500 p-6 rounded">
+                <h3 class="text-xl font-bold text-pink-400 mb-2">⚖️ Padding vs Height</h3>
+                <p class="text-slate-300 mb-2">
+                    Para botones y elementos interactivos, prefiere <code class="bg-slate-950 px-2 py-1 rounded">padding</code> 
+                    sobre <code class="bg-slate-950 px-2 py-1 rounded">height</code> fijo:
+                </p>
+                <div class="flex gap-4 mt-4">
+                    <button class="bg-blue-500 px-6 py-3 rounded">
+                        ✅ px-6 py-3 (flexible)
+                    </button>
+                    <button class="bg-red-500 px-6 h-12 rounded flex items-center">
+                        ❌ h-12 (rígido)
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr class="my-12 border-slate-700">
+
+    <!-- ========================================
+         TABLA DE REFERENCIA
+         ======================================== -->
+    <section class="mb-20">
+        <h2 class="text-4xl font-bold mb-6 text-blue-400">📋 Tabla de Referencia Rápida</h2>
+        
+        <div class="overflow-x-auto">
+            <table class="w-full bg-slate-800 rounded-lg overflow-hidden">
+                <thead class="bg-slate-700">
+                    <tr>
+                        <th class="p-4 text-left text-emerald-400">Clase</th>
+                        <th class="p-4 text-left text-emerald-400">Propiedad</th>
+                        <th class="p-4 text-left text-emerald-400">Descripción</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-slate-700">
+                    <tr>
+                        <td class="p-4 font-mono text-amber-300">p-4</td>
+                        <td class="p-4">padding: 1rem</td>
+                        <td class="p-4">Padding todos los lados</td>
+                    </tr>
+                    <tr>
+                        <td class="p-4 font-mono text-amber-300">px-4</td>
+                        <td class="p-4">padding-left/right</td>
+                        <td class="p-4">Padding horizontal</td>
+                    </tr>
+                    <tr>
+                        <td class="p-4 font-mono text-amber-300">py-4</td>
+                        <td class="p-4">padding-top/bottom</td>
+                        <td class="p-4">Padding vertical</td>
+                    </tr>
+                    <tr>
+                        <td class="p-4 font-mono text-amber-300">m-4</td>
+                        <td class="p-4">margin: 1rem</td>
+                        <td class="p-4">Margin todos los lados</td>
+                    </tr>
+                    <tr>
+                        <td class="p-4 font-mono text-amber-300">mx-auto</td>
+                        <td class="p-4">margin-left/right: auto</td>
+                        <td class="p-4">Centra horizontalmente</td>
+                    </tr>
+                    <tr>
+                        <td class="p-4 font-mono text-amber-300">w-1/2</td>
+                        <td class="p-4">width: 50%</td>
+                        <td class="p-4">Ancho 50%</td>
+                    </tr>
+                    <tr>
+                        <td class="p-4 font-mono text-amber-300">w-full</td>
+                        <td class="p-4">width: 100%</td>
+                        <td class="p-4">Ancho completo</td>
+                    </tr>
+                    <tr>
+                        <td class="p-4 font-mono text-amber-300">max-w-xl</td>
+                        <td class="p-4">max-width: 36rem</td>
+                        <td class="p-4">Ancho máximo</td>
+                    </tr>
+                    <tr>
+                        <td class="p-4 font-mono text-amber-300">h-screen</td>
+                        <td class="p-4">height: 100vh</td>
+                        <td class="p-4">Alto completo de pantalla</td>
+                    </tr>
+                    <tr>
+                        <td class="p-4 font-mono text-amber-300">space-y-4</td>
+                        <td class="p-4">margin-top (hijos)</td>
+                        <td class="p-4">Espacio vertical entre hijos</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center text-slate-500 text-sm py-8">
+        <p>📚 Archivo de estudio - Tamaños y Espaciado en Tailwind CSS v4</p>
+        <p class="mt-2">Para más información: <a href="https://tailwindcss.com/docs/padding" class="text-blue-400 hover:text-blue-300">Documentación oficial</a></p>
+    </footer>
+
+</body>
+</html>
