@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../public/estilos.css">
+    <title>Imágenes - Tailwind CSS</title>
+</head>
+<body class="bg-slate-900 text-slate-300 p-8 max-w-7xl mx-auto">
+    
+    <!-- ========================================
+         INTRODUCCIÓN A IMÁGENES
+         ======================================== -->
+    <section class="mb-20">
+        <h1 class="text-5xl font-bold mb-4 text-blue-400">🖼️ Manejo de Imágenes en Tailwind CSS</h1>
+        <p class="text-lg text-slate-400 mb-4">
+            Tailwind ofrece utilidades poderosas para controlar el tamaño, posicionamiento, y efectos visuales de imágenes
+        </p>
+        <div class="bg-slate-800 p-6 rounded-lg">
+            <h3 class="text-xl font-semibold mb-3 text-slate-300">Propiedades Principales</h3>
+            <ul class="space-y-2 text-slate-400">
+                <li>• <strong class="text-emerald-400">object-fit:</strong> Controla cómo la imagen se ajusta a su contenedor</li>
+                <li>• <strong class="text-emerald-400">object-position:</strong> Define dónde se posiciona la imagen</li>
+                <li>• <strong class="text-emerald-400">Filtros:</strong> Efectos visuales (blur, sepia, grayscale, etc.)</li>
+                <li>• <strong class="text-emerald-400">Border-radius:</strong> Redondeo de esquinas</li>
+                <li>• <strong class="text-emerald-400">Responsive:</strong> Adaptación a diferentes pantallas</li>
+            </ul>
+        </div>
+    </section>
+
+    <hr class="my-12 border-slate-700">
+
+    <!-- ========================================
+         OBJECT-FIT (Ajuste de Imagen)
+         ======================================== -->
+    <section class="mb-20">
+        <h2 class="text-4xl font-bold mb-6 text-blue-400">📐 Object-Fit (Ajuste de Imagen)</h2>
+        <p class="text-slate-400 mb-6">
+            Define cómo una imagen o video se ajusta dentro de su contenedor cuando tienen tamaños diferentes
+        </p>
+
+        <!-- Object-cover -->
+        <div class="mb-12">
+            <h3 class="text-2xl font-semibold mb-4 text-slate-300">object-cover (Cubre el contenedor)</h3>
+            <p class="text-slate-400 mb-4">
+                ✅ La imagen cubre TODO el contenedor manteniendo su proporción. Puede recortarse.
+            </p>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-slate-800 p-4 rounded-lg">
+                    <p class="text-sm text-slate-400 mb-2">Contenedor 16:9 (ancho)</p>
+                    <div class="w-full h-48 bg-slate-700 rounded overflow-hidden">
+                        <img src="../../CSS/imagenes/bosque.png" class="w-full h-full object-cover" alt="Bosque con object-cover">
+                    </div>
+                    <code class="block mt-2 text-amber-300 text-sm">object-cover</code>
+                </div>
+                <div class="bg-slate-800 p-4 rounded-lg">
+                    <p class="text-sm text-slate-400 mb-2">Contenedor cuadrado</p>
+                    <div class="w-full h-64 bg-slate-700 rounded overflow-hidden">
+                        <img src="../../CSS/imagenes/bosque.png" class="w-full h-full object-cover" alt="Bosque cuadrado">
+                    </div>
+                    <code class="block mt-2 text-amber-300 text-sm">object-cover</code>
+                </div>
+            </div>
+            <div class="mt-4 p-4 bg-emerald-900/20 border-l-4 border-emerald-500 rounded">
+                <p class="text-emerald-200">
+                    <strong>💡 Uso común:</strong> Imágenes de perfil, thumbnails, fondos de hero sections
+                </p>
+            </div>
+        </div>
+
+        <!-- Object-contain -->
+        <div class="mb-12">
+            <h3 class="text-2xl font-semibold mb-4 text-slate-300">object-contain (Contiene completa)</h3>
+            <p class="text-slate-400 mb-4">
+                📦 La imagen COMPLETA se ve dentro del contenedor. Puede dejar espacios vacíos.
+            </p>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-slate-800 p-4 rounded-lg">
+                    <p class="text-sm text-slate-400 mb-2">Contenedor ancho</p>
+                    <div class="w-full h-48 bg-slate-700 rounded overflow-hidden">
+                        <img src="../../CSS/imagenes/montaña.png" class="w-full h-full object-contain" alt="Montaña con object-contain">
+                    </div>
+                    <code class="block mt-2 text-amber-300 text-sm">object-contain</code>
+                </div>
+                <div class="bg-slate-800 p-4 rounded-lg">
+                    <p class="text-sm text-slate-400 mb-2">Contenedor alto</p>
+                    <div class="w-full h-96 bg-slate-700 rounded overflow-hidden">
+                        <img src="../../CSS/imagenes/montaña.png" class="w-full h-full object-contain" alt="Montaña alta">
+                    </div>
+                    <code class="block mt-2 text-amber-300 text-sm">object-contain</code>
+                </div>
+            </div>
+            <div class="mt-4 p-4 bg-blue-900/20 border-l-4 border-blue-500 rounded">
+                <p class="text-blue-200">
+                    <strong>💡 Uso común:</strong> Logos, productos en e-commerce, galerías donde toda la imagen importa
+                </p>
+            </div>
+        </div>
+
+        <!-- Object-fill -->
+        <div class="mb-12">
+            <h3 class="text-2xl font-semibold mb-4 text-slate-300">object-fill (Rellena estirando)</h3>
+            <p class="text-slate-400 mb-4">
+                ⚠️ La imagen se estira para llenar el contenedor. Puede distorsionarse.
+            </p>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-slate-800 p-4 rounded-lg">
+                    <div class="w-full h-40 bg-slate-700 rounded overflow-hidden">
+                        <img src="../../CSS/imagenes/bosque.png" class="w-full h-full object-fill" alt="Bosque con object-fill">
+                    </div>
+                    <code class="block mt-2 text-amber-300 text-sm">object-fill</code>
+                    <p class="text-xs text-red-400 mt-1">⚠️ Nota: La imagen se ve distorsionada</p>
+                </div>
+                <div class="bg-slate-800 p-4 rounded-lg">
+                    <div class="w-full h-64 bg-slate-700 rounded overflow-hidden">
+                        <img src="../../CSS/imagenes/bosque.png" class="w-full h-full object-fill" alt="Bosque estirado">
+                    </div>
+                    <code class="block mt-2 text-amber-300 text-sm">object-fill</code>
+                </div>
+            </div>
+        </div>
+
+        <!-- Object-none -->
+        <div class="mb-12">
+            <h3 class="text-2xl font-semibold mb-4 text-slate-300">object-none (Tamaño original)</h3>
+            <p class="text-slate-400 mb-4">
+                📏 La imagen mantiene su tamaño original, ignorando el tamaño del contenedor
+            </p>
+            <div class="bg-slate-800 p-4 rounded-lg">
+                <div class="w-full h-40 bg-slate-700 rounded overflow-hidden">
+                    <img src="../../CSS/imagenes/bosque.png" class="w-full h-full object-none" alt="Bosque con object-none">
+                </div>
+                <code class="block mt-2 text-amber-300 text-sm">object-none</code>
+                <p class="text-xs text-slate-400 mt-1">La imagen se muestra en su tamaño real (puede recortarse)</p>
+            </div>
+        </div>
+
+        <!-- Object-scale-down -->
+        <div class="mb-12">
+            <h3 class="text-2xl font-semibold mb-4 text-slate-300">object-scale-down (Reduce si es necesario)</h3>
+            <p class="text-slate-400 mb-4">
+                🔽 Como object-contain o object-none (el que resulte más pequeño)
+            </p>
+            <div class="bg-slate-800 p-4 rounded-lg">
+                <div class="w-full h-48 bg-slate-700 rounded overflow-hidden">
+                    <img src="../../CSS/imagenes/montaña.png" class="w-full h-full object-scale-down" alt="Montaña con object-scale-down">
+                </div>
+                <code class="block mt-2 text-amber-300 text-sm">object-scale-down</code>
+            </div>
+        </div>
+
+        <!-- Comparación visual -->
+        <div class="mb-8">
+            <h3 class="text-2xl font-semibold mb-4 text-slate-300">🔄 Comparación Lado a Lado</h3>
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-4 bg-slate-800 p-6 rounded-lg">
+                <div>
+                    <div class="h-32 bg-slate-700 rounded overflow-hidden mb-2">
+                        <img src="../../CSS/imagenes/bosque.png" class="w-full h-full object-cover" alt="cover">
+                    </div>
+                    <code class="text-xs text-amber-300">object-cover</code>
+                </div>
+                <div>
+                    <div class="h-32 bg-slate-700 rounded overflow-hidden mb-2">
+                        <img src="../../CSS/imagenes/bosque.png" class="w-full h-full object-contain" alt="contain">
+                    </div>
+                    <code class="text-xs text-amber-300">object-contain</code>
+                </div>
+                <div>
+                    <div class="h-32 bg-slate-700 rounded overflow-hidden mb-2">
+                        <img src="../../CSS/imagenes/bosque.png" class="w-full h-full object-fill" alt="fill">
+                    </div>
+                    <code class="text-xs text-amber-300">object-fill</code>
+                </div>
+                <div>
+                    <div class="h-32 bg-slate-700 rounded overflow-hidden mb-2">
+                        <img src="../../CSS/imagenes/bosque.png" class="w-full h-full object-none" alt="none">
+                    </div>
+                    <code class="text-xs text-amber-300">object-none</code>
+                </div>
+                <div>
+                    <div class="h-32 bg-slate-700 rounded overflow-hidden mb-2">
+                        <img src="../../CSS/imagenes/bosque.png" class="w-full h-full object-scale-down" alt="scale-down">
+                    </div>
+                    <code class="text-xs text-amber-300">object-scale-down</code>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr class="my-12 border-slate-700">
+
+    <!-- ========================================
+         OBJECT-POSITION (Posición de Imagen)
+         ======================================== -->
+    <section class="mb-20">
+        <h2 class="text-4xl font-bold mb-6 text-blue-400">🎯 Object-Position (Posicionamiento)</h2>
+        <p class="text-slate-400 mb-6">
+            Controla qué parte de la imagen se muestra cuando está recortada (útil con object-cover o object-none)
+        </p>
+
+        <!-- Posiciones básicas -->
+        <div class="mb-8">
+            <h3 class="text-2xl font-semibold mb-4 text-slate-300">Posiciones Predefinidas</h3>
+            <div class="grid grid-cols-3 gap-4 bg-slate-800 p-6 rounded-lg">
+                <div>
+                    <div class="h-32 bg-slate-700 rounded overflow-hidden mb-2">
+                        <img src="../../CSS/imagenes/montaña.png" class="w-full h-full object-cover object-top" alt="top">
+                    </div>
+                    <code class="text-xs text-amber-300">object-top</code>
+                </div>
+                <div>
+                    <div class="h-32 bg-slate-700 rounded overflow-hidden mb-2">
+                        <img src="../../CSS/imagenes/montaña.png" class="w-full h-full object-cover object-center" alt="center">
+                    </div>
+                    <code class="text-xs text-amber-300">object-center</code>
+                </div>
+                <div>
+                    <div class="h-32 bg-slate-700 rounded overflow-hidden mb-2">
+                        <img src="../../CSS/imagenes/montaña.png" class="w-full h-full object-cover object-bottom" alt="bottom">
+                    </div>
+                    <code class="text-xs text-amber-300">object-bottom</code>
+                </div>
+                <div>
+                    <div class="h-32 bg-slate-700 rounded overflow-hidden mb-2">
+                        <img src="../../CSS/imagenes/montaña.png" class="w-full h-full object-cover object-left" alt="left">
+                    </div>
+                    <code class="text-xs text-amber-300">object-left</code>
+                </div>
+                <div>
+                    <div class="h-32 bg-slate-700 rounded overflow-hidden mb-2">
+                        <img src="../../CSS/imagenes/montaña.png" class="w-full h-full object-cover object-right" alt="right">
+                    </div>
+                    <code class="text-xs text-amber-300">object-right</code>
+                </div>
+            </div>
+        </div>
+
+        <!-- Combinaciones de posición -->
+        <div class="mb-8">
+            <h3 class="text-2xl font-semibold mb-4 text-slate-300">Combinaciones (Esquinas)</h3>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 bg-slate-800 p-6 rounded-lg">
+                <div>
+                    <div class="h-32 bg-slate-700 rounded overflow-hidden mb-2">
+                        <img src="../../CSS/imagenes/bosque.png" class="w-full h-full object-none object-left-top" alt="left-top">
+                    </div>
+                    <code class="text-xs text-amber-300">object-left-top</code>
+                </div>
+                <div>
+                    <div class="h-32 bg-slate-700 rounded overflow-hidden mb-2">
+                        <img src="../../CSS/imagenes/bosque.png" class="w-full h-full object-none object-right-top" alt="right-top">
+                    </div>
+                    <code class="text-xs text-amber-300">object-right-top</code>
+                </div>
+                <div>
+                    <div class="h-32 bg-slate-700 rounded overflow-hidden mb-2">
+                        <img src="../../CSS/imagenes/bosque.png" class="w-full h-full object-none object-left-bottom" alt="left-bottom">
+                    </div>
+                    <code class="text-xs text-amber-300">object-left-bottom</code>
+                </div>
+                <div>
+                    <div class="h-32 bg-slate-700 rounded overflow-hidden mb-2">
+                        <img src="../../CSS/imagenes/bosque.png" class="w-full h-full object-none object-right-bottom" alt="right-bottom">
+                    </div>
+                    <code class="text-xs text-amber-300">object-right-bottom</code>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr class="my-12 border-slate-700">
+
+    <!-- ========================================
+         FILTROS CSS (Efectos Visuales)
+         ======================================== -->
+    <section class="mb-20">
+        <h2 class="text-4xl font-bold mb-6 text-blue-400">✨ Filtros CSS (Efectos Visuales)</h2>
+        <p class="text-slate-400 mb-6">
+            Aplica efectos visuales directamente a las imágenes sin necesidad de edición
+        </p>
+
+        <!-- Blur -->
+        <div class="mb-8">
+            <h3 class="text-2xl font-semibold mb-4 text-slate-300">blur- (Desenfoque)</h3>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 bg-slate-800 p-6 rounded-lg">
+                <div>
+                    <img src="../../CSS/imagenes/bosque.png" class="w-full h-32 object-cover rounded mb-2" alt="sin blur">
+                    <code class="text-xs text-amber-300">Sin filtro</code>
+                </div>
+                <div>
+                    <img src="../../CSS/imagenes/bosque.png" class="w-full h-32 object-cover rounded mb-2 blur-sm" alt="blur-sm">
+                    <code class="text-xs text-amber-300">blur-sm</code>
+                </div>
+                <div>
+                    <img src="../../CSS/imagenes/bosque.png" class="w-full h-32 object-cover rounded mb-2 blur" alt="blur">
+                    <code class="text-xs text-amber-300">blur (medio)</code>
+                </div>
+                <div>
+                    <img src="../../CSS/imagenes/bosque.png" class="w-full h-32 object-cover rounded mb-2 blur-lg" alt="blur-lg">
+                    <code class="text-xs text-amber-300">blur-lg</code>
+                </div>
+            </div>
+            <div class="mt-4 p-4 bg-blue-900/20 border-l-4 border-blue-500 rounded">
+                <p class="text-blue-200">
+                    <strong>💡 Uso común:</strong> Fondos de modales, imágenes placeholder mientras carga la real
+                </p>
+            </div>
+        </div>
+
+        <!-- Brightness -->
+        <div class="mb-8">
+            <h3 class="text-2xl font-semibold mb-4 text-slate-300">brightness- (Brillo)</h3>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 bg-slate-800 p-6 rounded-lg">
+                <div>
+                    <img src="../../CSS/imagenes/montaña.png" class="w-full h-32 object-cover rounded mb-2 brightness-50" alt="brightness-50">
+                    <code class="text-xs text-amber-300">brightness-50</code>
+                </div>
+                <div>
+                    <img src="../../CSS/imagenes/montaña.png" class="w-full h-32 object-cover rounded mb-2 brightness-75" alt="brightness-75">
+                    <code class="text-xs text-amber-300">brightness-75</code>
+                </div>
+                <div>
+                    <img src="../../CSS/imagenes/montaña.png" class="w-full h-32 object-cover rounded mb-2" alt="brightness-100">
+                    <code class="text-xs text-amber-300">brightness-100 (normal)</code>
+                </div>
+                <div>
+                    <img src="../../CSS/imagenes/montaña.png" class="w-full h-32 object-cover rounded mb-2 brightness-125" alt="brightness-125">
+                    <code class="text-xs text-amber-300">brightness-125</code>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contrast -->
+        <div class="mb-8">
+            <h3 class="text-2xl font-semibold mb-4 text-slate-300">contrast- (Contraste)</h3>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 bg-slate-800 p-6 rounded-lg">
+                <div>
+                    <img src="../../CSS/imagenes/bosque.png" class="w-full h-32 object-cover rounded mb-2 contrast-50" alt="contrast-50">
+                    <code class="text-xs text-amber-300">contrast-50</code>
+                </div>
+                <div>
+                    <img src="../../CSS/imagenes/bosque.png" class="w-full h-32 object-cover rounded mb-2" alt="contrast-100">
+                    <code class="text-xs text-amber-300">contrast-100 (normal)</code>
+                </div>
+                <div>
+                    <img src="../../CSS/imagenes/bosque.png" class="w-full h-32 object-cover rounded mb-2 contrast-125" alt="contrast-125">
+                    <code class="text-xs text-amber-300">contrast-125</code>
+                </div>
+                <div>
+                    <img src="../../CSS/imagenes/bosque.png" class="w-full h-32 object-cover rounded mb-2 contrast-150" alt="contrast-150">
+                    <code class="text-xs text-amber-300">contrast-150</code>
+                </div>
+            </div>
+        </div>
+
+        <!-- Grayscale -->
+        <div class="mb-8">
+            <h3 class="text-2xl font-semibold mb-4 text-slate-300">grayscale (Escala de Grises)</h3>
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-4 bg-slate-800 p-6 rounded-lg">
+                <div>
+                    <img src="../../CSS/imagenes/montaña.png" class="w-full h-40 object-cover rounded mb-2" alt="sin grayscale">
+                    <code class="text-xs text-amber-300">Sin filtro (color)</code>
+                </div>
+                <div>
+                    <img src="../../CSS/imagenes/montaña.png" class="w-full h-40 object-cover rounded mb-2 grayscale" alt="grayscale">
+                    <code class="text-xs text-amber-300">grayscale (blanco y negro)</code>
+                </div>
+                <div>
+                    <img src="../../CSS/imagenes/montaña.png" class="w-full h-40 object-cover rounded mb-2 grayscale hover:grayscale-0 transition-all duration-300" alt="hover grayscale">
+                    <code class="text-xs text-amber-300">hover:grayscale-0 (pasa el mouse)</code>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sepia -->
+        <div class="mb-8">
+            <h3 class="text-2xl font-semibold mb-4 text-slate-300">sepia (Efecto Sepia/Vintage)</h3>
+            <div class="grid grid-cols-2 gap-4 bg-slate-800 p-6 rounded-lg">
+                <div>
+                    <img src="../../CSS/imagenes/bosque.png" class="w-full h-40 object-cover rounded mb-2" alt="sin sepia">
+                    <code class="text-xs text-amber-300">Sin filtro</code>
+                </div>
+                <div>
+                    <img src="../../CSS/imagenes/montaña.png" class="w-full h-40 object-cover rounded mb-2 sepia" alt="sepia">
+                    <code class="text-xs text-amber-300">sepia (efecto vintage)</code>
+                </div>
+            </div>
+            <div class="mt-4 p-4 bg-amber-900/20 border-l-4 border-amber-500 rounded">
+                <p class="text-amber-200">
+                    <strong>💡 Uso común:</strong> Galerías de fotos históricas, secciones "nostalgia"
+                </p>
+            </div>
+        </div>
+
+        <!-- Saturate -->
+        <div class="mb-8">
+            <h3 class="text-2xl font-semibold mb-4 text-slate-300">saturate- (Saturación)</h3>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 bg-slate-800 p-6 rounded-lg">
+                <div>
+                    <img src="../../CSS/imagenes/montaña.png" class="w-full h-32 object-cover rounded mb-2 saturate-0" alt="saturate-0">
+                    <code class="text-xs text-amber-300">saturate-0 (sin color)</code>
+                </div>
+                <div>
+                    <img src="../../CSS/imagenes/montaña.png" class="w-full h-32 object-cover rounded mb-2 saturate-50" alt="saturate-50">
+                    <code class="text-xs text-amber-300">saturate-50</code>
+                </div>
+                <div>
+                    <img src="../../CSS/imagenes/montaña.png" class="w-full h-32 object-cover rounded mb-2" alt="saturate-100">
+                    <code class="text-xs text-amber-300">saturate-100 (normal)</code>
+                </div>
+                <div>
+                    <img src="../../CSS/imagenes/montaña.png" class="w-full h-32 object-cover rounded mb-2 saturate-150" alt="saturate-150">
+                    <code class="text-xs text-amber-300">saturate-150 (vibrante)</code>
+                </div>
+            </div>
+        </div>
+
+        <!-- Hue-rotate -->
+        <div class="mb-8">
+            <h3 class="text-2xl font-semibold mb-4 text-slate-300">hue-rotate- (Rotación de Tono)</h3>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 bg-slate-800 p-6 rounded-lg">
+                <div>
+                    <img src="../../CSS/imagenes/bosque.png" class="w-full h-32 object-cover rounded mb-2" alt="sin hue-rotate">
+                    <code class="text-xs text-amber-300">hue-rotate-0 (original)</code>
+                </div>
+                <div>
+                    <img src="../../CSS/imagenes/bosque.png" class="w-full h-32 object-cover rounded mb-2 hue-rotate-30" alt="hue-rotate-30">
+                    <code class="text-xs text-amber-300">hue-rotate-30</code>
+                </div>
+                <div>
+                    <img src="../../CSS/imagenes/bosque.png" class="w-full h-32 object-cover rounded mb-2 hue-rotate-90" alt="hue-rotate-90">
+                    <code class="text-xs text-amber-300">hue-rotate-90</code>
+                </div>
+                <div>
+                    <img src="../../CSS/imagenes/bosque.png" class="w-full h-32 object-cover rounded mb-2 hue-rotate-180" alt="hue-rotate-180">
+                    <code class="text-xs text-amber-300">hue-rotate-180</code>
+                </div>
+            </div>
+        </div>
+
+        <!-- Invert -->
+        <div class="mb-8">
+            <h3 class="text-2xl font-semibold mb-4 text-slate-300">invert (Invertir Colores)</h3>
+            <div class="grid grid-cols-2 gap-4 bg-slate-800 p-6 rounded-lg">
+                <div>
+                    <img src="../../CSS/imagenes/montaña.png" class="w-full h-40 object-cover rounded mb-2" alt="sin invert">
+                    <code class="text-xs text-amber-300">Sin filtro</code>
+                </div>
+                <div>
+                    <img src="../../CSS/imagenes/montaña.png" class="w-full h-40 object-cover rounded mb-2 invert" alt="invert">
+                    <code class="text-xs text-amber-300">invert (colores invertidos)</code>
+                </div>
+            </div>
+        </div>
+
+        <!-- Combinación de filtros -->
+        <div class="mb-8">
+            <h3 class="text-2xl font-semibold mb-4 text-slate-300">🎨 Combinación de Filtros</h3>
+            <p class="text-slate-400 mb-4">Puedes combinar múltiples filtros para efectos únicos</p>
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-4 bg-slate-800 p-6 rounded-lg">
+                <div>
+                    <img src="../../CSS/imagenes/bosque.png" class="w-full h-40 object-cover rounded mb-2 brightness-110 contrast-125 saturate-150" alt="combo1">
+                    <code class="text-xs text-amber-300">brightness-110 contrast-125 saturate-150</code>
+                    <p class="text-xs text-slate-400 mt-1">Efecto "HDR"</p>
+                </div>
+                <div>
+                    <img src="../../CSS/imagenes/bosque.png" class="w-full h-40 object-cover rounded mb-2 grayscale contrast-125 brightness-90" alt="combo2">
+                    <code class="text-xs text-amber-300">grayscale contrast-125 brightness-90</code>
+                    <p class="text-xs text-slate-400 mt-1">Efecto dramático B&N</p>
+                </div>
+                <div>
+                    <img src="../../CSS/imagenes/bosque.png" class="w-full h-40 object-cover rounded mb-2 sepia brightness-110 contrast-110" alt="combo3">
+                    <code class="text-xs text-amber-300">sepia brightness-110 contrast-110</code>
+                    <p class="text-xs text-slate-400 mt-1">Efecto retro cálido</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr class="my-12 border-slate-700">
+
+    <!-- ========================================
+         BORDER RADIUS (Redondeo)
+         ======================================== -->
+    <section class="mb-20">
+        <h2 class="text-4xl font-bold mb-6 text-blue-400">⭕ Border Radius (Redondeo de Esquinas)</h2>
+        
+        <div class="mb-8">
+            <h3 class="text-2xl font-semibold mb-4 text-slate-300">Redondeo General</h3>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 bg-slate-800 p-6 rounded-lg">
+                <div>
+                    <img src="../../CSS/imagenes/bosque.png" class="w-full h-32 object-cover mb-2" alt="sin rounded">
+                    <code class="text-xs text-amber-300">Sin rounded</code>
+                </div>
+                <div>
+                    <img src="../../CSS/imagenes/bosque.png" class="w-full h-32 object-cover rounded mb-2" alt="rounded">
+                    <code class="text-xs text-amber-300">rounded</code>
+                </div>
+                <div>
+                    <img src="../../CSS/imagenes/bosque.png" class="w-full h-32 object-cover rounded-lg mb-2" alt="rounded-lg">
+                    <code class="text-xs text-amber-300">rounded-lg</code>
+                </div>
+                <div>
+                    <img src="../../CSS/imagenes/bosque.png" class="w-full h-32 object-cover rounded-2xl mb-2" alt="rounded-2xl">
+                    <code class="text-xs text-amber-300">rounded-2xl</code>
+                </div>
+            </div>
+        </div>
+
+        <div class="mb-8">
+            <h3 class="text-2xl font-semibold mb-4 text-slate-300">Formas Especiales</h3>
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-4 bg-slate-800 p-6 rounded-lg">
+                <div class="text-center">
+                    <img src="../../CSS/imagenes/montaña.png" class="w-32 h-32 object-cover rounded-full mx-auto mb-2" alt="rounded-full">
+                    <code class="text-xs text-amber-300">rounded-full (círculo)</code>
+                </div>
+                <div class="text-center">
+                    <img src="../../CSS/imagenes/montaña.png" class="w-48 h-32 object-cover rounded-full mx-auto mb-2" alt="rounded-full oval">
+                    <code class="text-xs text-amber-300">rounded-full (óvalo)</code>
+                </div>
+                <div class="text-center">
+                    <img src="../../CSS/imagenes/montaña.png" class="w-32 h-32 object-cover rounded-none mx-auto mb-2" alt="rounded-none">
+                    <code class="text-xs text-amber-300">rounded-none</code>
+                </div>
+            </div>
+            <div class="mt-4 p-4 bg-emerald-900/20 border-l-4 border-emerald-500 rounded">
+                <p class="text-emerald-200">
+                    <strong>💡 Uso común:</strong> <code class="bg-slate-950 px-2 py-1 rounded text-amber-300">rounded-full</code> para avatares de perfil
+                </p>
+            </div>
+        </div>
+
+        <div class="mb-8">
+            <h3 class="text-2xl font-semibold mb-4 text-slate-300">Redondeo Individual por Esquina</h3>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 bg-slate-800 p-6 rounded-lg">
+                <div>
+                    <img src="../../CSS/imagenes/bosque.png" class="w-full h-32 object-cover rounded-tl-3xl mb-2" alt="rounded-tl">
+                    <code class="text-xs text-amber-300">rounded-tl-3xl</code>
+                </div>
+                <div>
+                    <img src="../../CSS/imagenes/bosque.png" class="w-full h-32 object-cover rounded-tr-3xl mb-2" alt="rounded-tr">
+                    <code class="text-xs text-amber-300">rounded-tr-3xl</code>
+                </div>
+                <div>
+                    <img src="../../CSS/imagenes/bosque.png" class="w-full h-32 object-cover rounded-bl-3xl mb-2" alt="rounded-bl">
+                    <code class="text-xs text-amber-300">rounded-bl-3xl</code>
+                </div>
+                <div>
+                    <img src="../../CSS/imagenes/bosque.png" class="w-full h-32 object-cover rounded-br-3xl mb-2" alt="rounded-br">
+                    <code class="text-xs text-amber-300">rounded-br-3xl</code>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr class="my-12 border-slate-700">
+
+    <!-- ========================================
+         EFECTOS INTERACTIVOS
+         ======================================== -->
+    <section class="mb-20">
+        <h2 class="text-4xl font-bold mb-6 text-blue-400">🎭 Efectos Interactivos (Hover & Transitions)</h2>
+        
+        <div class="mb-8">
+            <h3 class="text-2xl font-semibold mb-4 text-slate-300">Zoom al Hover</h3>
+            <div class="grid md:grid-cols-3 gap-6 bg-slate-800 p-6 rounded-lg">
+                <div class="overflow-hidden rounded-lg">
+                    <img src="../../CSS/imagenes/bosque.png" 
+                         class="w-full h-48 object-cover transition-transform duration-300 hover:scale-110" 
+                         alt="zoom hover">
+                    <code class="block mt-2 text-xs text-amber-300">hover:scale-110</code>
+                </div>
+                <div class="overflow-hidden rounded-lg">
+                    <img src="../../CSS/imagenes/montaña.png" 
+                         class="w-full h-48 object-cover transition-transform duration-500 hover:scale-125" 
+                         alt="zoom hover grande">
+                    <code class="block mt-2 text-xs text-amber-300">hover:scale-125</code>
+                </div>
+                <div class="overflow-hidden rounded-lg">
+                    <img src="../../CSS/imagenes/bosque.png" 
+                         class="w-full h-48 object-cover transition-all duration-300 hover:scale-105 hover:rotate-2" 
+                         alt="zoom y rotación">
+                    <code class="block mt-2 text-xs text-amber-300">hover:scale-105 hover:rotate-2</code>
+                </div>
+            </div>
+        </div>
+
+        <div class="mb-8">
+            <h3 class="text-2xl font-semibold mb-4 text-slate-300">Cambio de Filtros al Hover</h3>
+            <div class="grid md:grid-cols-3 gap-6 bg-slate-800 p-6 rounded-lg">
+                <div class="rounded-lg overflow-hidden">
+                    <img src="../../CSS/imagenes/montaña.png" 
+                         class="w-full h-48 object-cover grayscale hover:grayscale-0 transition-all duration-300" 
+                         alt="grayscale hover">
+                    <code class="block mt-2 text-xs text-amber-300">grayscale hover:grayscale-0</code>
+                </div>
+                <div class="rounded-lg overflow-hidden">
+                    <img src="../../CSS/imagenes/bosque.png" 
+                         class="w-full h-48 object-cover brightness-75 hover:brightness-100 transition-all duration-300" 
+                         alt="brightness hover">
+                    <code class="block mt-2 text-xs text-amber-300">brightness-75 hover:brightness-100</code>
+                </div>
+                <div class="rounded-lg overflow-hidden">
+                    <img src="../../CSS/imagenes/montaña.png" 
+                         class="w-full h-48 object-cover blur-sm hover:blur-none transition-all duration-300" 
+                         alt="blur hover">
+                    <code class="block mt-2 text-xs text-amber-300">blur-sm hover:blur-none</code>
+                </div>
+            </div>
+        </div>
+
+        <div class="mb-8">
+            <h3 class="text-2xl font-semibold mb-4 text-slate-300">Overlay al Hover</h3>
+            <div class="grid md:grid-cols-2 gap-6 bg-slate-800 p-6 rounded-lg">
+                <div class="relative group rounded-lg overflow-hidden">
+                    <img src="../../CSS/imagenes/bosque.png" 
+                         class="w-full h-64 object-cover" 
+                         alt="overlay hover">
+                    <div class="absolute inset-0 bg-black/0 group-hover:bg-black/50 transition-all duration-300 flex items-center justify-center">
+                        <p class="text-white text-xl font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            ¡Ver más!
+                        </p>
+                    </div>
+                    <code class="block mt-2 text-xs text-amber-300">Overlay oscuro con texto</code>
+                </div>
+                <div class="relative group rounded-lg overflow-hidden">
+                    <img src="../../CSS/imagenes/montaña.png" 
+                         class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300" 
+                         alt="overlay con zoom">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                        <div class="text-white">
+                            <h4 class="text-lg font-bold">Título de Imagen</h4>
+                            <p class="text-sm">Descripción aquí</p>
+                        </div>
+                    </div>
+                    <code class="block mt-2 text-xs text-amber-300">Gradiente + zoom + info</code>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr class="my-12 border-slate-700">
+
+    <!-- ========================================
+         IMÁGENES RESPONSIVAS
+         ======================================== -->
+    <section class="mb-20">
+        <h2 class="text-4xl font-bold mb-6 text-blue-400">📱 Imágenes Responsivas</h2>
+        
+        <div class="mb-8">
+            <h3 class="text-2xl font-semibold mb-4 text-slate-300">Ancho Responsivo</h3>
+            <div class="bg-slate-800 p-6 rounded-lg">
+                <img src="../../CSS/imagenes/bosque.png" 
+                     class="w-full md:w-2/3 lg:w-1/2 mx-auto h-48 object-cover rounded-lg mb-4" 
+                     alt="responsivo">
+                <code class="block text-xs text-amber-300 text-center">
+                    w-full md:w-2/3 lg:w-1/2 mx-auto
+                </code>
+                <p class="text-xs text-slate-400 text-center mt-2">
+                    100% móvil → 66% tablet → 50% desktop
+                </p>
+            </div>
+        </div>
+
+        <div class="mb-8">
+            <h3 class="text-2xl font-semibold mb-4 text-slate-300">Object-fit Responsivo</h3>
+            <div class="bg-slate-800 p-6 rounded-lg">
+                <div class="h-64 rounded-lg overflow-hidden mb-4">
+                    <img src="../../CSS/imagenes/montaña.png" 
+                         class="w-full h-full object-cover md:object-contain lg:object-cover" 
+                         alt="object-fit responsivo">
+                </div>
+                <code class="block text-xs text-amber-300 text-center">
+                    object-cover md:object-contain lg:object-cover
+                </code>
+                <p class="text-xs text-slate-400 text-center mt-2">
+                    Cambia el comportamiento según el tamaño de pantalla
+                </p>
+            </div>
+        </div>
+
+        <div class="mb-8">
+            <h3 class="text-2xl font-semibold mb-4 text-slate-300">Grid Responsivo de Imágenes</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 bg-slate-800 p-6 rounded-lg">
+                <img src="../../CSS/imagenes/bosque.png" class="w-full h-40 object-cover rounded" alt="grid 1">
+                <img src="../../CSS/imagenes/montaña.png" class="w-full h-40 object-cover rounded" alt="grid 2">
+                <img src="../../CSS/imagenes/bosque.png" class="w-full h-40 object-cover rounded" alt="grid 3">
+                <img src="../../CSS/imagenes/montaña.png" class="w-full h-40 object-cover rounded" alt="grid 4">
+            </div>
+            <code class="block mt-4 text-xs text-amber-300 text-center">
+                grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4
+            </code>
+            <p class="text-xs text-slate-400 text-center mt-2">
+                1 columna móvil → 2 columnas tablet → 4 columnas desktop
+            </p>
+        </div>
+    </section>
+
+    <hr class="my-12 border-slate-700">
+
+    <!-- ========================================
+         CONSEJOS Y MEJORES PRÁCTICAS
+         ======================================== -->
+    <section class="mb-20">
+        <h2 class="text-4xl font-bold mb-6 text-blue-400">💡 Consejos y Mejores Prácticas</h2>
+        
+        <div class="space-y-6">
+            <div class="bg-emerald-900/20 border-l-4 border-emerald-500 p-6 rounded">
+                <h3 class="text-xl font-bold text-emerald-400 mb-2">✅ Siempre usa alt en imágenes</h3>
+                <p class="text-slate-300 mb-2">
+                    El atributo <code class="bg-slate-950 px-2 py-1 rounded">alt</code> es crucial para accesibilidad y SEO
+                </p>
+                <code class="block bg-slate-950 p-2 rounded text-sm text-amber-300">
+                    &lt;img src="..." alt="Descripción clara de la imagen" /&gt;
+                </code>
+            </div>
+
+            <div class="bg-blue-900/20 border-l-4 border-blue-500 p-6 rounded">
+                <h3 class="text-xl font-bold text-blue-400 mb-2">📐 object-cover para thumbnails</h3>
+                <p class="text-slate-300">
+                    Usa <code class="bg-slate-950 px-2 py-1 rounded">object-cover</code> cuando necesites que todas las imágenes tengan el mismo tamaño (galerías, cards)
+                </p>
+            </div>
+
+            <div class="bg-purple-900/20 border-l-4 border-purple-500 p-6 rounded">
+                <h3 class="text-xl font-bold text-purple-400 mb-2">⚡ Optimiza el tamaño de las imágenes</h3>
+                <p class="text-slate-300 mb-2">
+                    Tailwind no optimiza imágenes. Usa herramientas como:
+                </p>
+                <ul class="list-disc list-inside text-slate-300 space-y-1">
+                    <li>TinyPNG para comprimir</li>
+                    <li>WebP para mejor rendimiento</li>
+                    <li>Lazy loading: <code class="bg-slate-950 px-2 py-1 rounded text-amber-300">loading="lazy"</code></li>
+                </ul>
+            </div>
+
+            <div class="bg-amber-900/20 border-l-4 border-amber-500 p-6 rounded">
+                <h3 class="text-xl font-bold text-amber-400 mb-2">🎨 Combina filtros con sutileza</h3>
+                <p class="text-slate-300">
+                    No exageres con los filtros. Menos es más. Combina 2-3 filtros máximo para mantener naturalidad.
+                </p>
+            </div>
+
+            <div class="bg-pink-900/20 border-l-4 border-pink-500 p-6 rounded">
+                <h3 class="text-xl font-bold text-pink-400 mb-2">🔄 Usa transiciones para suavidad</h3>
+                <p class="text-slate-300 mb-2">
+                    Agrega <code class="bg-slate-950 px-2 py-1 rounded text-amber-300">transition-all duration-300</code> para efectos hover suaves
+                </p>
+                <code class="block bg-slate-950 p-2 rounded text-sm text-amber-300 mt-2">
+                    class="grayscale hover:grayscale-0 transition-all duration-300"
+                </code>
+            </div>
+
+            <div class="bg-red-900/20 border-l-4 border-red-500 p-6 rounded">
+                <h3 class="text-xl font-bold text-red-400 mb-2">⚠️ Cuidado con overflow en zoom hover</h3>
+                <p class="text-slate-300 mb-2">
+                    Cuando uses <code class="bg-slate-950 px-2 py-1 rounded text-amber-300">hover:scale-110</code>, envuelve en un contenedor con:
+                </p>
+                <code class="block bg-slate-950 p-2 rounded text-sm text-amber-300">
+                    &lt;div class="overflow-hidden rounded-lg"&gt;<br>
+                    &nbsp;&nbsp;&lt;img class="hover:scale-110 transition" /&gt;<br>
+                    &lt;/div&gt;
+                </code>
+            </div>
+        </div>
+    </section>
+
+    <hr class="my-12 border-slate-700">
+
+    <!-- ========================================
+         TABLA DE REFERENCIA
+         ======================================== -->
+    <section class="mb-20">
+        <h2 class="text-4xl font-bold mb-6 text-blue-400">📋 Tabla de Referencia Rápida</h2>
+        
+        <div class="overflow-x-auto">
+            <table class="w-full bg-slate-800 rounded-lg overflow-hidden">
+                <thead class="bg-slate-700">
+                    <tr>
+                        <th class="p-4 text-left text-emerald-400">Clase</th>
+                        <th class="p-4 text-left text-emerald-400">Categoría</th>
+                        <th class="p-4 text-left text-emerald-400">Descripción</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-slate-700">
+                    <tr>
+                        <td class="p-4 font-mono text-amber-300">object-cover</td>
+                        <td class="p-4">Object Fit</td>
+                        <td class="p-4">Cubre el contenedor (puede recortar)</td>
+                    </tr>
+                    <tr>
+                        <td class="p-4 font-mono text-amber-300">object-contain</td>
+                        <td class="p-4">Object Fit</td>
+                        <td class="p-4">Muestra imagen completa (puede dejar espacio)</td>
+                    </tr>
+                    <tr>
+                        <td class="p-4 font-mono text-amber-300">object-center</td>
+                        <td class="p-4">Object Position</td>
+                        <td class="p-4">Centra la imagen</td>
+                    </tr>
+                    <tr>
+                        <td class="p-4 font-mono text-amber-300">object-top</td>
+                        <td class="p-4">Object Position</td>
+                        <td class="p-4">Alinea arriba</td>
+                    </tr>
+                    <tr>
+                        <td class="p-4 font-mono text-amber-300">blur-sm</td>
+                        <td class="p-4">Filter</td>
+                        <td class="p-4">Desenfoque pequeño</td>
+                    </tr>
+                    <tr>
+                        <td class="p-4 font-mono text-amber-300">grayscale</td>
+                        <td class="p-4">Filter</td>
+                        <td class="p-4">Blanco y negro</td>
+                    </tr>
+                    <tr>
+                        <td class="p-4 font-mono text-amber-300">sepia</td>
+                        <td class="p-4">Filter</td>
+                        <td class="p-4">Efecto vintage/sepia</td>
+                    </tr>
+                    <tr>
+                        <td class="p-4 font-mono text-amber-300">brightness-75</td>
+                        <td class="p-4">Filter</td>
+                        <td class="p-4">75% de brillo</td>
+                    </tr>
+                    <tr>
+                        <td class="p-4 font-mono text-amber-300">contrast-125</td>
+                        <td class="p-4">Filter</td>
+                        <td class="p-4">125% de contraste</td>
+                    </tr>
+                    <tr>
+                        <td class="p-4 font-mono text-amber-300">saturate-150</td>
+                        <td class="p-4">Filter</td>
+                        <td class="p-4">150% de saturación (vibrante)</td>
+                    </tr>
+                    <tr>
+                        <td class="p-4 font-mono text-amber-300">rounded-full</td>
+                        <td class="p-4">Border Radius</td>
+                        <td class="p-4">Círculo/óvalo perfecto</td>
+                    </tr>
+                    <tr>
+                        <td class="p-4 font-mono text-amber-300">hover:scale-110</td>
+                        <td class="p-4">Transform</td>
+                        <td class="p-4">Zoom 110% al pasar mouse</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center text-slate-500 text-sm py-8">
+        <p>📚 Archivo de estudio - Manejo de Imágenes en Tailwind CSS v4</p>
+        <p class="mt-2">Para más información: 
+            <a href="https://tailwindcss.com/docs/object-fit" class="text-blue-400 hover:text-blue-300">Documentación oficial</a>
+        </p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../public/estilos.css">
+    <title>Fondos - Tailwind CSS</title>
+</head>
+<body class="bg-slate-900 text-slate-300">
+    
+    <!-- ========================================
+         INTRODUCCIÓN A FONDOS
+         ======================================== -->
+    <section class="p-8 max-w-7xl mx-auto mb-20">
+        <h1 class="text-5xl font-bold mb-4 text-blue-400">🎨 Fondos en Tailwind CSS</h1>
+        <p class="text-lg text-slate-400 mb-4">
+            Tailwind ofrece utilidades completas para manejar fondos: colores sólidos, gradientes, imágenes, y efectos especiales
+        </p>
+        <div class="bg-slate-800 p-6 rounded-lg">
+            <h3 class="text-xl font-semibold mb-3 text-slate-300">Tipos de Fondos</h3>
+            <ul class="space-y-2 text-slate-400">
+                <li>• <strong class="text-emerald-400">Colores sólidos:</strong> bg-{color}-{intensity}</li>
+                <li>• <strong class="text-emerald-400">Gradientes:</strong> bg-gradient-to-{direction}</li>
+                <li>• <strong class="text-emerald-400">Imágenes:</strong> bg-{nombre} (definidas en CSS)</li>
+                <li>• <strong class="text-emerald-400">Attachment:</strong> bg-fixed (efecto parallax) ⭐</li>
+                <li>• <strong class="text-emerald-400">Tamaño y posición:</strong> bg-cover, bg-center, etc.</li>
+            </ul>
+        </div>
+    </section>
+
+    <hr class="border-slate-700 mb-20">
+
+    <!-- ========================================
+         COLORES SÓLIDOS
+         ======================================== -->
+    <section class="p-8 max-w-7xl mx-auto mb-20">
+        <h2 class="text-4xl font-bold mb-6 text-blue-400">🟦 Colores Sólidos</h2>
+        
+        <div class="space-y-4">
+            <div class="m-5 h-40 bg-black flex items-center justify-center rounded-lg">
+                <code class="text-white text-xl">bg-black</code>
+            </div>
+            <div class="m-5 h-40 bg-white flex items-center justify-center rounded-lg border-2 border-slate-700">
+                <code class="text-slate-900 text-xl">bg-white</code>
+            </div>
+            <div class="m-5 h-40 bg-indigo-500 flex items-center justify-center rounded-lg">
+                <code class="text-white text-xl">bg-indigo-500</code>
+            </div>
+            <div class="m-5 h-40 bg-primario/50 flex items-center justify-center rounded-lg">
+                <code class="text-white text-xl">bg-primario/50 (con opacidad)</code>
+            </div>
+        </div>
+
+        <div class="mt-8 p-4 bg-blue-900/20 border-l-4 border-blue-500 rounded">
+            <p class="text-blue-200">
+                <strong>💡 Tip:</strong> Usa opacidad con <code class="bg-slate-950 px-2 py-1 rounded text-amber-300">/50</code> 
+                para crear capas semitransparentes sobre otros fondos
+            </p>
+        </div>
+    </section>
+
+    <hr class="border-slate-700 mb-20">
+
+    <!-- ========================================
+         GRADIENTES
+         ======================================== -->
+    <section class="p-8 max-w-7xl mx-auto mb-20">
+        <h2 class="text-4xl font-bold mb-6 text-blue-400">🌈 Gradientes</h2>
+        <p class="text-slate-400 mb-6">
+            Tailwind permite crear gradientes lineales en 8 direcciones diferentes
+        </p>
+
+        <!-- Direcciones de gradientes -->
+        <div class="mb-8">
+            <h3 class="text-2xl font-semibold mb-4 text-slate-300">Direcciones de Gradientes</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="h-40 bg-gradient-to-r from-purple-500 to-pink-500 flex items-center justify-center rounded-lg">
+                    <code class="text-white text-lg bg-black/50 px-4 py-2 rounded">bg-gradient-to-r (derecha)</code>
+                </div>
+                <div class="h-40 bg-gradient-to-l from-blue-500 to-cyan-500 flex items-center justify-center rounded-lg">
+                    <code class="text-white text-lg bg-black/50 px-4 py-2 rounded">bg-gradient-to-l (izquierda)</code>
+                </div>
+                <div class="h-40 bg-gradient-to-b from-orange-500 to-red-500 flex items-center justify-center rounded-lg">
+                    <code class="text-white text-lg bg-black/50 px-4 py-2 rounded">bg-gradient-to-b (abajo)</code>
+                </div>
+                <div class="h-40 bg-gradient-to-t from-green-500 to-emerald-500 flex items-center justify-center rounded-lg">
+                    <code class="text-white text-lg bg-black/50 px-4 py-2 rounded">bg-gradient-to-t (arriba)</code>
+                </div>
+                <div class="h-40 bg-gradient-to-br from-violet-500 to-fuchsia-500 flex items-center justify-center rounded-lg">
+                    <code class="text-white text-lg bg-black/50 px-4 py-2 rounded">bg-gradient-to-br (diagonal abajo-derecha)</code>
+                </div>
+                <div class="h-40 bg-gradient-to-tl from-yellow-500 to-amber-500 flex items-center justify-center rounded-lg">
+                    <code class="text-white text-lg bg-black/50 px-4 py-2 rounded">bg-gradient-to-tl (diagonal arriba-izquierda)</code>
+                </div>
+            </div>
+        </div>
+
+        <!-- Gradientes con múltiples paradas -->
+        <div class="mb-8">
+            <h3 class="text-2xl font-semibold mb-4 text-slate-300">Gradientes con Paradas Intermedias (via)</h3>
+            <div class="space-y-4">
+                <div class="h-40 bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 flex items-center justify-center rounded-lg">
+                    <code class="text-white text-lg bg-black/50 px-4 py-2 rounded">from-pink-500 via-purple-500 to-indigo-500</code>
+                </div>
+                <div class="h-40 bg-gradient-to-r from-green-400 via-blue-500 to-purple-600 flex items-center justify-center rounded-lg">
+                    <code class="text-white text-lg bg-black/50 px-4 py-2 rounded">from-green-400 via-blue-500 to-purple-600</code>
+                </div>
+                <div class="h-40 bg-gradient-to-b from-yellow-200 via-orange-400 to-red-600 flex items-center justify-center rounded-lg">
+                    <code class="text-white text-lg bg-black/50 px-4 py-2 rounded">from-yellow-200 via-orange-400 to-red-600</code>
+                </div>
+            </div>
+        </div>
+
+        <!-- Gradientes populares para web -->
+        <div class="mb-8">
+            <h3 class="text-2xl font-semibold mb-4 text-slate-300">🔥 Gradientes Populares para Web</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="h-48 bg-gradient-to-r from-cyan-500 to-blue-500 flex items-center justify-center rounded-lg">
+                    <div class="text-center text-white">
+                        <p class="font-bold text-xl mb-2">Océano Fresco</p>
+                        <code class="text-sm bg-black/50 px-3 py-1 rounded">from-cyan-500 to-blue-500</code>
+                    </div>
+                </div>
+                <div class="h-48 bg-gradient-to-br from-pink-400 via-purple-400 to-indigo-600 flex items-center justify-center rounded-lg">
+                    <div class="text-center text-white">
+                        <p class="font-bold text-xl mb-2">Atardecer Mágico</p>
+                        <code class="text-sm bg-black/50 px-3 py-1 rounded">from-pink-400 via-purple-400 to-indigo-600</code>
+                    </div>
+                </div>
+                <div class="h-48 bg-gradient-to-r from-orange-400 to-rose-400 flex items-center justify-center rounded-lg">
+                    <div class="text-center text-white">
+                        <p class="font-bold text-xl mb-2">Fuego Cálido</p>
+                        <code class="text-sm bg-black/50 px-3 py-1 rounded">from-orange-400 to-rose-400</code>
+                    </div>
+                </div>
+                <div class="h-48 bg-gradient-to-br from-green-400 to-cyan-500 flex items-center justify-center rounded-lg">
+                    <div class="text-center text-white">
+                        <p class="font-bold text-xl mb-2">Bosque Tropical</p>
+                        <code class="text-sm bg-black/50 px-3 py-1 rounded">from-green-400 to-cyan-500</code>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr class="border-slate-700 mb-20">
+
+    <!-- ========================================
+         IMÁGENES DE FONDO
+         ======================================== -->
+    <section class="p-8 max-w-7xl mx-auto mb-20">
+        <h2 class="text-4xl font-bold mb-6 text-blue-400">🖼️ Imágenes de Fondo</h2>
+        
+        <div class="mb-8 p-4 bg-yellow-900/20 border-l-4 border-yellow-500 rounded">
+            <p class="text-yellow-200 mb-2">
+                <strong>📌 Importante:</strong> Para usar imágenes de fondo, debes definirlas primero en el CSS con <code class="bg-slate-950 px-2 py-1 rounded">@theme</code>
+            </p>
+            <code class="block bg-slate-950 p-3 rounded text-amber-300 text-sm mt-2">
+                @theme {<br>
+                &nbsp;&nbsp;--background-image-comida: url('ruta/imagen.jpg');<br>
+                }
+            </code>
+            <p class="text-yellow-200 mt-2">
+                Luego usas: <code class="bg-slate-950 px-2 py-1 rounded text-emerald-300">bg-comida</code> (sin "image")
+            </p>
+        </div>
+
+        <!-- Ejemplo de imagen de fondo -->
+        <div class="mb-8">
+            <h3 class="text-2xl font-semibold mb-4 text-slate-300">Imagen de Fondo Básica</h3>
+            <div class="m-5 h-[400px] bg-comida bg-cover bg-center rounded-lg flex items-center justify-center">
+                <div class="bg-black/60 px-6 py-4 rounded-lg">
+                    <code class="text-white text-lg">bg-comida bg-cover bg-center</code>
+                </div>
+            </div>
+        </div>
+
+        <!-- Background Size -->
+        <div class="mb-8">
+            <h3 class="text-2xl font-semibold mb-4 text-slate-300">Background Size (bg-{size})</h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div>
+                    <div class="h-64 bg-comida bg-cover bg-center rounded-lg border-4 border-slate-700"></div>
+                    <code class="block mt-2 text-amber-300 text-center">bg-cover (cubre todo)</code>
+                    <p class="text-xs text-slate-400 text-center mt-1">Cubre todo el espacio, puede recortar</p>
+                </div>
+                <div>
+                    <div class="h-64 bg-comida bg-contain bg-center rounded-lg border-4 border-slate-700"></div>
+                    <code class="block mt-2 text-amber-300 text-center">bg-contain (contiene)</code>
+                    <p class="text-xs text-slate-400 text-center mt-1">Muestra completa, puede repetirse</p>
+                </div>
+                <div>
+                    <div class="h-64 bg-comida bg-auto bg-center rounded-lg border-4 border-slate-700"></div>
+                    <code class="block mt-2 text-amber-300 text-center">bg-auto (tamaño original)</code>
+                    <p class="text-xs text-slate-400 text-center mt-1">Tamaño original de la imagen</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Background Position -->
+        <div class="mb-8">
+            <h3 class="text-2xl font-semibold mb-4 text-slate-300">Background Position (bg-{position})</h3>
+            <div class="grid grid-cols-3 gap-4">
+                <div>
+                    <div class="h-48 bg-comida bg-cover bg-top rounded-lg"></div>
+                    <code class="block mt-2 text-amber-300 text-center text-sm">bg-top</code>
+                </div>
+                <div>
+                    <div class="h-48 bg-comida bg-cover bg-center rounded-lg"></div>
+                    <code class="block mt-2 text-amber-300 text-center text-sm">bg-center</code>
+                </div>
+                <div>
+                    <div class="h-48 bg-comida bg-cover bg-bottom rounded-lg"></div>
+                    <code class="block mt-2 text-amber-300 text-center text-sm">bg-bottom</code>
+                </div>
+                <div>
+                    <div class="h-48 bg-comida bg-cover bg-left rounded-lg"></div>
+                    <code class="block mt-2 text-amber-300 text-center text-sm">bg-left</code>
+                </div>
+                <div>
+                    <div class="h-48 bg-comida bg-cover bg-right rounded-lg"></div>
+                    <code class="block mt-2 text-amber-300 text-center text-sm">bg-right</code>
+                </div>
+                <div>
+                    <div class="h-48 bg-comida bg-cover bg-left-top rounded-lg"></div>
+                    <code class="block mt-2 text-amber-300 text-center text-sm">bg-left-top</code>
+                </div>
+            </div>
+        </div>
+
+        <!-- Background Repeat -->
+        <div class="mb-8">
+            <h3 class="text-2xl font-semibold mb-4 text-slate-300">Background Repeat (bg-{repeat})</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                    <div class="h-64 bg-comida bg-auto bg-repeat rounded-lg"></div>
+                    <code class="block mt-2 text-amber-300 text-center">bg-repeat (se repite)</code>
+                </div>
+                <div>
+                    <div class="h-64 bg-comida bg-auto bg-no-repeat rounded-lg"></div>
+                    <code class="block mt-2 text-amber-300 text-center">bg-no-repeat (una sola vez)</code>
+                </div>
+                <div>
+                    <div class="h-64 bg-comida bg-auto bg-repeat-x rounded-lg"></div>
+                    <code class="block mt-2 text-amber-300 text-center">bg-repeat-x (horizontal)</code>
+                </div>
+                <div>
+                    <div class="h-64 bg-comida bg-auto bg-repeat-y rounded-lg"></div>
+                    <code class="block mt-2 text-amber-300 text-center">bg-repeat-y (vertical)</code>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr class="border-slate-700 mb-20">
+
+    <!-- ========================================
+         ⭐ BACKGROUND FIXED (PARALLAX) ⭐
+         ======================================== -->
+    <section class="p-8 max-w-7xl mx-auto mb-20">
+        <h2 class="text-4xl font-bold mb-6 text-blue-400">⭐ Background Fixed (Efecto Parallax)</h2>
+        <p class="text-lg text-slate-400 mb-6">
+            <strong class="text-emerald-400">bg-fixed</strong> crea el famoso <strong>efecto parallax</strong> 
+            donde la imagen de fondo permanece fija mientras haces scroll. ¡Muy popular en sitios web modernos!
+        </p>
+
+        <div class="mb-8 p-6 bg-emerald-900/20 border-l-4 border-emerald-500 rounded">
+            <h3 class="text-xl font-bold text-emerald-400 mb-3">¿Qué hace bg-fixed?</h3>
+            <ul class="space-y-2 text-slate-300">
+                <li>✅ La imagen de fondo <strong>NO se mueve</strong> cuando haces scroll</li>
+                <li>✅ El contenido se desliza <strong>sobre</strong> la imagen fija</li>
+                <li>✅ Crea un efecto de <strong>profundidad</strong> y modernidad</li>
+                <li>✅ Perfecto para <strong>hero sections</strong> y secciones destacadas</li>
+            </ul>
+        </div>
+
+        <div class="mb-8 p-4 bg-blue-900/20 border-l-4 border-blue-500 rounded">
+            <p class="text-blue-200">
+                <strong>💡 Diferencia:</strong><br>
+                • <code class="bg-slate-950 px-2 py-1 rounded text-amber-300">bg-scroll</code> (default): 
+                La imagen se mueve con el scroll<br>
+                • <code class="bg-slate-950 px-2 py-1 rounded text-emerald-300">bg-fixed</code>: 
+                La imagen permanece fija (parallax)
+            </p>
+        </div>
+
+        <!-- Ejemplo práctico de bg-fixed -->
+        <div class="mb-8">
+            <h3 class="text-2xl font-semibold mb-4 text-slate-300">Ejemplo: Compara bg-scroll vs bg-fixed</h3>
+            <p class="text-slate-400 mb-4">Haz scroll en esta página para ver el efecto</p>
+        </div>
+    </section>
+
+    <!-- SECCIÓN CON bg-scroll (normal) -->
+    <section class="h-screen bg-hero bg-cover bg-center bg-scroll flex items-center justify-center">
+        <div class="bg-slate-900/90 p-10 rounded-xl border-4 border-blue-500 max-w-2xl mx-4">
+            <h3 class="text-3xl font-bold text-blue-400 mb-4">🔹 bg-scroll (Normal)</h3>
+            <p class="text-slate-300 text-lg mb-4">
+                Esta sección usa <code class="bg-slate-950 px-2 py-1 rounded text-amber-300">bg-scroll</code> (comportamiento por defecto)
+            </p>
+            <p class="text-slate-400">
+                La imagen de fondo se mueve junto con el scroll de la página. 
+                Este es el comportamiento tradicional.
+            </p>
+        </div>
+    </section>
+
+    <!-- CONTENIDO INTERMEDIO -->
+    <section class="bg-slate-800 py-20">
+        <div class="max-w-4xl mx-auto px-8 text-center">
+            <h3 class="text-4xl font-bold text-slate-300 mb-6">Sigue haciendo scroll... 👇</h3>
+            <p class="text-slate-400 text-xl">
+                Ahora verás la diferencia con <strong class="text-emerald-400">bg-fixed</strong>
+            </p>
+        </div>
+    </section>
+
+    <!-- ⭐ SECCIÓN CON bg-fixed (PARALLAX) ⭐ -->
+    <section class="h-screen bg-hero2 bg-cover bg-center bg-fixed flex items-center justify-center">
+        <div class="bg-slate-900/90 p-10 rounded-xl border-4 border-emerald-500 max-w-2xl mx-4">
+            <h3 class="text-3xl font-bold text-emerald-400 mb-4">⭐ bg-fixed (Parallax)</h3>
+            <p class="text-slate-300 text-lg mb-4">
+                Esta sección usa <code class="bg-slate-950 px-2 py-1 rounded text-emerald-300">bg-fixed</code>
+            </p>
+            <p class="text-slate-400 mb-4">
+                ¡La imagen de fondo permanece FIJA mientras haces scroll! 
+                El contenido se desliza sobre la imagen. ✨
+            </p>
+            <p class="text-emerald-300 font-semibold">
+                Este es el efecto parallax tan popular en sitios web modernos 🚀
+            </p>
+        </div>
+    </section>
+
+    <!-- OTRO CONTENIDO -->
+    <section class="bg-slate-800 py-20">
+        <div class="max-w-4xl mx-auto px-8 text-center">
+            <h3 class="text-4xl font-bold text-slate-300 mb-6">¡Notaste la diferencia! 🎉</h3>
+            <p class="text-slate-400 text-xl mb-8">
+                Con <code class="bg-slate-950 px-3 py-1 rounded text-emerald-300">bg-fixed</code> 
+                la imagen se quedó fija mientras el contenido se movía
+            </p>
+        </div>
+    </section>
+
+    <!-- OTRA SECCIÓN CON bg-fixed pero diferente imagen -->
+    <section class="h-screen bg-comida bg-cover bg-center bg-fixed flex items-center justify-center">
+        <div class="bg-slate-900/90 p-10 rounded-xl border-4 border-purple-500 max-w-2xl mx-4">
+            <h3 class="text-3xl font-bold text-purple-400 mb-4">🎨 Puedes usar bg-fixed múltiples veces</h3>
+            <p class="text-slate-300 text-lg mb-4">
+                Puedes tener varias secciones con <code class="bg-slate-950 px-2 py-1 rounded text-emerald-300">bg-fixed</code>
+            </p>
+            <p class="text-slate-400">
+                Cada una puede tener diferente imagen de fondo, creando un efecto narrativo visual impresionante 📖
+            </p>
+        </div>
+    </section>
+
+    <section class="bg-slate-800 py-20">
+        <div class="max-w-4xl mx-auto px-8">
+            <h3 class="text-3xl font-bold text-slate-300 mb-6">📝 Código de las Secciones Parallax</h3>
+            
+            <div class="bg-slate-950 p-6 rounded-lg mb-6">
+                <p class="text-slate-400 mb-2">Sección normal (bg-scroll):</p>
+                <code class="text-amber-300 text-sm">
+                    &lt;section class="h-screen bg-hero bg-cover bg-center bg-scroll"&gt;<br>
+                    &nbsp;&nbsp;...<br>
+                    &lt;/section&gt;
+                </code>
+            </div>
+
+            <div class="bg-slate-950 p-6 rounded-lg">
+                <p class="text-slate-400 mb-2">Sección con parallax (bg-fixed):</p>
+                <code class="text-emerald-300 text-sm">
+                    &lt;section class="h-screen bg-hero2 bg-cover bg-center bg-fixed"&gt;<br>
+                    &nbsp;&nbsp;...<br>
+                    &lt;/section&gt;
+                </code>
+            </div>
+        </div>
+    </section>
+
+    <hr class="border-slate-700 my-20">
+
+    <!-- ========================================
+         OVERLAYS (Capas sobre fondos)
+         ======================================== -->
+    <section class="p-8 max-w-7xl mx-auto mb-20">
+        <h2 class="text-4xl font-bold mb-6 text-blue-400">🎭 Overlays (Capas sobre Fondos)</h2>
+        <p class="text-slate-400 mb-6">
+            Combina imágenes de fondo con capas de color semitransparentes para mejorar legibilidad
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <!-- Sin overlay -->
+            <div class="relative h-64 bg-comida bg-cover bg-center rounded-lg flex items-center justify-center">
+                <p class="text-white text-2xl font-bold text-shadow">Sin overlay (difícil de leer)</p>
+            </div>
+
+            <!-- Con overlay oscuro -->
+            <div class="relative h-64 bg-comida bg-cover bg-center rounded-lg">
+                <div class="absolute inset-0 bg-black/60 rounded-lg"></div>
+                <div class="relative h-full flex items-center justify-center">
+                    <div class="text-center text-white">
+                        <p class="text-2xl font-bold mb-2">Con overlay oscuro</p>
+                        <code class="text-sm bg-black/50 px-3 py-1 rounded">bg-black/60</code>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Con overlay gradiente -->
+            <div class="relative h-64 bg-comida bg-cover bg-center rounded-lg">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent rounded-lg"></div>
+                <div class="relative h-full flex items-end justify-center p-6">
+                    <div class="text-center text-white">
+                        <p class="text-2xl font-bold mb-2">Gradiente desde abajo</p>
+                        <code class="text-xs bg-black/50 px-2 py-1 rounded">bg-gradient-to-t from-black/90 to-transparent</code>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Con overlay de color -->
+            <div class="relative h-64 bg-comida bg-cover bg-center rounded-lg">
+                <div class="absolute inset-0 bg-blue-900/70 rounded-lg"></div>
+                <div class="relative h-full flex items-center justify-center">
+                    <div class="text-center text-white">
+                        <p class="text-2xl font-bold mb-2">Overlay de color</p>
+                        <code class="text-sm bg-black/50 px-3 py-1 rounded">bg-blue-900/70</code>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-8 p-6 bg-slate-800 rounded-lg">
+            <h3 class="text-xl font-semibold mb-3 text-slate-300">Estructura HTML del Overlay</h3>
+            <code class="block bg-slate-950 p-4 rounded text-sm text-amber-300">
+                &lt;div class="relative bg-comida bg-cover"&gt;<br>
+                &nbsp;&nbsp;&lt;!-- Overlay --&gt;<br>
+                &nbsp;&nbsp;&lt;div class="absolute inset-0 bg-black/60"&gt;&lt;/div&gt;<br>
+                &nbsp;&nbsp;&lt;!-- Contenido encima --&gt;<br>
+                &nbsp;&nbsp;&lt;div class="relative"&gt;Tu contenido aquí&lt;/div&gt;<br>
+                &lt;/div&gt;
+            </code>
+        </div>
+    </section>
+
+    <hr class="border-slate-700 mb-20">
+
+    <!-- ========================================
+         BLEND MODES (Modos de Mezcla)
+         ======================================== -->
+    <section class="p-8 max-w-7xl mx-auto mb-20">
+        <h2 class="text-4xl font-bold mb-6 text-blue-400">🎨 Blend Modes (Modos de Mezcla)</h2>
+        <p class="text-slate-400 mb-6">
+            Los blend modes permiten mezclar el fondo con elementos encima de forma creativa
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div class="relative h-48 bg-comida bg-cover bg-center rounded-lg">
+                <div class="absolute inset-0 bg-blue-500 mix-blend-multiply rounded-lg"></div>
+                <div class="relative h-full flex items-center justify-center">
+                    <code class="text-white bg-black/50 px-3 py-1 rounded">mix-blend-multiply</code>
+                </div>
+            </div>
+
+            <div class="relative h-48 bg-comida bg-cover bg-center rounded-lg">
+                <div class="absolute inset-0 bg-purple-500 mix-blend-screen rounded-lg"></div>
+                <div class="relative h-full flex items-center justify-center">
+                    <code class="text-white bg-black/50 px-3 py-1 rounded">mix-blend-screen</code>
+                </div>
+            </div>
+
+            <div class="relative h-48 bg-comida bg-cover bg-center rounded-lg">
+                <div class="absolute inset-0 bg-orange-500 mix-blend-overlay rounded-lg"></div>
+                <div class="relative h-full flex items-center justify-center">
+                    <code class="text-white bg-black/50 px-3 py-1 rounded">mix-blend-overlay</code>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr class="border-slate-700 mb-20">
+
+    <!-- ========================================
+         CONSEJOS Y MEJORES PRÁCTICAS
+         ======================================== -->
+    <section class="p-8 max-w-7xl mx-auto mb-20">
+        <h2 class="text-4xl font-bold mb-6 text-blue-400">💡 Consejos y Mejores Prácticas</h2>
+        
+        <div class="space-y-6">
+            <div class="bg-emerald-900/20 border-l-4 border-emerald-500 p-6 rounded">
+                <h3 class="text-xl font-bold text-emerald-400 mb-2">⭐ Usa bg-fixed con moderación</h3>
+                <p class="text-slate-300">
+                    El efecto parallax (bg-fixed) es hermoso pero puede afectar el rendimiento en móviles. 
+                    Úsalo en <strong>2-3 secciones clave</strong>, no en toda la página.
+                </p>
+            </div>
+
+            <div class="bg-blue-900/20 border-l-4 border-blue-500 p-6 rounded">
+                <h3 class="text-xl font-bold text-blue-400 mb-2">📱 Responsive con bg-fixed</h3>
+                <p class="text-slate-300 mb-2">
+                    En móviles, considera desactivar bg-fixed:
+                </p>
+                <code class="block bg-slate-950 p-3 rounded text-amber-300 text-sm">
+                    class="bg-scroll md:bg-fixed"
+                </code>
+                <p class="text-slate-400 text-sm mt-2">
+                    Esto usa bg-scroll en móviles pero bg-fixed en desktop para mejor rendimiento
+                </p>
+            </div>
+
+            <div class="bg-purple-900/20 border-l-4 border-purple-500 p-6 rounded">
+                <h3 class="text-xl font-bold text-purple-400 mb-2">🖼️ Optimiza imágenes de fondo</h3>
+                <ul class="list-disc list-inside text-slate-300 space-y-1">
+                    <li>Usa WebP para mejor compresión</li>
+                    <li>Tamaño máximo recomendado: 1920px de ancho</li>
+                    <li>Comprime con TinyPNG o similar</li>
+                    <li>Considera lazy loading para imágenes no visibles inicialmente</li>
+                </ul>
+            </div>
+
+            <div class="bg-amber-900/20 border-l-4 border-amber-500 p-6 rounded">
+                <h3 class="text-xl font-bold text-amber-400 mb-2">🎯 Siempre usa overlays en hero sections</h3>
+                <p class="text-slate-300">
+                    Para asegurar que el texto sea legible sobre imágenes, SIEMPRE agrega un overlay 
+                    oscuro (<code class="bg-slate-950 px-2 py-1 rounded">bg-black/50</code>) o gradiente.
+                </p>
+            </div>
+
+            <div class="bg-pink-900/20 border-l-4 border-pink-500 p-6 rounded">
+                <h3 class="text-xl font-bold text-pink-400 mb-2">🎨 Combina técnicas</h3>
+                <p class="text-slate-300">
+                    Las mejores hero sections combinan: <br>
+                    <code class="bg-slate-950 px-2 py-1 rounded text-emerald-300">bg-fixed</code> + 
+                    <code class="bg-slate-950 px-2 py-1 rounded text-blue-300">bg-cover</code> + 
+                    <code class="bg-slate-950 px-2 py-1 rounded text-purple-300">overlay</code> + 
+                    <code class="bg-slate-950 px-2 py-1 rounded text-amber-300">bg-center</code>
+                </p>
+            </div>
+
+            <div class="bg-red-900/20 border-l-4 border-red-500 p-6 rounded">
+                <h3 class="text-xl font-bold text-red-400 mb-2">⚠️ Contraste y accesibilidad</h3>
+                <p class="text-slate-300">
+                    Asegúrate de que el texto tenga suficiente contraste con el fondo. 
+                    Usa herramientas como WebAIM Contrast Checker para verificar.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <hr class="border-slate-700 mb-20">
+
+    <!-- ========================================
+         TABLA DE REFERENCIA
+         ======================================== -->
+    <section class="p-8 max-w-7xl mx-auto mb-20">
+        <h2 class="text-4xl font-bold mb-6 text-blue-400">📋 Tabla de Referencia Rápida</h2>
+        
+        <div class="overflow-x-auto">
+            <table class="w-full bg-slate-800 rounded-lg overflow-hidden">
+                <thead class="bg-slate-700">
+                    <tr>
+                        <th class="p-4 text-left text-emerald-400">Clase</th>
+                        <th class="p-4 text-left text-emerald-400">Propiedad CSS</th>
+                        <th class="p-4 text-left text-emerald-400">Uso</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-slate-700">
+                    <tr>
+                        <td class="p-4 font-mono text-amber-300">bg-fixed</td>
+                        <td class="p-4">background-attachment: fixed</td>
+                        <td class="p-4">⭐ Efecto parallax</td>
+                    </tr>
+                    <tr>
+                        <td class="p-4 font-mono text-amber-300">bg-scroll</td>
+                        <td class="p-4">background-attachment: scroll</td>
+                        <td class="p-4">Comportamiento normal</td>
+                    </tr>
+                    <tr>
+                        <td class="p-4 font-mono text-amber-300">bg-cover</td>
+                        <td class="p-4">background-size: cover</td>
+                        <td class="p-4">Cubre todo el espacio</td>
+                    </tr>
+                    <tr>
+                        <td class="p-4 font-mono text-amber-300">bg-contain</td>
+                        <td class="p-4">background-size: contain</td>
+                        <td class="p-4">Muestra imagen completa</td>
+                    </tr>
+                    <tr>
+                        <td class="p-4 font-mono text-amber-300">bg-center</td>
+                        <td class="p-4">background-position: center</td>
+                        <td class="p-4">Centra la imagen</td>
+                    </tr>
+                    <tr>
+                        <td class="p-4 font-mono text-amber-300">bg-no-repeat</td>
+                        <td class="p-4">background-repeat: no-repeat</td>
+                        <td class="p-4">No repite la imagen</td>
+                    </tr>
+                    <tr>
+                        <td class="p-4 font-mono text-amber-300">bg-gradient-to-r</td>
+                        <td class="p-4">linear-gradient(to right...)</td>
+                        <td class="p-4">Gradiente hacia la derecha</td>
+                    </tr>
+                    <tr>
+                        <td class="p-4 font-mono text-amber-300">from-blue-500</td>
+                        <td class="p-4">--tw-gradient-from</td>
+                        <td class="p-4">Color inicial del gradiente</td>
+                    </tr>
+                    <tr>
+                        <td class="p-4 font-mono text-amber-300">to-purple-500</td>
+                        <td class="p-4">--tw-gradient-to</td>
+                        <td class="p-4">Color final del gradiente</td>
+                    </tr>
+                    <tr>
+                        <td class="p-4 font-mono text-amber-300">via-pink-500</td>
+                        <td class="p-4">--tw-gradient-via</td>
+                        <td class="p-4">Color intermedio del gradiente</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center text-slate-500 text-sm py-12 bg-slate-950">
+        <p class="text-2xl mb-4">🎉 ¡Ahora dominas los fondos en Tailwind CSS!</p>
+        <p>📚 Archivo de estudio - Fondos y Parallax en Tailwind CSS v4</p>
+        <p class="mt-2">Para más información: 
+            <a href="https://tailwindcss.com/docs/background-attachment" class="text-blue-400 hover:text-blue-300">Documentación oficial</a>
+        </p>
+        <p class="mt-4 text-emerald-400">⭐ No olvides: bg-fixed es tu mejor amigo para efectos parallax ⭐</p>
+    </footer>
+
+</body>
+</html>

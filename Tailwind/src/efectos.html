@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../public/estilos.css">
+    <title>Efectos - Tailwind CSS</title>
+</head>
+<body class="bg-slate-900 text-slate-300">
+    
+    <!-- ========================================
+         INTRODUCCIÓN A EFECTOS
+         ======================================== -->
+    <section class="p-8 max-w-7xl mx-auto mb-20">
+        <h1 class="text-5xl font-bold mb-4 text-blue-400">✨ Efectos en Tailwind CSS</h1>
+        <p class="text-lg text-slate-400 mb-4">
+            Los efectos añaden profundidad, interactividad y pulido visual a tus diseños
+        </p>
+        <div class="bg-slate-800 p-6 rounded-lg">
+            <h3 class="text-xl font-semibold mb-3 text-slate-300">Tipos de Efectos</h3>
+            <ul class="space-y-2 text-slate-400">
+                <li>• <strong class="text-emerald-400">Box Shadow:</strong> Sombras para profundidad (shadow-{size})</li>
+                <li>• <strong class="text-emerald-400">Drop Shadow:</strong> Sombras que siguen la forma (drop-shadow-{size})</li>
+                <li>• <strong class="text-emerald-400">Opacity:</strong> Transparencia de elementos (opacity-{value})</li>
+                <li>• <strong class="text-emerald-400">Mix Blend Mode:</strong> Modos de mezcla con elementos debajo</li>
+                <li>• <strong class="text-emerald-400">Background Blend:</strong> Mezcla de fondos múltiples</li>
+            </ul>
+        </div>
+    </section>
+
+    <hr class="border-slate-700 mb-20">
+
+    <!-- ========================================
+         BOX SHADOW (SOMBRAS DE CAJA)
+         ======================================== -->
+    <section class="p-8 max-w-7xl mx-auto mb-20">
+        <h2 class="text-4xl font-bold mb-6 text-blue-400">📦 Box Shadow (Sombras de Caja)</h2>
+        <p class="text-slate-400 mb-6">
+            Las sombras crean sensación de elevación y profundidad en tus elementos
+        </p>
+
+        <!-- Tamaños de sombra -->
+        <div class="mb-12">
+            <h3 class="text-2xl font-semibold mb-4 text-slate-300">Tamaños de Sombra</h3>
+            <div class="bg-slate-200 p-8 rounded-lg">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="flex flex-col items-center">
+                        <div class="w-40 h-40 bg-white shadow-sm flex items-center justify-center rounded-lg">
+                            <span class="text-slate-900 font-bold text-center text-sm">shadow-sm</span>
+                        </div>
+                        <code class="mt-3 text-amber-300">shadow-sm</code>
+                        <p class="text-slate-400 text-xs mt-1">Sombra pequeña</p>
+                    </div>
+
+                    <div class="flex flex-col items-center">
+                        <div class="w-40 h-40 bg-white shadow flex items-center justify-center rounded-lg">
+                            <span class="text-slate-900 font-bold text-center text-sm">shadow</span>
+                        </div>
+                        <code class="mt-3 text-amber-300">shadow</code>
+                        <p class="text-slate-400 text-xs mt-1">Sombra base</p>
+                    </div>
+
+                    <div class="flex flex-col items-center">
+                        <div class="w-40 h-40 bg-white shadow-md flex items-center justify-center rounded-lg">
+                            <span class="text-slate-900 font-bold text-center text-sm">shadow-md</span>
+                        </div>
+                        <code class="mt-3 text-amber-300">shadow-md</code>
+                        <p class="text-slate-400 text-xs mt-1">Sombra mediana</p>
+                    </div>
+
+                    <div class="flex flex-col items-center">
+                        <div class="w-40 h-40 bg-white shadow-lg flex items-center justify-center rounded-lg">
+                            <span class="text-slate-900 font-bold text-center text-sm">shadow-lg</span>
+                        </div>
+                        <code class="mt-3 text-amber-300">shadow-lg</code>
+                        <p class="text-slate-400 text-xs mt-1">Sombra grande</p>
+                    </div>
+
+                    <div class="flex flex-col items-center">
+                        <div class="w-40 h-40 bg-white shadow-xl flex items-center justify-center rounded-lg">
+                            <span class="text-slate-900 font-bold text-center text-sm">shadow-xl</span>
+                        </div>
+                        <code class="mt-3 text-amber-300">shadow-xl</code>
+                        <p class="text-slate-400 text-xs mt-1">Sombra extra grande</p>
+                    </div>
+
+                    <div class="flex flex-col items-center">
+                        <div class="w-40 h-40 bg-white shadow-2xl flex items-center justify-center rounded-lg">
+                            <span class="text-slate-900 font-bold text-center text-sm">shadow-2xl</span>
+                        </div>
+                        <code class="mt-3 text-amber-300">shadow-2xl</code>
+                        <p class="text-slate-400 text-xs mt-1">Sombra 2X grande</p>
+                    </div>
+
+                    <div class="flex flex-col items-center">
+                        <div class="w-40 h-40 bg-white shadow-inner flex items-center justify-center rounded-lg border border-slate-300">
+                            <span class="text-slate-900 font-bold text-center text-sm">shadow-inner</span>
+                        </div>
+                        <code class="mt-3 text-amber-300">shadow-inner</code>
+                        <p class="text-slate-400 text-xs mt-1">Sombra interna</p>
+                    </div>
+
+                    <div class="flex flex-col items-center">
+                        <div class="w-40 h-40 bg-white shadow-none flex items-center justify-center rounded-lg border border-slate-300">
+                            <span class="text-slate-900 font-bold text-center text-sm">shadow-none</span>
+                        </div>
+                        <code class="mt-3 text-amber-300">shadow-none</code>
+                        <p class="text-slate-400 text-xs mt-1">Sin sombra</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-8 p-4 bg-blue-900/20 border-l-4 border-blue-500 rounded">
+            <p class="text-blue-200">
+                <strong>💡 Tip:</strong> Usa sombras más grandes para elementos flotantes como modales o menús desplegables. 
+                Sombras pequeñas funcionan bien para tarjetas y botones.
+            </p>
+        </div>
+    </section>
+
+    <hr class="border-slate-700 mb-20">
+
+    <!-- ========================================
+         SOMBRAS DE COLOR
+         ======================================== -->
+    <section class="p-8 max-w-7xl mx-auto mb-20">
+        <h2 class="text-4xl font-bold mb-6 text-blue-400">🎨 Sombras de Color</h2>
+        <p class="text-slate-400 mb-6">
+            Personaliza el color de las sombras para crear efectos únicos y modernos
+        </p>
+
+        <div class="mb-8 p-4 bg-purple-900/20 border-l-4 border-purple-500 rounded">
+            <p class="text-purple-200">
+                <strong>💡 Sintaxis:</strong><br>
+                <code class="bg-slate-950 px-2 py-1 rounded text-amber-300">
+                    shadow-{size} shadow-{color}/{opacity}
+                </code>
+            </p>
+        </div>
+
+        <div class="bg-slate-200 p-8 rounded-lg">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="flex flex-col items-center">
+                    <div class="w-48 h-48 bg-white shadow-xl shadow-black/30 flex items-center justify-center rounded-lg">
+                        <div class="text-center">
+                            <span class="text-slate-900 font-bold block">Sombra Negra</span>
+                            <span class="text-slate-600 text-sm">Clásica</span>
+                        </div>
+                    </div>
+                    <code class="mt-3 text-amber-300 text-sm">shadow-xl shadow-black/30</code>
+                </div>
+
+                <div class="flex flex-col items-center">
+                    <div class="w-48 h-48 bg-white shadow-xl shadow-blue-500/50 flex items-center justify-center rounded-lg">
+                        <div class="text-center">
+                            <span class="text-slate-900 font-bold block">Sombra Azul</span>
+                            <span class="text-slate-600 text-sm">Fresca</span>
+                        </div>
+                    </div>
+                    <code class="mt-3 text-amber-300 text-sm">shadow-xl shadow-blue-500/50</code>
+                </div>
+
+                <div class="flex flex-col items-center">
+                    <div class="w-48 h-48 bg-white shadow-xl shadow-purple-500/50 flex items-center justify-center rounded-lg">
+                        <div class="text-center">
+                            <span class="text-slate-900 font-bold block">Sombra Púrpura</span>
+                            <span class="text-slate-600 text-sm">Mágica</span>
+                        </div>
+                    </div>
+                    <code class="mt-3 text-amber-300 text-sm">shadow-xl shadow-purple-500/50</code>
+                </div>
+
+                <div class="flex flex-col items-center">
+                    <div class="w-48 h-48 bg-white shadow-xl shadow-pink-500/50 flex items-center justify-center rounded-lg">
+                        <div class="text-center">
+                            <span class="text-slate-900 font-bold block">Sombra Rosa</span>
+                            <span class="text-slate-600 text-sm">Vibrante</span>
+                        </div>
+                    </div>
+                    <code class="mt-3 text-amber-300 text-sm">shadow-xl shadow-pink-500/50</code>
+                </div>
+
+                <div class="flex flex-col items-center">
+                    <div class="w-48 h-48 bg-white shadow-xl shadow-green-500/50 flex items-center justify-center rounded-lg">
+                        <div class="text-center">
+                            <span class="text-slate-900 font-bold block">Sombra Verde</span>
+                            <span class="text-slate-600 text-sm">Natural</span>
+                        </div>
+                    </div>
+                    <code class="mt-3 text-amber-300 text-sm">shadow-xl shadow-green-500/50</code>
+                </div>
+
+                <div class="flex flex-col items-center">
+                    <div class="w-48 h-48 bg-white shadow-xl shadow-orange-500/50 flex items-center justify-center rounded-lg">
+                        <div class="text-center">
+                            <span class="text-slate-900 font-bold block">Sombra Naranja</span>
+                            <span class="text-slate-600 text-sm">Cálida</span>
+                        </div>
+                    </div>
+                    <code class="mt-3 text-amber-300 text-sm">shadow-xl shadow-orange-500/50</code>
+                </div>
+            </div>
+        </div>
+
+        <!-- Ejemplo con gradientes -->
+        <div class="mt-12">
+            <h3 class="text-2xl font-semibold mb-4 text-slate-300">Sombras con Elementos de Color</h3>
+            <div class="bg-slate-200 p-8 rounded-lg">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="flex flex-col items-center">
+                        <div class="w-48 h-48 bg-gradient-to-br from-blue-500 to-purple-600 shadow-xl shadow-blue-500/50 flex items-center justify-center rounded-lg">
+                            <span class="text-white font-bold">Gradiente + Sombra</span>
+                        </div>
+                        <code class="mt-3 text-amber-300 text-sm">shadow-blue-500/50</code>
+                    </div>
+
+                    <div class="flex flex-col items-center">
+                        <div class="w-48 h-48 bg-gradient-to-br from-pink-500 to-rose-600 shadow-xl shadow-pink-500/50 flex items-center justify-center rounded-lg">
+                            <span class="text-white font-bold">Gradiente + Sombra</span>
+                        </div>
+                        <code class="mt-3 text-amber-300 text-sm">shadow-pink-500/50</code>
+                    </div>
+
+                    <div class="flex flex-col items-center">
+                        <div class="w-48 h-48 bg-gradient-to-br from-green-400 to-cyan-500 shadow-xl shadow-cyan-500/50 flex items-center justify-center rounded-lg">
+                            <span class="text-white font-bold">Gradiente + Sombra</span>
+                        </div>
+                        <code class="mt-3 text-amber-300 text-sm">shadow-cyan-500/50</code>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr class="border-slate-700 mb-20">
+
+    <!-- ========================================
+         OPACITY (OPACIDAD)
+         ======================================== -->
+    <section class="p-8 max-w-7xl mx-auto mb-20">
+        <h2 class="text-4xl font-bold mb-6 text-blue-400">👻 Opacity (Opacidad)</h2>
+        <p class="text-slate-400 mb-6">
+            Controla la transparencia de elementos completos, incluyendo su contenido
+        </p>
+
+        <div class="mb-8 p-4 bg-yellow-900/20 border-l-4 border-yellow-500 rounded">
+            <p class="text-yellow-200">
+                <strong>⚠️ Diferencia importante:</strong><br>
+                • <code class="bg-slate-950 px-2 py-1 rounded text-amber-300">opacity-50</code> afecta TODO el elemento (fondo + texto + hijos)<br>
+                • <code class="bg-slate-950 px-2 py-1 rounded text-emerald-300">bg-blue-500/50</code> solo afecta el color de fondo
+            </p>
+        </div>
+
+        <!-- Escala de opacidad -->
+        <div class="mb-8">
+            <h3 class="text-2xl font-semibold mb-4 text-slate-300">Escala de Opacidad</h3>
+            <div class="bg-slate-200 p-8 rounded-lg">
+                <div class="grid grid-cols-2 md:grid-cols-5 gap-6">
+                    <div class="flex flex-col items-center">
+                        <div class="w-32 h-32 bg-red-500 opacity-0 flex items-center justify-center rounded-lg border-2 border-slate-400">
+                            <span class="text-white font-bold">0%</span>
+                        </div>
+                        <code class="mt-2 text-amber-300">opacity-0</code>
+                        <p class="text-slate-400 text-xs">Invisible</p>
+                    </div>
+
+                    <div class="flex flex-col items-center">
+                        <div class="w-32 h-32 bg-red-500 opacity-25 flex items-center justify-center rounded-lg">
+                            <span class="text-white font-bold">25%</span>
+                        </div>
+                        <code class="mt-2 text-amber-300">opacity-25</code>
+                        <p class="text-slate-400 text-xs">Muy transparente</p>
+                    </div>
+
+                    <div class="flex flex-col items-center">
+                        <div class="w-32 h-32 bg-red-500 opacity-50 flex items-center justify-center rounded-lg">
+                            <span class="text-white font-bold">50%</span>
+                        </div>
+                        <code class="mt-2 text-amber-300">opacity-50</code>
+                        <p class="text-slate-400 text-xs">Semi-transparente</p>
+                    </div>
+
+                    <div class="flex flex-col items-center">
+                        <div class="w-32 h-32 bg-red-500 opacity-75 flex items-center justify-center rounded-lg">
+                            <span class="text-white font-bold">75%</span>
+                        </div>
+                        <code class="mt-2 text-amber-300">opacity-75</code>
+                        <p class="text-slate-400 text-xs">Casi opaco</p>
+                    </div>
+
+                    <div class="flex flex-col items-center">
+                        <div class="w-32 h-32 bg-red-500 opacity-100 flex items-center justify-center rounded-lg">
+                            <span class="text-white font-bold">100%</span>
+                        </div>
+                        <code class="mt-2 text-amber-300">opacity-100</code>
+                        <p class="text-slate-400 text-xs">Opaco</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Valores específicos -->
+        <div class="mb-8">
+            <h3 class="text-2xl font-semibold mb-4 text-slate-300">Valores Disponibles</h3>
+            <div class="bg-slate-800 p-6 rounded-lg">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <div class="bg-slate-700 p-3 rounded">
+                        <code class="text-amber-300">opacity-0</code>
+                        <span class="text-slate-400 text-sm block">0%</span>
+                    </div>
+                    <div class="bg-slate-700 p-3 rounded">
+                        <code class="text-amber-300">opacity-5</code>
+                        <span class="text-slate-400 text-sm block">5%</span>
+                    </div>
+                    <div class="bg-slate-700 p-3 rounded">
+                        <code class="text-amber-300">opacity-10</code>
+                        <span class="text-slate-400 text-sm block">10%</span>
+                    </div>
+                    <div class="bg-slate-700 p-3 rounded">
+                        <code class="text-amber-300">opacity-15</code>
+                        <span class="text-slate-400 text-sm block">15%</span>
+                    </div>
+                    <div class="bg-slate-700 p-3 rounded">
+                        <code class="text-amber-300">opacity-20</code>
+                        <span class="text-slate-400 text-sm block">20%</span>
+                    </div>
+                    <div class="bg-slate-700 p-3 rounded">
+                        <code class="text-amber-300">opacity-25</code>
+                        <span class="text-slate-400 text-sm block">25%</span>
+                    </div>
+                    <div class="bg-slate-700 p-3 rounded">
+                        <code class="text-amber-300">opacity-30</code>
+                        <span class="text-slate-400 text-sm block">30%</span>
+                    </div>
+                    <div class="bg-slate-700 p-3 rounded">
+                        <code class="text-amber-300">opacity-40</code>
+                        <span class="text-slate-400 text-sm block">40%</span>
+                    </div>
+                    <div class="bg-slate-700 p-3 rounded">
+                        <code class="text-amber-300">opacity-50</code>
+                        <span class="text-slate-400 text-sm block">50%</span>
+                    </div>
+                    <div class="bg-slate-700 p-3 rounded">
+                        <code class="text-amber-300">opacity-60</code>
+                        <span class="text-slate-400 text-sm block">60%</span>
+                    </div>
+                    <div class="bg-slate-700 p-3 rounded">
+                        <code class="text-amber-300">opacity-70</code>
+                        <span class="text-slate-400 text-sm block">70%</span>
+                    </div>
+                    <div class="bg-slate-700 p-3 rounded">
+                        <code class="text-amber-300">opacity-75</code>
+                        <span class="text-slate-400 text-sm block">75%</span>
+                    </div>
+                    <div class="bg-slate-700 p-3 rounded">
+                        <code class="text-amber-300">opacity-80</code>
+                        <span class="text-slate-400 text-sm block">80%</span>
+                    </div>
+                    <div class="bg-slate-700 p-3 rounded">
+                        <code class="text-amber-300">opacity-90</code>
+                        <span class="text-slate-400 text-sm block">90%</span>
+                    </div>
+                    <div class="bg-slate-700 p-3 rounded">
+                        <code class="text-amber-300">opacity-95</code>
+                        <span class="text-slate-400 text-sm block">95%</span>
+                    </div>
+                    <div class="bg-slate-700 p-3 rounded">
+                        <code class="text-amber-300">opacity-100</code>
+                        <span class="text-slate-400 text-sm block">100%</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Comparación opacity vs color/opacity -->
+        <div class="mb-8">
+            <h3 class="text-2xl font-semibold mb-4 text-slate-300">Comparación: opacity vs color/opacity</h3>
+            <div class="bg-slate-200 p-8 rounded-lg">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="space-y-4">
+                        <h4 class="font-bold text-slate-900">opacity-50 (TODO transparente)</h4>
+                        <div class="bg-blue-500 opacity-50 p-6 rounded-lg">
+                            <p class="text-white font-bold">Texto también transparente</p>
+                            <p class="text-white text-sm">El elemento completo tiene 50% de opacidad</p>
+                        </div>
+                        <code class="text-amber-300">bg-blue-500 opacity-50</code>
+                    </div>
+
+                    <div class="space-y-4">
+                        <h4 class="font-bold text-slate-900">bg-blue-500/50 (solo fondo)</h4>
+                        <div class="bg-blue-500/50 p-6 rounded-lg">
+                            <p class="text-slate-900 font-bold">Texto 100% opaco</p>
+                            <p class="text-slate-900 text-sm">Solo el fondo tiene 50% de opacidad</p>
+                        </div>
+                        <code class="text-amber-300">bg-blue-500/50</code>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr class="border-slate-700 mb-20">
+
+    <!-- ========================================
+         MIX BLEND MODE
+         ======================================== -->
+    <section class="p-8 max-w-7xl mx-auto mb-20">
+        <h2 class="text-4xl font-bold mb-6 text-blue-400">🎭 Mix Blend Mode (Modos de Mezcla)</h2>
+        <p class="text-slate-400 mb-6">
+            Controla cómo un elemento se mezcla con el contenido detrás de él
+        </p>
+
+        <div class="space-y-8">
+            <!-- Blend modes principales -->
+            <div>
+                <h3 class="text-2xl font-semibold mb-4 text-slate-300">Modos de Mezcla Principales</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="relative h-48 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg overflow-hidden flex items-center justify-center">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="w-32 h-32 bg-pink-500 mix-blend-normal rounded-full"></div>
+                        </div>
+                        <code class="relative z-10 text-white bg-black/50 px-3 py-1 rounded text-sm">mix-blend-normal</code>
+                    </div>
+
+                    <div class="relative h-48 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg overflow-hidden flex items-center justify-center">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="w-32 h-32 bg-pink-500 mix-blend-multiply rounded-full"></div>
+                        </div>
+                        <code class="relative z-10 text-white bg-black/50 px-3 py-1 rounded text-sm">mix-blend-multiply</code>
+                    </div>
+
+                    <div class="relative h-48 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg overflow-hidden flex items-center justify-center">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="w-32 h-32 bg-pink-500 mix-blend-screen rounded-full"></div>
+                        </div>
+                        <code class="relative z-10 text-white bg-black/50 px-3 py-1 rounded text-sm">mix-blend-screen</code>
+                    </div>
+
+                    <div class="relative h-48 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg overflow-hidden flex items-center justify-center">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="w-32 h-32 bg-yellow-400 mix-blend-overlay rounded-full"></div>
+                        </div>
+                        <code class="relative z-10 text-white bg-black/50 px-3 py-1 rounded text-sm">mix-blend-overlay</code>
+                    </div>
+
+                    <div class="relative h-48 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg overflow-hidden flex items-center justify-center">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="w-32 h-32 bg-white mix-blend-darken rounded-full"></div>
+                        </div>
+                        <code class="relative z-10 text-white bg-black/50 px-3 py-1 rounded text-sm">mix-blend-darken</code>
+                    </div>
+
+                    <div class="relative h-48 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg overflow-hidden flex items-center justify-center">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="w-32 h-32 bg-black mix-blend-lighten rounded-full"></div>
+                        </div>
+                        <code class="relative z-10 text-white bg-black/50 px-3 py-1 rounded text-sm">mix-blend-lighten</code>
+                    </div>
+
+                    <div class="relative h-48 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg overflow-hidden flex items-center justify-center">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="w-32 h-32 bg-orange-500 mix-blend-color-dodge rounded-full"></div>
+                        </div>
+                        <code class="relative z-10 text-white bg-black/50 px-3 py-1 rounded text-sm">mix-blend-color-dodge</code>
+                    </div>
+
+                    <div class="relative h-48 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg overflow-hidden flex items-center justify-center">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="w-32 h-32 bg-cyan-400 mix-blend-color-burn rounded-full"></div>
+                        </div>
+                        <code class="relative z-10 text-white bg-black/50 px-3 py-1 rounded text-sm">mix-blend-color-burn</code>
+                    </div>
+
+                    <div class="relative h-48 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg overflow-hidden flex items-center justify-center">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="w-32 h-32 bg-green-400 mix-blend-difference rounded-full"></div>
+                        </div>
+                        <code class="relative z-10 text-white bg-black/50 px-3 py-1 rounded text-sm">mix-blend-difference</code>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ejemplo práctico -->
+            <div>
+                <h3 class="text-2xl font-semibold mb-4 text-slate-300">Ejemplo Práctico: Texto con Blend Mode</h3>
+                <div class="relative h-64 bg-comida bg-cover bg-center rounded-lg overflow-hidden flex items-center justify-center">
+                    <h2 class="text-8xl font-bold text-white mix-blend-difference">TEXTO</h2>
+                </div>
+                <code class="block mt-3 text-amber-300">text-white mix-blend-difference</code>
+                <p class="text-slate-400 text-sm mt-2">El texto invierte los colores de la imagen detrás</p>
+            </div>
+        </div>
+    </section>
+
+    <hr class="border-slate-700 mb-20">
+
+    <!-- ========================================
+         BACKGROUND BLEND MODE
+         ======================================== -->
+    <section class="p-8 max-w-7xl mx-auto mb-20">
+        <h2 class="text-4xl font-bold mb-6 text-blue-400">🖼️ Background Blend Mode</h2>
+        <p class="text-slate-400 mb-6">
+            Mezcla múltiples fondos (imagen + color) en un mismo elemento
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="relative h-48 bg-hero bg-cover bg-center rounded-lg overflow-hidden">
+                <div class="absolute inset-0 bg-blue-500 bg-blend-normal opacity-50"></div>
+                <div class="relative h-full flex items-center justify-center">
+                    <code class="text-white bg-black/60 px-3 py-1 rounded text-sm">bg-blend-normal</code>
+                </div>
+            </div>
+
+            <div class="relative h-48 bg-hero bg-cover bg-center rounded-lg overflow-hidden">
+                <div class="absolute inset-0 bg-purple-600 bg-blend-multiply"></div>
+                <div class="relative h-full flex items-center justify-center">
+                    <code class="text-white bg-black/60 px-3 py-1 rounded text-sm">bg-blend-multiply</code>
+                </div>
+            </div>
+
+            <div class="relative h-48 bg-hero bg-cover bg-center rounded-lg overflow-hidden">
+                <div class="absolute inset-0 bg-cyan-400 bg-blend-screen"></div>
+                <div class="relative h-full flex items-center justify-center">
+                    <code class="text-white bg-black/60 px-3 py-1 rounded text-sm">bg-blend-screen</code>
+                </div>
+            </div>
+
+            <div class="relative h-48 bg-hero bg-cover bg-center rounded-lg overflow-hidden">
+                <div class="absolute inset-0 bg-orange-500 bg-blend-overlay"></div>
+                <div class="relative h-full flex items-center justify-center">
+                    <code class="text-white bg-black/60 px-3 py-1 rounded text-sm">bg-blend-overlay</code>
+                </div>
+            </div>
+
+            <div class="relative h-48 bg-hero bg-cover bg-center rounded-lg overflow-hidden">
+                <div class="absolute inset-0 bg-pink-500 bg-blend-darken"></div>
+                <div class="relative h-full flex items-center justify-center">
+                    <code class="text-white bg-black/60 px-3 py-1 rounded text-sm">bg-blend-darken</code>
+                </div>
+            </div>
+
+            <div class="relative h-48 bg-hero bg-cover bg-center rounded-lg overflow-hidden">
+                <div class="absolute inset-0 bg-yellow-300 bg-blend-lighten"></div>
+                <div class="relative h-full flex items-center justify-center">
+                    <code class="text-slate-900 bg-white/60 px-3 py-1 rounded text-sm">bg-blend-lighten</code>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr class="border-slate-700 mb-20">
+
+    <!-- ========================================
+         EFECTOS INTERACTIVOS CON HOVER
+         ======================================== -->
+    <section class="p-8 max-w-7xl mx-auto mb-20">
+        <h2 class="text-4xl font-bold mb-6 text-blue-400">🎮 Efectos Interactivos con Hover</h2>
+        <p class="text-slate-400 mb-6">
+            Combina efectos con estados hover para crear interacciones atractivas
+        </p>
+
+        <div class="space-y-12">
+            <!-- Hover con sombras -->
+            <div>
+                <h3 class="text-2xl font-semibold mb-4 text-slate-300">Hover con Sombras</h3>
+                <div class="bg-slate-200 p-8 rounded-lg">
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div class="bg-white p-8 rounded-lg shadow hover:shadow-xl transition-shadow duration-300 cursor-pointer">
+                            <h4 class="text-slate-900 font-bold mb-2">Tarjeta 1</h4>
+                            <p class="text-slate-600 text-sm">Hover para ver el efecto de sombra</p>
+                            <code class="text-xs text-amber-600">hover:shadow-xl</code>
+                        </div>
+
+                        <div class="bg-white p-8 rounded-lg shadow hover:shadow-2xl hover:shadow-blue-500/50 transition-all duration-300 cursor-pointer">
+                            <h4 class="text-slate-900 font-bold mb-2">Tarjeta 2</h4>
+                            <p class="text-slate-600 text-sm">Sombra de color al hover</p>
+                            <code class="text-xs text-amber-600">hover:shadow-blue-500/50</code>
+                        </div>
+
+                        <div class="bg-gradient-to-br from-purple-500 to-pink-500 p-8 rounded-lg shadow-lg hover:shadow-2xl hover:shadow-purple-500/50 transition-all duration-300 cursor-pointer">
+                            <h4 class="text-white font-bold mb-2">Tarjeta 3</h4>
+                            <p class="text-white text-sm">Gradiente + sombra color</p>
+                            <code class="text-xs text-yellow-200">hover:shadow-purple-500/50</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hover con opacity -->
+            <div>
+                <h3 class="text-2xl font-semibold mb-4 text-slate-300">Hover con Opacity</h3>
+                <div class="bg-slate-200 p-8 rounded-lg">
+                    <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                        <div class="bg-blue-500 p-8 rounded-lg hover:opacity-80 transition-opacity duration-300 cursor-pointer flex items-center justify-center">
+                            <span class="text-white font-bold text-center">Hover<br>opacity-80</span>
+                        </div>
+
+                        <div class="bg-green-500 p-8 rounded-lg hover:opacity-60 transition-opacity duration-300 cursor-pointer flex items-center justify-center">
+                            <span class="text-white font-bold text-center">Hover<br>opacity-60</span>
+                        </div>
+
+                        <div class="bg-orange-500 p-8 rounded-lg hover:opacity-40 transition-opacity duration-300 cursor-pointer flex items-center justify-center">
+                            <span class="text-white font-bold text-center">Hover<br>opacity-40</span>
+                        </div>
+
+                        <div class="bg-pink-500 p-8 rounded-lg opacity-60 hover:opacity-100 transition-opacity duration-300 cursor-pointer flex items-center justify-center">
+                            <span class="text-white font-bold text-center">Opaco<br>al hover</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Botones con efectos -->
+            <div>
+                <h3 class="text-2xl font-semibold mb-4 text-slate-300">Botones con Efectos Combinados</h3>
+                <div class="flex flex-wrap gap-4">
+                    <button class="px-6 py-3 bg-blue-500 text-white rounded-lg shadow-md hover:shadow-xl hover:shadow-blue-500/50 hover:-translate-y-1 transition-all duration-300">
+                        Elevación + Sombra
+                    </button>
+
+                    <button class="px-6 py-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-lg shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300">
+                        Scale + Sombra
+                    </button>
+
+                    <button class="px-6 py-3 bg-green-500 text-white rounded-lg shadow-md hover:opacity-80 hover:shadow-lg transition-all duration-300">
+                        Opacity + Sombra
+                    </button>
+
+                    <button class="px-6 py-3 bg-orange-500 text-white rounded-full shadow-lg hover:shadow-2xl hover:shadow-orange-500/50 hover:scale-110 transition-all duration-300">
+                        Botón Píldora
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr class="border-slate-700 mb-20">
+
+    <!-- ========================================
+         CONSEJOS Y MEJORES PRÁCTICAS
+         ======================================== -->
+    <section class="p-8 max-w-7xl mx-auto mb-20">
+        <h2 class="text-4xl font-bold mb-6 text-blue-400">💡 Consejos y Mejores Prácticas</h2>
+        
+        <div class="space-y-6">
+            <div class="bg-emerald-900/20 border-l-4 border-emerald-500 p-6 rounded">
+                <h3 class="text-xl font-bold text-emerald-400 mb-2">💫 Sombras sutiles son más elegantes</h3>
+                <p class="text-slate-300">
+                    Para interfaces profesionales, usa sombras sutiles (shadow-sm, shadow-md). 
+                    Guarda shadow-2xl para elementos flotantes importantes como modales o menús.
+                </p>
+            </div>
+
+            <div class="bg-blue-900/20 border-l-4 border-blue-500 p-6 rounded">
+                <h3 class="text-xl font-bold text-blue-400 mb-2">🎨 Sombras de color para destacar</h3>
+                <p class="text-slate-300">
+                    Las sombras de color (shadow-blue-500/50) son excelentes para CTAs (Call To Action) 
+                    y elementos que quieres destacar. Úsalas con moderación para mayor impacto.
+                </p>
+            </div>
+
+            <div class="bg-purple-900/20 border-l-4 border-purple-500 p-6 rounded">
+                <h3 class="text-xl font-bold text-purple-400 mb-2">⚡ Transiciones suaves</h3>
+                <p class="text-slate-300">
+                    Siempre combina efectos con <code class="bg-slate-950 px-2 py-1 rounded">transition-all duration-300</code> 
+                    para que los cambios en hover sean suaves y agradables.
+                </p>
+            </div>
+
+            <div class="bg-amber-900/20 border-l-4 border-amber-500 p-6 rounded">
+                <h3 class="text-xl font-bold text-amber-400 mb-2">🎭 Usa opacity para overlays</h3>
+                <p class="text-slate-300">
+                    Para overlays sobre imágenes, usa <code class="bg-slate-950 px-2 py-1 rounded">bg-black/60</code> 
+                    en lugar de <code class="bg-slate-950 px-2 py-1 rounded">opacity-60</code> 
+                    para que el texto permanezca legible.
+                </p>
+            </div>
+
+            <div class="bg-pink-900/20 border-l-4 border-pink-500 p-6 rounded">
+                <h3 class="text-xl font-bold text-pink-400 mb-2">🌈 Blend modes para efectos creativos</h3>
+                <p class="text-slate-300">
+                    Los blend modes son geniales para efectos creativos en encabezados, hero sections 
+                    e imágenes. Experimenta con multiply, screen y overlay.
+                </p>
+            </div>
+
+            <div class="bg-red-900/20 border-l-4 border-red-500 p-6 rounded">
+                <h3 class="text-xl font-bold text-red-400 mb-2">⚠️ Accesibilidad con opacity</h3>
+                <p class="text-slate-300">
+                    No uses opacity en elementos interactivos importantes (botones, enlaces) 
+                    ya que puede dificultar su visualización. Si necesitas transparencia, usa color/opacity.
+                </p>
+            </div>
+
+            <div class="bg-cyan-900/20 border-l-4 border-cyan-500 p-6 rounded">
+                <h3 class="text-xl font-bold text-cyan-400 mb-2">🎯 Jerarquía con sombras</h3>
+                <p class="text-slate-300">
+                    Usa diferentes tamaños de sombra para crear jerarquía visual:<br>
+                    • Cards normales: shadow-md<br>
+                    • Cards activas: shadow-lg<br>
+                    • Modales: shadow-2xl
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <hr class="border-slate-700 mb-20">
+
+    <!-- ========================================
+         TABLA DE REFERENCIA
+         ======================================== -->
+    <section class="p-8 max-w-7xl mx-auto mb-20">
+        <h2 class="text-4xl font-bold mb-6 text-blue-400">📋 Tabla de Referencia Rápida</h2>
+        
+        <div class="overflow-x-auto">
+            <table class="w-full bg-slate-800 rounded-lg overflow-hidden">
+                <thead class="bg-slate-700">
+                    <tr>
+                        <th class="p-4 text-left text-emerald-400">Categoría</th>
+                        <th class="p-4 text-left text-emerald-400">Clase</th>
+                        <th class="p-4 text-left text-emerald-400">Descripción</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-slate-700">
+                    <tr>
+                        <td class="p-4 font-bold text-blue-400">Box Shadow</td>
+                        <td class="p-4 font-mono text-amber-300">shadow-{size}</td>
+                        <td class="p-4">sm, (base), md, lg, xl, 2xl, inner, none</td>
+                    </tr>
+                    <tr>
+                        <td class="p-4 font-bold text-blue-400">Shadow Color</td>
+                        <td class="p-4 font-mono text-amber-300">shadow-{color}/{opacity}</td>
+                        <td class="p-4">shadow-blue-500/50</td>
+                    </tr>
+                    <tr>
+                        <td class="p-4 font-bold text-blue-400">Opacity</td>
+                        <td class="p-4 font-mono text-amber-300">opacity-{value}</td>
+                        <td class="p-4">0, 5, 10, 20, 25, 30, 40, 50, 60, 70, 75, 80, 90, 95, 100</td>
+                    </tr>
+                    <tr>
+                        <td class="p-4 font-bold text-blue-400">Mix Blend</td>
+                        <td class="p-4 font-mono text-amber-300">mix-blend-{mode}</td>
+                        <td class="p-4">normal, multiply, screen, overlay, darken, lighten, etc.</td>
+                    </tr>
+                    <tr>
+                        <td class="p-4 font-bold text-blue-400">BG Blend</td>
+                        <td class="p-4 font-mono text-amber-300">bg-blend-{mode}</td>
+                        <td class="p-4">normal, multiply, screen, overlay, darken, lighten</td>
+                    </tr>
+                    <tr>
+                        <td class="p-4 font-bold text-blue-400">Drop Shadow</td>
+                        <td class="p-4 font-mono text-amber-300">drop-shadow-{size}</td>
+                        <td class="p-4">sm, (base), md, lg, xl, 2xl, none</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center text-slate-500 text-sm py-12 bg-slate-950">
+        <p class="text-2xl mb-4">🎉 ¡Ahora dominas los efectos en Tailwind CSS!</p>
+        <p>📚 Archivo de estudio - Efectos en Tailwind CSS v4</p>
+        <p class="mt-2">Para más información: 
+            <a href="https://tailwindcss.com/docs/box-shadow" class="text-blue-400 hover:text-blue-300">Documentación oficial</a>
+        </p>
+        <p class="mt-4 text-emerald-400">✨ Los efectos dan profundidad y vida a tus diseños</p>
+    </footer>
+
+</body>
+</html>

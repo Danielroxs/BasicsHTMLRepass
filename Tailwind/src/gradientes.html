@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../public/estilos.css">
+    <title>Gradientes - Tailwind CSS</title>
+</head>
+<body class="bg-slate-900 text-slate-300">
+    
+    <!-- ========================================
+         INTRODUCCIÓN A GRADIENTES
+         ======================================== -->
+    <section class="p-8 max-w-7xl mx-auto mb-20">
+        <h1 class="text-5xl font-bold mb-4 text-blue-400">🌈 Gradientes en Tailwind CSS</h1>
+        <p class="text-lg text-slate-400 mb-4">
+            Los gradientes permiten crear transiciones suaves entre colores, añadiendo profundidad y modernidad a tus diseños
+        </p>
+        <div class="bg-slate-800 p-6 rounded-lg">
+            <h3 class="text-xl font-semibold mb-3 text-slate-300">Componentes de un Gradiente</h3>
+            <ul class="space-y-2 text-slate-400">
+                <li>• <strong class="text-emerald-400">Dirección:</strong> bg-gradient-to-{direction} (r, l, t, b, br, bl, tr, tl)</li>
+                <li>• <strong class="text-emerald-400">Color inicial:</strong> from-{color}-{intensity}</li>
+                <li>• <strong class="text-emerald-400">Color intermedio:</strong> via-{color}-{intensity} (opcional)</li>
+                <li>• <strong class="text-emerald-400">Color final:</strong> to-{color}-{intensity}</li>
+                <li>• <strong class="text-emerald-400">Posiciones personalizadas:</strong> from-30%, via-60%, to-90%</li>
+            </ul>
+        </div>
+
+        <div class="mt-6 p-4 bg-blue-900/20 border-l-4 border-blue-500 rounded">
+            <p class="text-blue-200">
+                <strong>💡 Estructura básica:</strong><br>
+                <code class="bg-slate-950 px-2 py-1 rounded text-amber-300">
+                    bg-gradient-to-{dir} from-{color} to-{color}
+                </code>
+            </p>
+        </div>
+    </section>
+
+    <hr class="border-slate-700 mb-20">
+
+    <!-- ========================================
+         COMPARACIÓN: COLOR SÓLIDO VS GRADIENTE
+         ======================================== -->
+    <section class="p-8 max-w-7xl mx-auto mb-20">
+        <h2 class="text-4xl font-bold mb-6 text-blue-400">🎨 Color Sólido vs Gradiente</h2>
+        <p class="text-slate-400 mb-6">Observa la diferencia entre un color sólido y un gradiente</p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+                <div class="h-40 bg-red-500 flex items-center justify-center rounded-lg">
+                    <code class="text-white text-lg bg-black/50 px-4 py-2 rounded">bg-red-500 (sólido)</code>
+                </div>
+                <p class="text-slate-400 text-center mt-2">Color uniforme sin transición</p>
+            </div>
+            <div>
+                <div class="h-40 bg-gradient-to-r from-red-500 to-pink-500 flex items-center justify-center rounded-lg">
+                    <code class="text-white text-lg bg-black/50 px-4 py-2 rounded">bg-gradient-to-r from-red-500 to-pink-500</code>
+                </div>
+                <p class="text-slate-400 text-center mt-2">Transición suave entre colores</p>
+            </div>
+        </div>
+    </section>
+
+    <hr class="border-slate-700 mb-20">
+
+    <!-- ========================================
+         DIRECCIONES DE GRADIENTES
+         ======================================== -->
+    <section class="p-8 max-w-7xl mx-auto mb-20">
+        <h2 class="text-4xl font-bold mb-6 text-blue-400">🧭 Direcciones de Gradientes</h2>
+        <p class="text-slate-400 mb-6">
+            Tailwind ofrece 8 direcciones para tus gradientes lineales
+        </p>
+
+        <!-- Direcciones cardinales -->
+        <div class="mb-8">
+            <h3 class="text-2xl font-semibold mb-4 text-slate-300">Direcciones Cardinales (Principales)</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                    <div class="h-48 bg-gradient-to-r from-red-500 to-blue-600 flex items-center justify-center rounded-lg">
+                        <div class="text-center bg-black/60 px-6 py-3 rounded">
+                            <code class="text-white text-lg block mb-1">bg-gradient-to-r</code>
+                            <p class="text-slate-300 text-sm">Izquierda → Derecha</p>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="h-48 bg-gradient-to-l from-purple-500 to-pink-500 flex items-center justify-center rounded-lg">
+                        <div class="text-center bg-black/60 px-6 py-3 rounded">
+                            <code class="text-white text-lg block mb-1">bg-gradient-to-l</code>
+                            <p class="text-slate-300 text-sm">Derecha → Izquierda</p>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="h-48 bg-gradient-to-b from-cyan-500 to-blue-600 flex items-center justify-center rounded-lg">
+                        <div class="text-center bg-black/60 px-6 py-3 rounded">
+                            <code class="text-white text-lg block mb-1">bg-gradient-to-b</code>
+                            <p class="text-slate-300 text-sm">Arriba → Abajo</p>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="h-48 bg-gradient-to-t from-orange-500 to-yellow-400 flex items-center justify-center rounded-lg">
+                        <div class="text-center bg-black/60 px-6 py-3 rounded">
+                            <code class="text-white text-lg block mb-1">bg-gradient-to-t</code>
+                            <p class="text-slate-300 text-sm">Abajo → Arriba</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Direcciones diagonales -->
+        <div class="mb-8">
+            <h3 class="text-2xl font-semibold mb-4 text-slate-300">Direcciones Diagonales</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                    <div class="h-48 bg-gradient-to-br from-green-400 to-blue-500 flex items-center justify-center rounded-lg">
+                        <div class="text-center bg-black/60 px-6 py-3 rounded">
+                            <code class="text-white text-lg block mb-1">bg-gradient-to-br</code>
+                            <p class="text-slate-300 text-sm">↘ Abajo-Derecha</p>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="h-48 bg-gradient-to-bl from-violet-500 to-purple-600 flex items-center justify-center rounded-lg">
+                        <div class="text-center bg-black/60 px-6 py-3 rounded">
+                            <code class="text-white text-lg block mb-1">bg-gradient-to-bl</code>
+                            <p class="text-slate-300 text-sm">↙ Abajo-Izquierda</p>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="h-48 bg-gradient-to-tr from-pink-500 to-rose-500 flex items-center justify-center rounded-lg">
+                        <div class="text-center bg-black/60 px-6 py-3 rounded">
+                            <code class="text-white text-lg block mb-1">bg-gradient-to-tr</code>
+                            <p class="text-slate-300 text-sm">↗ Arriba-Derecha</p>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="h-48 bg-gradient-to-tl from-amber-500 to-orange-500 flex items-center justify-center rounded-lg">
+                        <div class="text-center bg-black/60 px-6 py-3 rounded">
+                            <code class="text-white text-lg block mb-1">bg-gradient-to-tl</code>
+                            <p class="text-slate-300 text-sm">↖ Arriba-Izquierda</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr class="border-slate-700 mb-20">
+
+    <!-- ========================================
+         GRADIENTES BÁSICOS (FROM-TO)
+         ======================================== -->
+    <section class="p-8 max-w-7xl mx-auto mb-20">
+        <h2 class="text-4xl font-bold mb-6 text-blue-400">🎯 Gradientes Básicos (from-to)</h2>
+        <p class="text-slate-400 mb-6">
+            La forma más simple: solo color inicial y final
+        </p>
+
+        <div class="space-y-6">
+            <!-- Solo FROM (sin TO) -->
+            <div>
+                <h3 class="text-xl font-semibold mb-3 text-slate-300">⚠️ Solo FROM (sin TO)</h3>
+                <div class="h-40 bg-gradient-to-r from-red-500 flex items-center justify-center rounded-lg border-4 border-yellow-500">
+                    <code class="text-white text-lg bg-black/60 px-4 py-2 rounded">bg-gradient-to-r from-red-500</code>
+                </div>
+                <p class="text-yellow-300 mt-2 text-sm">
+                    ⚠️ Sin <code class="bg-slate-950 px-2 py-1 rounded">to-</code>, el gradiente va de rojo a transparente
+                </p>
+            </div>
+
+            <!-- FROM + TO -->
+            <div>
+                <h3 class="text-xl font-semibold mb-3 text-slate-300">✅ FROM + TO (Correcto)</h3>
+                <div class="h-40 bg-gradient-to-r from-red-500 to-blue-600 flex items-center justify-center rounded-lg">
+                    <code class="text-white text-lg bg-black/60 px-4 py-2 rounded">bg-gradient-to-r from-red-500 to-blue-600</code>
+                </div>
+                <p class="text-emerald-300 mt-2 text-sm">
+                    ✅ Con <code class="bg-slate-950 px-2 py-1 rounded">to-</code>, el gradiente va de rojo a azul
+                </p>
+            </div>
+
+            <!-- Ejemplos variados -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8">
+                <div>
+                    <div class="h-32 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg"></div>
+                    <code class="block mt-2 text-amber-300 text-sm text-center">from-purple-500 to-pink-500</code>
+                </div>
+                <div>
+                    <div class="h-32 bg-gradient-to-r from-green-400 to-cyan-500 rounded-lg"></div>
+                    <code class="block mt-2 text-amber-300 text-sm text-center">from-green-400 to-cyan-500</code>
+                </div>
+                <div>
+                    <div class="h-32 bg-gradient-to-b from-yellow-300 to-orange-500 rounded-lg"></div>
+                    <code class="block mt-2 text-amber-300 text-sm text-center">from-yellow-300 to-orange-500</code>
+                </div>
+                <div>
+                    <div class="h-32 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-lg"></div>
+                    <code class="block mt-2 text-amber-300 text-sm text-center">from-indigo-500 to-purple-600</code>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr class="border-slate-700 mb-20">
+
+    <!-- ========================================
+         GRADIENTES CON VIA (TRES COLORES)
+         ======================================== -->
+    <section class="p-8 max-w-7xl mx-auto mb-20">
+        <h2 class="text-4xl font-bold mb-6 text-blue-400">🌟 Gradientes con VIA (Tres Colores)</h2>
+        <p class="text-slate-400 mb-6">
+            Usa <code class="bg-slate-950 px-2 py-1 rounded text-amber-300">via-</code> para añadir un color intermedio
+        </p>
+
+        <div class="mb-8 p-4 bg-emerald-900/20 border-l-4 border-emerald-500 rounded">
+            <p class="text-emerald-200">
+                <strong>💡 Sintaxis:</strong><br>
+                <code class="bg-slate-950 px-2 py-1 rounded text-amber-300">
+                    bg-gradient-to-r from-{inicio} via-{medio} to-{final}
+                </code>
+            </p>
+        </div>
+
+        <div class="space-y-6">
+            <!-- Ejemplo básico con VIA -->
+            <div>
+                <h3 class="text-xl font-semibold mb-3 text-slate-300">Tres Colores Básico</h3>
+                <div class="h-40 bg-gradient-to-r from-red-500 via-green-500 to-blue-600 flex items-center justify-center rounded-lg">
+                    <code class="text-white text-lg bg-black/60 px-4 py-2 rounded">from-red-500 via-green-500 to-blue-600</code>
+                </div>
+                <p class="text-slate-400 mt-2 text-sm">Rojo → Verde (centro) → Azul</p>
+            </div>
+
+            <!-- Ejemplos variados -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                    <div class="h-48 bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 rounded-lg flex items-center justify-center">
+                        <div class="text-center bg-black/60 px-4 py-2 rounded">
+                            <code class="text-white text-sm">from-pink via-purple to-indigo</code>
+                        </div>
+                    </div>
+                    <p class="text-slate-400 text-center mt-2 text-sm">Gradiente Mágico</p>
+                </div>
+                <div>
+                    <div class="h-48 bg-gradient-to-r from-green-400 via-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
+                        <div class="text-center bg-black/60 px-4 py-2 rounded">
+                            <code class="text-white text-sm">from-green via-blue to-purple</code>
+                        </div>
+                    </div>
+                    <p class="text-slate-400 text-center mt-2 text-sm">Arcoíris Fresco</p>
+                </div>
+                <div>
+                    <div class="h-48 bg-gradient-to-b from-yellow-200 via-orange-400 to-red-600 rounded-lg flex items-center justify-center">
+                        <div class="text-center bg-black/60 px-4 py-2 rounded">
+                            <code class="text-white text-sm">from-yellow via-orange to-red</code>
+                        </div>
+                    </div>
+                    <p class="text-slate-400 text-center mt-2 text-sm">Atardecer Cálido</p>
+                </div>
+                <div>
+                    <div class="h-48 bg-gradient-to-br from-cyan-400 via-blue-500 to-indigo-600 rounded-lg flex items-center justify-center">
+                        <div class="text-center bg-black/60 px-4 py-2 rounded">
+                            <code class="text-white text-sm">from-cyan via-blue to-indigo</code>
+                        </div>
+                    </div>
+                    <p class="text-slate-400 text-center mt-2 text-sm">Océano Profundo</p>
+                </div>
+            </div>
+
+            <!-- Múltiples VIA -->
+            <div class="mt-12">
+                <h3 class="text-xl font-semibold mb-3 text-slate-300">⚠️ Nota: Solo un VIA por gradiente</h3>
+                <div class="p-4 bg-yellow-900/20 border-l-4 border-yellow-500 rounded">
+                    <p class="text-yellow-200">
+                        Tailwind solo soporta <strong>un color via</strong> por gradiente. Para más colores, 
+                        necesitas usar posiciones personalizadas o CSS puro.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr class="border-slate-700 mb-20">
+
+    <!-- ========================================
+         POSICIONES PERSONALIZADAS
+         ======================================== -->
+    <section class="p-8 max-w-7xl mx-auto mb-20">
+        <h2 class="text-4xl font-bold mb-6 text-blue-400">📍 Posiciones Personalizadas</h2>
+        <p class="text-slate-400 mb-6">
+            Controla exactamente dónde empieza y termina cada color usando porcentajes
+        </p>
+
+        <div class="mb-8 p-4 bg-purple-900/20 border-l-4 border-purple-500 rounded">
+            <p class="text-purple-200">
+                <strong>💡 Sintaxis:</strong><br>
+                <code class="bg-slate-950 px-2 py-1 rounded text-amber-300">
+                    from-{color} from-{%} via-{color} via-{%} to-{color} to-{%}
+                </code>
+            </p>
+        </div>
+
+        <div class="space-y-8">
+            <!-- Sin posiciones (por defecto) -->
+            <div>
+                <h3 class="text-xl font-semibold mb-3 text-slate-300">Sin Posiciones Personalizadas (Por Defecto)</h3>
+                <div class="h-32 bg-gradient-to-r from-red-500 via-green-500 to-blue-600 rounded-lg flex items-center justify-center">
+                    <code class="text-white bg-black/60 px-4 py-2 rounded text-sm">from-red-500 via-green-500 to-blue-600</code>
+                </div>
+                <p class="text-slate-400 mt-2 text-sm">
+                    Por defecto: from (0%), via (50%), to (100%)
+                </p>
+            </div>
+
+            <!-- Con posiciones personalizadas -->
+            <div>
+                <h3 class="text-xl font-semibold mb-3 text-slate-300">Con Posiciones Personalizadas</h3>
+                <div class="h-32 bg-gradient-to-r from-green-500 from-30% via-orange-500 via-60% to-blue-500 to-70% rounded-lg flex items-center justify-center">
+                    <code class="text-white bg-black/60 px-4 py-2 rounded text-sm">from-green-500 from-30% via-orange-500 via-60% to-blue-500 to-70%</code>
+                </div>
+                <p class="text-slate-400 mt-2 text-sm">
+                    Verde hasta 30%, naranja en 60%, azul en 70%
+                </p>
+            </div>
+
+            <!-- Más ejemplos -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                    <div class="h-40 bg-gradient-to-r from-purple-500 from-10% to-pink-500 to-90% rounded-lg"></div>
+                    <code class="block mt-2 text-amber-300 text-sm text-center">from-10% to-90%</code>
+                    <p class="text-slate-400 text-center text-xs mt-1">Transición concentrada en el centro</p>
+                </div>
+                <div>
+                    <div class="h-40 bg-gradient-to-r from-blue-500 from-0% to-cyan-500 to-50% rounded-lg"></div>
+                    <code class="block mt-2 text-amber-300 text-sm text-center">from-0% to-50%</code>
+                    <p class="text-slate-400 text-center text-xs mt-1">Gradiente en la primera mitad</p>
+                </div>
+                <div>
+                    <div class="h-40 bg-gradient-to-r from-yellow-400 from-40% via-orange-500 via-70% to-red-600 to-80% rounded-lg"></div>
+                    <code class="block mt-2 text-amber-300 text-sm text-center">from-40% via-70% to-80%</code>
+                    <p class="text-slate-400 text-center text-xs mt-1">Control preciso de cada color</p>
+                </div>
+                <div>
+                    <div class="h-40 bg-gradient-to-r from-indigo-500 from-20% to-purple-600 to-80% rounded-lg"></div>
+                    <code class="block mt-2 text-amber-300 text-sm text-center">from-20% to-80%</code>
+                    <p class="text-slate-400 text-center text-xs mt-1">Transición suave extendida</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-8 p-4 bg-blue-900/20 border-l-4 border-blue-500 rounded">
+            <p class="text-blue-200">
+                <strong>💡 Tip:</strong> Las posiciones personalizadas son útiles para crear efectos como:
+            </p>
+            <ul class="list-disc list-inside text-blue-200 mt-2 space-y-1">
+                <li>Gradientes asimétricos</li>
+                <li>Transiciones abruptas o suaves</li>
+                <li>Concentrar colores en zonas específicas</li>
+                <li>Efectos de iluminación o sombras</li>
+            </ul>
+        </div>
+    </section>
+
+    <hr class="border-slate-700 mb-20">
+
+    <!-- ========================================
+         GRADIENTES POPULARES PARA WEB
+         ======================================== -->
+    <section class="p-8 max-w-7xl mx-auto mb-20">
+        <h2 class="text-4xl font-bold mb-6 text-blue-400">🔥 Gradientes Populares para Web</h2>
+        <p class="text-slate-400 mb-6">
+            Combinaciones de colores probadas y atractivas para tus proyectos
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Gradiente 1 -->
+            <div class="h-64 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-lg flex items-center justify-center p-4">
+                <div class="text-center bg-black/60 px-4 py-3 rounded">
+                    <p class="text-white font-bold text-xl mb-2">🌊 Océano Fresco</p>
+                    <code class="text-xs text-slate-300">from-cyan-500 to-blue-500</code>
+                </div>
+            </div>
+
+            <!-- Gradiente 2 -->
+            <div class="h-64 bg-gradient-to-br from-pink-400 via-purple-400 to-indigo-600 rounded-lg flex items-center justify-center p-4">
+                <div class="text-center bg-black/60 px-4 py-3 rounded">
+                    <p class="text-white font-bold text-xl mb-2">🌆 Atardecer Mágico</p>
+                    <code class="text-xs text-slate-300">from-pink-400 via-purple-400 to-indigo-600</code>
+                </div>
+            </div>
+
+            <!-- Gradiente 3 -->
+            <div class="h-64 bg-gradient-to-r from-orange-400 to-rose-400 rounded-lg flex items-center justify-center p-4">
+                <div class="text-center bg-black/60 px-4 py-3 rounded">
+                    <p class="text-white font-bold text-xl mb-2">🔥 Fuego Cálido</p>
+                    <code class="text-xs text-slate-300">from-orange-400 to-rose-400</code>
+                </div>
+            </div>
+
+            <!-- Gradiente 4 -->
+            <div class="h-64 bg-gradient-to-br from-green-400 to-cyan-500 rounded-lg flex items-center justify-center p-4">
+                <div class="text-center bg-black/60 px-4 py-3 rounded">
+                    <p class="text-white font-bold text-xl mb-2">🌴 Bosque Tropical</p>
+                    <code class="text-xs text-slate-300">from-green-400 to-cyan-500</code>
+                </div>
+            </div>
+
+            <!-- Gradiente 5 -->
+            <div class="h-64 bg-gradient-to-r from-violet-500 to-fuchsia-500 rounded-lg flex items-center justify-center p-4">
+                <div class="text-center bg-black/60 px-4 py-3 rounded">
+                    <p class="text-white font-bold text-xl mb-2">💜 Neón Vibrante</p>
+                    <code class="text-xs text-slate-300">from-violet-500 to-fuchsia-500</code>
+                </div>
+            </div>
+
+            <!-- Gradiente 6 -->
+            <div class="h-64 bg-gradient-to-br from-amber-500 to-pink-500 rounded-lg flex items-center justify-center p-4">
+                <div class="text-center bg-black/60 px-4 py-3 rounded">
+                    <p class="text-white font-bold text-xl mb-2">🍑 Melocotón Dulce</p>
+                    <code class="text-xs text-slate-300">from-amber-500 to-pink-500</code>
+                </div>
+            </div>
+
+            <!-- Gradiente 7 -->
+            <div class="h-64 bg-gradient-to-r from-blue-600 via-cyan-500 to-teal-500 rounded-lg flex items-center justify-center p-4">
+                <div class="text-center bg-black/60 px-4 py-3 rounded">
+                    <p class="text-white font-bold text-xl mb-2">🏔️ Glaciar Azul</p>
+                    <code class="text-xs text-slate-300">from-blue-600 via-cyan-500 to-teal-500</code>
+                </div>
+            </div>
+
+            <!-- Gradiente 8 -->
+            <div class="h-64 bg-gradient-to-br from-red-500 via-orange-500 to-yellow-500 rounded-lg flex items-center justify-center p-4">
+                <div class="text-center bg-black/60 px-4 py-3 rounded">
+                    <p class="text-white font-bold text-xl mb-2">🌅 Amanecer Brillante</p>
+                    <code class="text-xs text-slate-300">from-red-500 via-orange-500 to-yellow-500</code>
+                </div>
+            </div>
+
+            <!-- Gradiente 9 -->
+            <div class="h-64 bg-gradient-to-r from-slate-900 to-slate-700 rounded-lg flex items-center justify-center p-4">
+                <div class="text-center bg-black/60 px-4 py-3 rounded">
+                    <p class="text-white font-bold text-xl mb-2">🌑 Noche Oscura</p>
+                    <code class="text-xs text-slate-300">from-slate-900 to-slate-700</code>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr class="border-slate-700 mb-20">
+
+    <!-- ========================================
+         GRADIENTES EN TEXTO
+         ======================================== -->
+    <section class="p-8 max-w-7xl mx-auto mb-20">
+        <h2 class="text-4xl font-bold mb-6 text-blue-400">✨ Gradientes en Texto</h2>
+        <p class="text-slate-400 mb-6">
+            Aplica gradientes a texto usando <code class="bg-slate-950 px-2 py-1 rounded">bg-clip-text</code> 
+            y <code class="bg-slate-950 px-2 py-1 rounded">text-transparent</code>
+        </p>
+
+        <div class="mb-8 p-4 bg-emerald-900/20 border-l-4 border-emerald-500 rounded">
+            <p class="text-emerald-200 mb-2">
+                <strong>💡 Sintaxis para texto con gradiente:</strong>
+            </p>
+            <code class="block bg-slate-950 p-3 rounded text-amber-300 text-sm">
+                &lt;h1 class="bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent"&gt;<br>
+                &nbsp;&nbsp;Tu texto aquí<br>
+                &lt;/h1&gt;
+            </code>
+        </div>
+
+        <div class="space-y-8">
+            <div class="text-center">
+                <h2 class="text-7xl font-bold bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent">
+                    Texto con Gradiente
+                </h2>
+                <code class="block mt-4 text-amber-300 text-sm">from-blue-500 to-purple-600</code>
+            </div>
+
+            <div class="text-center">
+                <h2 class="text-6xl font-bold bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 bg-clip-text text-transparent">
+                    Efecto Arcoíris
+                </h2>
+                <code class="block mt-4 text-amber-300 text-sm">from-pink-500 via-purple-500 to-indigo-500</code>
+            </div>
+
+            <div class="text-center">
+                <h2 class="text-6xl font-bold bg-gradient-to-br from-green-400 to-cyan-500 bg-clip-text text-transparent">
+                    Frescura Verde
+                </h2>
+                <code class="block mt-4 text-amber-300 text-sm">from-green-400 to-cyan-500</code>
+            </div>
+
+            <div class="text-center">
+                <h2 class="text-6xl font-bold bg-gradient-to-r from-orange-500 via-red-500 to-pink-500 bg-clip-text text-transparent">
+                    Fuego Ardiente
+                </h2>
+                <code class="block mt-4 text-amber-300 text-sm">from-orange-500 via-red-500 to-pink-500</code>
+            </div>
+        </div>
+
+        <div class="mt-8 p-4 bg-yellow-900/20 border-l-4 border-yellow-500 rounded">
+            <p class="text-yellow-200">
+                <strong>⚠️ Compatibilidad:</strong> Los gradientes en texto funcionan en navegadores modernos. 
+                Considera un color de respaldo para navegadores antiguos.
+            </p>
+        </div>
+    </section>
+
+    <hr class="border-slate-700 mb-20">
+
+    <!-- ========================================
+         GRADIENTES CON OPACIDAD
+         ======================================== -->
+    <section class="p-8 max-w-7xl mx-auto mb-20">
+        <h2 class="text-4xl font-bold mb-6 text-blue-400">🌫️ Gradientes con Opacidad</h2>
+        <p class="text-slate-400 mb-6">
+            Combina gradientes con opacidad para crear efectos de transparencia
+        </p>
+
+        <div class="space-y-6">
+            <!-- Gradiente sobre imagen -->
+            <div class="relative h-64 bg-comida bg-cover bg-center rounded-lg">
+                <div class="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent rounded-lg"></div>
+                <div class="relative h-full flex items-end justify-center p-6">
+                    <div class="text-center text-white">
+                        <p class="text-2xl font-bold mb-2">Gradiente sobre imagen</p>
+                        <code class="text-xs bg-black/60 px-3 py-1 rounded">bg-gradient-to-t from-black via-black/50 to-transparent</code>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Más ejemplos -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="relative h-48 bg-hero bg-cover bg-center rounded-lg">
+                    <div class="absolute inset-0 bg-gradient-to-r from-blue-900/90 to-transparent rounded-lg"></div>
+                    <div class="relative h-full flex items-center justify-start p-6">
+                        <div class="text-white">
+                            <p class="font-bold text-lg">Gradiente lateral</p>
+                            <code class="text-xs">from-blue-900/90</code>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative h-48 bg-hero2 bg-cover bg-center rounded-lg">
+                    <div class="absolute inset-0 bg-gradient-to-b from-transparent via-purple-900/60 to-purple-900/90 rounded-lg"></div>
+                    <div class="relative h-full flex items-end justify-center p-6">
+                        <div class="text-white text-center">
+                            <p class="font-bold text-lg">Gradiente inferior</p>
+                            <code class="text-xs">via-purple-900/60 to-purple-900/90</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-8 p-4 bg-blue-900/20 border-l-4 border-blue-500 rounded">
+            <p class="text-blue-200">
+                <strong>💡 Uso común:</strong> Los gradientes con transparencia son perfectos para overlays sobre imágenes, 
+                asegurando que el texto sea legible sin ocultar completamente la imagen.
+            </p>
+        </div>
+    </section>
+
+    <hr class="border-slate-700 mb-20">
+
+    <!-- ========================================
+         CONSEJOS Y MEJORES PRÁCTICAS
+         ======================================== -->
+    <section class="p-8 max-w-7xl mx-auto mb-20">
+        <h2 class="text-4xl font-bold mb-6 text-blue-400">💡 Consejos y Mejores Prácticas</h2>
+        
+        <div class="space-y-6">
+            <div class="bg-emerald-900/20 border-l-4 border-emerald-500 p-6 rounded">
+                <h3 class="text-xl font-bold text-emerald-400 mb-2">🎨 Usa colores armoniosos</h3>
+                <p class="text-slate-300">
+                    Los mejores gradientes usan colores cercanos en el círculo cromático o variaciones de un mismo color. 
+                    Evita combinar colores muy opuestos a menos que busques un efecto dramático.
+                </p>
+            </div>
+
+            <div class="bg-blue-900/20 border-l-4 border-blue-500 p-6 rounded">
+                <h3 class="text-xl font-bold text-blue-400 mb-2">📐 Las diagonales son más dinámicas</h3>
+                <p class="text-slate-300">
+                    Los gradientes diagonales (to-br, to-tr) suelen verse más modernos y dinámicos que los horizontales o verticales.
+                </p>
+            </div>
+
+            <div class="bg-purple-900/20 border-l-4 border-purple-500 p-6 rounded">
+                <h3 class="text-xl font-bold text-purple-400 mb-2">✨ Gradientes sutiles para fondos</h3>
+                <p class="text-slate-300">
+                    Para fondos de secciones, usa gradientes sutiles con colores cercanos (ej: from-slate-800 to-slate-900) 
+                    para dar profundidad sin distraer.
+                </p>
+            </div>
+
+            <div class="bg-amber-900/20 border-l-4 border-amber-500 p-6 rounded">
+                <h3 class="text-xl font-bold text-amber-400 mb-2">🎯 Gradientes vibrantes para CTAs</h3>
+                <p class="text-slate-300">
+                    Usa gradientes vibrantes en botones de acción (Call To Action) para atraer la atención. 
+                    Combina con <code class="bg-slate-950 px-2 py-1 rounded">hover:</code> para efectos interactivos.
+                </p>
+            </div>
+
+            <div class="bg-pink-900/20 border-l-4 border-pink-500 p-6 rounded">
+                <h3 class="text-xl font-bold text-pink-400 mb-2">🌈 Limita los colores</h3>
+                <p class="text-slate-300">
+                    2-3 colores por gradiente es suficiente. Más colores pueden verse sobrecargados. 
+                    Usa <code class="bg-slate-950 px-2 py-1 rounded">via</code> solo cuando realmente añada valor.
+                </p>
+            </div>
+
+            <div class="bg-red-900/20 border-l-4 border-red-500 p-6 rounded">
+                <h3 class="text-xl font-bold text-red-400 mb-2">⚡ Rendimiento</h3>
+                <p class="text-slate-300">
+                    Los gradientes CSS son ligeros y eficientes. Prefíerelos sobre imágenes para fondos simples 
+                    para mejorar el rendimiento de carga.
+                </p>
+            </div>
+
+            <div class="bg-cyan-900/20 border-l-4 border-cyan-500 p-6 rounded">
+                <h3 class="text-xl font-bold text-cyan-400 mb-2">🎭 Overlays con gradientes</h3>
+                <p class="text-slate-300">
+                    Para imágenes hero, combina un gradiente semitransparente (from-black/80 to-transparent) 
+                    con la imagen de fondo para mejorar la legibilidad del texto.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <hr class="border-slate-700 mb-20">
+
+    <!-- ========================================
+         TABLA DE REFERENCIA
+         ======================================== -->
+    <section class="p-8 max-w-7xl mx-auto mb-20">
+        <h2 class="text-4xl font-bold mb-6 text-blue-400">📋 Tabla de Referencia Rápida</h2>
+        
+        <div class="overflow-x-auto">
+            <table class="w-full bg-slate-800 rounded-lg overflow-hidden">
+                <thead class="bg-slate-700">
+                    <tr>
+                        <th class="p-4 text-left text-emerald-400">Clase</th>
+                        <th class="p-4 text-left text-emerald-400">Descripción</th>
+                        <th class="p-4 text-left text-emerald-400">Ejemplo</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-slate-700">
+                    <tr>
+                        <td class="p-4 font-mono text-amber-300">bg-gradient-to-r</td>
+                        <td class="p-4">Gradiente hacia la derecha</td>
+                        <td class="p-4">→</td>
+                    </tr>
+                    <tr>
+                        <td class="p-4 font-mono text-amber-300">bg-gradient-to-l</td>
+                        <td class="p-4">Gradiente hacia la izquierda</td>
+                        <td class="p-4">←</td>
+                    </tr>
+                    <tr>
+                        <td class="p-4 font-mono text-amber-300">bg-gradient-to-b</td>
+                        <td class="p-4">Gradiente hacia abajo</td>
+                        <td class="p-4">↓</td>
+                    </tr>
+                    <tr>
+                        <td class="p-4 font-mono text-amber-300">bg-gradient-to-t</td>
+                        <td class="p-4">Gradiente hacia arriba</td>
+                        <td class="p-4">↑</td>
+                    </tr>
+                    <tr>
+                        <td class="p-4 font-mono text-amber-300">bg-gradient-to-br</td>
+                        <td class="p-4">Gradiente diagonal abajo-derecha</td>
+                        <td class="p-4">↘</td>
+                    </tr>
+                    <tr>
+                        <td class="p-4 font-mono text-amber-300">bg-gradient-to-bl</td>
+                        <td class="p-4">Gradiente diagonal abajo-izquierda</td>
+                        <td class="p-4">↙</td>
+                    </tr>
+                    <tr>
+                        <td class="p-4 font-mono text-amber-300">bg-gradient-to-tr</td>
+                        <td class="p-4">Gradiente diagonal arriba-derecha</td>
+                        <td class="p-4">↗</td>
+                    </tr>
+                    <tr>
+                        <td class="p-4 font-mono text-amber-300">bg-gradient-to-tl</td>
+                        <td class="p-4">Gradiente diagonal arriba-izquierda</td>
+                        <td class="p-4">↖</td>
+                    </tr>
+                    <tr>
+                        <td class="p-4 font-mono text-amber-300">from-{color}</td>
+                        <td class="p-4">Color inicial del gradiente</td>
+                        <td class="p-4">from-blue-500</td>
+                    </tr>
+                    <tr>
+                        <td class="p-4 font-mono text-amber-300">via-{color}</td>
+                        <td class="p-4">Color intermedio (50%)</td>
+                        <td class="p-4">via-purple-500</td>
+                    </tr>
+                    <tr>
+                        <td class="p-4 font-mono text-amber-300">to-{color}</td>
+                        <td class="p-4">Color final del gradiente</td>
+                        <td class="p-4">to-pink-500</td>
+                    </tr>
+                    <tr>
+                        <td class="p-4 font-mono text-amber-300">from-{%}</td>
+                        <td class="p-4">Posición personalizada del inicio</td>
+                        <td class="p-4">from-30%</td>
+                    </tr>
+                    <tr>
+                        <td class="p-4 font-mono text-amber-300">via-{%}</td>
+                        <td class="p-4">Posición personalizada del medio</td>
+                        <td class="p-4">via-60%</td>
+                    </tr>
+                    <tr>
+                        <td class="p-4 font-mono text-amber-300">to-{%}</td>
+                        <td class="p-4">Posición personalizada del final</td>
+                        <td class="p-4">to-90%</td>
+                    </tr>
+                    <tr>
+                        <td class="p-4 font-mono text-amber-300">bg-clip-text</td>
+                        <td class="p-4">Aplica el fondo solo al texto</td>
+                        <td class="p-4">Para gradientes en texto</td>
+                    </tr>
+                    <tr>
+                        <td class="p-4 font-mono text-amber-300">text-transparent</td>
+                        <td class="p-4">Hace el texto transparente</td>
+                        <td class="p-4">Muestra el gradiente de fondo</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- ========================================
+         EJEMPLOS INTERACTIVOS
+         ======================================== -->
+    <section class="p-8 max-w-7xl mx-auto mb-20">
+        <h2 class="text-4xl font-bold mb-6 text-blue-400">🎮 Ejemplos Interactivos</h2>
+        <p class="text-slate-400 mb-6">
+            Gradientes con hover para botones y tarjetas
+        </p>
+
+        <div class="space-y-8">
+            <!-- Botones con gradiente -->
+            <div>
+                <h3 class="text-2xl font-semibold mb-4 text-slate-300">Botones con Gradiente</h3>
+                <div class="flex flex-wrap gap-4">
+                    <button class="px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-bold rounded-lg hover:from-blue-600 hover:to-purple-700 transition-all duration-300">
+                        Hover me!
+                    </button>
+                    <button class="px-8 py-4 bg-gradient-to-r from-pink-500 to-rose-500 text-white font-bold rounded-lg hover:from-pink-600 hover:to-rose-600 transition-all duration-300">
+                        Click aquí
+                    </button>
+                    <button class="px-8 py-4 bg-gradient-to-br from-green-400 to-cyan-500 text-white font-bold rounded-lg hover:from-green-500 hover:to-cyan-600 transition-all duration-300">
+                        Comienza ya
+                    </button>
+                </div>
+            </div>
+
+            <!-- Tarjetas con gradiente -->
+            <div>
+                <h3 class="text-2xl font-semibold mb-4 text-slate-300">Tarjetas con Gradiente</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="h-48 bg-gradient-to-br from-purple-500 to-pink-500 rounded-lg p-6 hover:scale-105 transition-transform duration-300 flex items-center justify-center">
+                        <p class="text-white text-xl font-bold">Tarjeta 1</p>
+                    </div>
+                    <div class="h-48 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-lg p-6 hover:scale-105 transition-transform duration-300 flex items-center justify-center">
+                        <p class="text-white text-xl font-bold">Tarjeta 2</p>
+                    </div>
+                    <div class="h-48 bg-gradient-to-br from-orange-500 to-red-500 rounded-lg p-6 hover:scale-105 transition-transform duration-300 flex items-center justify-center">
+                        <p class="text-white text-xl font-bold">Tarjeta 3</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center text-slate-500 text-sm py-12 bg-slate-950">
+        <p class="text-2xl mb-4">🎉 ¡Ahora dominas los gradientes en Tailwind CSS!</p>
+        <p>📚 Archivo de estudio - Gradientes en Tailwind CSS v4</p>
+        <p class="mt-2">Para más información: 
+            <a href="https://tailwindcss.com/docs/gradient-color-stops" class="text-blue-400 hover:text-blue-300">Documentación oficial</a>
+        </p>
+        <p class="mt-4 text-emerald-400">🌈 Los gradientes dan vida y profundidad a tus diseños</p>
+    </footer>
+
+</body>
+</html>
