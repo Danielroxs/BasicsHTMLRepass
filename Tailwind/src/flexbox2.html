@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../public/estilos.css">
+    <title>Flexbox 2 - Direction, Justify, Align</title>
+</head>
+<body class="bg-slate-900 text-white">
+    <!-- ========== DIRECTION ========== -->
+    <!-- Controla la dirección del flujo de los elementos flex -->
+    <h2 class="m-5 mt-10 font-bold text-3xl">Direction (Dirección del flujo)</h2>
+    
+    <!-- flex-row: Elementos en fila horizontal (por defecto) -->
+    <p class="m-5">flex-row (horizontal, por defecto) - Orden: 1 → 2 → 3</p>
+    <div class="flex flex-row gap-5 p-5 m-5 bg-slate-400 ">
+        <div class="bg-indigo-500 p-5 w-80 text-center">1</div>
+        <div class="bg-indigo-500 p-5 w-80 text-center">2</div>
+        <div class="bg-indigo-500 p-5 w-80 text-center">3</div>
+    </div>
+   
+    <!-- flex-row-reverse: Invierte el orden de los elementos en fila -->
+    <p class="m-5">flex-row-reverse (horizontal invertido) - Orden: 3 ← 2 ← 1</p>
+    <div class="flex flex-row-reverse gap-5 p-5 m-5 bg-slate-400 ">
+        <div class="bg-indigo-500 p-5 w-80 text-center">1</div>
+        <div class="bg-indigo-500 p-5 w-80 text-center">2</div>
+        <div class="bg-indigo-500 p-5 w-80 text-center">3</div>
+    </div>
+    
+    <!-- flex-col: Elementos en columna vertical -->
+    <p class="m-5">flex-col (vertical) - Orden: 1 ↓ 2 ↓ 3</p>
+    <div class="flex flex-col gap-5 p-5 m-5 bg-slate-400 ">
+        <div class="bg-indigo-500 p-5 w-80 text-center">1</div>
+        <div class="bg-indigo-500 p-5 w-80 text-center">2</div>
+        <div class="bg-indigo-500 p-5 w-80 text-center">3</div>
+    </div>
+   
+    <!-- flex-col-reverse: Invierte el orden de los elementos en columna -->
+    <p class="m-5">flex-col-reverse (vertical invertido) - Orden: 3 ↑ 2 ↑ 1</p>
+    <div class="flex flex-col-reverse gap-5 p-5 m-5 bg-slate-400 ">
+        <div class="bg-indigo-500 p-5 w-80 text-center">1</div>
+        <div class="bg-indigo-500 p-5 w-80 text-center">2</div>
+        <div class="bg-indigo-500 p-5 w-80 text-center">3</div>
+    </div>
+
+    <!-- ========== JUSTIFY CONTENT (ROW) ========== -->
+    <!-- Alinea elementos en el EJE PRINCIPAL (horizontal en flex-row) -->
+    <h2 class="m-5 mt-10 font-bold text-3xl">Justify Content (ROW) - Alineación Horizontal</h2>
+
+    <!-- justify-start: Alinea al inicio (izquierda) -->
+    <p class="m-5">.justify-start (inicio/izquierda)</p>
+    <div class="flex justify-start gap-5 p-5 m-5 bg-slate-400 ">
+        <div class="bg-indigo-500 p-5 w-40 text-center">1</div>
+        <div class="bg-indigo-500 p-5 w-40 text-center">2</div>
+        <div class="bg-indigo-500 p-5 w-40 text-center">3</div>
+    </div>
+       
+    <!-- justify-center: Centra los elementos horizontalmente -->
+    <p class="m-5">.justify-center (centrado)</p>
+    <div class="flex justify-center gap-5 p-5 m-5 bg-slate-400 ">
+        <div class="bg-indigo-500 p-5 w-40 text-center">1</div>
+        <div class="bg-indigo-500 p-5 w-40 text-center">2</div>
+        <div class="bg-indigo-500 p-5 w-40 text-center">3</div>
+    </div>
+    
+    <!-- justify-end: Alinea al final (derecha) -->
+    <p class="m-5">.justify-end (final/derecha)</p>
+    <div class="flex justify-end gap-5 p-5 m-5 bg-slate-400 ">
+        <div class="bg-indigo-500 p-5 w-40 text-center">1</div>
+        <div class="bg-indigo-500 p-5 w-40 text-center">2</div>
+        <div class="bg-indigo-500 p-5 w-40 text-center">3</div>
+    </div>
+    
+    <!-- justify-between: Espacio entre elementos (extremos pegados a los bordes) -->
+    <p class="m-5">.justify-between (espacio entre)</p>
+    <div class="flex justify-between gap-5 p-5 m-5 bg-slate-400 ">
+        <div class="bg-indigo-500 p-5 w-40 text-center">1</div>
+        <div class="bg-indigo-500 p-5 w-40 text-center">2</div>
+        <div class="bg-indigo-500 p-5 w-40 text-center">3</div>
+    </div>
+    
+    <!-- justify-around: Espacio alrededor de cada elemento (espacios iguales) -->
+    <p class="m-5">.justify-around (espacio alrededor)</p>
+    <div class="flex justify-around gap-5 p-5 m-5 bg-slate-400 ">
+        <div class="bg-indigo-500 p-5 w-40 text-center">1</div>
+        <div class="bg-indigo-500 p-5 w-40 text-center">2</div>
+        <div class="bg-indigo-500 p-5 w-40 text-center">3</div>
+    </div>
+    
+    <!-- justify-evenly: Espacio uniforme entre y alrededor de elementos -->
+    <p class="m-5">.justify-evenly (espacio uniforme)</p>
+    <div class="flex justify-evenly gap-5 p-5 m-5 bg-slate-400 ">
+        <div class="bg-indigo-500 p-5 w-40 text-center">1</div>
+        <div class="bg-indigo-500 p-5 w-40 text-center">2</div>
+        <div class="bg-indigo-500 p-5 w-40 text-center">3</div>
+    </div>
+
+    <!-- ========== JUSTIFY CONTENT (COL) ========== -->
+    <!-- Alinea elementos en el EJE PRINCIPAL (vertical en flex-col) -->
+    <h2 class="m-5 mt-10 font-bold text-3xl">Justify Content (COL) - Alineación Vertical</h2>
+
+    <!-- justify-start en columna: Alinea arriba -->
+    <p class="m-5">.justify-start (arriba)</p>
+    <div class="flex flex-col justify-start gap-5 p-5 m-5 bg-slate-400 h-[500px] ">
+        <div class="bg-indigo-500 p-5 w-40 text-center">1</div>
+        <div class="bg-indigo-500 p-5 w-40 text-center">2</div>
+        <div class="bg-indigo-500 p-5 w-40 text-center">3</div>
+    </div>   
+
+    <!-- justify-center en columna: Centra verticalmente -->
+    <p class="m-5">.justify-center (centro vertical)</p>
+    <div class="flex flex-col justify-center gap-5 p-5 m-5 bg-slate-400 h-[500px] ">
+        <div class="bg-indigo-500 p-5 w-40 text-center">1</div>
+        <div class="bg-indigo-500 p-5 w-40 text-center">2</div>
+        <div class="bg-indigo-500 p-5 w-40 text-center">3</div>
+    </div>    
+
+    <!-- justify-end en columna: Alinea abajo -->
+    <p class="m-5">.justify-end (abajo)</p>
+    <div class="flex flex-col justify-end gap-5 p-5 m-5 bg-slate-400 h-[500px] ">
+        <div class="bg-indigo-500 p-5 w-40 text-center">1</div>
+        <div class="bg-indigo-500 p-5 w-40 text-center">2</div>
+        <div class="bg-indigo-500 p-5 w-40 text-center">3</div>
+    </div>    
+
+    <p class="m-5">.justify-between</p>
+    <div class="flex flex-col justify-between gap-5 p-5 m-5 bg-slate-400 h-[500px] ">
+        <div class="bg-indigo-500 p-5 w-40 text-center">1</div>
+        <div class="bg-indigo-500 p-5 w-40 text-center">2</div>
+        <div class="bg-indigo-500 p-5 w-40 text-center">3</div>
+    </div>  
+
+    <p class="m-5">.justify-around</p>
+    <div class="flex flex-col justify-around gap-5 p-5 m-5 bg-slate-400 h-[500px] ">
+        <div class="bg-indigo-500 p-5 w-40 text-center">1</div>
+        <div class="bg-indigo-500 p-5 w-40 text-center">2</div>
+        <div class="bg-indigo-500 p-5 w-40 text-center">3</div>
+    </div> 
+
+    <p class="m-5">.justify-evenly</p>
+    <div class="flex flex-col justify-evenly gap-5 p-5 m-5 bg-slate-400 h-[500px] ">
+        <div class="bg-indigo-500 p-5 w-40 text-center">1</div>
+        <div class="bg-indigo-500 p-5 w-40 text-center">2</div>
+        <div class="bg-indigo-500 p-5 w-40 text-center">3</div>
+    </div>    
+
+    <!-- ========== ALIGN ITEMS (ROW) ========== -->
+    <!-- Alinea elementos en el EJE TRANSVERSAL (vertical en flex-row) -->
+    <!-- Necesita altura del contenedor para ver el efecto -->
+    <h2 class="m-5 mt-10 font-bold text-3xl">Align Items (ROW) - Alineación Vertical</h2>
+
+    <!-- items-start: Alinea arriba -->
+    <p class="m-5">.items-start (arriba)</p>
+    <div class="flex gap-5 p-5 m-5 bg-slate-400 h-60 items-start">
+        <div class="bg-indigo-500 p-5 w-40 text-center">1</div>
+        <div class="bg-indigo-500 p-5 w-40 text-center">2</div>
+        <div class="bg-indigo-500 p-5 w-40 text-center">3</div>
+    </div>  
+       
+    <!-- items-center: Centra verticalmente -->
+    <p class="m-5">.items-center (centro vertical)</p>
+    <div class="flex gap-5 p-5 m-5 bg-slate-400 h-60 items-center">
+        <div class="bg-indigo-500 p-5 w-40 text-center">1</div>
+        <div class="bg-indigo-500 p-5 w-40 text-center">2</div>
+        <div class="bg-indigo-500 p-5 w-40 text-center">3</div>
+    </div>  
+    
+    <!-- items-end: Alinea abajo -->
+    <p class="m-5">.items-end (abajo)</p>
+    <div class="flex gap-5 p-5 m-5 bg-slate-400 h-60 items-end">
+        <div class="bg-indigo-500 p-5 w-40 text-center">1</div>
+        <div class="bg-indigo-500 p-5 w-40 text-center">2</div>
+        <div class="bg-indigo-500 p-5 w-40 text-center">3</div>
+    </div>  
+    
+    <!-- items-baseline: Alinea según la línea base del texto (para legibilidad) -->
+    <p class="m-5">.items-baseline (línea base del texto)</p>
+    <div class="flex gap-5 p-5 m-5 bg-slate-400 h-60 items-baseline">
+        <div class="bg-indigo-500 p-5 w-40 text-center pt-20">1</div>
+        <div class="bg-indigo-500 p-5 w-40 text-center">2</div>
+        <div class="bg-indigo-500 p-5 w-40 text-center pb-20">3</div>
+    </div>  
+    
+    <!-- items-stretch: Estira elementos para ocupar toda la altura (valor por defecto) -->
+    <p class="m-5">.items-stretch (estirar - por defecto)</p>
+    <div class="flex gap-5 p-5 m-5 bg-slate-400 h-60 items-stretch">
+        <div class="bg-indigo-500 p-5 w-40 text-center">1</div>
+        <div class="bg-indigo-500 p-5 w-40 text-center">2</div>
+        <div class="bg-indigo-500 p-5 w-40 text-center">3</div>
+    </div>  
+
+    <!-- ========== ALIGN ITEMS (COL) ========== -->
+    <!-- Alinea elementos en el EJE TRANSVERSAL (horizontal en flex-col) -->
+    <h2 class="m-5 mt-10 font-bold text-3xl">Align Items (COL) - Alineación Horizontal</h2>
+
+    <!-- items-start en columna: Alinea a la izquierda -->
+    <p class="m-5">.items-start (izquierda)</p>
+    <div class="flex flex-col gap-5 p-5 m-5 bg-slate-400 items-start">
+        <div class="bg-indigo-500 p-5 w-40 text-center">1</div>
+        <div class="bg-indigo-500 p-5 w-40 text-center">2</div>
+        <div class="bg-indigo-500 p-5 w-40 text-center">3</div>
+    </div>  
+    
+    <!-- items-center en columna: Centra horizontalmente -->
+    <p class="m-5">.items-center (centro horizontal)</p>
+    <div class="flex flex-col gap-5 p-5 m-5 bg-slate-400 items-center">
+        <div class="bg-indigo-500 p-5 w-40 text-center">1</div>
+        <div class="bg-indigo-500 p-5 w-40 text-center">2</div>
+        <div class="bg-indigo-500 p-5 w-40 text-center">3</div>
+    </div>  
+    
+    <!-- items-end en columna: Alinea a la derecha -->
+    <p class="m-5">.items-end (derecha)</p>
+    <div class="flex flex-col gap-5 p-5 m-5 bg-slate-400 items-end">
+        <div class="bg-indigo-500 p-5 w-40 text-center">1</div>
+        <div class="bg-indigo-500 p-5 w-40 text-center">2</div>
+        <div class="bg-indigo-500 p-5 w-40 text-center">3</div>
+    </div>  
+    
+    <!-- items-baseline en columna -->
+    <p class="m-5">.items-baseline</p>
+    <div class="flex flex-col gap-5 p-5 m-5 bg-slate-400 items-baseline">
+        <div class="bg-indigo-500 p-5 w-40 text-center">1</div>
+        <div class="bg-indigo-500 p-5 w-40 text-center">2</div>
+        <div class="bg-indigo-500 p-5 w-40 text-center">3</div>
+    </div>  
+    
+    <!-- items-stretch en columna: Estira elementos al ancho completo -->
+    <p class="m-5">.items-stretch (ancho completo)</p>
+    <div class="flex flex-col gap-5 p-5 m-5 bg-slate-400 items-stretch">
+        <div class="bg-indigo-500 p-5 text-center">1</div>
+        <div class="bg-indigo-500 p-5 text-center">2</div>
+        <div class="bg-indigo-500 p-5 text-center">3</div>
+    </div>  
+
+    <!-- ========== ALIGN SELF (ROW) ========== -->
+    <!-- Permite alinear INDIVIDUALMENTE cada elemento (sobreescribe align-items) -->
+    <h2 class="m-5 mt-10 font-bold text-3xl">Align Self (ROW) - Alineación Individual</h2>
+
+    <!-- Cada elemento tiene su propia alineación -->
+    <div class="flex gap-5 p-5 m-5 bg-slate-400 h-60">
+        <div class="bg-indigo-500 p-5 w-40 text-center self-start">1 - self-start</div>
+        <div class="bg-indigo-500 p-5 w-40 text-center self-center">2 - self-center</div>
+        <div class="bg-indigo-500 p-5 w-40 text-center self-end">3 - self-end</div>
+        <div class="bg-indigo-500 p-5 w-40 text-center self-stretch">4 - self-stretch</div>
+    </div>  
+    
+    <!-- ========== ALIGN SELF (COL) ========== -->
+    <!-- Alineación individual de elementos en columna -->
+    <h2 class="m-5 mt-10 font-bold text-3xl">Align Self (COL) - Alineación Individual</h2>
+
+    <!-- Cada elemento se alinea horizontalmente de forma individual -->
+    <div class="flex flex-col gap-5 p-5 m-5 bg-slate-400 ">
+        <div class="bg-indigo-500 p-5 w-40 text-center self-start">1 - self-start</div>
+        <div class="bg-indigo-500 p-5 w-40 text-center self-center">2 - self-center</div>
+        <div class="bg-indigo-500 p-5 w-40 text-center self-end">3 - self-end</div>
+        <div class="bg-indigo-500 p-5 text-center self-stretch">4 - self-stretch</div>
+    </div>  
+
+    <!-- RESUMEN RÁPIDO:
+    
+    DIRECTION: Dirección del flujo
+    - flex-row (→) | flex-row-reverse (←)
+    - flex-col (↓) | flex-col-reverse (↑)
+    
+    JUSTIFY-CONTENT: Alinea en el eje principal (dirección del flujo)
+    - start | center | end | between | around | evenly
+    
+    ALIGN-ITEMS: Alinea en el eje transversal (perpendicular al flujo)
+    - start | center | end | baseline | stretch
+    
+    ALIGN-SELF: Alinea UN elemento individual
+    - self-start | self-center | self-end | self-stretch
+    
+    REGLA DE ORO:
+    - justify = dirección del flujo (main axis)
+    - items/self = perpendicular al flujo (cross axis)
+    -->  
+
+</body>
+</html> 

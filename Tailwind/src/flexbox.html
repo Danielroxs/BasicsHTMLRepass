@@ -4,11 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../public/estilos.css">
-    <title>Flexbox</title>
+    <title>Flexbox - Display, Grow, Shrink, Wrap</title>
 </head>
 <body class="bg-slate-900 text-white">
-    <h2 class="m-5 mt-10 font-bold text-3xl">Display</h2>
-    <p class="m-5">.flex</p>
+    <!-- ========== DISPLAY ========== -->
+    <!-- flex vs inline-flex: comportamiento del contenedor -->
+    <h2 class="m-5 mt-10 font-bold text-3xl">Display (Tipo de contenedor)</h2>
+    
+    <!-- flex: Contenedor de bloque (ocupa todo el ancho disponible) -->
+    <p class="m-5">.flex (contenedor de bloque - ancho completo)</p>
     <div class="flex gap-5 bg-slate-200 m-5 p-5 rounded-2xl">
         <div class="bg-indigo-500 p-5">Caja 1</div>
         <div class="bg-indigo-500 p-5">Caja 2</div>
@@ -16,7 +20,8 @@
         <div class="bg-indigo-500 p-5">Caja 4</div>
     </div>
     
-    <p class="m-5">.inline-flex</p>
+    <!-- inline-flex: Contenedor en línea (solo ocupa el ancho de su contenido) -->
+    <p class="m-5">.inline-flex (contenedor en línea - ancho del contenido)</p>
     <div class="inline-flex gap-5 bg-slate-200 m-5 p-5 rounded-2xl">
         <div class="bg-indigo-500 p-5">Caja 1</div>
         <div class="bg-indigo-500 p-5">Caja 2</div>
@@ -24,29 +29,39 @@
         <div class="bg-indigo-500 p-5">Caja 4</div>
     </div>
     
-    <h2 class="m-5 mt-10 font-bold text-3xl">Grow, Shrink, Flex</h2>
-    <p class="m-5">.Grow</p>
+    <!-- ========== GROW, SHRINK, FLEX ========== -->
+    <!-- Controla cómo crecen o se encogen los elementos flex -->
+    <h2 class="m-5 mt-10 font-bold text-3xl">Grow, Shrink, Flex (Crecimiento y encogimiento)</h2>
+    
+    <!-- GROW: Permite que elementos crezcan para llenar espacio disponible -->
+    <p class="m-5">.grow (elementos crecen para llenar espacio)</p>
     <div class="flex gap-5 bg-slate-200 m-5 p-5 rounded-2xl">
         <div class="bg-indigo-500 p-5 grow-0">Grow-0</div>
         <div class="bg-indigo-500 p-5 grow">Grow</div>
         <div class="bg-indigo-500 p-5 grow">Grow </div>
     </div>
     
-    <p class="m-5">.Shrink</p>
+    <!-- SHRINK: Permite que elementos se encojan cuando no hay espacio -->
+    <p class="m-5">.shrink (elementos se encogen si falta espacio)</p>
     <div class="flex gap-5 bg-slate-200 m-5 p-5 rounded-2xl">
         <div class="bg-indigo-500 p-5 w-80 shrink-0">Shrink-0</div>
         <div class="bg-indigo-500 p-5 w-80 shrink">Shrink</div>
         <div class="bg-indigo-500 p-5 w-80 shrink">Shrink </div>
     </div>
     
-    <p class="m-5">.Flex None / Flex Initial</p>
+    <!-- FLEX-NONE: No crece ni se encoge | FLEX-INITIAL: Valor inicial -->
+    <p class="m-5">.flex-none (no crece/encoge) vs .flex-initial (encoge pero no crece)</p>
     <div class="flex gap-5 bg-slate-200 m-5 p-5 rounded-2xl">
         <div class="bg-indigo-500 p-5 w-80 shrink-0 flex-none">.flex-none</div>
         <div class="bg-indigo-500 p-5 w-80 shrink flex-initial">.flex-initial</div>
     </div>
 
-    <h2 class="m-5 mt-10 font-bold text-3xl">Wrap</h2>
-    <p class="m-5 mt-10 font-bold text-xl">flex-wrap</p>
+    <!-- ========== WRAP ========== -->
+    <!-- Controla si los elementos se envuelven en múltiples líneas -->
+    <h2 class="m-5 mt-10 font-bold text-3xl">Wrap (Envolver elementos)</h2>
+    
+    <!-- flex-wrap: Elementos saltan a la siguiente línea si no caben -->
+    <p class="m-5 mt-10 font-bold text-xl">flex-wrap (envuelve a siguiente línea)</p>
      <div class="flex gap-5 bg-slate-200 m-5 p-5 rounded-2xl flex-wrap">
         <div class="bg-indigo-500 p-5 w-80 shrink-0 ">1. Lorem ipsum dolor sit.</div>
         <div class="bg-indigo-500 p-5 w-80 shrink-0 ">2. Lorem ipsum dolor sit.</div>
@@ -55,7 +70,8 @@
         <div class="bg-indigo-500 p-5 w-80 shrink-0 ">5. Lorem ipsum dolor sit.</div>
     </div>
     
-    <p class="m-5 mt-10 font-bold text-xl">flex-wrap-reverse</p>
+    <!-- flex-wrap-reverse: Envuelve pero en dirección inversa (de abajo hacia arriba) -->
+    <p class="m-5 mt-10 font-bold text-xl">flex-wrap-reverse (envuelve invertido)</p>
     <div class="flex gap-5 bg-slate-200 m-5 p-5 rounded-2xl flex-wrap-reverse">
         <div class="bg-indigo-500 p-5 w-80 shrink-0 ">1. Lorem ipsum dolor sit.</div>
         <div class="bg-indigo-500 p-5 w-80 shrink-0 ">2. Lorem ipsum dolor sit.</div>
@@ -64,7 +80,8 @@
         <div class="bg-indigo-500 p-5 w-80 shrink-0 ">5. Lorem ipsum dolor sit.</div>
     </div>
     
-    <p class="m-5 mt-10 font-bold text-xl">flex-nowrap</p>
+    <!-- flex-nowrap: No envuelve, todos los elementos en una sola línea (por defecto) -->
+    <p class="m-5 mt-10 font-bold text-xl">flex-nowrap (no envuelve - una sola línea)</p>
     <div class="flex gap-5 bg-slate-200 m-5 p-5 rounded-2xl flex-nowrap">
         <div class="bg-indigo-500 p-5 w-80 shrink-0 ">1. Lorem ipsum dolor sit.</div>
         <div class="bg-indigo-500 p-5 w-80 shrink-0 ">2. Lorem ipsum dolor sit.</div>
@@ -73,13 +90,40 @@
         <div class="bg-indigo-500 p-5 w-80 shrink-0 ">5. Lorem ipsum dolor sit.</div>
     </div>
 
-    <p class="m-5 mt-10 font-bold text-xl">Order</p>
-     <div class="flex gap-5 bg-slate-200 text-3xl m-5 p-5 rounded-2xl ">
-        <div class="bg-indigo-500 p-5 w-80 shrink-0 order-last">1</div>
-        <div class="bg-indigo-500 p-5 w-80 shrink-0 order-4 ">2</div>
-        <div class="bg-indigo-500 p-5 w-80 shrink-0 ">3</div>
-        <div class="bg-indigo-500 p-5 w-80 shrink-0 ">4</div>
-        <div class="bg-indigo-500 p-5 w-80 shrink-0 order-first">5</div>
+    <!-- ========== ORDER ========== -->
+    <!-- Cambia el orden visual de los elementos sin modificar el HTML -->
+    <p class="m-5 mt-10 font-bold text-xl">Order (orden visual de elementos)</p>
+    <div class="flex gap-5 bg-slate-200 text-3xl m-5 p-5 rounded-2xl ">
+        <div class="bg-indigo-500 p-5 w-80 shrink-0 order-last">1 - order-last</div>
+        <div class="bg-indigo-500 p-5 w-80 shrink-0 order-4 ">2 - order-4</div>
+        <div class="bg-indigo-500 p-5 w-80 shrink-0 ">3 - sin order</div>
+        <div class="bg-indigo-500 p-5 w-80 shrink-0 ">4 - sin order</div>
+        <div class="bg-indigo-500 p-5 w-80 shrink-0 order-first">5 - order-first</div>
     </div>
+
+    <!-- RESUMEN RÁPIDO:
+    
+    DISPLAY:
+    - flex: contenedor de bloque (ancho completo)
+    - inline-flex: contenedor en línea (ancho del contenido)
+    
+    GROW/SHRINK:
+    - grow: crece para llenar espacio
+    - grow-0: no crece
+    - shrink: se encoge si falta espacio
+    - shrink-0: no se encoge
+    - flex-none: no crece ni se encoge
+    - flex-initial: se encoge pero no crece
+    
+    WRAP:
+    - flex-wrap: envuelve elementos a siguiente línea
+    - flex-wrap-reverse: envuelve invertido
+    - flex-nowrap: no envuelve (por defecto)
+    
+    ORDER:
+    - order-first: primero
+    - order-last: último
+    - order-{número}: orden específico
+    -->
 </body>
 </html> 
