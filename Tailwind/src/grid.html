@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../public/estilos.css">
+    <title>CSS Grid - Layout bidimensional</title>
+</head>
+<body class="bg-slate-900 text-white">
+    <!-- ========== DISPLAY ========== -->
+    <!-- Grid: Sistema de layout bidimensional (filas y columnas) -->
+    <h2 class="m-5 mt-10 font-bold text-3xl ">Display (Tipo de contenedor Grid)</h2>
+    
+    <!-- grid: Contenedor de bloque (ancho completo) -->
+    <p class="m-5">.grid (contenedor de bloque - ancho completo)</p>
+    <div class="grid gap-5 m-5 bg-slate-600 p-5">
+        <div class="bg-indigo-500 text-white p-5">Caja 1</div>
+        <div class="bg-indigo-500 text-white p-5">Caja 2</div>
+        <div class="bg-indigo-500 text-white p-5">Caja 3</div>
+        <div class="bg-indigo-500 text-white p-5">Caja 4</div>
+    </div>
+    
+    <!-- inline-grid: Contenedor en línea (solo ancho del contenido) -->
+    <p class="m-5">.inline-grid (contenedor en línea - ancho del contenido)</p>
+    <div class="inline-grid gap-5 mx-5 bg-slate-600 p-5">
+        <div class="bg-indigo-500 text-white p-5">Caja 1</div>
+        <div class="bg-indigo-500 text-white p-5">Caja 2</div>
+        <div class="bg-indigo-500 text-white p-5">Caja 3</div>
+        <div class="bg-indigo-500 text-white p-5">Caja 4</div>
+    </div>
+
+    <!-- ========== TEMPLATE COLUMNS / ROWS ========== -->
+    <!-- Define la estructura de columnas y filas del grid -->
+    <h2 class="m-5 mt-10 font-bold text-3xl ">Template Columns / Rows (Estructura del Grid)</h2>
+    
+    <!-- grid-cols-#: Define el número de columnas -->
+    <p class="m-5">.grid-cols-3 (3 columnas iguales)</p>
+    <div class="grid grid-cols-3 gap-5 mx-5 bg-slate-600 p-5">
+        <div class="bg-indigo-500 text-white p-5">Caja 1</div>
+        <div class="bg-indigo-500 text-white p-5">Caja 2</div>
+        <div class="bg-indigo-500 text-white p-5">Caja 3</div>
+        <div class="bg-indigo-500 text-white p-5">Caja 4</div>
+    </div>
+    
+    <!-- grid-rows-#: Define el número de filas -->
+    <!-- grid-flow-col: Los elementos fluyen por columnas (en lugar de por filas) -->
+    <p class="m-5">.grid-rows-3 + .grid-flow-col (3 filas, flujo por columnas)</p>
+    <div class="grid grid-rows-3 grid-flow-col gap-5 mx-5 bg-slate-600 p-5">
+        <div class="bg-indigo-500 text-white p-5">Caja 1</div>
+        <div class="bg-indigo-500 text-white p-5">Caja 2</div>
+        <div class="bg-indigo-500 text-white p-5">Caja 3</div>
+        <div class="bg-indigo-500 text-white p-5">Caja 4</div>
+    </div>
+
+    <!-- ========== GRID COLUMN SPAN / START / END ========== -->
+    <!-- Controla cuántas columnas ocupa un elemento o dónde empieza/termina -->
+    <h2 class="m-5 mt-10 font-bold text-3xl ">Grid Column Span / Start / End</h2>
+    <div class="grid grid-cols-3 gap-5 mx-5 bg-slate-600 p-5">
+        <!-- col-span-2: Ocupa 2 columnas -->
+        <div class="bg-orange-500 text-white p-5 col-span-2">Caja 1 - col-span-2</div>
+        <div class="bg-indigo-500 text-white p-5">Caja 2</div>
+        <div class="bg-indigo-500 text-white p-5">Caja 3</div>
+        <!-- col-start-2 col-end-4: Empieza en columna 2, termina en 4 -->
+        <div class="bg-green-500 text-white p-5 col-start-2 col-end-4">Caja 4 - col-start-2 col-end-4</div>
+        <div class="bg-indigo-500 text-white p-5">Caja 5</div>
+        <!-- col-span-full: Ocupa todas las columnas -->
+        <div class="bg-red-500 text-white p-5 col-span-full">Caja 6 - col-span-full</div>
+    </div>
+       
+    <!-- ========== GRID ROW SPAN / START / END ========== -->
+    <!-- Controla cuántas filas ocupa un elemento o dónde empieza/termina -->
+    <h2 class="m-5 mt-10 font-bold text-3xl ">Grid Row Span / Start / End</h2>
+    <div class="grid gap-5 mx-5 bg-slate-600 rounded-xl p-5 grid-flow-col grid-rows-5">
+        <!-- row-span-2: Ocupa 2 filas -->
+        <div class="bg-orange-500 rounded-xl text-white p-5 row-span-2">Caja 1 - row-span-2</div>
+        <div class="bg-indigo-500 rounded-xl text-white p-5">Caja 2</div>
+        <div class="bg-indigo-500 rounded-xl text-white p-5">Caja 3</div>
+        <div class="bg-indigo-500 rounded-xl text-white p-5">Caja 4</div>
+        <!-- row-span-full: Ocupa todas las filas -->
+        <div class="bg-green-500 rounded-xl text-white p-5 row-span-full">Caja 5 - row-span-full</div>
+        <!-- row-start-2 row-end-4: Empieza en fila 2, termina en 4 -->
+        <div class="bg-red-500 rounded-xl text-white p-5 row-start-2 row-end-4">Caja 6 - row-start-2 row-end-4</div>
+    </div>
+
+    <!-- ========== GAP ========== -->
+    <!-- Controla el espacio entre elementos del grid -->
+    <h2 class="m-5 mt-10 font-bold text-3xl ">Gap (Espaciado entre elementos)</h2>
+    
+    <!-- gap-#: Espacio uniforme entre filas y columnas -->
+    <p class="m-5">.gap-8 (espacio uniforme de 2rem)</p>
+    <div class="grid grid-cols-3 gap-8 mx-5 bg-slate-600 p-5">
+        <div class="bg-indigo-500 text-white p-5">Caja 1</div>
+        <div class="bg-indigo-500 text-white p-5">Caja 2</div>
+        <div class="bg-indigo-500 text-white p-5">Caja 3</div>
+        <div class="bg-indigo-500 text-white p-5">Caja 4</div>
+    </div>
+    
+    <!-- gap-x y gap-y: Espaciado diferente para columnas y filas -->
+    <p class="m-5">.gap-x-10 .gap-y-2 (espacio horizontal 2.5rem, vertical 0.5rem)</p>
+    <div class="grid grid-cols-3 gap-x-10 gap-y-2 mx-5 bg-slate-600 p-5">
+        <div class="bg-indigo-500 text-white p-5">Caja 1</div>
+        <div class="bg-indigo-500 text-white p-5">Caja 2</div>
+        <div class="bg-indigo-500 text-white p-5">Caja 3</div>
+        <div class="bg-indigo-500 text-white p-5">Caja 4</div>
+    </div>
+
+    <!-- ========== JUSTIFY Y ALIGN ITEMS ========== -->
+    <!-- Alineación de elementos dentro de sus celdas -->
+    <h2 class="m-5 mt-10 font-bold text-3xl ">Justify & Align Items (Alineación en celdas)</h2>
+    
+    <!-- justify-items: Alineación horizontal de elementos en sus celdas -->
+    <p class="m-5">.justify-items-center (centrado horizontal en celdas)</p>
+    <div class="grid grid-cols-3 gap-5 mx-5 bg-slate-600 p-5 justify-items-center">
+        <div class="bg-indigo-500 text-white p-5">Caja 1</div>
+        <div class="bg-indigo-500 text-white p-5">Caja 2</div>
+        <div class="bg-indigo-500 text-white p-5">Caja 3</div>
+    </div>
+    
+    <!-- align-items: Alineación vertical de elementos en sus celdas -->
+    <p class="m-5">.items-center (centrado vertical en celdas)</p>
+    <div class="grid grid-cols-3 gap-5 mx-5 bg-slate-600 p-5 items-center h-60">
+        <div class="bg-indigo-500 text-white p-5">Caja 1</div>
+        <div class="bg-indigo-500 text-white p-5">Caja 2</div>
+        <div class="bg-indigo-500 text-white p-5">Caja 3</div>
+    </div>
+    
+    <!-- place-items: Combina justify-items y align-items -->
+    <p class="m-5">.place-items-center (centrado horizontal y vertical)</p>
+    <div class="grid grid-cols-3 gap-5 mx-5 bg-slate-600 p-5 place-items-center h-60">
+        <div class="bg-indigo-500 text-white p-5">Caja 1</div>
+        <div class="bg-indigo-500 text-white p-5">Caja 2</div>
+        <div class="bg-indigo-500 text-white p-5">Caja 3</div>
+    </div>
+
+    <!-- ========== JUSTIFY Y ALIGN CONTENT ========== -->
+    <!-- Alineación del grid completo dentro del contenedor -->
+    <h2 class="m-5 mt-10 font-bold text-3xl ">Justify & Align Content (Alineación del grid)</h2>
+    
+    <!-- justify-content: Alineación horizontal del grid completo -->
+    <p class="m-5">.justify-center (grid centrado horizontalmente)</p>
+    <div class="grid grid-cols-3 gap-5 mx-5 bg-slate-600 p-5 justify-center h-60">
+        <div class="bg-indigo-500 text-white p-5 w-20">1</div>
+        <div class="bg-indigo-500 text-white p-5 w-20">2</div>
+        <div class="bg-indigo-500 text-white p-5 w-20">3</div>
+    </div>
+    
+    <!-- align-content: Alineación vertical del grid completo -->
+    <p class="m-5">.content-center (grid centrado verticalmente)</p>
+    <div class="grid grid-cols-3 gap-5 mx-5 bg-slate-600 p-5 content-center h-60">
+        <div class="bg-indigo-500 text-white p-5">Caja 1</div>
+        <div class="bg-indigo-500 text-white p-5">Caja 2</div>
+        <div class="bg-indigo-500 text-white p-5">Caja 3</div>
+    </div>
+
+    <!-- ========== AUTO-FIT Y AUTO-FILL ========== -->
+    <!-- Columnas responsivas automáticas -->
+    <h2 class="m-5 mt-10 font-bold text-3xl ">Grid Auto-Columns (Columnas automáticas)</h2>
+    
+    <!-- auto-cols-fr: Columnas con tamaño flexible -->
+    <p class="m-5">.grid-flow-col .auto-cols-fr (columnas flexibles)</p>
+    <div class="grid grid-flow-col auto-cols-fr gap-5 mx-5 bg-slate-600 p-5">
+        <div class="bg-indigo-500 text-white p-5">Caja 1</div>
+        <div class="bg-indigo-500 text-white p-5">Caja 2</div>
+        <div class="bg-indigo-500 text-white p-5">Caja 3</div>
+        <div class="bg-indigo-500 text-white p-5">Caja 4</div>
+    </div>
+
+    <!-- RESUMEN RÁPIDO:
+    
+    DISPLAY:
+    - grid: contenedor de bloque
+    - inline-grid: contenedor en línea
+    
+    ESTRUCTURA:
+    - grid-cols-{n}: número de columnas
+    - grid-rows-{n}: número de filas
+    - grid-flow-col: flujo por columnas
+    - grid-flow-row: flujo por filas (default)
+    
+    SPAN (ocupar celdas):
+    - col-span-{n}: ocupa n columnas
+    - row-span-{n}: ocupa n filas
+    - col-span-full: ocupa todas las columnas
+    - row-span-full: ocupa todas las filas
+    
+    START/END (posicionamiento):
+    - col-start-{n} col-end-{n}: posición en columnas
+    - row-start-{n} row-end-{n}: posición en filas
+    
+    ESPACIADO:
+    - gap-{n}: espacio uniforme
+    - gap-x-{n}: espacio horizontal
+    - gap-y-{n}: espacio vertical
+    
+    ALINEACIÓN DE ELEMENTOS (en sus celdas):
+    - justify-items-{value}: horizontal
+    - items-{value}: vertical (align-items)
+    - place-items-{value}: ambos
+    
+    ALINEACIÓN DEL GRID (completo):
+    - justify-{value}: horizontal
+    - content-{value}: vertical (align-content)
+    - place-content-{value}: ambos
+    
+    VALUES: start | center | end | stretch | between | around | evenly
+    -->
+
+</body>
+</html>
