@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../public/estilos.css">
+    <title>Responsive Design - Tailwind CSS</title> 
+</head>
+<body class="bg-slate-900 text-white p-8">
+    
+    <!-- ========== BREAKPOINTS DE TAILWIND CSS ========== -->
+    <h2 class="text-3xl font-bold mb-5">Responsive Design - Breakpoints</h2>
+    
+    <!-- Tabla de breakpoints -->
+    <div class="bg-slate-800 p-6 rounded-lg mb-8">
+        <h3 class="text-xl font-bold mb-4">Breakpoints (Puntos de quiebre)</h3>
+        <table class="w-full text-left border-collapse">
+            <thead>
+                <tr class="border-b border-slate-600">
+                    <th class="p-3">Prefijo</th>
+                    <th class="p-3">Tamaño Mínimo</th>
+                    <th class="p-3">Dispositivo</th>
+                    <th class="p-3">Media Query CSS</th>
+                </tr>
+            </thead>
+            <tbody class="text-gray-300">
+                <tr class="border-b border-slate-700">
+                    <td class="p-3"><code class="bg-slate-700 px-2 py-1 rounded">sm</code></td>
+                    <td class="p-3">640px</td>
+                    <td class="p-3">Móvil horizontal / Tablet pequeña</td>
+                    <td class="p-3"><code>@media (min-width: 640px)</code></td>
+                </tr>
+                <tr class="border-b border-slate-700">
+                    <td class="p-3"><code class="bg-slate-700 px-2 py-1 rounded">md</code></td>
+                    <td class="p-3">768px</td>
+                    <td class="p-3">Tablet</td>
+                    <td class="p-3"><code>@media (min-width: 768px)</code></td>
+                </tr>
+                <tr class="border-b border-slate-700">
+                    <td class="p-3"><code class="bg-slate-700 px-2 py-1 rounded">lg</code></td>
+                    <td class="p-3">1024px</td>
+                    <td class="p-3">Laptop</td>
+                    <td class="p-3"><code>@media (min-width: 1024px)</code></td>
+                </tr>
+                <tr class="border-b border-slate-700">
+                    <td class="p-3"><code class="bg-slate-700 px-2 py-1 rounded">xl</code></td>
+                    <td class="p-3">1280px</td>
+                    <td class="p-3">Desktop</td>
+                    <td class="p-3"><code>@media (min-width: 1280px)</code></td>
+                </tr>
+                <tr>
+                    <td class="p-3"><code class="bg-slate-700 px-2 py-1 rounded">2xl</code></td>
+                    <td class="p-3">1536px</td>
+                    <td class="p-3">Desktop grande / 4K</td>
+                    <td class="p-3"><code>@media (min-width: 1536px)</code></td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <div class="mt-4 p-4 bg-blue-900/30 border border-blue-500 rounded">
+            <p class="text-sm"><strong>⚠️ Mobile First:</strong> Tailwind usa el enfoque "mobile first". 
+            Las clases sin prefijo aplican a móviles. Los prefijos aplican estilos "desde ese tamaño hacia arriba".</p>
+        </div>
+    </div>
+
+    <!-- ========== EJEMPLOS PRÁCTICOS ========== -->
+    <h3 class="text-2xl font-bold mb-4">Ejemplos Prácticos</h3>
+
+    <!-- Ejemplo 1: Tamaño de texto responsive -->
+    <div class="mb-8 bg-slate-800 p-6 rounded-lg">
+        <h4 class="text-xl font-bold mb-3">1. Tamaño de texto responsive</h4>
+        <p class="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl bg-indigo-600 p-4 rounded">
+            Este texto crece según el tamaño de pantalla
+        </p>
+        <code class="block mt-3 text-xs bg-slate-700 p-3 rounded">
+            class="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl"
+        </code>
+        <p class="text-sm text-gray-400 mt-2">
+            Móvil: text-sm → SM: text-base → MD: text-lg → LG: text-xl → XL: text-2xl
+        </p>
+    </div>
+
+    <!-- Ejemplo 2: Grid responsive -->
+    <div class="mb-8 bg-slate-800 p-6 rounded-lg">
+        <h4 class="text-xl font-bold mb-3">2. Grid responsive (columnas adaptativas)</h4>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            <div class="bg-purple-600 p-4 rounded text-center">Caja 1</div>
+            <div class="bg-purple-600 p-4 rounded text-center">Caja 2</div>
+            <div class="bg-purple-600 p-4 rounded text-center">Caja 3</div>
+            <div class="bg-purple-600 p-4 rounded text-center">Caja 4</div>
+        </div>
+        <code class="block mt-3 text-xs bg-slate-700 p-3 rounded">
+            class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4"
+        </code>
+        <p class="text-sm text-gray-400 mt-2">
+            Móvil: 1 columna → SM: 2 columnas → MD: 3 columnas → LG: 4 columnas
+        </p>
+    </div>
+
+    <!-- Ejemplo 3: Ocultar/Mostrar elementos -->
+    <div class="mb-8 bg-slate-800 p-6 rounded-lg">
+        <h4 class="text-xl font-bold mb-3">3. Ocultar/Mostrar elementos según pantalla</h4>
+        <div class="space-y-3">
+            <div class="bg-red-600 p-4 rounded md:hidden">
+                Solo visible en móvil y SM (oculto desde MD)
+            </div>
+            <div class="bg-green-600 p-4 rounded hidden md:block">
+                Solo visible desde MD en adelante
+            </div>
+            <div class="bg-blue-600 p-4 rounded hidden lg:block">
+                Solo visible desde LG en adelante
+            </div>
+        </div>
+        <code class="block mt-3 text-xs bg-slate-700 p-3 rounded">
+            md:hidden → Oculta desde MD<br>
+            hidden md:block → Oculto en móvil, visible desde MD<br>
+            hidden lg:block → Oculto hasta LG
+        </code>
+    </div>
+
+    <!-- Ejemplo 4: Padding/Margin responsive -->
+    <div class="mb-8 bg-slate-800 p-6 rounded-lg">
+        <h4 class="text-xl font-bold mb-3">4. Espaciado responsive</h4>
+        <div class="bg-yellow-600 p-2 sm:p-4 md:p-6 lg:p-8 xl:p-10 rounded">
+            Mi padding crece con la pantalla
+        </div>
+        <code class="block mt-3 text-xs bg-slate-700 p-3 rounded">
+            class="p-2 sm:p-4 md:p-6 lg:p-8 xl:p-10"
+        </code>
+    </div>
+
+    <!-- Ejemplo 5: Flexbox direction responsive -->
+    <div class="mb-8 bg-slate-800 p-6 rounded-lg">
+        <h4 class="text-xl font-bold mb-3">5. Dirección de Flexbox responsive</h4>
+        <div class="flex flex-col md:flex-row gap-4 bg-slate-700 p-4 rounded">
+            <div class="bg-pink-600 p-4 rounded flex-1">Elemento 1</div>
+            <div class="bg-pink-600 p-4 rounded flex-1">Elemento 2</div>
+            <div class="bg-pink-600 p-4 rounded flex-1">Elemento 3</div>
+        </div>
+        <code class="block mt-3 text-xs bg-slate-700 p-3 rounded">
+            class="flex flex-col md:flex-row"
+        </code>
+        <p class="text-sm text-gray-400 mt-2">
+            Móvil: columna vertical → MD: fila horizontal
+        </p>
+    </div>
+
+    <!-- Ejemplo 6: Indicador visual del breakpoint actual -->
+    <div class="mb-8 bg-slate-800 p-6 rounded-lg">
+        <h4 class="text-xl font-bold mb-3">6. Indicador de breakpoint actual (para testing)</h4>
+        <div class="text-center p-4 rounded font-bold text-2xl">
+            <span class="sm:hidden bg-red-600 p-3 rounded">XS (menos de 640px)</span>
+            <span class="hidden sm:block md:hidden bg-yellow-600 p-3 rounded">SM (640px+)</span>
+            <span class="hidden md:block lg:hidden bg-green-600 p-3 rounded">MD (768px+)</span>
+            <span class="hidden lg:block xl:hidden bg-blue-600 p-3 rounded">LG (1024px+)</span>
+            <span class="hidden xl:block 2xl:hidden bg-purple-600 p-3 rounded">XL (1280px+)</span>
+            <span class="hidden 2xl:block bg-pink-600 p-3 rounded">2XL (1536px+)</span>
+            
+        </div>
+        <p class="text-sm text-gray-400 mt-2 text-center">
+            Redimensiona tu navegador para ver el cambio
+        </p>
+    </div>
+
+    <!-- Resumen -->
+    <div class="bg-slate-800 p-6 rounded-lg">
+        <h3 class="text-xl font-bold mb-3">RESUMEN RÁPIDO</h3>
+        <ul class="space-y-2 text-sm text-gray-300">
+            <li>✅ <strong>Mobile First:</strong> Diseña primero para móvil, luego agrega breakpoints</li>
+            <li>✅ <strong>Sintaxis:</strong> <code>prefijo:clase</code> → Ejemplo: <code>md:text-lg</code></li>
+            <li>✅ <strong>Sin prefijo = móvil</strong> → Aplica a todos los tamaños</li>
+            <li>✅ <strong>Con prefijo = desde ese tamaño</strong> → <code>md:block</code> = visible desde 768px</li>
+            <li>✅ <strong>Se pueden combinar:</strong> <code>hidden md:block lg:flex xl:grid</code></li>
+            <li>✅ <strong>Prueba responsive:</strong> DevTools → Toggle device toolbar (Ctrl+Shift+M)</li>
+        </ul>
+    </div>
+
+</body>
+</html>
