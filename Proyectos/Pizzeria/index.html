@@ -1,194 +1,401 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script defer type="module" src="/src/main.js"></script>
-    <link rel="stylesheet" href="./src/index.css">
+    <link rel="stylesheet" href="./src/index.css" />
     <title>Pizzeria DanRox</title>
   </head>
   <body class="bg-background">
-    <header 
-      class="relative pt-10 overflow-auto text-white bg-hero bg-cover bg-centerbefore:content-[''] before:bg-red-950/70 before:w-full before:h-full before:block before:absolute before:z-0 before:top-0">
-        <div class="relative z-10 w-11/12 mx-auto max-w-7xl">
-          <!-- Menu de navegacion -->
-          <div class="flex flex-wrap items-center justify-center lg:justify-between gap-7">
-            <h3 class="font-title text-4xl font-semibold">DanRox</h3>
-            <nav class="flex flex-wrap items-center justify-center gap-7 text-nowrap text-center font-semibold uppercase">
-              <a href="menu.html" class="hover:underline">Menu</a>
-              <a href="index.html#sucursales" class="hover:underline">Sucursales</a>
-              <a href="index.html#acerca-de" class="hover:underline">Acerca de</a>
-              <a href="#" class="hover:underline">Contacto</a>
-            </nav>
-          </div>
+    <header
+      class="relative pt-10 overflow-auto text-white bg-hero bg-cover bg-centerbefore:content-[''] before:bg-red-950/70 before:w-full before:h-full before:block before:absolute before:z-0 before:top-0"
+    >
+      <div class="relative z-10 w-11/12 mx-auto max-w-7xl">
+        <!-- Menu de navegacion -->
+        <div
+          class="flex flex-wrap items-center justify-center lg:justify-between gap-7"
+        >
+          <h3 class="font-title text-4xl font-semibold">DanRox</h3>
+          <nav
+            class="flex flex-wrap items-center justify-center gap-7 text-nowrap text-center font-semibold uppercase"
+          >
+            <a href="menu.html" class="hover:underline">Menu</a>
+            <a href="index.html#sucursales" class="hover:underline"
+              >Sucursales</a
+            >
+            <a href="index.html#acerca-de" class="hover:underline">Acerca de</a>
+            <a href="#" class="hover:underline">Contacto</a>
+          </nav>
+        </div>
 
-          <!-- Contenedor de textos -->
-           <div class="my-24 text-center lg:mb-52">
-              <p class="mb-4 font-bold uppercase">Pizzeria</p>
-              <h1 class="mb-4 font-title text-6xl lg:text-8xl">DanRox</h1>
-              <p class="font-title text-xl lg:text-2xl">— Desde 1995 —</p>
-              <div class="pt-10 flex justify-center gap-5 uppercase">
-                <a href="menu.html" class="border border-white/20 px-4 py-2 transition-all hover:border-white">Menu</a>
-                <a href="#" class="border border-white/20 px-4 py-2 transition-all hover:border-white">Contacto</a>
-              </div>
-           </div>
-        </div> 
+        <!-- Contenedor de textos -->
+        <div class="my-24 text-center lg:mb-52">
+          <p class="mb-4 font-bold uppercase">Pizzeria</p>
+          <h1 class="mb-4 font-title text-6xl lg:text-8xl">DanRox</h1>
+          <p class="font-title text-xl lg:text-2xl">— Desde 1995 —</p>
+          <div class="pt-10 flex justify-center gap-5 uppercase">
+            <a
+              href="menu.html"
+              class="border border-white/20 px-4 py-2 transition-all hover:border-white"
+              >Menu</a
+            >
+            <a
+              href="#"
+              class="border border-white/20 px-4 py-2 transition-all hover:border-white"
+              >Contacto</a
+            >
+          </div>
+        </div>
+      </div>
     </header>
     <main>
       <!-- Acerca De -->
-       <section>
-        <div class="my-10 lg:my-0 relative w-10/12 lg:-top-36 max-w-4xl mx-auto  ">
-          <img src="./img/acerca-de.png" alt="acerca-de" class="w-full relative lg:left-6">
-          <div class="bg-white relative lg:right-6 lg:-top-12 p-5 text-center shadow-md">
-            <h3 class="font-title text-3xl lg:text-5xl mb-3 lg:mb-5 text-primary">Tradicion, amor y sabor</h3>
+      <section>
+        <div
+          class="my-10 lg:my-0 relative w-10/12 lg:-top-36 max-w-4xl mx-auto"
+        >
+          <img
+            src="./img/acerca-de.png"
+            alt="acerca-de"
+            class="w-full relative lg:left-6"
+          />
+          <div
+            class="bg-white relative lg:right-6 lg:-top-12 p-5 text-center shadow-md"
+          >
+            <h3
+              class="font-title text-3xl lg:text-5xl mb-3 lg:mb-5 text-primary"
+            >
+              Tradicion, amor y sabor
+            </h3>
             <p class="leading-8 text-black text-md lg:text-lg">
-                Visítanos y disfruta de nuestras pizzas artesanales, elaboradas con pasión y los mejores ingredientes.<br>
-                ¡Bienvenido a tu nuevo lugar favorito!
+              Visítanos y disfruta de nuestras pizzas artesanales, elaboradas
+              con pasión y los mejores ingredientes.<br />
+              ¡Bienvenido a tu nuevo lugar favorito!
             </p>
           </div>
         </div>
-       </section>
+      </section>
 
-       <!-- Populares -->
-        <section class="w-11/12 max-w-7xl mx-auto mb-20 mt-0">
+      <!-- Populares -->
+      <section class="w-11/12 max-w-7xl mx-auto mb-20 mt-0">
+        <!-- Encabezado -->
+        <div class="mb-14 text-center">
+          <h2 class="mb-4 font-title text-5xl font-bold text-primary">
+            Pizzas Populares
+          </h2>
+          <p class="text-lg text-black">Algunas de nuestras mejores pizzas</p>
+        </div>
+
+        <!-- Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          <!-- Card -->
+          <div class="mb-5 bg-white shadow-sm">
+            <!-- Thumb -->
+            <div class="aspect-square">
+              <img
+                src="./img/menu/pizza-1.png"
+                class="h-auto w-full"
+                alt="pizza               "
+              />
+            </div>
+
+            <!-- Precios -->
+            <div class="flex flex-col">
+              <h3 class="text-center p-2 text-xl font-bold text-primary">
+                Pepperoni
+              </h3>
+              <div
+                class="flex justify-between border-b border-black/10 p-2 text-sm md:text-base"
+              >
+                <p>Pequena</p>
+                <p>$123.00</p>
+              </div>
+              <div
+                class="flex justify-between border-b border-black/10 p-2 text-sm md:text-base"
+              >
+                <p>Mediana</p>
+                <p>$153.00</p>
+              </div>
+              <div
+                class="flex justify-between border-b border-black/10 p-2 text-sm md:text-base"
+              >
+                <p>Grande</p>
+                <p>$223.00</p>
+              </div>
+              <div
+                class="flex justify-between border-b border-black/10 p-2 text-sm md:text-base"
+              >
+                <p>Familiar</p>
+                <p>$323.00</p>
+              </div>
+            </div>
+          </div>
+          <div class="mb-5 bg-white shadow-sm">
+            <!-- Thumb -->
+            <div class="aspect-square">
+              <img
+                src="./img/menu/pizza-2.png"
+                class="h-auto w-full"
+                alt="pizza               "
+              />
+            </div>
+
+            <!-- Precios -->
+            <div class="flex flex-col">
+              <h3 class="text-center p-2 text-xl font-bold text-primary">
+                Napolitana
+              </h3>
+              <div
+                class="flex justify-between border-b border-black/10 p-2 text-sm md:text-base"
+              >
+                <p>Pequena</p>
+                <p>$123.00</p>
+              </div>
+              <div
+                class="flex justify-between border-b border-black/10 p-2 text-sm md:text-base"
+              >
+                <p>Mediana</p>
+                <p>$153.00</p>
+              </div>
+              <div
+                class="flex justify-between border-b border-black/10 p-2 text-sm md:text-base"
+              >
+                <p>Grande</p>
+                <p>$223.00</p>
+              </div>
+              <div
+                class="flex justify-between border-b border-black/10 p-2 text-sm md:text-base"
+              >
+                <p>Familiar</p>
+                <p>$323.00</p>
+              </div>
+            </div>
+          </div>
+          <div class="mb-5 bg-white shadow-sm">
+            <!-- Thumb -->
+            <div class="aspect-square">
+              <img
+                src="./img/menu/pizza-3.png"
+                class="h-auto w-full"
+                alt="pizza               "
+              />
+            </div>
+
+            <!-- Precios -->
+            <div class="flex flex-col">
+              <h3 class="text-center p-2 text-xl font-bold text-primary">
+                Margherita
+              </h3>
+              <div
+                class="flex justify-between border-b border-black/10 p-2 text-sm md:text-base"
+              >
+                <p>Pequena</p>
+                <p>$123.00</p>
+              </div>
+              <div
+                class="flex justify-between border-b border-black/10 p-2 text-sm md:text-base"
+              >
+                <p>Mediana</p>
+                <p>$153.00</p>
+              </div>
+              <div
+                class="flex justify-between border-b border-black/10 p-2 text-sm md:text-base"
+              >
+                <p>Grande</p>
+                <p>$223.00</p>
+              </div>
+              <div
+                class="flex justify-between border-b border-black/10 p-2 text-sm md:text-base"
+              >
+                <p>Familiar</p>
+                <p>$323.00</p>
+              </div>
+            </div>
+          </div>
+          <div class="mb-5 bg-white shadow-sm">
+            <!-- Thumb -->
+            <div class="aspect-square">
+              <img
+                src="./img/menu/pizza-4.png"
+                class="h-auto w-full"
+                alt="pizza               "
+              />
+            </div>
+
+            <!-- Precios -->
+            <div class="flex flex-col">
+              <h3 class="text-center p-2 text-xl font-bold text-primary">
+                Cuatro Quesos
+              </h3>
+              <div
+                class="flex justify-between border-b border-black/10 p-2 text-sm md:text-base"
+              >
+                <p>Pequena</p>
+                <p>$123.00</p>
+              </div>
+              <div
+                class="flex justify-between border-b border-black/10 p-2 text-sm md:text-base"
+              >
+                <p>Mediana</p>
+                <p>$153.00</p>
+              </div>
+              <div
+                class="flex justify-between border-b border-black/10 p-2 text-sm md:text-base"
+              >
+                <p>Grande</p>
+                <p>$223.00</p>
+              </div>
+              <div
+                class="flex justify-between border-b border-black/10 p-2 text-sm md:text-base"
+              >
+                <p>Familiar</p>
+                <p>$323.00</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Boton de Menu -->
+        <div class="flex justify-center mt-2">
+          <a
+            href="menu.html"
+            class="block border border-primary p-5 font-bold uppercase transition hover:bg-primary hover:text-white"
+            >Ver menu completo</a
+          >
+        </div>
+      </section>
+
+      <!-- Galeria -->
+      <section class="mb-14">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
+          <img
+            src="./public/img/galeria/galeria-1.png"
+            alt=""
+            class="w-full aspect-square opacity-90 hover:opacity-100 transition grayscale-50 hover:grayscale-0"
+          />
+          <img
+            src="./public/img/galeria/galeria-2.png"
+            alt=""
+            class="w-full aspect-square opacity-90 hover:opacity-100 transition grayscale-50 hover:grayscale-0"
+          />
+          <img
+            src="./public/img/galeria/galeria-3.png"
+            alt=""
+            class="w-full aspect-square opacity-90 hover:opacity-100 transition grayscale-50 hover:grayscale-0"
+          />
+          <img
+            src="./public/img/galeria/galeria-4.png"
+            alt=""
+            class="w-full aspect-square opacity-90 hover:opacity-100 transition grayscale-50 hover:grayscale-0"
+          />
+          <img
+            src="./public/img/galeria/galeria-5.png"
+            alt=""
+            class="w-full aspect-square opacity-90 hover:opacity-100 transition grayscale-50 hover:grayscale-0"
+          />
+          <img
+            src="./public/img/galeria/galeria-6.png"
+            alt=""
+            class="w-full aspect-square opacity-90 hover:opacity-100 transition grayscale-50 hover:grayscale-0"
+          />
+          <img
+            src="./public/img/galeria/galeria-7.png"
+            alt=""
+            class="w-full aspect-square opacity-90 hover:opacity-100 transition grayscale-50 hover:grayscale-0"
+          />
+          <img
+            src="./public/img/galeria/galeria-8.png"
+            alt=""
+            class="w-full aspect-square opacity-90 hover:opacity-100 transition grayscale-50 hover:grayscale-0"
+          />
+        </div>
+      </section>
+
+      <!-- Sucursales -->
+      <section class="mb-14" id="sucursales">
+        <!-- Contenedor -->
+        <div class="w-11/12 max-w-7xl mx-auto">
           <!-- Encabezado -->
           <div class="mb-14 text-center">
-            <h2 class="mb-4 font-title text-5xl font-bold text-primary">Pizzas Populares</h2>
-            <p class="text-lg text-black">Algunas de nuestras mejores pizzas</p>
+            <h2 class="mb-4 font-title text-5xl font-bold text-primary">
+              Sucursales
+            </h2>
+            <p class="text-lg text-black">Visitanos en nuestras sucursales</p>
           </div>
 
-          <!-- Grid -->
-          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-          <!-- Card -->
-             <div class="mb-5 bg-white shadow-sm">
-                <!-- Thumb -->
-                 <div class="aspect-square">
-                   <img src="./img/menu/pizza-1.png" class="h-auto w-full" alt="pizza               ">
-                 </div>
-
-                 <!-- Precios -->
-                  <div class="flex flex-col">
-                    <h3 class="text-center p-2 text-xl font-bold text-primary">Pepperoni</h3>
-                    <div class="flex justify-between border-b border-black/10 p-2 text-sm md:text-base">
-                      <p>Pequena</p>
-                      <p>$123.00</p>
-                    </div>
-                    <div class="flex justify-between border-b border-black/10 p-2 text-sm md:text-base">
-                      <p>Mediana</p>
-                      <p>$153.00</p>
-                    </div>
-                    <div class="flex justify-between border-b border-black/10 p-2 text-sm md:text-base">
-                      <p>Grande</p>
-                      <p>$223.00</p>
-                    </div>
-                    <div class="flex justify-between border-b border-black/10 p-2 text-sm md:text-base">
-                      <p>Familiar</p>
-                      <p>$323.00</p>
-                    </div>
-                  </div>
-             </div>
-             <div class="mb-5 bg-white shadow-sm">
-                <!-- Thumb -->
-                 <div class="aspect-square">
-                   <img src="./img/menu/pizza-2.png" class="h-auto w-full" alt="pizza               ">
-                 </div>
-
-                 <!-- Precios -->
-                  <div class="flex flex-col">
-                    <h3 class="text-center p-2 text-xl font-bold text-primary">Napolitana</h3>
-                    <div class="flex justify-between border-b border-black/10 p-2 text-sm md:text-base">
-                      <p>Pequena</p>
-                      <p>$123.00</p>
-                    </div>
-                    <div class="flex justify-between border-b border-black/10 p-2 text-sm md:text-base">
-                      <p>Mediana</p>
-                      <p>$153.00</p>
-                    </div>
-                    <div class="flex justify-between border-b border-black/10 p-2 text-sm md:text-base">
-                      <p>Grande</p>
-                      <p>$223.00</p>
-                    </div>
-                    <div class="flex justify-between border-b border-black/10 p-2 text-sm md:text-base">
-                      <p>Familiar</p>
-                      <p>$323.00</p>
-                    </div>
-                  </div>
-             </div>
-             <div class="mb-5 bg-white shadow-sm">
-                <!-- Thumb -->
-                 <div class="aspect-square">
-                   <img src="./img/menu/pizza-3.png" class="h-auto w-full" alt="pizza               ">
-                 </div>
-
-                 <!-- Precios -->
-                  <div class="flex flex-col">
-                    <h3 class="text-center p-2 text-xl font-bold text-primary">Margherita</h3>
-                    <div class="flex justify-between border-b border-black/10 p-2 text-sm md:text-base">
-                      <p>Pequena</p>
-                      <p>$123.00</p>
-                    </div>
-                    <div class="flex justify-between border-b border-black/10 p-2 text-sm md:text-base">
-                      <p>Mediana</p>
-                      <p>$153.00</p>
-                    </div>
-                    <div class="flex justify-between border-b border-black/10 p-2 text-sm md:text-base">
-                      <p>Grande</p>
-                      <p>$223.00</p>
-                    </div>
-                    <div class="flex justify-between border-b border-black/10 p-2 text-sm md:text-base">
-                      <p>Familiar</p>
-                      <p>$323.00</p>
-                    </div>
-                  </div>
-             </div>
-             <div class="mb-5 bg-white shadow-sm">
-                <!-- Thumb -->
-                 <div class="aspect-square">
-                   <img src="./img/menu/pizza-4.png" class="h-auto w-full" alt="pizza               ">
-                 </div>
-
-                 <!-- Precios -->
-                  <div class="flex flex-col">
-                    <h3 class="text-center p-2 text-xl font-bold text-primary">Cuatro Quesos</h3>
-                    <div class="flex justify-between border-b border-black/10 p-2 text-sm md:text-base">
-                      <p>Pequena</p>
-                      <p>$123.00</p>
-                    </div>
-                    <div class="flex justify-between border-b border-black/10 p-2 text-sm md:text-base">
-                      <p>Mediana</p>
-                      <p>$153.00</p>
-                    </div>
-                    <div class="flex justify-between border-b border-black/10 p-2 text-sm md:text-base">
-                      <p>Grande</p>
-                      <p>$223.00</p>
-                    </div>
-                    <div class="flex justify-between border-b border-black/10 p-2 text-sm md:text-base">
-                      <p>Familiar</p>
-                      <p>$323.00</p>
-                    </div>
-                  </div>
-             </div>
-          </div>
-
-          <!-- Boton de Menu -->
-           <div class="flex justify-center mt-2">
-              <a href="menu.html" class="block border border-primary p-5 font-bold uppercase transition hover:bg-primary hover:text-white">Ver menu completo</a>
-           </div>
-        </section>
-
-        <!-- Galeria -->
-         <section class="mb-14">
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
-              <img src="./public/img/galeria/galeria-1.png" alt="" class="w-full aspect-square opacity-90 hover:opacity-100 transition grayscale-50 hover:grayscale-0">
-              <img src="./public/img/galeria/galeria-2.png" alt="" class="w-full aspect-square opacity-90 hover:opacity-100 transition grayscale-50 hover:grayscale-0">
-              <img src="./public/img/galeria/galeria-3.png" alt="" class="w-full aspect-square opacity-90 hover:opacity-100 transition grayscale-50 hover:grayscale-0">
-              <img src="./public/img/galeria/galeria-4.png" alt="" class="w-full aspect-square opacity-90 hover:opacity-100 transition grayscale-50 hover:grayscale-0">
-              <img src="./public/img/galeria/galeria-5.png" alt="" class="w-full aspect-square opacity-90 hover:opacity-100 transition grayscale-50 hover:grayscale-0">
-              <img src="./public/img/galeria/galeria-6.png" alt="" class="w-full aspect-square opacity-90 hover:opacity-100 transition grayscale-50 hover:grayscale-0">
-              <img src="./public/img/galeria/galeria-7.png" alt="" class="w-full aspect-square opacity-90 hover:opacity-100 transition grayscale-50 hover:grayscale-0">
-              <img src="./public/img/galeria/galeria-8.png" alt="" class="w-full aspect-square opacity-90 hover:opacity-100 transition grayscale-50 hover:grayscale-0">
+          <!-- Sucursales GRID -->
+          <div class="flex flex-col gap-5">
+            <!-- Sucursal #1 -->
+            <div class="grid grid-cols-3 gap-0 md:gap-5">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3758.578087925482!2d-99.22116912402608!3d19.602568235229466!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d21d4a5296bf3b%3A0xaabcfe6a8f16d9a3!2sGYM%20MUSCLE%20MACHINE!5e0!3m2!1ses!2smx!4v1764623324092!5m2!1ses!2smx"
+                style="border: 0"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                class="h-full w-full col-span-full md:col-span-2 aspect-video md:aspect-auto"
+              ></iframe>
+              <div
+                class="col-span-full md:col-span-1 flex flex-col gap-5 p-5 text-white bg-primary"
+              >
+                <p class="text-2xl">Jacksonville, Florida</p>
+                <p class="italic">1620 Margaret St #105</p>
+                <p class="italic">C.P.32204</p>
+                <p class="flex gap-2 items-center">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-telephone"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.6 17.6 0 0 0 4.168 6.608 17.6 17.6 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.68.68 0 0 0-.58-.122l-2.19.547a1.75 1.75 0 0 1-1.657-.459L5.482 8.062a1.75 1.75 0 0 1-.46-1.657l.548-2.19a.68.68 0 0 0-.122-.58zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.68.68 0 0 0 .178.643l2.457 2.457a.68.68 0 0 0 .644.178l2.189-.547a1.75 1.75 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.6 18.6 0 0 1-7.01-4.42 18.6 18.6 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877z"
+                    />
+                  </svg>
+                  (01) 123 456 789
+                </p>
+              </div>
             </div>
-         </section>
+
+            <!-- Sucursal #2 -->
+            <div class="grid grid-cols-3 gap-0 md:gap-5">
+              <div
+                class="md:col-span-1 col-span-full flex flex-col gap-5 p-5 text-white bg-primary order-2 md:order-1"
+              >
+                <p class="text-2xl">Jacksonville, Florida</p>
+                <p class="italic">1620 Margaret St #105</p>
+                <p class="italic">C.P.32204</p>
+                <p class="flex gap-2 items-center">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-telephone"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.6 17.6 0 0 0 4.168 6.608 17.6 17.6 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.68.68 0 0 0-.58-.122l-2.19.547a1.75 1.75 0 0 1-1.657-.459L5.482 8.062a1.75 1.75 0 0 1-.46-1.657l.548-2.19a.68.68 0 0 0-.122-.58zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.68.68 0 0 0 .178.643l2.457 2.457a.68.68 0 0 0 .644.178l2.189-.547a1.75 1.75 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.6 18.6 0 0 1-7.01-4.42 18.6 18.6 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877z"
+                    />
+                  </svg>
+                  (01) 123 456 789
+                </p>
+              </div>
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3758.578087925482!2d-99.22116912402608!3d19.602568235229466!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d21d4a5296bf3b%3A0xaabcfe6a8f16d9a3!2sGYM%20MUSCLE%20MACHINE!5e0!3m2!1ses!2smx!4v1764623324092!5m2!1ses!2smx"
+                style="border: 0"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                class="h-full w-full col-span-full md:col-span-2 aspect-video md:aspect-auto order-1 md:order-2"
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
   </body>
 </html>
