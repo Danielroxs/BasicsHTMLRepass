@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script defer type="module" src="/src/main.js"></script>
+    <link rel="stylesheet" href="./src/index.css" />
+    <title>Menu - Pizzeria DanRox</title>
+  </head>
+  <body class="bg-background">
+    <header
+      class="relative pt-10 overflow-auto text-white bg-hero bg-cover bg-center before:content-[''] before:bg-red-950/70 before:w-full before:h-full before:block before:absolute before:z-0 before:top-0"
+    >
+      <div class="relative z-10 w-11/12 mx-auto max-w-7xl">
+        <!-- Menu de navegacion -->
+        <div class="flex flex-wrap items-center justify-center lg:justify-between gap-7">
+          <h3 class="font-title text-4xl font-semibold">DanRox</h3>
+          <nav class="flex flex-wrap items-center justify-center gap-7 text-nowrap text-center font-semibold uppercase">
+            <a href="index.html" class="hover:underline">Inicio</a>
+            <a href="index.html#sucursales" class="hover:underline">Sucursales</a>
+            <a href="index.html#acerca-de" class="hover:underline">Acerca de</a>
+            <a href="#" class="hover:underline">Contacto</a>
+          </nav>
+        </div>
+
+        <div class="my-10 text-center">
+          <h1 class="font-title text-5xl">Menu</h1>
+        </div>
+      </div>
+    </header>
+
+    <!-- Menu -->
+    <div class="flex flex-wrap justify-center gap-5 bg-white py-2 text-center">
+      <a href="#pizzas" class="text-primary hover:border-primary border border-transparent px-4 py-2 transition">
+        Pizzas
+      </a>
+      <a href="#hamburguesas" class="text-primary hover:border-primary border border-transparent px-4 py-2 transition">
+        Hamburguesas
+      </a>
+      <a href="#bebidas" class="text-primary hover:border-primary border border-transparent px-4 py-2 transition">
+        Bebidas
+      </a>
+      <a href="#entradas" class="text-primary hover:border-primary border border-transparent px-4 py-2 transition">
+        Entradas
+      </a>
+      <a href="#ensaladas" class="text-primary hover:border-primary border border-transparent px-4 py-2 transition">
+        Ensaladas
+      </a>
+      <a href="#postres" class="text-primary hover:border-primary border border-transparent px-4 py-2 transition">
+        Postres
+      </a>
+    </div>
+
+    <main class="mt-12">
+      <section class="w-11/12 max-w-7xl mx-auto mb-20 mt-0" id="pizzas">
+        <!-- Encabezado -->
+        <div class="mb-14 text-center">
+          <h2 class="mb-4 font-title text-5xl font-bold text-primary">Pizzas</h2>
+          <p class="text-lg text-black">Algunas de nuestras mejores pizzas</p>
+        </div>
+
+        <!-- Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          <!-- Card -->
+          <div class="mb-5 bg-white shadow-sm">
+            <!-- Thumb -->
+            <div class="aspect-square">
+              <img src="./img/menu/pizza-1.png" class="h-auto w-full" alt="pizza               " />
+            </div>
+
+            <!-- Precios -->
+            <div class="flex flex-col">
+              <h3 class="text-center p-2 text-xl font-bold text-primary">Pepperoni</h3>
+              <div class="flex justify-between border-b border-black/10 p-2 text-sm md:text-base">
+                <p>Pequena</p>
+                <p>$123.00</p>
+              </div>
+              <div class="flex justify-between border-b border-black/10 p-2 text-sm md:text-base">
+                <p>Mediana</p>
+                <p>$153.00</p>
+              </div>
+              <div class="flex justify-between border-b border-black/10 p-2 text-sm md:text-base">
+                <p>Grande</p>
+                <p>$223.00</p>
+              </div>
+              <div class="flex justify-between border-b border-black/10 p-2 text-sm md:text-base">
+                <p>Familiar</p>
+                <p>$323.00</p>
+              </div>
+            </div>
+          </div>
+          <div class="mb-5 bg-white shadow-sm">
+            <!-- Thumb -->
+            <div class="aspect-square">
+              <img src="./img/menu/pizza-2.png" class="h-auto w-full" alt="pizza               " />
+            </div>
+
+            <!-- Precios -->
+            <div class="flex flex-col">
+              <h3 class="text-center p-2 text-xl font-bold text-primary">Napolitana</h3>
+              <div class="flex justify-between border-b border-black/10 p-2 text-sm md:text-base">
+                <p>Pequena</p>
+                <p>$123.00</p>
+              </div>
+              <div class="flex justify-between border-b border-black/10 p-2 text-sm md:text-base">
+                <p>Mediana</p>
+                <p>$153.00</p>
+              </div>
+              <div class="flex justify-between border-b border-black/10 p-2 text-sm md:text-base">
+                <p>Grande</p>
+                <p>$223.00</p>
+              </div>
+              <div class="flex justify-between border-b border-black/10 p-2 text-sm md:text-base">
+                <p>Familiar</p>
+                <p>$323.00</p>
+              </div>
+            </div>
+          </div>
+          <div class="mb-5 bg-white shadow-sm">
+            <!-- Thumb -->
+            <div class="aspect-square">
+              <img src="./img/menu/pizza-3.png" class="h-auto w-full" alt="pizza               " />
+            </div>
+
+            <!-- Precios -->
+            <div class="flex flex-col">
+              <h3 class="text-center p-2 text-xl font-bold text-primary">Margherita</h3>
+              <div class="flex justify-between border-b border-black/10 p-2 text-sm md:text-base">
+                <p>Pequena</p>
+                <p>$123.00</p>
+              </div>
+              <div class="flex justify-between border-b border-black/10 p-2 text-sm md:text-base">
+                <p>Mediana</p>
+                <p>$153.00</p>
+              </div>
+              <div class="flex justify-between border-b border-black/10 p-2 text-sm md:text-base">
+                <p>Grande</p>
+                <p>$223.00</p>
+              </div>
+              <div class="flex justify-between border-b border-black/10 p-2 text-sm md:text-base">
+                <p>Familiar</p>
+                <p>$323.00</p>
+              </div>
+            </div>
+          </div>
+          <div class="mb-5 bg-white shadow-sm">
+            <!-- Thumb -->
+            <div class="aspect-square">
+              <img src="./img/menu/pizza-4.png" class="h-auto w-full" alt="pizza               " />
+            </div>
+
+            <!-- Precios -->
+            <div class="flex flex-col">
+              <h3 class="text-center p-2 text-xl font-bold text-primary">Cuatro Quesos</h3>
+              <div class="flex justify-between border-b border-black/10 p-2 text-sm md:text-base">
+                <p>Pequena</p>
+                <p>$123.00</p>
+              </div>
+              <div class="flex justify-between border-b border-black/10 p-2 text-sm md:text-base">
+                <p>Mediana</p>
+                <p>$153.00</p>
+              </div>
+              <div class="flex justify-between border-b border-black/10 p-2 text-sm md:text-base">
+                <p>Grande</p>
+                <p>$223.00</p>
+              </div>
+              <div class="flex justify-between border-b border-black/10 p-2 text-sm md:text-base">
+                <p>Familiar</p>
+                <p>$323.00</p>
+              </div>
+            </div>
+          </div>
+          <div class="mb-5 bg-white shadow-sm">
+            <!-- Thumb -->
+            <div class="aspect-square">
+              <img src="./img/menu/pizza-5.png" class="h-auto w-full" alt="pizza               " />
+            </div>
+
+            <!-- Precios -->
+            <div class="flex flex-col">
+              <h3 class="text-center p-2 text-xl font-bold text-primary">Vegetariana</h3>
+              <div class="flex justify-between border-b border-black/10 p-2 text-sm md:text-base">
+                <p>Pequena</p>
+                <p>$123.00</p>
+              </div>
+              <div class="flex justify-between border-b border-black/10 p-2 text-sm md:text-base">
+                <p>Mediana</p>
+                <p>$153.00</p>
+              </div>
+              <div class="flex justify-between border-b border-black/10 p-2 text-sm md:text-base">
+                <p>Grande</p>
+                <p>$223.00</p>
+              </div>
+              <div class="flex justify-between border-b border-black/10 p-2 text-sm md:text-base">
+                <p>Familiar</p>
+                <p>$323.00</p>
+              </div>
+            </div>
+          </div>
+          <div class="mb-5 bg-white shadow-sm">
+            <!-- Thumb -->
+            <div class="aspect-square">
+              <img src="./img/menu/pizza-6.png" class="h-auto w-full" alt="pizza               " />
+            </div>
+
+            <!-- Precios -->
+            <div class="flex flex-col">
+              <h3 class="text-center p-2 text-xl font-bold text-primary">BBQ Chicken</h3>
+              <div class="flex justify-between border-b border-black/10 p-2 text-sm md:text-base">
+                <p>Pequena</p>
+                <p>$123.00</p>
+              </div>
+              <div class="flex justify-between border-b border-black/10 p-2 text-sm md:text-base">
+                <p>Mediana</p>
+                <p>$153.00</p>
+              </div>
+              <div class="flex justify-between border-b border-black/10 p-2 text-sm md:text-base">
+                <p>Grande</p>
+                <p>$223.00</p>
+              </div>
+              <div class="flex justify-between border-b border-black/10 p-2 text-sm md:text-base">
+                <p>Familiar</p>
+                <p>$323.00</p>
+              </div>
+            </div>
+          </div>
+          <div class="mb-5 bg-white shadow-sm">
+            <!-- Thumb -->
+            <div class="aspect-square">
+              <img src="./img/menu/pizza-7.png" class="h-auto w-full" alt="pizza               " />
+            </div>
+
+            <!-- Precios -->
+            <div class="flex flex-col">
+              <h3 class="text-center p-2 text-xl font-bold text-primary">Mexicana</h3>
+              <div class="flex justify-between border-b border-black/10 p-2 text-sm md:text-base">
+                <p>Pequena</p>
+                <p>$123.00</p>
+              </div>
+              <div class="flex justify-between border-b border-black/10 p-2 text-sm md:text-base">
+                <p>Mediana</p>
+                <p>$153.00</p>
+              </div>
+              <div class="flex justify-between border-b border-black/10 p-2 text-sm md:text-base">
+                <p>Grande</p>
+                <p>$223.00</p>
+              </div>
+              <div class="flex justify-between border-b border-black/10 p-2 text-sm md:text-base">
+                <p>Familiar</p>
+                <p>$323.00</p>
+              </div>
+            </div>
+          </div>
+          <div class="mb-5 bg-white shadow-sm">
+            <!-- Thumb -->
+            <div class="aspect-square">
+              <img src="./img/menu/pizza-8.png" class="h-auto w-full" alt="pizza               " />
+            </div>
+
+            <!-- Precios -->
+            <div class="flex flex-col">
+              <h3 class="text-center p-2 text-xl font-bold text-primary">Calzone</h3>
+              <div class="flex justify-between border-b border-black/10 p-2 text-sm md:text-base">
+                <p>Pequena</p>
+                <p>$123.00</p>
+              </div>
+              <div class="flex justify-between border-b border-black/10 p-2 text-sm md:text-base">
+                <p>Mediana</p>
+                <p>$153.00</p>
+              </div>
+              <div class="flex justify-between border-b border-black/10 p-2 text-sm md:text-base">
+                <p>Grande</p>
+                <p>$223.00</p>
+              </div>
+              <div class="flex justify-between border-b border-black/10 p-2 text-sm md:text-base">
+                <p>Familiar</p>
+                <p>$323.00</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="w-11/12 max-w-7xl mx-auto mb-20 mt-0" id="hamburguesas">
+        <!-- Encabezado -->
+        <div class="mb-14 text-center">
+          <h2 class="mb-4 font-title text-5xl font-bold text-primary">Hamburguesas</h2>
+          <p class="text-lg text-black">Algunas de nuestras mejores hamburguesas</p>
+        </div>
+
+        <!-- Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          <!-- Card -->
+          <div class="mb-5 bg-white shadow-sm">
+            <!-- Thumb -->
+            <div class="aspect-square">
+              <img src="./img/menu/hamburguesa-1.png" class="h-auto w-full" alt="pizza               " />
+            </div>
+
+            <!-- Precios -->
+            <div class="flex flex-col">
+              <h3 class="text-center p-2 text-xl font-bold text-primary">Clasica</h3>
+              <div class="flex justify-between border-b border-black/10 p-2 text-sm md:text-base">
+                <p>Normal</p>
+                <p>$123.00</p>
+              </div>
+              <div class="flex justify-between border-b border-black/10 p-2 text-sm md:text-base">
+                <p>Carne Doble</p>
+                <p>$153.00</p>
+              </div>
+            </div>
+          </div>
+          <div class="mb-5 bg-white shadow-sm">
+            <!-- Thumb -->
+            <div class="aspect-square">
+              <img src="./img/menu/hamburguesa-2.png" class="h-auto w-full" alt="pizza               " />
+            </div>
+
+            <!-- Precios -->
+            <div class="flex flex-col">
+              <h3 class="text-center p-2 text-xl font-bold text-primary">Pollo</h3>
+              <div class="flex justify-between border-b border-black/10 p-2 text-sm md:text-base">
+                <p>Normal</p>
+                <p>$123.00</p>
+              </div>
+              <div class="flex justify-between border-b border-black/10 p-2 text-sm md:text-base">
+                <p>Carne Doble</p>
+                <p>$153.00</p>
+              </div>
+            </div>
+          </div>
+          <div class="mb-5 bg-white shadow-sm">
+            <!-- Thumb -->
+            <div class="aspect-square">
+              <img src="./img/menu/hamburguesa-3.png" class="h-auto w-full" alt="pizza               " />
+            </div>
+
+            <!-- Precios -->
+            <div class="flex flex-col">
+              <h3 class="text-center p-2 text-xl font-bold text-primary">Vegetariana</h3>
+              <div class="flex justify-between border-b border-black/10 p-2 text-sm md:text-base">
+                <p>Normal</p>
+                <p>$123.00</p>
+              </div>
+              <div class="flex justify-between border-b border-black/10 p-2 text-sm md:text-base">
+                <p>Carne Doble</p>
+                <p>$153.00</p>
+              </div>
+            </div>
+          </div>
+          <div class="mb-5 bg-white shadow-sm">
+            <!-- Thumb -->
+            <div class="aspect-square">
+              <img src="./img/menu/hamburguesa-4.png" class="h-auto w-full" alt="pizza               " />
+            </div>
+
+            <!-- Precios -->
+            <div class="flex flex-col">
+              <h3 class="text-center p-2 text-xl font-bold text-primary">Gourmet</h3>
+              <div class="flex justify-between border-b border-black/10 p-2 text-sm md:text-base">
+                <p>Normal</p>
+                <p>$123.00</p>
+              </div>
+              <div class="flex justify-between border-b border-black/10 p-2 text-sm md:text-base">
+                <p>Carne Doble</p>
+                <p>$153.00</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="w-11/12 max-w-7xl mx-auto mb-20 mt-0" id="bebidas">
+        <!-- Encabezado -->
+        <div class="mb-14 text-center">
+          <h2 class="mb-4 font-title text-5xl font-bold text-primary">Bebidas</h2>
+          <p class="text-lg text-black">Algunas de nuestras mejores bebidas</p>
+        </div>
+
+        <!-- Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          <!-- Card -->
+          <div class="mb-5 bg-white shadow-sm">
+            <!-- Thumb -->
+            <div class="aspect-square">
+              <img src="./img/menu/bebida-1.png" class="h-auto w-full" alt="pizza               " />
+            </div>
+
+            <!-- Precios -->
+            <div class="flex flex-col">
+              <h3 class="text-center p-2 text-xl font-bold text-primary">Ron</h3>
+              <div class="flex justify-between border-b border-black/10 p-2 text-sm md:text-base">
+                <p>500ml</p>
+                <p>$123.00</p>
+              </div>
+            </div>
+          </div>
+          <div class="mb-5 bg-white shadow-sm">
+            <!-- Thumb -->
+            <div class="aspect-square">
+              <img src="./img/menu/bebida-2.png" class="h-auto w-full" alt="pizza               " />
+            </div>
+
+            <!-- Precios -->
+            <div class="flex flex-col">
+              <h3 class="text-center p-2 text-xl font-bold text-primary">Whiskey</h3>
+              <div class="flex justify-between border-b border-black/10 p-2 text-sm md:text-base">
+                <p>500ml</p>
+                <p>$123.00</p>
+              </div>
+            </div>
+          </div>
+          <div class="mb-5 bg-white shadow-sm">
+            <!-- Thumb -->
+            <div class="aspect-square">
+              <img src="./img/menu/bebida-3.png" class="h-auto w-full" alt="pizza               " />
+            </div>
+
+            <!-- Precios -->
+            <div class="flex flex-col">
+              <h3 class="text-center p-2 text-xl font-bold text-primary">Pink Vodka</h3>
+              <div class="flex justify-between border-b border-black/10 p-2 text-sm md:text-base">
+                <p>500ml</p>
+                <p>$123.00</p>
+              </div>
+            </div>
+          </div>
+          <div class="mb-5 bg-white shadow-sm">
+            <!-- Thumb -->
+            <div class="aspect-square">
+              <img src="./img/menu/bebida-4.png" class="h-auto w-full" alt="pizza               " />
+            </div>
+
+            <!-- Precios -->
+            <div class="flex flex-col">
+              <h3 class="text-center p-2 text-xl font-bold text-primary">Martini</h3>
+              <div class="flex justify-between border-b border-black/10 p-2 text-sm md:text-base">
+                <p>500ml</p>
+                <p>$123.00</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-primary p-3 text-center text-white text-sm">
+      <p>© 2026 Pizzeria DanRox - Todos los derechos reservados.</p>
+    </footer>
+  </body>
+</html>

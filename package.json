@@ -5,6 +5,8 @@
     "toastify-js": "^1.12.0"
   },
   "scripts": {
-    "tailwind": "npx @tailwindcss/cli -i ./Tailwind/src/input.css -o ./Tailwind/public/estilos.css --watch"
+    "tailwind": "npx @tailwindcss/cli -i ./src/index.css -o ./src/output.css --watch",
+    "dev": "vite",
+    "start": "npm run tailwind & npm run dev"
   }
 }
